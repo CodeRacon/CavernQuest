@@ -4,35 +4,35 @@ const c = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height = 512;
 
+const collisionBlocks = [];
+
+groundCollisions.forEach((collision) => {
+	collision.objects.forEach((object) => {
+		const collisionBlock = new CollisionBlock({
+			polygon: object.polygon,
+			position: {
+				x: object.x,
+				y: object.y,
+			},
+		});
+		collisionBlocks.push(collisionBlock);
+	});
+});
+
+frameCollisions.forEach((collision) => {
+	collision.objects.forEach((object) => {
+		const collisionBlock = new CollisionBlock({
+			polygon: object.polygon,
+			position: {
+				x: object.x,
+				y: object.y,
+			},
+		});
+		collisionBlocks.push(collisionBlock);
+	});
+});
+
 const gravity = 0.25;
-
-class Player {
-	constructor(position) {
-		this.position = position;
-		this.velocity = {
-			x: 0,
-			y: 1,
-		};
-		this.height = 100;
-	}
-
-	draw() {
-		c.fillStyle = 'salmon';
-		c.fillRect(this.position.x, this.position.y, 100, this.height);
-	}
-
-	update() {
-		this.draw();
-		this.position.y += this.velocity.y;
-		this.position.x += this.velocity.x;
-
-		if (this.position.y + this.height + this.velocity.y < canvas.height) {
-			this.velocity.y += gravity;
-		} else {
-			this.velocity.y = 0;
-		}
-	}
-}
 
 const player = new Player({
 	x: 0,
@@ -50,10 +50,28 @@ const keys = {
 
 let y = 100;
 
+const background = new Sprite({
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imgSrc: '/img/background.jpg',
+});
+
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = 'black';
 	c.fillRect(0, 0, canvas.width, canvas.height);
+
+	c.save();
+	c.scale(0.125, 0.125);
+	background.update();
+
+	collisionBlocks.forEach((collisionBlock) => {
+		collisionBlock.update();
+	});
+	c.restore();
+
 	player.update();
 	player2.update();
 
