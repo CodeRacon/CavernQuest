@@ -7,8 +7,8 @@ class CollisionBlock {
 	}
 
 	draw() {
-		c.fillStyle = this.color;
-		c.fillRect(this.position.x, this.position.y, this.width, this.height);
+		// c.fillStyle = this.color;
+		// c.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 
 	update() {
