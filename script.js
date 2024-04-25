@@ -57,7 +57,11 @@ const player = new Player({
 		x: 2768,
 		y: 1512,
 	},
+
 	collisionBlocks: collisionBlocks,
+
+	imgSrc: 'img/wizard/Wizard-Idle-Right.png',
+	frameRate: 20,
 });
 
 const keys = {
