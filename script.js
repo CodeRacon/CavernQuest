@@ -9,11 +9,12 @@ const collisionBlocks = [];
 groundCollisions.forEach((collision) => {
 	collision.objects.forEach((object) => {
 		const collisionBlock = new CollisionBlock({
-			polygon: object.polygon,
 			position: {
 				x: object.x,
 				y: object.y,
 			},
+			width: object.width,
+			height: object.height,
 		});
 		collisionBlocks.push(collisionBlock);
 	});
@@ -22,25 +23,41 @@ groundCollisions.forEach((collision) => {
 frameCollisions.forEach((collision) => {
 	collision.objects.forEach((object) => {
 		const collisionBlock = new CollisionBlock({
-			polygon: object.polygon,
 			position: {
 				x: object.x,
 				y: object.y,
 			},
+			width: object.width,
+			height: object.height,
 		});
 		collisionBlocks.push(collisionBlock);
 	});
 });
 
-const gravity = 0.25;
+const hazards = [];
+
+hazardCollision.forEach((collision) => {
+	collision.objects.forEach((object) => {
+		const hazard = new Hazard({
+			position: {
+				x: object.x,
+				y: object.y,
+			},
+			width: object.width,
+			height: object.height,
+		});
+		hazards.push(hazard);
+	});
+});
+
+const gravity = 1;
 
 const player = new Player({
-	x: 0,
-	y: 0,
-});
-const player2 = new Player({
-	x: 200,
-	y: 50,
+	position: {
+		x: 2768,
+		y: 1512,
+	},
+	collisionBlocks: collisionBlocks,
 });
 
 const keys = {
@@ -65,38 +82,44 @@ function animate() {
 
 	c.save();
 	c.scale(0.125, 0.125);
+
 	background.update();
 
 	collisionBlocks.forEach((collisionBlock) => {
 		collisionBlock.update();
 	});
-	c.restore();
+
+	hazards.forEach((hazard) => {
+		hazard.update();
+	});
 
 	player.update();
-	player2.update();
 
 	player.velocity.x = 0;
 	if (keys.d.pressed) {
-		player.velocity.x = 4;
+		player.velocity.x = 24;
 	} else if (keys.a.pressed) {
-		player.velocity.x = -4;
+		player.velocity.x = -24;
 	}
+
+	c.restore();
 }
 
 animate();
 
 window.addEventListener('keydown', (event) => {
 	switch (event.key) {
+		case 'w':
+			if (player.isGrounded) {
+				player.velocity.y = -40;
+				player.isGrounded = false; // Spieler verlässt den Boden beim Springen
+			}
+			break;
 		case 'd':
 			keys.d.pressed = true;
 			break;
 		case 'a':
 			keys.a.pressed = true;
-			break;
-		case 'w':
-			if (player.velocity.y == 0) {
-				player.velocity.y = -10;
-			}
 			break;
 	}
 });
