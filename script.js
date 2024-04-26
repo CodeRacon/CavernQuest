@@ -54,8 +54,8 @@ const gravity = 1.75;
 
 const player = new Player({
 	position: {
-		x: 256,
-		y: 2000,
+		x: 4000,
+		y: 1024,
 	},
 
 	collisionBlocks: collisionBlocks,
@@ -122,6 +122,13 @@ const background = new Sprite({
 	imgSrc: '/img/background.jpg',
 });
 
+const camera = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+};
+
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = 'black';
@@ -129,7 +136,7 @@ function animate() {
 
 	c.save();
 	c.scale(0.125, 0.125);
-
+	c.translate(camera.position.x, camera.position.y);
 	background.update();
 
 	collisionBlocks.forEach((collisionBlock) => {
@@ -148,10 +155,17 @@ function animate() {
 		player.switchToSprite('WalkRight');
 		player.velocity.x = 28;
 		player.lastDirection = 'right';
+		player.leftSideCamPanning({ canvas, camera });
+		// ####################
+		// ####################
 	} else if (keys.a.pressed) {
 		player.switchToSprite('WalkLeft');
 		player.velocity.x = -28;
 		player.lastDirection = 'left';
+		player.rightSideCamPanning({ canvas, camera });
+
+		// ####################
+		// ####################
 	} else if (player.velocity.y === 0) {
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('IdleRight');
@@ -183,7 +197,7 @@ window.addEventListener('keydown', (event) => {
 	switch (event.key) {
 		case 'w':
 			if (player.isGrounded) {
-				player.velocity.y = -46;
+				player.velocity.y = -48;
 				player.isGrounded = false; // Spieler verlässt den Boden beim Springen
 			}
 			break;
