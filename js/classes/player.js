@@ -78,7 +78,7 @@ class Player extends Sprite {
 		};
 	}
 
-	leftSideCamPanning({ canvas, camera }) {
+	leftBorderCamPanning({ canvas, camera }) {
 		const cameraBoxRightEnd = this.cameraBox.position.x + this.cameraBox.width;
 		const scaledCanvasWidth = canvas.width * 8;
 
@@ -89,11 +89,36 @@ class Player extends Sprite {
 		}
 	}
 
-	rightSideCamPanning({ camera }) {
+	rightBorderCamPanning({ camera }) {
 		if (this.cameraBox.position.x <= 0) return;
 
 		if (this.cameraBox.position.x <= Math.abs(camera.position.x)) {
 			camera.position.x -= this.velocity.x;
+		}
+	}
+
+	upperBorderCamPanning({ canvas, camera }) {
+		if (
+			this.cameraBox.position.y + this.cameraBox.height + this.velocity.y >=
+			8192
+		)
+			return;
+
+		const scaledCanvasHeight = canvas.height * 8;
+
+		if (
+			this.cameraBox.position.y + this.cameraBox.height >=
+			Math.abs(camera.position.y) + scaledCanvasHeight
+		) {
+			camera.position.y -= this.velocity.y;
+		}
+	}
+
+	bottomBorderCamPanning({ camera }) {
+		if (this.cameraBox.position.y + this.velocity.y <= 0) return;
+
+		if (this.cameraBox.position.y <= Math.abs(camera.position.y)) {
+			camera.position.y -= this.velocity.y;
 		}
 	}
 
@@ -107,7 +132,7 @@ class Player extends Sprite {
 		// c.fillRect(this.position.x, this.position.y, this.width, this.height);
 
 		// draws out cameraBox
-		c.fillStyle = '#0004ff8c';
+		c.fillStyle = 'transparent';
 		c.fillRect(
 			this.cameraBox.position.x,
 			this.cameraBox.position.y,

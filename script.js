@@ -155,14 +155,14 @@ function animate() {
 		player.switchToSprite('WalkRight');
 		player.velocity.x = 28;
 		player.lastDirection = 'right';
-		player.leftSideCamPanning({ canvas, camera });
+		player.leftBorderCamPanning({ canvas, camera });
 		// ####################
 		// ####################
 	} else if (keys.a.pressed) {
 		player.switchToSprite('WalkLeft');
 		player.velocity.x = -28;
 		player.lastDirection = 'left';
-		player.rightSideCamPanning({ canvas, camera });
+		player.rightBorderCamPanning({ canvas, camera });
 
 		// ####################
 		// ####################
@@ -173,14 +173,21 @@ function animate() {
 			player.switchToSprite('IdleLeft');
 		}
 	}
-
+	// ####################
+	// ####################
 	if (player.velocity.y < 0) {
+		player.bottomBorderCamPanning({ camera, canvas });
+
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('JumpRight');
 		} else {
 			player.switchToSprite('JumpLeft');
 		}
+		// ####################
+		// ####################
 	} else if (player.velocity.y > 0) {
+		player.upperBorderCamPanning({ camera, canvas });
+
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('FallRight');
 		} else {
