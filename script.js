@@ -50,18 +50,61 @@ hazardCollision.forEach((collision) => {
 	});
 });
 
-const gravity = 1;
+const gravity = 1.75;
 
 const player = new Player({
 	position: {
-		x: 2768,
-		y: 1512,
+		x: 256,
+		y: 2000,
 	},
 
 	collisionBlocks: collisionBlocks,
 
 	imgSrc: 'img/wizard/Wizard-Idle-Right.png',
 	frameRate: 20,
+
+	animations: {
+		IdleRight: {
+			imgSrc: 'img/wizard/Wizard-Idle-Right.png',
+			frameRate: 20,
+			frameBuffer: 4,
+		},
+		IdleLeft: {
+			imgSrc: 'img/wizard/Wizard-Idle-Left.png',
+			frameRate: 20,
+			frameBuffer: 4,
+		},
+		WalkRight: {
+			imgSrc: 'img/wizard/Wizard-Walk-Right.png',
+			frameRate: 20,
+			frameBuffer: 3,
+		},
+		WalkLeft: {
+			imgSrc: 'img/wizard/Wizard-Walk-Left.png',
+			frameRate: 20,
+			frameBuffer: 3,
+		},
+		FallRight: {
+			imgSrc: 'img/wizard/Wizard-Fall-Right.png',
+			frameRate: 4,
+			frameBuffer: 20,
+		},
+		FallLeft: {
+			imgSrc: 'img/wizard/Wizard-Fall-Left.png',
+			frameRate: 4,
+			frameBuffer: 20,
+		},
+		JumpRight: {
+			imgSrc: 'img/wizard/Wizard-Jump-Right.png',
+			frameRate: 4,
+			frameBuffer: 20,
+		},
+		JumpLeft: {
+			imgSrc: 'img/wizard/Wizard-Jump-Left.png',
+			frameRate: 4,
+			frameBuffer: 20,
+		},
+	},
 });
 
 const keys = {
@@ -100,10 +143,35 @@ function animate() {
 	player.update();
 
 	player.velocity.x = 0;
+
 	if (keys.d.pressed) {
-		player.velocity.x = 24;
+		player.switchToSprite('WalkRight');
+		player.velocity.x = 28;
+		player.lastDirection = 'right';
 	} else if (keys.a.pressed) {
-		player.velocity.x = -24;
+		player.switchToSprite('WalkLeft');
+		player.velocity.x = -28;
+		player.lastDirection = 'left';
+	} else if (player.velocity.y === 0) {
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('IdleRight');
+		} else {
+			player.switchToSprite('IdleLeft');
+		}
+	}
+
+	if (player.velocity.y < 0) {
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('JumpRight');
+		} else {
+			player.switchToSprite('JumpLeft');
+		}
+	} else if (player.velocity.y > 0) {
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('FallRight');
+		} else {
+			player.switchToSprite('FallLeft');
+		}
 	}
 
 	c.restore();
@@ -115,7 +183,7 @@ window.addEventListener('keydown', (event) => {
 	switch (event.key) {
 		case 'w':
 			if (player.isGrounded) {
-				player.velocity.y = -40;
+				player.velocity.y = -46;
 				player.isGrounded = false; // Spieler verlässt den Boden beim Springen
 			}
 			break;

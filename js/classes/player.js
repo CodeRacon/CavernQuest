@@ -29,6 +29,33 @@ class Player extends Sprite {
 			width: 64,
 			height: 64,
 		};
+
+		this.animations = animations;
+		this.lastDirection = 'right';
+
+		for (let key in this.animations) {
+			const image = new Image();
+			image.src = this.animations[key].imgSrc;
+
+			this.animations[key].image = image;
+		}
+	}
+
+	switchToSprite(sprite) {
+		if (this.image === this.animations[sprite].image) return;
+
+		if (
+			sprite === 'JumpRight' ||
+			sprite === 'FallRight' ||
+			sprite === 'JumpLeft' ||
+			sprite === 'FallLeft'
+		) {
+			this.currentFrame = 0;
+		}
+
+		this.image = this.animations[sprite].image;
+		this.frameRate = this.animations[sprite].frameRate;
+		this.frameBuffer = this.animations[sprite].frameBuffer;
 	}
 
 	update() {
@@ -103,8 +130,8 @@ class Player extends Sprite {
 	}
 
 	applyGravity() {
-		this.position.y += this.velocity.y;
 		this.velocity.y += gravity;
+		this.position.y += this.velocity.y;
 	}
 
 	detectVerticalCollision() {

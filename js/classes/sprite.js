@@ -1,5 +1,5 @@
 class Sprite {
-	constructor({ position, imgSrc, frameRate = 1, frameBuffer = 6, scale = 1 }) {
+	constructor({ position, imgSrc, frameRate = 1, frameBuffer = 4, scale = 1 }) {
 		this.position = position;
 		this.scale = scale;
 		this.loaded = false;
