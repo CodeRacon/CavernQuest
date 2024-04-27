@@ -36,7 +36,7 @@ frameCollisions.forEach((collision) => {
 
 const hazards = [];
 
-hazardCollision.forEach((collision) => {
+hazardCollisions.forEach((collision) => {
 	collision.objects.forEach((object) => {
 		const hazard = new Hazard({
 			position: {
@@ -47,6 +47,77 @@ hazardCollision.forEach((collision) => {
 			height: object.height,
 		});
 		hazards.push(hazard);
+	});
+});
+
+const fencePoles = [];
+
+fencePoleCollisions.forEach((collision) => {
+	collision.objects.forEach((object) => {
+		const fencePole = new FencePole({
+			position: {
+				x: object.x,
+				y: object.y,
+			},
+			width: object.width,
+			height: object.height,
+		});
+		fencePoles.push(fencePole);
+	});
+});
+
+const movingBlobs = [];
+
+movingBlobPositions.forEach((movingBlobPosition) => {
+	movingBlobPosition.objects.forEach((object) => {
+		const movingBlob = new MovingBlob({
+			position: {
+				x: object.x,
+				y: object.y - 410,
+			},
+			fencePoles: fencePoles,
+			speed: 4,
+			imgSrc: 'img/enemies/SlimeOrange.png',
+			frameRate: 30,
+			frameBuffer: 2,
+		});
+		movingBlobs.push(movingBlob);
+	});
+});
+
+const hangingBlobs = [];
+
+hangingBlobPositions.forEach((hangingBlobPosition) => {
+	hangingBlobPosition.objects.forEach((object) => {
+		const hangingBlob = new HangingBlob({
+			position: {
+				x: object.x - 640,
+				y: object.y,
+			},
+			scale: 1.66,
+			imgSrc: 'img/enemies/SlimeBasic.png',
+			frameRate: 30,
+			frameBuffer: 4,
+		});
+		hangingBlobs.push(hangingBlob);
+	});
+});
+
+const bouncePlants = [];
+
+bouncePlantPositions.forEach((bouncePlantPosition) => {
+	bouncePlantPosition.objects.forEach((object) => {
+		const bouncePlant = new BouncePlant({
+			position: {
+				x: object.x,
+				y: object.y - 512,
+			},
+			scale: 1.125,
+			imgSrc: 'img/plants/JumpPlant_00000.png',
+			frameRate: 1,
+			frameBuffer: 4,
+		});
+		bouncePlants.push(bouncePlant);
 	});
 });
 
@@ -145,6 +216,22 @@ function animate() {
 
 	hazards.forEach((hazard) => {
 		hazard.update();
+	});
+
+	fencePoles.forEach((fencePole) => {
+		fencePole.update();
+	});
+
+	movingBlobs.forEach((movingBlob) => {
+		movingBlob.update();
+	});
+
+	hangingBlobs.forEach((hangingBlob) => {
+		hangingBlob.update();
+	});
+
+	bouncePlants.forEach((bouncePlant) => {
+		bouncePlant.update();
 	});
 
 	player.update();
