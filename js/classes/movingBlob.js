@@ -21,14 +21,14 @@ class MovingBlob extends Sprite {
 			y: 1,
 		};
 		this.fencePoles = fencePoles;
-		this.direction = 1; // 1 für Bewegung nach rechts, -1 für Bewegung nach links
+		this.direction = 1;
 		this.collisionCooldown = 0;
 	}
 
 	update(player) {
 		this.updateFrames();
 
-		// Überprüfe Kollision mit fencePoles
+		// check collision with fencePoles
 		for (let i = 0; i < this.fencePoles.length; i++) {
 			const fencePole = this.fencePoles[i];
 			if (
@@ -37,22 +37,22 @@ class MovingBlob extends Sprite {
 				this.position.y < fencePole.position.y + fencePole.height &&
 				this.position.y + this.height > fencePole.position.y
 			) {
-				// Kollision erkannt, kehre Bewegungsrichtung um
+				// collision detected, change direction
 				this.direction *= -1;
 				break;
 			}
 		}
 
-		// Aktualisiere Position basierend auf Geschwindigkeit und Richtung
+		// update position based on tempo and direction
 		this.position.x += this.velocity.x * this.direction;
 
-		// Definiere den Offset für den sichtbaren Bereich des MovingBlobs
+		// deifne offset for visible area of MovingBlob
 		const offset = {
-			x: 64, // Beispielwert, passe ihn an die tatsächlichen Abmessungen an
-			y: 64, // Beispielwert, passe ihn an die tatsächlichen Abmessungen an
+			x: 72,
+			y: 72,
 		};
 
-		// Überprüfe die Kollision zwischen dem MovingBlob und dem Spieler
+		// check for collision of MovingBlob with player
 		if (
 			player.hitbox.position.x + player.hitbox.width >=
 				this.position.x + offset.x &&
@@ -61,17 +61,18 @@ class MovingBlob extends Sprite {
 				this.position.y + offset.y &&
 			player.hitbox.position.y <= this.position.y + this.height - offset.y
 		) {
-			// Überprüfe, ob der Kollisions-Cooldown abgelaufen ist
+			// check for collision cooldown to be done
 			if (this.collisionCooldown <= 0) {
-				// Kollision erkannt, verringere die Lebenspunkte des Spielers
+				// collision detected, reduce player health by 10 points
 				player.health -= 10;
+				player.takeDamage();
 
-				// Setze den Kollisions-Cooldown auf einen bestimmten Wert, z.B. 60 Frames (ca. 1 Sekunde bei 60 FPS)
+				// set collision cooldown to 60 frames (= 1 Second)
 				this.collisionCooldown = 60;
 			}
 		}
 
-		// Verringere den Kollisions-Cooldown in jedem Frame
+		// reduce collision cooldown in each frame
 		if (this.collisionCooldown > 0) {
 			this.collisionCooldown--;
 		}

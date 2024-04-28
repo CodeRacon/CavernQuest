@@ -54,10 +54,10 @@ class HangingBlob extends Sprite {
 		);
 
 		if (this.isAwake) {
-			// Definiere den Offset für den sichtbaren Bereich des HangingBlobs
+			// define offset for visible area of HangingBlob
 			const offset = 110;
 
-			// Überprüfe die Kollision zwischen dem HangingBlob und dem Spieler
+			// check for collision of HangingBlob with player
 			if (
 				player.hitbox.position.x + player.hitbox.width >=
 					this.position.x + offset &&
@@ -65,12 +65,12 @@ class HangingBlob extends Sprite {
 				player.hitbox.position.y + player.hitbox.height >= this.position.y &&
 				player.hitbox.position.y <= this.position.y + this.height
 			) {
-				// Überprüfe, ob der Kollisions-Cooldown abgelaufen ist
+				// check for collision cooldown to be done
 				if (this.collisionCooldown <= 0) {
-					// Kollision erkannt, verringere die Lebenspunkte des Spielers
+					// collision detected, reduce player health by 10 points
 					player.health -= 10;
+					player.takeDamage();
 
-					// Setze den Kollisions-Cooldown auf einen bestimmten Wert, z.B. 60 Frames (ca. 1 Sekunde bei 60 FPS)
 					this.collisionCooldown = 60;
 				}
 			}
