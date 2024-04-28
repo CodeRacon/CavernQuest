@@ -1800,6 +1800,7 @@ const hazardCollisions = [
 			{
 				height: 43,
 				id: 676,
+
 				width: 182,
 				x: 24309,
 				y: 4427,
@@ -1807,6 +1808,7 @@ const hazardCollisions = [
 			{
 				height: 71,
 				id: 677,
+
 				width: 169,
 				x: 24299,
 				y: 4482,
@@ -1814,6 +1816,7 @@ const hazardCollisions = [
 			{
 				height: 72,
 				id: 678,
+
 				width: 186,
 				x: 24238,
 				y: 4604,
@@ -1821,6 +1824,7 @@ const hazardCollisions = [
 			{
 				height: 88,
 				id: 679,
+
 				width: 151,
 				x: 24330,
 				y: 4685,
@@ -1828,6 +1832,7 @@ const hazardCollisions = [
 			{
 				height: 86,
 				id: 680,
+
 				width: 88,
 				x: 24415,
 				y: 4777,
@@ -1835,6 +1840,7 @@ const hazardCollisions = [
 			{
 				height: 102,
 				id: 681,
+
 				width: 58,
 				x: 24522,
 				y: 4783,
@@ -1842,6 +1848,7 @@ const hazardCollisions = [
 			{
 				height: 150,
 				id: 682,
+
 				width: 60,
 				x: 24583,
 				y: 4797,
@@ -1849,6 +1856,7 @@ const hazardCollisions = [
 			{
 				height: 122,
 				id: 683,
+
 				width: 79,
 				x: 24651,
 				y: 4806,
@@ -1856,6 +1864,7 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 684,
+
 				width: 122,
 				x: 24736,
 				y: 5032,
@@ -1863,6 +1872,7 @@ const hazardCollisions = [
 			{
 				height: 42,
 				id: 685,
+
 				width: 86,
 				x: 24722,
 				y: 5092,
@@ -1870,6 +1880,7 @@ const hazardCollisions = [
 			{
 				height: 103,
 				id: 686,
+
 				width: 97,
 				x: 24754,
 				y: 5138,
@@ -1877,6 +1888,7 @@ const hazardCollisions = [
 			{
 				height: 94,
 				id: 689,
+
 				width: 56,
 				x: 24977,
 				y: 5349,
@@ -1884,6 +1896,7 @@ const hazardCollisions = [
 			{
 				height: 90,
 				id: 690,
+
 				width: 58,
 				x: 25059,
 				y: 5327,
@@ -1891,6 +1904,7 @@ const hazardCollisions = [
 			{
 				height: 72,
 				id: 691,
+
 				width: 101,
 				x: 24869,
 				y: 5321,
@@ -1898,6 +1912,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 692,
+
 				width: 116,
 				x: 24748,
 				y: 5301,
@@ -1905,6 +1920,7 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 693,
+
 				width: 88,
 				x: 24799,
 				y: 5253,
@@ -1912,6 +1928,7 @@ const hazardCollisions = [
 			{
 				height: 110,
 				id: 694,
+
 				width: 74,
 				x: 25126,
 				y: 5327,
@@ -1919,6 +1936,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 695,
+
 				width: 74,
 				x: 25247,
 				y: 5518,
@@ -1926,6 +1944,7 @@ const hazardCollisions = [
 			{
 				height: 63,
 				id: 696,
+
 				width: 177,
 				x: 25192,
 				y: 5631,
@@ -1933,6 +1952,7 @@ const hazardCollisions = [
 			{
 				height: 56,
 				id: 697,
+
 				width: 63,
 				x: 25280,
 				y: 5726,
@@ -1940,6 +1960,7 @@ const hazardCollisions = [
 			{
 				height: 36,
 				id: 698,
+
 				width: 38,
 				x: 25353,
 				y: 5767,
@@ -1947,6 +1968,7 @@ const hazardCollisions = [
 			{
 				height: 88,
 				id: 699,
+
 				width: 56,
 				x: 25371,
 				y: 5802,
@@ -1954,6 +1976,7 @@ const hazardCollisions = [
 			{
 				height: 85,
 				id: 700,
+
 				width: 50,
 				x: 25473,
 				y: 5826,
@@ -1961,6 +1984,7 @@ const hazardCollisions = [
 			{
 				height: 138,
 				id: 701,
+
 				width: 61,
 				x: 25529,
 				y: 5832,
@@ -1968,6 +1992,7 @@ const hazardCollisions = [
 			{
 				height: 122,
 				id: 702,
+
 				width: 68,
 				x: 25600,
 				y: 5833,
@@ -1975,83 +2000,95 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 703,
+
 				width: 116,
-				x: 24134,
-				y: 6030,
+				x: 24006,
+				y: 6040,
 			},
 			{
 				height: 39,
 				id: 704,
+
 				width: 87,
-				x: 24133,
-				y: 6081,
+				x: 24005,
+				y: 6091,
 			},
 			{
 				height: 59,
 				id: 705,
+
 				width: 122,
-				x: 24141,
-				y: 6133,
+				x: 24013,
+				y: 6143,
 			},
 			{
 				height: 171,
 				id: 706,
+
 				width: 48,
-				x: 24297,
-				y: 6090,
+				x: 24169,
+				y: 6100,
 			},
 			{
 				height: 86,
 				id: 707,
+
 				width: 54,
-				x: 24347,
-				y: 6144,
+				x: 24219,
+				y: 6154,
 			},
 			{
 				height: 62,
 				id: 708,
+
 				width: 75,
-				x: 24428,
-				y: 6171,
+				x: 24300,
+				y: 6181,
 			},
 			{
 				height: 75,
 				id: 709,
+
 				width: 82,
-				x: 24495,
-				y: 6242,
+				x: 24367,
+				y: 6252,
 			},
 			{
 				height: 72,
 				id: 710,
+
 				width: 144,
-				x: 24516,
-				y: 6332,
+				x: 24388,
+				y: 6342,
 			},
 			{
 				height: 58,
 				id: 711,
+
 				width: 122,
-				x: 24491,
-				y: 6457,
+				x: 24363,
+				y: 6467,
 			},
 			{
 				height: 61,
 				id: 712,
+
 				width: 117,
-				x: 24513,
-				y: 6521,
+				x: 24385,
+				y: 6531,
 			},
 			{
 				height: 68,
 				id: 713,
+
 				width: 110,
-				x: 24569,
-				y: 6605,
+				x: 24441,
+				y: 6615,
 			},
 			{
 				height: 209,
 				id: 714,
+
 				width: 90,
 				x: 21888,
 				y: 6907,
@@ -2059,6 +2096,7 @@ const hazardCollisions = [
 			{
 				height: 253,
 				id: 715,
+
 				width: 117,
 				x: 21707,
 				y: 6873,
@@ -2066,6 +2104,7 @@ const hazardCollisions = [
 			{
 				height: 232,
 				id: 716,
+
 				width: 34,
 				x: 21646,
 				y: 6822,
@@ -2073,6 +2112,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 717,
+
 				width: 16,
 				x: 21587,
 				y: 6617,
@@ -2080,6 +2120,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 718,
+
 				width: 21,
 				x: 21564,
 				y: 6631,
@@ -2087,6 +2128,7 @@ const hazardCollisions = [
 			{
 				height: 66,
 				id: 719,
+
 				width: 21,
 				x: 21540,
 				y: 6663,
@@ -2094,6 +2136,7 @@ const hazardCollisions = [
 			{
 				height: 86,
 				id: 720,
+
 				width: 21,
 				x: 21516,
 				y: 6687,
@@ -2101,6 +2144,7 @@ const hazardCollisions = [
 			{
 				height: 113,
 				id: 721,
+
 				width: 25,
 				x: 21487,
 				y: 6715,
@@ -2108,6 +2152,7 @@ const hazardCollisions = [
 			{
 				height: 128,
 				id: 722,
+
 				width: 15,
 				x: 21467,
 				y: 6743,
@@ -2115,6 +2160,7 @@ const hazardCollisions = [
 			{
 				height: 115,
 				id: 723,
+
 				width: 16,
 				x: 21443,
 				y: 6762,
@@ -2122,6 +2168,7 @@ const hazardCollisions = [
 			{
 				height: 184,
 				id: 724,
+
 				width: 15,
 				x: 21625,
 				y: 6867,
@@ -2129,6 +2176,7 @@ const hazardCollisions = [
 			{
 				height: 135,
 				id: 725,
+
 				width: 18,
 				x: 21598,
 				y: 6907,
@@ -2136,6 +2184,7 @@ const hazardCollisions = [
 			{
 				height: 239,
 				id: 726,
+
 				width: 54,
 				x: 21334,
 				y: 6633,
@@ -2143,6 +2192,7 @@ const hazardCollisions = [
 			{
 				height: 178,
 				id: 727,
+
 				width: 49,
 				x: 21246,
 				y: 6698,
@@ -2150,6 +2200,7 @@ const hazardCollisions = [
 			{
 				height: 168,
 				id: 728,
+
 				width: 74,
 				x: 21136,
 				y: 6624,
@@ -2158,6 +2209,7 @@ const hazardCollisions = [
 			{
 				height: 44,
 				id: 729,
+
 				width: 28,
 				x: 20985,
 				y: 6736,
@@ -2165,6 +2217,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 730,
+
 				width: 39,
 				x: 20823,
 				y: 6774,
@@ -2172,6 +2225,7 @@ const hazardCollisions = [
 			{
 				height: 38,
 				id: 731,
+
 				width: 93,
 				x: 20843,
 				y: 6814,
@@ -2179,6 +2233,7 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 732,
+
 				width: 127,
 				x: 20876,
 				y: 6863,
@@ -2186,6 +2241,7 @@ const hazardCollisions = [
 			{
 				height: 21,
 				id: 733,
+
 				width: 130,
 				x: 20914,
 				y: 6905,
@@ -2193,6 +2249,7 @@ const hazardCollisions = [
 			{
 				height: 15,
 				id: 734,
+
 				width: 40,
 				x: 20999,
 				y: 6789,
@@ -2200,6 +2257,7 @@ const hazardCollisions = [
 			{
 				height: 18,
 				id: 735,
+
 				width: 53,
 				x: 21008,
 				y: 6814,
@@ -2207,6 +2265,7 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 736,
+
 				width: 68,
 				x: 21020,
 				y: 6845,
@@ -2214,6 +2273,7 @@ const hazardCollisions = [
 			{
 				height: 234,
 				id: 737,
+
 				width: 39,
 				x: 20620,
 				y: 6818,
@@ -2221,6 +2281,7 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 738,
+
 				width: 70,
 				x: 20731,
 				y: 7033,
@@ -2228,6 +2289,7 @@ const hazardCollisions = [
 			{
 				height: 155,
 				id: 739,
+
 				width: 16,
 				x: 20603,
 				y: 6895,
@@ -2235,6 +2297,7 @@ const hazardCollisions = [
 			{
 				height: 90,
 				id: 740,
+
 				width: 16,
 				x: 20583,
 				y: 6954,
@@ -2242,6 +2305,7 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 744,
+
 				width: 51,
 				x: 20749,
 				y: 7010,
@@ -2249,6 +2313,7 @@ const hazardCollisions = [
 			{
 				height: 14,
 				id: 745,
+
 				width: 49,
 				x: 20756,
 				y: 6992,
@@ -2256,6 +2321,7 @@ const hazardCollisions = [
 			{
 				height: 12,
 				id: 746,
+
 				width: 40,
 				x: 20767,
 				y: 6975,
@@ -2263,6 +2329,7 @@ const hazardCollisions = [
 			{
 				height: 12,
 				id: 747,
+
 				width: 34,
 				x: 20777,
 				y: 6957,
@@ -2270,6 +2337,7 @@ const hazardCollisions = [
 			{
 				height: 24,
 				id: 748,
+
 				width: 27,
 				x: 20786,
 				y: 6927,
@@ -2277,6 +2345,7 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 749,
+
 				width: 44,
 				x: 19018,
 				y: 6011,
@@ -2284,6 +2353,7 @@ const hazardCollisions = [
 			{
 				height: 47,
 				id: 750,
+
 				width: 27,
 				x: 19052,
 				y: 6048,
@@ -2291,6 +2361,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 751,
+
 				width: 27,
 				x: 19077,
 				y: 6126,
@@ -2298,6 +2369,7 @@ const hazardCollisions = [
 			{
 				height: 31,
 				id: 752,
+
 				width: 25,
 				x: 19146,
 				y: 6126,
@@ -2305,6 +2377,7 @@ const hazardCollisions = [
 			{
 				height: 26,
 				id: 753,
+
 				width: 19,
 				x: 19182,
 				y: 6112,
@@ -2312,6 +2385,7 @@ const hazardCollisions = [
 			{
 				height: 51,
 				id: 754,
+
 				width: 25,
 				x: 19212,
 				y: 6111,
@@ -2319,6 +2393,7 @@ const hazardCollisions = [
 			{
 				height: 31,
 				id: 755,
+
 				width: 32,
 				x: 19259,
 				y: 6098,
@@ -2326,6 +2401,7 @@ const hazardCollisions = [
 			{
 				height: 42,
 				id: 756,
+
 				width: 52,
 				x: 19293,
 				y: 6076,
@@ -2333,6 +2409,7 @@ const hazardCollisions = [
 			{
 				height: 31,
 				id: 757,
+
 				width: 45,
 				x: 19326,
 				y: 6043,
@@ -2340,6 +2417,7 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 758,
+
 				width: 46,
 				x: 19091,
 				y: 6095,
@@ -2347,6 +2425,7 @@ const hazardCollisions = [
 			{
 				height: 229,
 				id: 759,
+
 				width: 73,
 				x: 18820,
 				y: 7744,
@@ -2354,6 +2433,7 @@ const hazardCollisions = [
 			{
 				height: 255,
 				id: 760,
+
 				width: 40,
 				x: 18682,
 				y: 7720,
@@ -2361,6 +2441,7 @@ const hazardCollisions = [
 			{
 				height: 152,
 				id: 761,
+
 				width: 45,
 				x: 18620,
 				y: 7826,
@@ -2368,6 +2449,7 @@ const hazardCollisions = [
 			{
 				height: 252,
 				id: 762,
+
 				width: 101,
 				x: 18489,
 				y: 7675,
@@ -2375,6 +2457,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 763,
+
 				width: 55,
 				x: 18441,
 				y: 7480,
@@ -2382,6 +2465,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 764,
+
 				width: 58,
 				x: 18413,
 				y: 7542,
@@ -2389,6 +2473,7 @@ const hazardCollisions = [
 			{
 				height: 17,
 				id: 765,
+
 				width: 88,
 				x: 18374,
 				y: 7583,
@@ -2396,6 +2481,7 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 766,
+
 				width: 82,
 				x: 18368,
 				y: 7604,
@@ -2403,6 +2489,7 @@ const hazardCollisions = [
 			{
 				height: 18,
 				id: 767,
+
 				width: 85,
 				x: 18353,
 				y: 7627,
@@ -2410,6 +2497,7 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 768,
+
 				width: 102,
 				x: 18330,
 				y: 7652,
@@ -2417,6 +2505,7 @@ const hazardCollisions = [
 			{
 				height: 27,
 				id: 769,
+
 				width: 109,
 				x: 18314,
 				y: 7674,
@@ -2424,6 +2513,7 @@ const hazardCollisions = [
 			{
 				height: 203,
 				id: 770,
+
 				width: 28,
 				x: 18241,
 				y: 7508,
@@ -2431,6 +2521,7 @@ const hazardCollisions = [
 			{
 				height: 28,
 				id: 771,
+
 				width: 53,
 				x: 18188,
 				y: 7638,
@@ -2438,6 +2529,7 @@ const hazardCollisions = [
 			{
 				height: 27,
 				id: 772,
+
 				width: 37,
 				x: 18202,
 				y: 7599,
@@ -2445,6 +2537,7 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 773,
+
 				width: 22,
 				x: 18217,
 				y: 7565,
@@ -2452,6 +2545,7 @@ const hazardCollisions = [
 			{
 				height: 76,
 				id: 774,
+
 				width: 49,
 				x: 18130,
 				y: 7590,
@@ -2459,6 +2553,7 @@ const hazardCollisions = [
 			{
 				height: 143,
 				id: 775,
+
 				width: 35,
 				x: 18008,
 				y: 7523,
@@ -2466,6 +2561,7 @@ const hazardCollisions = [
 			{
 				height: 96,
 				id: 776,
+
 				width: 13,
 				x: 18047,
 				y: 7574,
@@ -2473,6 +2569,7 @@ const hazardCollisions = [
 			{
 				height: 71,
 				id: 777,
+
 				width: 28,
 				x: 18066,
 				y: 7612,
@@ -2480,6 +2577,7 @@ const hazardCollisions = [
 			{
 				height: 73,
 				id: 778,
+
 				width: 49,
 				x: 17857,
 				y: 7645,
@@ -2487,6 +2585,7 @@ const hazardCollisions = [
 			{
 				height: 106,
 				id: 779,
+
 				width: 26,
 				x: 17912,
 				y: 7689,
@@ -2494,6 +2593,7 @@ const hazardCollisions = [
 			{
 				height: 51,
 				id: 780,
+
 				width: 20,
 				x: 17946,
 				y: 7723,
@@ -2501,6 +2601,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 781,
+
 				width: 22,
 				x: 17887,
 				y: 7722,
@@ -2508,6 +2609,7 @@ const hazardCollisions = [
 			{
 				height: 113,
 				id: 782,
+
 				width: 23,
 				x: 17822,
 				y: 7759,
@@ -2516,6 +2618,7 @@ const hazardCollisions = [
 			{
 				height: 103,
 				id: 783,
+
 				width: 18,
 				x: 17796,
 				y: 7743,
@@ -2523,6 +2626,7 @@ const hazardCollisions = [
 			{
 				height: 90,
 				id: 784,
+
 				width: 28,
 				x: 17761,
 				y: 7726,
@@ -2530,6 +2634,7 @@ const hazardCollisions = [
 			{
 				height: 60,
 				id: 785,
+
 				width: 15,
 				x: 17736,
 				y: 7713,
@@ -2537,6 +2642,7 @@ const hazardCollisions = [
 			{
 				height: 45,
 				id: 786,
+
 				width: 28,
 				x: 17699,
 				y: 7694,
@@ -2544,6 +2650,7 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 787,
+
 				width: 74,
 				x: 17621,
 				y: 7939,
@@ -2551,6 +2658,7 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 788,
+
 				width: 50,
 				x: 17647,
 				y: 7898,
@@ -2558,6 +2666,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 789,
+
 				width: 31,
 				x: 17668,
 				y: 7854,
@@ -2565,6 +2674,7 @@ const hazardCollisions = [
 			{
 				height: 49,
 				id: 790,
+
 				width: 80,
 				x: 17468,
 				y: 7897,
@@ -2572,6 +2682,7 @@ const hazardCollisions = [
 			{
 				height: 36,
 				id: 791,
+
 				width: 56,
 				x: 17481,
 				y: 7852,
@@ -2579,6 +2690,7 @@ const hazardCollisions = [
 			{
 				height: 41,
 				id: 792,
+
 				width: 42,
 				x: 17490,
 				y: 7802,
@@ -2586,6 +2698,7 @@ const hazardCollisions = [
 			{
 				height: 37,
 				id: 793,
+
 				width: 24,
 				x: 17501,
 				y: 7759,
@@ -2593,6 +2706,7 @@ const hazardCollisions = [
 			{
 				height: 203,
 				id: 794,
+
 				width: 39,
 				x: 14683,
 				y: 6908,
@@ -2600,6 +2714,7 @@ const hazardCollisions = [
 			{
 				height: 36,
 				id: 795,
+
 				width: 123,
 				x: 14595,
 				y: 7146,
@@ -2607,6 +2722,7 @@ const hazardCollisions = [
 			{
 				height: 45,
 				id: 796,
+
 				width: 65,
 				x: 14616,
 				y: 7096,
@@ -2614,6 +2730,7 @@ const hazardCollisions = [
 			{
 				height: 61,
 				id: 797,
+
 				width: 31,
 				x: 14649,
 				y: 7033,
@@ -2621,6 +2738,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 798,
+
 				width: 19,
 				x: 14659,
 				y: 6993,
@@ -2628,6 +2746,7 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 799,
+
 				width: 37,
 				x: 14939,
 				y: 6744,
@@ -2635,6 +2754,7 @@ const hazardCollisions = [
 			{
 				height: 73,
 				id: 800,
+
 				width: 60,
 				x: 14929,
 				y: 6804,
@@ -2642,6 +2762,7 @@ const hazardCollisions = [
 			{
 				height: 98,
 				id: 801,
+
 				width: 100,
 				x: 14912,
 				y: 6883,
@@ -2649,6 +2770,7 @@ const hazardCollisions = [
 			{
 				height: 156,
 				id: 802,
+
 				width: 131,
 				x: 14902,
 				y: 6986,
@@ -2656,6 +2778,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 803,
+
 				width: 22,
 				x: 15178,
 				y: 6913,
@@ -2663,6 +2786,7 @@ const hazardCollisions = [
 			{
 				height: 64,
 				id: 804,
+
 				width: 56,
 				x: 15140,
 				y: 6983,
@@ -2670,6 +2794,7 @@ const hazardCollisions = [
 			{
 				height: 55,
 				id: 805,
+
 				width: 103,
 				x: 15091,
 				y: 7060,
@@ -2677,6 +2802,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 806,
+
 				width: 113,
 				x: 15075,
 				y: 7125,
@@ -2684,6 +2810,7 @@ const hazardCollisions = [
 			{
 				height: 116,
 				id: 807,
+
 				width: 83,
 				x: 15199,
 				y: 7080,
@@ -2691,6 +2818,7 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 808,
+
 				width: 42,
 				x: 15424,
 				y: 7093,
@@ -2698,6 +2826,7 @@ const hazardCollisions = [
 			{
 				height: 83,
 				id: 810,
+
 				width: 48,
 				x: 15324,
 				y: 7175,
@@ -2705,6 +2834,7 @@ const hazardCollisions = [
 			{
 				height: 70,
 				id: 812,
+
 				width: 45,
 				x: 15374,
 				y: 7136,
@@ -2712,6 +2842,7 @@ const hazardCollisions = [
 			{
 				height: 42,
 				id: 813,
+
 				width: 100,
 				x: 14482,
 				y: 7122,
@@ -2719,6 +2850,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 814,
+
 				width: 81,
 				x: 14477,
 				y: 7071,
@@ -2726,6 +2858,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 815,
+
 				width: 156,
 				x: 12197,
 				y: 7324,
@@ -2733,6 +2866,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 816,
+
 				width: 55,
 				x: 12299,
 				y: 7367,
@@ -2740,6 +2874,7 @@ const hazardCollisions = [
 			{
 				height: 41,
 				id: 817,
+
 				width: 88,
 				x: 12329,
 				y: 7402,
@@ -2747,6 +2882,7 @@ const hazardCollisions = [
 			{
 				height: 55,
 				id: 818,
+
 				width: 96,
 				x: 12362,
 				y: 7448,
@@ -2754,6 +2890,7 @@ const hazardCollisions = [
 			{
 				height: 105,
 				id: 820,
+
 				width: 155,
 				x: 12462,
 				y: 7346,
@@ -2761,6 +2898,7 @@ const hazardCollisions = [
 			{
 				height: 49,
 				id: 821,
+
 				width: 109,
 				x: 12432,
 				y: 7293,
@@ -2768,6 +2906,7 @@ const hazardCollisions = [
 			{
 				height: 23,
 				id: 822,
+
 				width: 87,
 				x: 12416,
 				y: 7268,
@@ -2775,6 +2914,7 @@ const hazardCollisions = [
 			{
 				height: 17,
 				id: 823,
+
 				width: 68,
 				x: 12405,
 				y: 7248,
@@ -2782,6 +2922,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 824,
+
 				width: 37,
 				x: 12378,
 				y: 7190,
@@ -2789,6 +2930,7 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 825,
+
 				width: 64,
 				x: 12390,
 				y: 7224,
@@ -2796,6 +2938,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 826,
+
 				width: 28,
 				x: 12559,
 				y: 7171,
@@ -2803,6 +2946,7 @@ const hazardCollisions = [
 			{
 				height: 66,
 				id: 827,
+
 				width: 40,
 				x: 12566,
 				y: 7209,
@@ -2810,6 +2954,7 @@ const hazardCollisions = [
 			{
 				height: 56,
 				id: 828,
+
 				width: 85,
 				x: 12580,
 				y: 7285,
@@ -2817,6 +2962,7 @@ const hazardCollisions = [
 			{
 				height: 51,
 				id: 829,
+
 				width: 23,
 				x: 12611,
 				y: 7230,
@@ -2824,6 +2970,7 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 830,
+
 				width: 89,
 				x: 12726,
 				y: 7213,
@@ -2831,6 +2978,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 831,
+
 				width: 64,
 				x: 12733,
 				y: 7167,
@@ -2838,6 +2986,7 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 832,
+
 				width: 40,
 				x: 12741,
 				y: 7121,
@@ -2845,6 +2994,7 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 833,
+
 				width: 21,
 				x: 12748,
 				y: 7078,
@@ -2852,6 +3002,7 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 834,
+
 				width: 54,
 				x: 12851,
 				y: 7230,
@@ -2859,6 +3010,7 @@ const hazardCollisions = [
 			{
 				height: 43,
 				id: 835,
+
 				width: 36,
 				x: 12865,
 				y: 7178,
@@ -2866,6 +3018,7 @@ const hazardCollisions = [
 			{
 				height: 43,
 				id: 836,
+
 				width: 27,
 				x: 13002,
 				y: 7126,
@@ -2874,6 +3027,7 @@ const hazardCollisions = [
 			{
 				height: 25,
 				id: 837,
+
 				width: 48,
 				x: 12973,
 				y: 7174,
@@ -2881,6 +3035,7 @@ const hazardCollisions = [
 			{
 				height: 22,
 				id: 838,
+
 				width: 59,
 				x: 12953,
 				y: 7207,
@@ -2888,6 +3043,7 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 839,
+
 				width: 80,
 				x: 12924,
 				y: 7243,
@@ -2895,6 +3051,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 840,
+
 				width: 155,
 				x: 12836,
 				y: 7287,
@@ -2902,6 +3059,7 @@ const hazardCollisions = [
 			{
 				height: 27,
 				id: 843,
+
 				width: 54,
 				x: 12359,
 				y: 7371,
@@ -2909,6 +3067,7 @@ const hazardCollisions = [
 			{
 				height: 42,
 				id: 844,
+
 				width: 37,
 				x: 12422,
 				y: 7403,
@@ -2916,6 +3075,7 @@ const hazardCollisions = [
 			{
 				height: 37,
 				id: 846,
+
 				width: 41,
 				x: 17320,
 				y: 7871,
@@ -2923,6 +3083,7 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 847,
+
 				width: 38,
 				x: 17367,
 				y: 7900,
@@ -2930,6 +3091,7 @@ const hazardCollisions = [
 			{
 				height: 38,
 				id: 848,
+
 				width: 55,
 				x: 17411,
 				y: 7925,
@@ -2937,6 +3099,7 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 849,
+
 				width: 128,
 				x: 20376,
 				y: 6944,
@@ -2944,6 +3107,7 @@ const hazardCollisions = [
 			{
 				height: 21,
 				id: 850,
+
 				width: 88,
 				x: 20393,
 				y: 6912,
@@ -2951,6 +3115,7 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 851,
+
 				width: 22,
 				x: 20514,
 				y: 6966,
@@ -2958,6 +3123,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 852,
+
 				width: 40,
 				x: 20541,
 				y: 6981,
@@ -2965,6 +3131,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 853,
+
 				width: 144,
 				x: 21989,
 				y: 7064,
@@ -2972,13 +3139,15 @@ const hazardCollisions = [
 			{
 				height: 86,
 				id: 854,
+
 				width: 45,
-				x: 24612,
-				y: 6690,
+				x: 24484,
+				y: 6700,
 			},
 			{
 				height: 88,
 				id: 855,
+
 				width: 104,
 				x: 15104,
 				y: 5132,
@@ -2986,6 +3155,7 @@ const hazardCollisions = [
 			{
 				height: 101,
 				id: 856,
+
 				width: 47,
 				x: 15051,
 				y: 5076,
@@ -2993,6 +3163,7 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 857,
+
 				width: 145,
 				x: 14899,
 				y: 5114,
@@ -3000,6 +3171,7 @@ const hazardCollisions = [
 			{
 				height: 150,
 				id: 858,
+
 				width: 47,
 				x: 14850,
 				y: 5011,
@@ -3007,6 +3179,7 @@ const hazardCollisions = [
 			{
 				height: 70,
 				id: 859,
+
 				width: 56,
 				x: 14760,
 				y: 5083,
@@ -3014,6 +3187,7 @@ const hazardCollisions = [
 			{
 				height: 82,
 				id: 860,
+
 				width: 100,
 				x: 14596,
 				y: 5113,
@@ -3021,6 +3195,7 @@ const hazardCollisions = [
 			{
 				height: 49,
 				id: 861,
+
 				width: 85,
 				x: 14709,
 				y: 5172,
@@ -3028,6 +3203,7 @@ const hazardCollisions = [
 			{
 				height: 95,
 				id: 862,
+
 				width: 91,
 				x: 14343,
 				y: 4829,
@@ -3035,6 +3211,7 @@ const hazardCollisions = [
 			{
 				height: 54,
 				id: 863,
+
 				width: 57,
 				x: 14282,
 				y: 4857,
@@ -3042,6 +3219,7 @@ const hazardCollisions = [
 			{
 				height: 75,
 				id: 864,
+
 				width: 96,
 				x: 14457,
 				y: 4908,
@@ -3049,6 +3227,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 865,
+
 				width: 65,
 				x: 14556,
 				y: 4962,
@@ -3056,6 +3235,7 @@ const hazardCollisions = [
 			{
 				height: 56,
 				id: 866,
+
 				width: 105,
 				x: 14525,
 				y: 5023,
@@ -3063,6 +3243,7 @@ const hazardCollisions = [
 			{
 				height: 76,
 				id: 867,
+
 				width: 40,
 				x: 14216,
 				y: 4994,
@@ -3070,6 +3251,7 @@ const hazardCollisions = [
 			{
 				height: 131,
 				id: 868,
+
 				width: 55,
 				x: 14314,
 				y: 4995,
@@ -3077,6 +3259,7 @@ const hazardCollisions = [
 			{
 				height: 44,
 				id: 869,
+
 				width: 49,
 				x: 14263,
 				y: 4982,
@@ -3084,6 +3267,7 @@ const hazardCollisions = [
 			{
 				height: 93,
 				id: 870,
+
 				width: 45,
 				x: 14374,
 				y: 4994,
@@ -3091,6 +3275,7 @@ const hazardCollisions = [
 			{
 				height: 99,
 				id: 871,
+
 				width: 107,
 				x: 14378,
 				y: 5088,
@@ -3098,6 +3283,7 @@ const hazardCollisions = [
 			{
 				height: 29,
 				id: 872,
+
 				width: 51,
 				x: 14378,
 				y: 5300,
@@ -3105,6 +3291,7 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 873,
+
 				width: 77,
 				x: 14403,
 				y: 5278,
@@ -3112,6 +3299,7 @@ const hazardCollisions = [
 			{
 				height: 26,
 				id: 874,
+
 				width: 111,
 				x: 14424,
 				y: 5247,
@@ -3119,6 +3307,7 @@ const hazardCollisions = [
 			{
 				height: 54,
 				id: 875,
+
 				width: 140,
 				x: 14453,
 				y: 5189,
@@ -3126,6 +3315,7 @@ const hazardCollisions = [
 			{
 				height: 31,
 				id: 876,
+
 				width: 30,
 				x: 14513,
 				y: 5336,
@@ -3133,6 +3323,7 @@ const hazardCollisions = [
 			{
 				height: 21,
 				id: 877,
+
 				width: 57,
 				x: 14526,
 				y: 5311,
@@ -3140,6 +3331,7 @@ const hazardCollisions = [
 			{
 				height: 27,
 				id: 878,
+
 				width: 112,
 				x: 14541,
 				y: 5281,
@@ -3147,6 +3339,7 @@ const hazardCollisions = [
 			{
 				height: 43,
 				id: 879,
+
 				width: 33,
 				x: 14596,
 				y: 5309,
@@ -3154,6 +3347,7 @@ const hazardCollisions = [
 			{
 				height: 115,
 				id: 880,
+
 				width: 46,
 				x: 14646,
 				y: 5310,
@@ -3161,6 +3355,7 @@ const hazardCollisions = [
 			{
 				height: 102,
 				id: 881,
+
 				width: 42,
 				x: 14744,
 				y: 5288,
@@ -3168,6 +3363,7 @@ const hazardCollisions = [
 			{
 				height: 26,
 				id: 882,
+
 				width: 49,
 				x: 14693,
 				y: 5310,
@@ -3175,6 +3371,7 @@ const hazardCollisions = [
 			{
 				height: 78,
 				id: 883,
+
 				width: 32,
 				x: 14856,
 				y: 5326,
@@ -3182,6 +3379,7 @@ const hazardCollisions = [
 			{
 				height: 133,
 				id: 884,
+
 				width: 64,
 				x: 14789,
 				y: 5236,
@@ -3189,6 +3387,7 @@ const hazardCollisions = [
 			{
 				height: 96,
 				id: 885,
+
 				width: 89,
 				x: 14926,
 				y: 5225,
@@ -3196,6 +3395,7 @@ const hazardCollisions = [
 			{
 				height: 95,
 				id: 886,
+
 				width: 69,
 				x: 15002,
 				y: 5326,
@@ -3203,6 +3403,7 @@ const hazardCollisions = [
 			{
 				height: 75,
 				id: 887,
+
 				width: 154,
 				x: 10117,
 				y: 5350,
@@ -3210,6 +3411,7 @@ const hazardCollisions = [
 			{
 				height: 190,
 				id: 888,
+
 				width: 59,
 				x: 10275,
 				y: 5306,
@@ -3217,6 +3419,7 @@ const hazardCollisions = [
 			{
 				height: 136,
 				id: 889,
+
 				width: 98,
 				x: 10372,
 				y: 5271,
@@ -3224,6 +3427,7 @@ const hazardCollisions = [
 			{
 				height: 154,
 				id: 890,
+
 				width: 550,
 				x: 10480,
 				y: 5375,
@@ -3232,6 +3436,7 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 891,
+
 				width: 29,
 				x: 10609,
 				y: 5530,
@@ -3239,6 +3444,7 @@ const hazardCollisions = [
 			{
 				height: 106,
 				id: 892,
+
 				width: 49,
 				x: 10734,
 				y: 5532,
@@ -3246,6 +3452,7 @@ const hazardCollisions = [
 			{
 				height: 45,
 				id: 893,
+
 				width: 29,
 				x: 10829,
 				y: 5530,
@@ -3253,6 +3460,7 @@ const hazardCollisions = [
 			{
 				height: 92,
 				id: 894,
+
 				width: 72,
 				x: 10878,
 				y: 5531,
@@ -3260,6 +3468,7 @@ const hazardCollisions = [
 			{
 				height: 44,
 				id: 895,
+
 				width: 52,
 				x: 11076,
 				y: 5586,
@@ -3267,6 +3476,7 @@ const hazardCollisions = [
 			{
 				height: 48,
 				id: 896,
+
 				width: 96,
 				x: 11011,
 				y: 5531,
@@ -3274,6 +3484,7 @@ const hazardCollisions = [
 			{
 				height: 88,
 				id: 898,
+
 				width: 29,
 				x: 11033,
 				y: 5440,
@@ -3281,6 +3492,7 @@ const hazardCollisions = [
 			{
 				height: 132,
 				id: 899,
+
 				width: 120,
 				x: 11066,
 				y: 5334,
@@ -3288,6 +3500,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 900,
+
 				width: 96,
 				x: 11187,
 				y: 5303,
@@ -3295,6 +3508,7 @@ const hazardCollisions = [
 			{
 				height: 230,
 				id: 901,
+
 				width: 129,
 				x: 11154,
 				y: 5059,
@@ -3302,6 +3516,7 @@ const hazardCollisions = [
 			{
 				height: 66,
 				id: 902,
+
 				width: 263,
 				x: 8050,
 				y: 7387,
@@ -3309,6 +3524,7 @@ const hazardCollisions = [
 			{
 				height: 102,
 				id: 903,
+
 				width: 120,
 				x: 8094,
 				y: 7282,
@@ -3316,6 +3532,7 @@ const hazardCollisions = [
 			{
 				height: 111,
 				id: 904,
+
 				width: 43,
 				x: 8082,
 				y: 7169,
@@ -3323,6 +3540,7 @@ const hazardCollisions = [
 			{
 				height: 147,
 				id: 905,
+
 				width: 59,
 				x: 7681,
 				y: 6991,
@@ -3330,6 +3548,7 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 906,
+
 				width: 76,
 				x: 7601,
 				y: 6989,
@@ -3337,6 +3556,7 @@ const hazardCollisions = [
 			{
 				height: 89,
 				id: 907,
+
 				width: 33,
 				x: 7772,
 				y: 7055,
@@ -3344,6 +3564,7 @@ const hazardCollisions = [
 			{
 				height: 141,
 				id: 908,
+
 				width: 25,
 				x: 7864,
 				y: 7006,
@@ -3351,6 +3572,7 @@ const hazardCollisions = [
 			{
 				height: 81,
 				id: 909,
+
 				width: 46,
 				x: 7813,
 				y: 7062,
@@ -3358,6 +3580,7 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 910,
+
 				width: 53,
 				x: 8013,
 				y: 7002,
@@ -3365,6 +3588,7 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 911,
+
 				width: 61,
 				x: 7993,
 				y: 7045,
@@ -3372,6 +3596,7 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 912,
+
 				width: 88,
 				x: 7956,
 				y: 7066,
@@ -3379,6 +3604,7 @@ const hazardCollisions = [
 			{
 				height: 37,
 				id: 913,
+
 				width: 98,
 				x: 7925,
 				y: 7103,
@@ -3386,6 +3612,7 @@ const hazardCollisions = [
 			{
 				height: 76,
 				id: 914,
+
 				width: 106,
 				x: 7894,
 				y: 7142,
@@ -3393,6 +3620,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 915,
+
 				width: 75,
 				x: 8004,
 				y: 7210,
@@ -3400,6 +3628,7 @@ const hazardCollisions = [
 			{
 				height: 60,
 				id: 916,
+
 				width: 94,
 				x: 5069,
 				y: 7833,
@@ -3407,6 +3636,7 @@ const hazardCollisions = [
 			{
 				height: 51,
 				id: 917,
+
 				width: 56,
 				x: 5075,
 				y: 7780,
@@ -3414,6 +3644,7 @@ const hazardCollisions = [
 			{
 				height: 80,
 				id: 918,
+
 				width: 39,
 				x: 5024,
 				y: 7766,
@@ -3421,6 +3652,7 @@ const hazardCollisions = [
 			{
 				height: 79,
 				id: 919,
+
 				width: 29,
 				x: 4971,
 				y: 7723,
@@ -3428,6 +3660,7 @@ const hazardCollisions = [
 			{
 				height: 96,
 				id: 920,
+
 				width: 75,
 				x: 4885,
 				y: 7729,
@@ -3435,6 +3668,7 @@ const hazardCollisions = [
 			{
 				height: 102,
 				id: 921,
+
 				width: 76,
 				x: 4805,
 				y: 7728,
@@ -3442,6 +3676,7 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 922,
+
 				width: 75,
 				x: 5169,
 				y: 7839,
@@ -3449,6 +3684,7 @@ const hazardCollisions = [
 			{
 				height: 743,
 				id: 924,
+
 				width: 788,
 				x: 4008,
 				y: 7286,
@@ -3456,6 +3692,7 @@ const hazardCollisions = [
 			{
 				height: 167,
 				id: 925,
+
 				width: 73,
 				x: 3927,
 				y: 7607,
@@ -3463,6 +3700,7 @@ const hazardCollisions = [
 			{
 				height: 110,
 				id: 926,
+
 				width: 218,
 				x: 3701,
 				y: 7693,
@@ -3470,6 +3708,7 @@ const hazardCollisions = [
 			{
 				height: 59,
 				id: 927,
+
 				width: 54,
 				x: 3643,
 				y: 7732,
@@ -3477,6 +3716,7 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 928,
+
 				width: 59,
 				x: 3580,
 				y: 7748,
@@ -3484,6 +3724,7 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 929,
+
 				width: 31,
 				x: 3546,
 				y: 7798,
@@ -3491,6 +3732,7 @@ const hazardCollisions = [
 			{
 				height: 46,
 				id: 930,
+
 				width: 153,
 				x: 3460,
 				y: 7833,
@@ -3498,6 +3740,7 @@ const hazardCollisions = [
 			{
 				height: 53,
 				id: 931,
+
 				width: 101,
 				x: 2955,
 				y: 6821,
@@ -3505,6 +3748,7 @@ const hazardCollisions = [
 			{
 				height: 93,
 				id: 932,
+
 				width: 104,
 				x: 2954,
 				y: 6878,
@@ -3512,6 +3756,7 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 933,
+
 				width: 119,
 				x: 2885,
 				y: 6981,
@@ -3519,6 +3764,7 @@ const hazardCollisions = [
 			{
 				height: 68,
 				id: 934,
+
 				width: 206,
 				x: 2770,
 				y: 7047,
@@ -3526,6 +3772,7 @@ const hazardCollisions = [
 			{
 				height: 245,
 				id: 935,
+
 				width: 69,
 				x: 2615,
 				y: 6764,
@@ -3533,6 +3780,7 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 936,
+
 				width: 96,
 				x: 2654,
 				y: 7013,
@@ -3540,6 +3788,7 @@ const hazardCollisions = [
 			{
 				height: 124,
 				id: 937,
+
 				width: 130,
 				x: 2510,
 				y: 6561,
@@ -3547,6 +3796,7 @@ const hazardCollisions = [
 			{
 				height: 222,
 				id: 938,
+
 				width: 78,
 				x: 2305,
 				y: 6396,
@@ -3554,6 +3804,7 @@ const hazardCollisions = [
 			{
 				height: 126,
 				id: 939,
+
 				width: 36,
 				x: 2232,
 				y: 6430,
@@ -3561,6 +3812,7 @@ const hazardCollisions = [
 			{
 				height: 159,
 				id: 940,
+
 				width: 136,
 				x: 2089,
 				y: 6388,
@@ -3568,6 +3820,7 @@ const hazardCollisions = [
 			{
 				height: 104,
 				id: 941,
+
 				width: 210,
 				x: 1796,
 				y: 6218,
@@ -3575,6 +3828,7 @@ const hazardCollisions = [
 			{
 				height: 129,
 				id: 942,
+
 				width: 173,
 				x: 1842,
 				y: 6084,
@@ -3582,6 +3836,7 @@ const hazardCollisions = [
 			{
 				height: 112,
 				id: 943,
+
 				width: 142,
 				x: 1938,
 				y: 6326,
@@ -3590,6 +3845,7 @@ const hazardCollisions = [
 			{
 				height: 157,
 				id: 944,
+
 				width: 120,
 				x: 2387,
 				y: 6396,
@@ -3597,6 +3853,7 @@ const hazardCollisions = [
 			{
 				height: 151,
 				id: 945,
+
 				width: 105,
 				x: 4079,
 				y: 5425,
@@ -3604,6 +3861,7 @@ const hazardCollisions = [
 			{
 				height: 87,
 				id: 946,
+
 				width: 258,
 				x: 3626,
 				y: 5099,
@@ -3611,6 +3869,7 @@ const hazardCollisions = [
 			{
 				height: 66,
 				id: 947,
+
 				width: 223,
 				x: 3706,
 				y: 5011,
@@ -3618,6 +3877,7 @@ const hazardCollisions = [
 			{
 				height: 59,
 				id: 948,
+
 				width: 101,
 				x: 3788,
 				y: 4946,
@@ -3625,6 +3885,7 @@ const hazardCollisions = [
 			{
 				height: 105,
 				id: 949,
+
 				width: 133,
 				x: 3779,
 				y: 4833,
@@ -3632,6 +3893,7 @@ const hazardCollisions = [
 			{
 				height: 77,
 				id: 950,
+
 				width: 85,
 				x: 3911,
 				y: 4752,
@@ -3639,6 +3901,7 @@ const hazardCollisions = [
 			{
 				height: 100,
 				id: 951,
+
 				width: 62,
 				x: 3991,
 				y: 4647,
@@ -3646,6 +3909,7 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 952,
+
 				width: 152,
 				x: 4061,
 				y: 4691,
@@ -3653,6 +3917,7 @@ const hazardCollisions = [
 			{
 				height: 173,
 				id: 953,
+
 				width: 140,
 				x: 4090,
 				y: 4513,
@@ -3660,6 +3925,7 @@ const hazardCollisions = [
 			{
 				height: 37,
 				id: 954,
+
 				width: 230,
 				x: 3753,
 				y: 5290,
@@ -3667,6 +3933,7 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 955,
+
 				width: 160,
 				x: 3824,
 				y: 5330,
@@ -3674,6 +3941,7 @@ const hazardCollisions = [
 			{
 				height: 71,
 				id: 956,
+
 				width: 155,
 				x: 3919,
 				y: 5432,
@@ -3681,6 +3949,7 @@ const hazardCollisions = [
 			{
 				height: 74,
 				id: 957,
+
 				width: 91,
 				x: 3824,
 				y: 5369,
@@ -3688,6 +3957,7 @@ const hazardCollisions = [
 			{
 				height: 98,
 				id: 958,
+
 				width: 80,
 				x: 3835,
 				y: 5189,
@@ -3695,6 +3965,7 @@ const hazardCollisions = [
 			{
 				height: 155,
 				id: 959,
+
 				width: 126,
 				x: 6014,
 				y: 4485,
@@ -3702,6 +3973,7 @@ const hazardCollisions = [
 			{
 				height: 99,
 				id: 960,
+
 				width: 217,
 				x: 6147,
 				y: 4594,
@@ -3709,6 +3981,7 @@ const hazardCollisions = [
 			{
 				height: 24,
 				id: 961,
+
 				width: 41,
 				x: 6230,
 				y: 4695,
@@ -3716,6 +3989,7 @@ const hazardCollisions = [
 			{
 				height: 115,
 				id: 962,
+
 				width: 127,
 				x: 6369,
 				y: 4573,
@@ -3723,6 +3997,7 @@ const hazardCollisions = [
 			{
 				height: 55,
 				id: 963,
+
 				width: 108,
 				x: 6429,
 				y: 4511,
@@ -3730,6 +4005,7 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 964,
+
 				width: 62,
 				x: 6472,
 				y: 4450,
@@ -3737,6 +4013,7 @@ const hazardCollisions = [
 			{
 				height: 53,
 				id: 965,
+
 				width: 66,
 				x: 6534,
 				y: 4400,
@@ -3744,6 +4021,7 @@ const hazardCollisions = [
 			{
 				height: 88,
 				id: 966,
+
 				width: 80,
 				x: 6539,
 				y: 4039,
@@ -3751,6 +4029,7 @@ const hazardCollisions = [
 			{
 				height: 380,
 				id: 967,
+
 				width: 591,
 				x: 5470,
 				y: 2508,
@@ -3758,6 +4037,7 @@ const hazardCollisions = [
 			{
 				height: 472,
 				id: 968,
+
 				width: 567,
 				x: 5493,
 				y: 2899,
@@ -3765,6 +4045,7 @@ const hazardCollisions = [
 			{
 				height: 122,
 				id: 970,
+
 				width: 552,
 				x: 5686,
 				y: 3380,
@@ -3772,6 +4053,7 @@ const hazardCollisions = [
 			{
 				height: 180,
 				id: 971,
+
 				width: 122,
 				x: 6064,
 				y: 3068,
@@ -3779,6 +4061,7 @@ const hazardCollisions = [
 			{
 				height: 37,
 				id: 972,
+
 				width: 69,
 				x: 6196,
 				y: 3200,
@@ -3786,6 +4069,7 @@ const hazardCollisions = [
 			{
 				height: 61,
 				id: 973,
+
 				width: 97,
 				x: 10220,
 				y: 2553,
@@ -3793,6 +4077,7 @@ const hazardCollisions = [
 			{
 				height: 47,
 				id: 974,
+
 				width: 229,
 				x: 10129,
 				y: 2687,
@@ -3800,6 +4085,7 @@ const hazardCollisions = [
 			{
 				height: 63,
 				id: 975,
+
 				width: 150,
 				x: 10131,
 				y: 2619,
@@ -3807,6 +4093,7 @@ const hazardCollisions = [
 			{
 				height: 81,
 				id: 976,
+
 				width: 59,
 				x: 10082,
 				y: 2537,
@@ -3814,6 +4101,7 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 977,
+
 				width: 97,
 				x: 9981,
 				y: 2573,
@@ -3821,6 +4109,7 @@ const hazardCollisions = [
 			{
 				height: 160,
 				id: 978,
+
 				width: 52,
 				x: 9923,
 				y: 2498,
@@ -3828,6 +4117,7 @@ const hazardCollisions = [
 			{
 				height: 131,
 				id: 979,
+
 				width: 71,
 				x: 9792,
 				y: 2566,
@@ -3835,6 +4125,7 @@ const hazardCollisions = [
 			{
 				height: 63,
 				id: 980,
+
 				width: 48,
 				x: 9868,
 				y: 2614,
@@ -3842,6 +4133,7 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 981,
+
 				width: 47,
 				x: 9663,
 				y: 2577,
@@ -3849,6 +4141,7 @@ const hazardCollisions = [
 			{
 				height: 104,
 				id: 982,
+
 				width: 251,
 				x: 9611,
 				y: 2701,
@@ -3856,6 +4149,7 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 983,
+
 				width: 96,
 				x: 9692,
 				y: 2639,
@@ -3863,6 +4157,7 @@ const hazardCollisions = [
 			{
 				height: 89,
 				id: 984,
+
 				width: 138,
 				x: 7688,
 				y: 4549,
@@ -3870,6 +4165,7 @@ const hazardCollisions = [
 			{
 				height: 67,
 				id: 985,
+
 				width: 90,
 				x: 7733,
 				y: 4642,
@@ -3877,6 +4173,7 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 986,
+
 				width: 57,
 				x: 7764,
 				y: 4712,
@@ -3884,6 +4181,7 @@ const hazardCollisions = [
 			{
 				height: 75,
 				id: 987,
+
 				width: 161,
 				x: 7825,
 				y: 4717,
@@ -3891,6 +4189,7 @@ const hazardCollisions = [
 			{
 				height: 45,
 				id: 988,
+
 				width: 30,
 				x: 7894,
 				y: 4794,
@@ -3898,6 +4197,7 @@ const hazardCollisions = [
 			{
 				height: 38,
 				id: 989,
+
 				width: 48,
 				x: 8174,
 				y: 4545,
@@ -3905,6 +4205,7 @@ const hazardCollisions = [
 			{
 				height: 92,
 				id: 990,
+
 				width: 112,
 				x: 8043,
 				y: 4546,
@@ -3912,6 +4213,7 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 991,
+
 				width: 82,
 				x: 8025,
 				y: 4640,
@@ -3919,6 +4221,7 @@ const hazardCollisions = [
 			{
 				height: 65,
 				id: 992,
+
 				width: 82,
 				x: 7989,
 				y: 4682,
@@ -3926,6 +4229,7 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 993,
+
 				width: 76,
 				x: 10864,
 				y: 3920,
@@ -3933,6 +4237,7 @@ const hazardCollisions = [
 			{
 				height: 61,
 				id: 994,
+
 				width: 42,
 				x: 10899,
 				y: 3980,
@@ -3940,6 +4245,7 @@ const hazardCollisions = [
 			{
 				height: 100,
 				id: 995,
+
 				width: 85,
 				x: 10909,
 				y: 4043,
@@ -3948,6 +4254,7 @@ const hazardCollisions = [
 			{
 				height: 130,
 				id: 996,
+
 				width: 100,
 				x: 11011,
 				y: 4037,
@@ -3955,6 +4262,7 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 997,
+
 				width: 35,
 				x: 11118,
 				y: 4119,
@@ -3962,6 +4270,7 @@ const hazardCollisions = [
 			{
 				height: 72,
 				id: 998,
+
 				width: 41,
 				x: 11180,
 				y: 4099,
@@ -3969,6 +4278,7 @@ const hazardCollisions = [
 			{
 				height: 117,
 				id: 999,
+
 				width: 75,
 				x: 11225,
 				y: 4061,
@@ -3976,6 +4286,7 @@ const hazardCollisions = [
 			{
 				height: 98,
 				id: 1000,
+
 				width: 244,
 				x: 11304,
 				y: 4040,
@@ -3983,6 +4294,7 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 1001,
+
 				width: 91,
 				x: 11653,
 				y: 3835,
@@ -3990,6 +4302,7 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 1002,
+
 				width: 57,
 				x: 11555,
 				y: 4041,
@@ -3997,6 +4310,7 @@ const hazardCollisions = [
 			{
 				height: 92,
 				id: 1003,
+
 				width: 68,
 				x: 11615,
 				y: 3985,
@@ -4004,6 +4318,7 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 1004,
+
 				width: 37,
 				x: 11686,
 				y: 3985,
@@ -4011,6 +4326,7 @@ const hazardCollisions = [
 			{
 				height: 68,
 				id: 1005,
+
 				width: 82,
 				x: 11608,
 				y: 3908,
@@ -4018,6 +4334,7 @@ const hazardCollisions = [
 			{
 				height: 96,
 				id: 1006,
+
 				width: 104,
 				x: 14218,
 				y: 3262,
@@ -4025,6 +4342,7 @@ const hazardCollisions = [
 			{
 				height: 80,
 				id: 1007,
+
 				width: 155,
 				x: 14148,
 				y: 3419,
@@ -4032,6 +4350,7 @@ const hazardCollisions = [
 			{
 				height: 53,
 				id: 1008,
+
 				width: 118,
 				x: 14148,
 				y: 3361,
@@ -4039,6 +4358,7 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 1009,
+
 				width: 117,
 				x: 14152,
 				y: 3502,
@@ -4046,6 +4366,7 @@ const hazardCollisions = [
 			{
 				height: 186,
 				id: 1010,
+
 				width: 86,
 				x: 13862,
 				y: 3279,
@@ -4053,6 +4374,7 @@ const hazardCollisions = [
 			{
 				height: 54,
 				id: 1011,
+
 				width: 231,
 				x: 13914,
 				y: 3466,
@@ -4060,6 +4382,7 @@ const hazardCollisions = [
 			{
 				height: 82,
 				id: 1012,
+
 				width: 203,
 				x: 13945,
 				y: 3524,
