@@ -125,8 +125,8 @@ const gravity = 1.75;
 
 const player = new Player({
 	position: {
-		x: 4000,
-		y: 1024,
+		x: 360,
+		y: 2064,
 	},
 
 	collisionBlocks: collisionBlocks,
@@ -138,7 +138,7 @@ const player = new Player({
 		IdleRight: {
 			imgSrc: 'img/wizard/Wizard-Idle-Right.png',
 			frameRate: 20,
-			frameBuffer: 4,
+			frameBuffer: 3,
 		},
 		IdleLeft: {
 			imgSrc: 'img/wizard/Wizard-Idle-Left.png',
@@ -175,6 +175,16 @@ const player = new Player({
 			frameRate: 4,
 			frameBuffer: 20,
 		},
+		HitLeft: {
+			imgSrc: 'img/wizard/wizard-hit-left.png',
+			frameRate: 6,
+			frameBuffer: 1,
+		},
+		HitRight: {
+			imgSrc: 'img/wizard/wizard-hit-right.png',
+			frameRate: 6,
+			frameBuffer: 1,
+		},
 	},
 });
 
@@ -200,6 +210,102 @@ const camera = {
 	},
 };
 
+// function animate() {
+// 	window.requestAnimationFrame(animate);
+// 	c.fillStyle = 'black';
+// 	c.fillRect(0, 0, canvas.width, canvas.height);
+
+// 	c.save();
+// 	c.scale(0.125, 0.125);
+// 	c.translate(camera.position.x, camera.position.y);
+// 	background.update();
+
+// 	collisionBlocks.forEach((collisionBlock) => {
+// 		collisionBlock.update();
+// 	});
+
+// 	hazards.forEach((hazard) => {
+// 		hazard.update(player);
+// 	});
+
+// 	fencePoles.forEach((fencePole) => {
+// 		fencePole.update();
+// 	});
+
+// 	movingBlobs.forEach((movingBlob) => {
+// 		movingBlob.update(player);
+// 	});
+
+// 	hangingBlobs.forEach((hangingBlob) => {
+// 		hangingBlob.update(player);
+// 	});
+
+// 	bouncePlants.forEach((bouncePlant) => {
+// 		bouncePlant.update();
+// 	});
+
+// 	const healthBarFill = document.getElementById('health-bar-fill');
+// 	const healthPercentage = (player.health / 100) * 100;
+// 	healthBarFill.style.width = `${healthPercentage}`;
+
+// 	const healthBarText = document.getElementById('health-bar-text');
+// 	healthBarText.textContent = `${player.health} HP`;
+
+// 	player.update(bouncePlants);
+
+// 	if (player.isHit) {
+// 		return;
+// 	}
+
+// 	player.velocity.x = 0;
+
+// 	if (keys.d.pressed) {
+// 		player.switchToSprite('WalkRight');
+// 		player.velocity.x = 28;
+// 		player.lastDirection = 'right';
+// 		player.leftBorderCamPanning({ canvas, camera });
+// 		// ####################
+// 		// ####################
+// 	} else if (keys.a.pressed) {
+// 		player.switchToSprite('WalkLeft');
+// 		player.velocity.x = -28;
+// 		player.lastDirection = 'left';
+// 		player.rightBorderCamPanning({ canvas, camera });
+
+// 		// ####################
+// 		// ####################
+// 	} else if (player.velocity.y === 0) {
+// 		if (player.lastDirection === 'right') {
+// 			player.switchToSprite('IdleRight');
+// 		} else {
+// 			player.switchToSprite('IdleLeft');
+// 		}
+// 	}
+// 	// ####################
+// 	// ####################
+// 	if (player.velocity.y < 0) {
+// 		player.bottomBorderCamPanning({ camera, canvas });
+
+// 		if (player.lastDirection === 'right') {
+// 			player.switchToSprite('JumpRight');
+// 		} else {
+// 			player.switchToSprite('JumpLeft');
+// 		}
+// 		// ####################
+// 		// ####################
+// 	} else if (player.velocity.y > 0) {
+// 		player.upperBorderCamPanning({ camera, canvas });
+
+// 		if (player.lastDirection === 'right') {
+// 			player.switchToSprite('FallRight');
+// 		} else {
+// 			player.switchToSprite('FallLeft');
+// 		}
+// 	}
+
+// 	c.restore();
+// }
+
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = 'black';
@@ -215,7 +321,7 @@ function animate() {
 	});
 
 	hazards.forEach((hazard) => {
-		hazard.update();
+		hazard.update(player);
 	});
 
 	fencePoles.forEach((fencePole) => {
@@ -228,6 +334,7 @@ function animate() {
 
 	hangingBlobs.forEach((hangingBlob) => {
 		hangingBlob.update(player);
+		// hangingBlob.drawSensor();
 	});
 
 	bouncePlants.forEach((bouncePlant) => {
@@ -245,31 +352,25 @@ function animate() {
 
 	player.velocity.x = 0;
 
-	if (keys.d.pressed) {
+	if (keys.d.pressed && !player.isHit) {
 		player.switchToSprite('WalkRight');
 		player.velocity.x = 28;
 		player.lastDirection = 'right';
 		player.leftBorderCamPanning({ canvas, camera });
-		// ####################
-		// ####################
-	} else if (keys.a.pressed) {
+	} else if (keys.a.pressed && !player.isHit) {
 		player.switchToSprite('WalkLeft');
 		player.velocity.x = -28;
 		player.lastDirection = 'left';
 		player.rightBorderCamPanning({ canvas, camera });
-
-		// ####################
-		// ####################
-	} else if (player.velocity.y === 0) {
+	} else if (player.velocity.y === 0 && !player.isHit) {
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('IdleRight');
 		} else {
 			player.switchToSprite('IdleLeft');
 		}
 	}
-	// ####################
-	// ####################
-	if (player.velocity.y < 0) {
+
+	if (player.velocity.y < 0 && !player.isHit) {
 		player.bottomBorderCamPanning({ camera, canvas });
 
 		if (player.lastDirection === 'right') {
@@ -277,9 +378,7 @@ function animate() {
 		} else {
 			player.switchToSprite('JumpLeft');
 		}
-		// ####################
-		// ####################
-	} else if (player.velocity.y > 0) {
+	} else if (player.velocity.y > 0 && !player.isHit) {
 		player.upperBorderCamPanning({ camera, canvas });
 
 		if (player.lastDirection === 'right') {
