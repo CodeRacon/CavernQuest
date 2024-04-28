@@ -97,7 +97,7 @@ hangingBlobPositions.forEach((hangingBlobPosition) => {
 			scale: 1.66,
 			imgSrc: 'img/enemies/SlimeBasic.png',
 			frameRate: 30,
-			frameBuffer: 4,
+			frameBuffer: 3,
 		});
 		hangingBlobs.push(hangingBlob);
 	});
@@ -113,8 +113,8 @@ bouncePlantPositions.forEach((bouncePlantPosition) => {
 				y: object.y - 512,
 			},
 			scale: 1.125,
-			imgSrc: 'img/plants/JumpPlant_00000.png',
-			frameRate: 1,
+			imgSrc: 'img/plants/JumpPlant-frames.png',
+			frameRate: 20,
 			frameBuffer: 4,
 		});
 		bouncePlants.push(bouncePlant);
@@ -223,18 +223,25 @@ function animate() {
 	});
 
 	movingBlobs.forEach((movingBlob) => {
-		movingBlob.update();
+		movingBlob.update(player);
 	});
 
 	hangingBlobs.forEach((hangingBlob) => {
-		hangingBlob.update();
+		hangingBlob.update(player);
 	});
 
 	bouncePlants.forEach((bouncePlant) => {
 		bouncePlant.update();
 	});
 
-	player.update();
+	const healthBarFill = document.getElementById('health-bar-fill');
+	const healthPercentage = (player.health / 100) * 100;
+	healthBarFill.style.width = `${healthPercentage}`;
+
+	const healthBarText = document.getElementById('health-bar-text');
+	healthBarText.textContent = `${player.health} HP`;
+
+	player.update(bouncePlants);
 
 	player.velocity.x = 0;
 
