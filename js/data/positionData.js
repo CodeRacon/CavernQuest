@@ -295,6 +295,22 @@ const bouncePlantPositions = [
 				x: 24429,
 				y: 6929,
 			},
+			{
+				height: 512,
+				id: 1152,
+
+				width: 512,
+				x: 5113,
+				y: 7953,
+			},
+			{
+				height: 512,
+				id: 1153,
+
+				width: 512,
+				x: 7524,
+				y: 5904,
+			},
 		],
 	},
 ];
