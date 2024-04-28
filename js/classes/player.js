@@ -23,6 +23,9 @@ class Player extends Sprite {
 
 		this.health = 100;
 
+		this.isHit = false;
+		this.hitAnimationDuration = 333;
+
 		this.hitbox = {
 			position: {
 				x: this.position.x,
@@ -124,14 +127,41 @@ class Player extends Sprite {
 		}
 	}
 
+	takeDamage() {
+		if (this.isHit === false) {
+			console.log('Player took damage');
+			if (this.lastDirection === 'right') {
+				this.switchToSprite('HitRight');
+			} else {
+				this.switchToSprite('HitLeft');
+			}
+
+			this.isHit = true;
+
+			setTimeout(() => {
+				if (this.lastDirection === 'right') {
+					this.switchToSprite('IdleRight');
+				} else {
+					this.switchToSprite('IdleLeft');
+				}
+				this.isHit = false;
+			}, this.hitAnimationDuration);
+		}
+	}
+
 	update() {
 		this.updateFrames();
 		this.updateHitbox();
 		this.updateCameraBox();
 
-		// draws out image
-		// c.fillStyle = '#00fffb6a';
-		// c.fillRect(this.position.x, this.position.y, this.width, this.height);
+		// draws out hitbox
+		c.fillStyle = 'transparent';
+		c.fillRect(
+			this.hitbox.position.x,
+			this.hitbox.position.y,
+			this.hitbox.width,
+			this.hitbox.height
+		);
 
 		// draws out cameraBox
 		c.fillStyle = 'transparent';
@@ -154,11 +184,11 @@ class Player extends Sprite {
 	updateHitbox() {
 		this.hitbox = {
 			position: {
-				x: this.position.x + 372,
-				y: this.position.y + 248,
+				x: this.position.x + 392,
+				y: this.position.y + 288,
 			},
-			width: 280,
-			height: 548,
+			width: 248,
+			height: 512,
 		};
 	}
 
