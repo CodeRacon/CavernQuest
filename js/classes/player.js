@@ -21,6 +21,8 @@ class Player extends Sprite {
 		this.collisionBlocks = collisionBlocks;
 		this.isGrounded = false;
 
+		this.health = 100;
+
 		this.hitbox = {
 			position: {
 				x: this.position.x,
@@ -146,6 +148,7 @@ class Player extends Sprite {
 		this.applyGravity();
 		this.updateHitbox();
 		this.detectVerticalCollision();
+		this.detectBouncePlantCollision(bouncePlants);
 	}
 
 	updateHitbox() {
@@ -230,6 +233,36 @@ class Player extends Sprite {
 					break;
 				}
 			} else {
+			}
+		}
+	}
+
+	detectBouncePlantCollision(bouncePlants) {
+		if (this.velocity.y <= 0) return; // proof, if player is falling
+
+		for (let i = 0; i < bouncePlants.length; i++) {
+			const bouncePlant = bouncePlants[i];
+
+			// define offset for visual part of the BouncePlant (lot of transparent 'whitespace' in png)
+			const offset = {
+				x: 256,
+				y: 256,
+			};
+
+			if (
+				this.hitbox.position.y + this.hitbox.height >=
+					bouncePlant.position.y + offset.y &&
+				this.hitbox.position.y + this.hitbox.height <=
+					bouncePlant.position.y + bouncePlant.height - offset.y &&
+				this.hitbox.position.x + this.hitbox.width >=
+					bouncePlant.position.x + offset.x &&
+				this.hitbox.position.x <=
+					bouncePlant.position.x + bouncePlant.width - offset.x
+			) {
+				// collision detected, player jumps higher
+				this.velocity.y = -48 * 1.2875;
+				this.isGrounded = false;
+				break;
 			}
 		}
 	}
