@@ -28,25 +28,27 @@ class MovingBlob extends Sprite {
 		this.hitCount = 0;
 		this.initialSpeed = speed;
 		this.jumpAtHitVelocity = -30;
-		this.removerAfterHitDelay = 60;
+		this.removerAfterHitDelay = 30;
+
+		this.hitOpacity = 0;
 	}
 
 	update(player) {
 		this.updateFrames();
 
 		if (this.isHit) {
-			console.log('MovingBlob hit! hitCount:', this.hitCount);
-
 			this.hitCount++;
-			this.isHit = false; // Reset isHit flag
+			this.isHit = false;
 
 			if (this.hitCount === 1) {
 				this.velocity.x *= 1.33;
+				this.hitOpacity = 0.2;
 			} else if (this.hitCount === 2) {
 				this.velocity.x *= 1.66;
+				this.hitOpacity = 0.4;
 			} else if (this.hitCount === 3) {
 				this.velocity.y = this.jumpAtHitVelocity;
-				this.removerAfterHitDelay = 60; // Set the delay to 60 frames (1 second)
+				this.removerAfterHitDelay;
 			}
 		}
 
@@ -115,5 +117,38 @@ class MovingBlob extends Sprite {
 		}
 
 		super.update();
+	}
+
+	draw() {
+		if (this.hitOpacity > 0) {
+			// create seperate canvas for filter
+			const filterCanvas = document.createElement('canvas');
+			filterCanvas.width = this.width;
+			filterCanvas.height = this.height;
+			const filterCtx = filterCanvas.getContext('2d');
+
+			// draw sprite onto filter canvas
+			filterCtx.drawImage(
+				this.image,
+				this.currentFrame * (this.image.width / this.frameRate),
+				0,
+				this.image.width / this.frameRate,
+				this.image.height,
+				0,
+				0,
+				this.width,
+				this.height
+			);
+
+			// use filter on new canvas context
+			filterCtx.globalCompositeOperation = 'source-atop';
+			filterCtx.fillStyle = `rgba(255, 0, 0, ${this.hitOpacity})`;
+			filterCtx.fillRect(0, 0, this.width, this.height);
+
+			// draw filtered canvas onto main canvas
+			c.drawImage(filterCanvas, this.position.x, this.position.y);
+		} else {
+			super.draw();
+		}
 	}
 }
