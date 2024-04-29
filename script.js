@@ -210,102 +210,6 @@ const camera = {
 	},
 };
 
-// function animate() {
-// 	window.requestAnimationFrame(animate);
-// 	c.fillStyle = 'black';
-// 	c.fillRect(0, 0, canvas.width, canvas.height);
-
-// 	c.save();
-// 	c.scale(0.125, 0.125);
-// 	c.translate(camera.position.x, camera.position.y);
-// 	background.update();
-
-// 	collisionBlocks.forEach((collisionBlock) => {
-// 		collisionBlock.update();
-// 	});
-
-// 	hazards.forEach((hazard) => {
-// 		hazard.update(player);
-// 	});
-
-// 	fencePoles.forEach((fencePole) => {
-// 		fencePole.update();
-// 	});
-
-// 	movingBlobs.forEach((movingBlob) => {
-// 		movingBlob.update(player);
-// 	});
-
-// 	hangingBlobs.forEach((hangingBlob) => {
-// 		hangingBlob.update(player);
-// 	});
-
-// 	bouncePlants.forEach((bouncePlant) => {
-// 		bouncePlant.update();
-// 	});
-
-// 	const healthBarFill = document.getElementById('health-bar-fill');
-// 	const healthPercentage = (player.health / 100) * 100;
-// 	healthBarFill.style.width = `${healthPercentage}`;
-
-// 	const healthBarText = document.getElementById('health-bar-text');
-// 	healthBarText.textContent = `${player.health} HP`;
-
-// 	player.update(bouncePlants);
-
-// 	if (player.isHit) {
-// 		return;
-// 	}
-
-// 	player.velocity.x = 0;
-
-// 	if (keys.d.pressed) {
-// 		player.switchToSprite('WalkRight');
-// 		player.velocity.x = 28;
-// 		player.lastDirection = 'right';
-// 		player.leftBorderCamPanning({ canvas, camera });
-// 		// ####################
-// 		// ####################
-// 	} else if (keys.a.pressed) {
-// 		player.switchToSprite('WalkLeft');
-// 		player.velocity.x = -28;
-// 		player.lastDirection = 'left';
-// 		player.rightBorderCamPanning({ canvas, camera });
-
-// 		// ####################
-// 		// ####################
-// 	} else if (player.velocity.y === 0) {
-// 		if (player.lastDirection === 'right') {
-// 			player.switchToSprite('IdleRight');
-// 		} else {
-// 			player.switchToSprite('IdleLeft');
-// 		}
-// 	}
-// 	// ####################
-// 	// ####################
-// 	if (player.velocity.y < 0) {
-// 		player.bottomBorderCamPanning({ camera, canvas });
-
-// 		if (player.lastDirection === 'right') {
-// 			player.switchToSprite('JumpRight');
-// 		} else {
-// 			player.switchToSprite('JumpLeft');
-// 		}
-// 		// ####################
-// 		// ####################
-// 	} else if (player.velocity.y > 0) {
-// 		player.upperBorderCamPanning({ camera, canvas });
-
-// 		if (player.lastDirection === 'right') {
-// 			player.switchToSprite('FallRight');
-// 		} else {
-// 			player.switchToSprite('FallLeft');
-// 		}
-// 	}
-
-// 	c.restore();
-// }
-
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = 'black';
@@ -349,6 +253,10 @@ function animate() {
 	healthBarText.textContent = `${player.health} HP`;
 
 	player.update(bouncePlants);
+
+	if (player.currentSpell) {
+		player.currentSpell.update();
+	}
 
 	player.velocity.x = 0;
 
@@ -417,6 +325,15 @@ window.addEventListener('keyup', (event) => {
 			break;
 		case 'a':
 			keys.a.pressed = false;
+			break;
+	}
+});
+
+window.addEventListener('keydown', (event) => {
+	switch (event.key) {
+		// ...
+		case ' ':
+			player.castSpell();
 			break;
 	}
 });
