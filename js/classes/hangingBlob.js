@@ -45,7 +45,7 @@ class HangingBlob extends Sprite {
 			height: this.height * 3.25,
 		};
 
-		c.fillStyle = '#00eeff8c';
+		c.fillStyle = 'transparent';
 		c.fillRect(
 			this.sensor.position.x - 64,
 			this.sensor.position.y,
@@ -68,7 +68,7 @@ class HangingBlob extends Sprite {
 				// check for collision cooldown to be done
 				if (this.collisionCooldown <= 0) {
 					// collision detected, reduce player health by 10 points
-					player.health -= 10;
+					player.health -= 20;
 					player.takeDamage();
 
 					this.collisionCooldown = 60;

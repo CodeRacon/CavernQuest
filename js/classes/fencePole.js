@@ -3,7 +3,7 @@ class FencePole {
 		this.position = position;
 		this.width = width;
 		this.height = height;
-		this.color = '#f5df6460';
+		this.color = 'transparent';
 	}
 
 	draw() {
