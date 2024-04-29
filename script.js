@@ -255,7 +255,7 @@ function animate() {
 	player.update(bouncePlants);
 
 	if (player.currentSpell) {
-		player.currentSpell.update();
+		player.currentSpell.update(movingBlobs);
 	}
 
 	player.velocity.x = 0;
