@@ -18,15 +18,36 @@ class MovingBlob extends Sprite {
 		this.position = position;
 		this.velocity = {
 			x: speed,
-			y: 1,
+			y: 0,
 		};
 		this.fencePoles = fencePoles;
 		this.direction = 1;
 		this.collisionCooldown = 0;
+
+		this.isHit = false;
+		this.jumpAtHitVelocity = -30;
+		this.removerAfterHitDelay = 60;
 	}
 
 	update(player) {
 		this.updateFrames();
+
+		if (this.isHit) {
+			if (this.velocity.y === 0) {
+				this.velocity.y = this.jumpAtHitVelocity; // Setze die y-Geschwindigkeit auf jumpAtHitVelocity, wenn der Blob getroffen wurde
+			}
+			this.velocity.y += gravity; // Wende die Schwerkraft an
+			this.position.y += this.velocity.y; // Aktualisiere die y-Position basierend auf der Geschwindigkeit
+
+			this.removerAfterHitDelay--;
+
+			if (this.removerAfterHitDelay <= 0) {
+				const index = movingBlobs.indexOf(this);
+				if (index !== -1) {
+					movingBlobs.splice(index, 1);
+				}
+			}
+		}
 
 		// check collision with fencePoles
 		for (let i = 0; i < this.fencePoles.length; i++) {
