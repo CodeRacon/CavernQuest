@@ -37,8 +37,10 @@ class MagicSpell extends Sprite {
 				this.position.y + collisionHeight > blob.position.y
 			) {
 				// collision detected
-				blob.isHit = true;
-				this.hitEnemies.push(blob); // push ememy to hitEnemies array
+				if (blob.hitCount < 3 && !this.hitEnemies.includes(blob)) {
+					blob.isHit = true;
+					this.hitEnemies.push(blob);
+				}
 			}
 		}
 	}

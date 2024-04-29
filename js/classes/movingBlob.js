@@ -25,6 +25,8 @@ class MovingBlob extends Sprite {
 		this.collisionCooldown = 0;
 
 		this.isHit = false;
+		this.hitCount = 0;
+		this.initialSpeed = speed;
 		this.jumpAtHitVelocity = -30;
 		this.removerAfterHitDelay = 60;
 	}
@@ -33,12 +35,26 @@ class MovingBlob extends Sprite {
 		this.updateFrames();
 
 		if (this.isHit) {
-			if (this.velocity.y === 0) {
-				this.velocity.y = this.jumpAtHitVelocity; // Setze die y-Geschwindigkeit auf jumpAtHitVelocity, wenn der Blob getroffen wurde
-			}
-			this.velocity.y += gravity; // Wende die Schwerkraft an
-			this.position.y += this.velocity.y; // Aktualisiere die y-Position basierend auf der Geschwindigkeit
+			console.log('MovingBlob hit! hitCount:', this.hitCount);
 
+			this.hitCount++;
+			this.isHit = false; // Reset isHit flag
+
+			if (this.hitCount === 1) {
+				this.velocity.x *= 1.33;
+			} else if (this.hitCount === 2) {
+				this.velocity.x *= 1.66;
+			} else if (this.hitCount === 3) {
+				this.velocity.y = this.jumpAtHitVelocity;
+				this.removerAfterHitDelay = 60; // Set the delay to 60 frames (1 second)
+			}
+		}
+
+		if (this.hitCount === 3) {
+			console.log('MovingBlob hit 3 times! ');
+
+			this.velocity.y += gravity;
+			this.position.y += this.velocity.y;
 			this.removerAfterHitDelay--;
 
 			if (this.removerAfterHitDelay <= 0) {
@@ -47,20 +63,20 @@ class MovingBlob extends Sprite {
 					movingBlobs.splice(index, 1);
 				}
 			}
-		}
-
-		// check collision with fencePoles
-		for (let i = 0; i < this.fencePoles.length; i++) {
-			const fencePole = this.fencePoles[i];
-			if (
-				this.position.x < fencePole.position.x + fencePole.width &&
-				this.position.x + this.width > fencePole.position.x &&
-				this.position.y < fencePole.position.y + fencePole.height &&
-				this.position.y + this.height > fencePole.position.y
-			) {
-				// collision detected, change direction
-				this.direction *= -1;
-				break;
+		} else {
+			// check collision with fencePoles
+			for (let i = 0; i < this.fencePoles.length; i++) {
+				const fencePole = this.fencePoles[i];
+				if (
+					this.position.x < fencePole.position.x + fencePole.width &&
+					this.position.x + this.width > fencePole.position.x &&
+					this.position.y < fencePole.position.y + fencePole.height &&
+					this.position.y + this.height > fencePole.position.y
+				) {
+					// collision detected, change direction
+					this.direction *= -1;
+					break;
+				}
 			}
 		}
 
