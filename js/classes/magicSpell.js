@@ -17,10 +17,29 @@ class MagicSpell extends Sprite {
 			this.position.x += 512 + 256;
 			this.position.y += 320;
 		}
+
+		this.hitEnemies = [];
 	}
 
 	update() {
 		this.updateFrames();
 		super.update();
+
+		const collisionHeight = this.height * 0.4;
+		const collisionWidth = this.width * 0.75;
+
+		for (let i = 0; i < movingBlobs.length; i++) {
+			const blob = movingBlobs[i];
+			if (
+				this.position.x < blob.position.x + blob.width &&
+				this.position.x + collisionWidth > blob.position.x &&
+				this.position.y < blob.position.y + blob.height &&
+				this.position.y + collisionHeight > blob.position.y
+			) {
+				// collision detected
+				blob.isHit = true;
+				this.hitEnemies.push(blob); // push ememy to hitEnemies array
+			}
+		}
 	}
 }
