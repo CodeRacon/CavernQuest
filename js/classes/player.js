@@ -19,12 +19,17 @@ class Player extends Sprite {
 		};
 
 		this.collisionBlocks = collisionBlocks;
+
 		this.isGrounded = false;
 
 		this.health = 100;
 
 		this.isHit = false;
 		this.hitAnimationDuration = 333;
+
+		this.currentSpell = null;
+		this.spellCooldown = 0;
+		this.spellCooldownDuration = 30;
 
 		this.hitbox = {
 			position: {
@@ -149,7 +154,38 @@ class Player extends Sprite {
 		}
 	}
 
+	castSpell() {
+		if (this.spellCooldown <= 0) {
+			console.log('Spell casted', this.lastDirection);
+			this.currentSpell = new MagicSpell({
+				position: {
+					x: this.position.x,
+					y: this.position.y,
+				},
+				direction: this.lastDirection,
+				imgSrc:
+					this.lastDirection === 'right'
+						? 'img/wizard/magic-spell-right.png'
+						: 'img/wizard/magic-spell-left.png',
+				frameRate: 12,
+				frameBuffer: 2,
+				scale: 1,
+			});
+			this.spellCooldown = this.spellCooldownDuration;
+
+			setTimeout(() => {
+				this.currentSpell = null;
+			}, ((this.currentSpell.frameRate * this.currentSpell.frameBuffer) / 60) * 1000);
+		} else {
+			return;
+		}
+	}
+
 	update() {
+		if (this.spellCooldown > 0) {
+			this.spellCooldown--;
+		}
+
 		this.updateFrames();
 		this.updateHitbox();
 		this.updateCameraBox();
