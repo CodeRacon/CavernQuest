@@ -76,7 +76,7 @@ movingBlobPositions.forEach((movingBlobPosition) => {
 				y: object.y - 410,
 			},
 			fencePoles: fencePoles,
-			speed: 4,
+			speed: 6,
 			imgSrc: 'img/enemies/SlimeOrange.png',
 			frameRate: 30,
 			frameBuffer: 2,
@@ -130,6 +130,7 @@ const player = new Player({
 	},
 
 	collisionBlocks: collisionBlocks,
+	hazards: hazards,
 
 	imgSrc: 'img/wizard/Wizard-Idle-Right.png',
 	frameRate: 20,
@@ -238,7 +239,6 @@ function animate() {
 
 	hangingBlobs.forEach((hangingBlob) => {
 		hangingBlob.update(player);
-		// hangingBlob.drawSensor();
 	});
 
 	bouncePlants.forEach((bouncePlant) => {
@@ -252,7 +252,7 @@ function animate() {
 	const healthBarText = document.getElementById('health-bar-text');
 	healthBarText.textContent = `${player.health} HP`;
 
-	player.update(bouncePlants);
+	player.update(bouncePlants, collisionBlocks, hazards);
 
 	if (player.currentSpell) {
 		player.currentSpell.update(movingBlobs);
