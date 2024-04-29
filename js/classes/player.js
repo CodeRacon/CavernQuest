@@ -2,6 +2,7 @@ class Player extends Sprite {
 	constructor({
 		position,
 		collisionBlocks,
+		hazards,
 		imgSrc,
 		frameRate,
 		scale = 2,
@@ -19,6 +20,8 @@ class Player extends Sprite {
 		};
 
 		this.collisionBlocks = collisionBlocks;
+		this.hazards = hazards;
+		this.collisionCooldown = 0;
 
 		this.isGrounded = false;
 
@@ -229,22 +232,30 @@ class Player extends Sprite {
 	}
 
 	detectHorizontalCollision() {
-		for (let i = 0; i < this.collisionBlocks.length; i++) {
-			const collisionBlock = this.collisionBlocks[i];
+		const objects = [...this.collisionBlocks, ...this.hazards];
+
+		for (let i = 0; i < objects.length; i++) {
+			const object = objects[i];
 
 			if (
 				collision({
 					object1: this.hitbox,
-					object2: collisionBlock,
+					object2: object,
 				})
 			) {
+				if (object instanceof Hazard && this.collisionCooldown <= 0) {
+					this.health -= 2;
+					this.takeDamage();
+					this.collisionCooldown = 60;
+				}
+
 				if (this.velocity.x > 0) {
 					this.velocity.x = 0;
 
 					const offset =
 						this.hitbox.position.x - this.position.x + this.hitbox.width;
 
-					this.position.x = collisionBlock.position.x - offset - 0.01;
+					this.position.x = object.position.x - offset - 0.01;
 					break;
 				}
 
@@ -253,12 +264,14 @@ class Player extends Sprite {
 
 					const offset = this.hitbox.position.x - this.position.x;
 
-					this.position.x =
-						collisionBlock.position.x + collisionBlock.width - offset + 0.01;
+					this.position.x = object.position.x + object.width - offset + 0.01;
 					break;
 				}
-			} else {
 			}
+		}
+
+		if (this.collisionCooldown > 0) {
+			this.collisionCooldown--;
 		}
 	}
 
@@ -268,24 +281,31 @@ class Player extends Sprite {
 	}
 
 	detectVerticalCollision() {
-		for (let i = 0; i < this.collisionBlocks.length; i++) {
-			const collisionBlock = this.collisionBlocks[i];
+		const objects = [...this.collisionBlocks, ...this.hazards];
+
+		for (let i = 0; i < objects.length; i++) {
+			const object = objects[i];
 
 			if (
 				collision({
 					object1: this.hitbox,
-					object2: collisionBlock,
+					object2: object,
 				})
 			) {
+				if (object instanceof Hazard && this.collisionCooldown <= 0) {
+					this.health -= 2;
+					this.takeDamage();
+					this.collisionCooldown = 60;
+				}
+
 				if (this.velocity.y > 0) {
 					this.velocity.y = 0;
 
 					const offset =
 						this.hitbox.position.y - this.position.y + this.hitbox.height;
 
-					this.position.y = collisionBlock.position.y - offset - 0.01;
+					this.position.y = object.position.y - offset - 0.01;
 					this.isGrounded = true;
-
 					break;
 				}
 
@@ -294,12 +314,14 @@ class Player extends Sprite {
 
 					const offset = this.hitbox.position.y - this.position.y;
 
-					this.position.y =
-						collisionBlock.position.y + collisionBlock.height - offset + 0.01;
+					this.position.y = object.position.y + object.height - offset + 0.01;
 					break;
 				}
-			} else {
 			}
+		}
+
+		if (this.collisionCooldown > 0) {
+			this.collisionCooldown--;
 		}
 	}
 
