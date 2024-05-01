@@ -314,3 +314,58 @@ const bouncePlantPositions = [
 		],
 	},
 ];
+
+const poisonPlantPositions = [
+	{
+		objects: [
+			{
+				height: 768,
+				id: 1333,
+				scale: 1.5,
+				width: 768,
+				x: 19328,
+				y: 1336,
+			},
+			{
+				height: 768,
+				id: 1180,
+				scale: 1.5,
+				width: 768,
+				x: 4402.43,
+				y: 3046.43,
+			},
+			{
+				height: 768,
+				id: 1228,
+				scale: 1.5,
+				width: 768,
+				x: 616,
+				y: 6048,
+			},
+			{
+				height: 768,
+				id: 1229,
+				scale: 1.5,
+				width: 768,
+				x: 15824,
+				y: 1720,
+			},
+			{
+				height: 768,
+				id: 1230,
+				scale: 1.5,
+				width: 768,
+				x: 17840,
+				y: 5576,
+			},
+			{
+				height: 768,
+				id: 1232,
+				scale: 1.5,
+				width: 768,
+				x: 22432,
+				y: 4568,
+			},
+		],
+	},
+];
