@@ -27,8 +27,14 @@ class Player extends Sprite {
 
 		this.health = 100;
 
+		this.spellPower = 100;
+
 		this.isHit = false;
 		this.hitAnimationDuration = 333;
+
+		this.isPoisoned = false;
+		this.poisonDuration = 0;
+		this.poisonOpacity = 0;
 
 		this.currentSpell = null;
 		this.spellCooldown = 0;
@@ -218,6 +224,67 @@ class Player extends Sprite {
 		this.updateHitbox();
 		this.detectVerticalCollision();
 		this.detectBouncePlantCollision(bouncePlants);
+
+		this.updatePoisonEffect();
+	}
+
+	applyPoisonDamage() {
+		const FPS = 60;
+
+		if (!this.isPoisoned) {
+			this.isPoisoned = true;
+			this.poisonDuration = 15 * FPS; // 60 seconds at 60 FPS
+			this.poisonOpacity = 1;
+		}
+	}
+
+	updatePoisonEffect() {
+		if (this.isPoisoned) {
+			this.poisonDuration--;
+			this.poisonOpacity = this.poisonDuration / (60 * 60);
+
+			if (this.poisonDuration % 60 === 0) {
+				this.health--;
+			}
+
+			if (this.poisonDuration <= 0) {
+				this.isPoisoned = false;
+				this.poisonOpacity = 0;
+			}
+		}
+	}
+
+	draw() {
+		if (this.poisonOpacity > 0) {
+			// create separate canvas for filter
+			const filterCanvas = document.createElement('canvas');
+			filterCanvas.width = this.width;
+			filterCanvas.height = this.height;
+			const filterCtx = filterCanvas.getContext('2d');
+
+			// draw sprite onto filter canvas
+			filterCtx.drawImage(
+				this.image,
+				this.currentFrame * (this.image.width / this.frameRate),
+				0,
+				this.image.width / this.frameRate,
+				this.image.height,
+				0,
+				0,
+				this.width,
+				this.height
+			);
+
+			// use filter on new canvas context
+			filterCtx.globalCompositeOperation = 'source-atop';
+			filterCtx.fillStyle = `rgba(191, 255, 0, ${this.poisonOpacity})`;
+			filterCtx.fillRect(0, 0, this.width, this.height);
+
+			// draw filtered canvas onto main canvas
+			c.drawImage(filterCanvas, this.position.x, this.position.y);
+		} else {
+			super.draw();
+		}
 	}
 
 	updateHitbox() {
