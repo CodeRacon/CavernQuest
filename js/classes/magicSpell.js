@@ -26,7 +26,7 @@ class MagicSpell extends Sprite {
 		super.update();
 
 		const collisionHeight = this.height * 0.4;
-		const collisionWidth = this.width * 0.75;
+		const collisionWidth = this.width * 0.7;
 
 		for (let i = 0; i < movingBlobs.length; i++) {
 			const blob = movingBlobs[i];
