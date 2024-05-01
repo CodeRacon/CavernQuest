@@ -97,7 +97,7 @@ hangingBlobPositions.forEach((hangingBlobPosition) => {
 			scale: 1.66,
 			imgSrc: 'img/enemies/SlimeBasic.png',
 			frameRate: 30,
-			frameBuffer: 3,
+			frameBuffer: 4,
 		});
 		hangingBlobs.push(hangingBlob);
 	});
@@ -121,6 +121,24 @@ bouncePlantPositions.forEach((bouncePlantPosition) => {
 	});
 });
 
+const poisonPlants = [];
+
+poisonPlantPositions.forEach((poisonPlantPosition) => {
+	poisonPlantPosition.objects.forEach((object) => {
+		const poisonPlant = new PoisonPlant({
+			position: {
+				x: object.x,
+				y: object.y - 832,
+			},
+			scale: object.scale,
+			imgSrc: 'img/plants/poison-plant.png',
+			frameRate: 30,
+			frameBuffer: 5,
+		});
+		poisonPlants.push(poisonPlant);
+	});
+});
+
 const gravity = 1.75;
 
 const player = new Player({
@@ -131,6 +149,7 @@ const player = new Player({
 
 	collisionBlocks: collisionBlocks,
 	hazards: hazards,
+	poisonPlants: poisonPlants,
 
 	imgSrc: 'img/wizard/Wizard-Idle-Right.png',
 	frameRate: 20,
@@ -184,6 +203,16 @@ const player = new Player({
 		HitRight: {
 			imgSrc: 'img/wizard/wizard-hit-right.png',
 			frameRate: 6,
+			frameBuffer: 1,
+		},
+		DashLeft: {
+			imgSrc: 'img/wizard/wizard-dash-left.png',
+			frameRate: 16,
+			frameBuffer: 1,
+		},
+		DashRight: {
+			imgSrc: 'img/wizard/wizard-dash-right.png',
+			frameRate: 16,
 			frameBuffer: 1,
 		},
 	},
@@ -245,12 +274,24 @@ function animate() {
 		bouncePlant.update();
 	});
 
+	poisonPlants.forEach((poisonPlant) => {
+		poisonPlant.update();
+		poisonPlant.checkCollision(player);
+	});
+
 	const healthBarFill = document.getElementById('health-bar-fill');
 	const healthPercentage = (player.health / 100) * 100;
 	healthBarFill.style.width = `${healthPercentage}`;
 
 	const healthBarText = document.getElementById('health-bar-text');
 	healthBarText.textContent = `${player.health} HP`;
+
+	const spellpowerBarFill = document.getElementById('spellpower-bar-fill');
+	const spellpowerPercentage = (player.health / 100) * 100;
+	spellpowerBarFill.style.width = `${spellpowerPercentage}`;
+
+	const spellpowerBarText = document.getElementById('spellpower-bar-text');
+	spellpowerBarText.textContent = `${player.spellPower} SP`;
 
 	player.update(bouncePlants, collisionBlocks, hazards);
 
