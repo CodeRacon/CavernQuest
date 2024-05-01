@@ -27,5 +27,11 @@ const spriteImages = [
 	'img/wizard/Wizard-Jump-Right.png',
 	'img/wizard/Wizard-Walk-Left.png',
 	'img/wizard/Wizard-Walk-Right.png',
+	'img/wizard/wizard-dash-left.png',
+	'img/wizard/wizard-dash-right.png',
+	'img/plants/JumpPlant-frames.png',
+	'img/plants/poison-plant.png',
+	'img/enemies/SlimeBasic.png',
+	'img/enemies/SlimeOrange.png',
 	'img/background.jpg',
 ];
