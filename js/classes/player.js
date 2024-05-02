@@ -28,6 +28,7 @@ class Player extends Sprite {
 		this.health = 100;
 
 		this.spellPower = 100;
+		this.spellPowerRegenRate = 0.5;
 
 		this.isHit = false;
 		this.hitAnimationDuration = 333;
@@ -67,6 +68,21 @@ class Player extends Sprite {
 			width: canvas.width,
 			height: canvas.height,
 		};
+	}
+
+	useSpellPower(amount) {
+		if (this.spellPower >= amount) {
+			this.spellPower -= amount;
+		}
+	}
+
+	regenSpellPower() {
+		if (this.spellPower < 100) {
+			this.spellPower += this.spellPowerRegenRate / FPS;
+			if (this.spellPower > 100) {
+				this.spellPower = 100;
+			}
+		}
 	}
 
 	switchToSprite(sprite) {
@@ -226,14 +242,14 @@ class Player extends Sprite {
 		this.detectBouncePlantCollision(bouncePlants);
 
 		this.updatePoisonEffect();
+
+		this.regenSpellPower();
 	}
 
 	applyPoisonDamage() {
-		const FPS = 60;
-
 		if (!this.isPoisoned) {
 			this.isPoisoned = true;
-			this.poisonDuration = 15 * FPS; // 60 seconds at 60 FPS
+			this.poisonDuration = 15 * FPS;
 			this.poisonOpacity = 1;
 		}
 	}

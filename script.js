@@ -91,7 +91,7 @@ hangingBlobPositions.forEach((hangingBlobPosition) => {
 	hangingBlobPosition.objects.forEach((object) => {
 		const hangingBlob = new HangingBlob({
 			position: {
-				x: object.x - 640,
+				x: object.x - 512,
 				y: object.y,
 			},
 			scale: 1.66,
@@ -221,6 +221,9 @@ const player = new Player({
 const keys = {
 	d: { pressed: false },
 	a: { pressed: false },
+	e: { pressed: false },
+	q: { pressed: false },
+	p: { pressed: false },
 };
 
 let y = 100;
@@ -291,9 +294,9 @@ function animate() {
 	spellpowerBarFill.style.width = `${spellpowerPercentage}`;
 
 	const spellpowerBarText = document.getElementById('spellpower-bar-text');
-	spellpowerBarText.textContent = `${player.spellPower} SP`;
+	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
 
-	player.update(bouncePlants, collisionBlocks, hazards);
+	player.update(bouncePlants);
 
 	if (player.currentSpell) {
 		player.currentSpell.update(movingBlobs);
@@ -301,6 +304,7 @@ function animate() {
 
 	player.velocity.x = 0;
 
+	// Walk
 	if (keys.d.pressed && !player.isHit) {
 		player.switchToSprite('WalkRight');
 		player.velocity.x = 28;
@@ -319,6 +323,47 @@ function animate() {
 		}
 	}
 
+	// Dash
+	if (keys.e.pressed && !player.isHit && player.spellPower >= 3 / 60) {
+		player.switchToSprite('DashRight');
+		player.velocity.x = 64;
+		player.lastDirection = 'right';
+		player.leftBorderCamPanning({ canvas, camera });
+	} else if (keys.q.pressed && !player.isHit && player.spellPower >= 3 / 60) {
+		player.switchToSprite('DashLeft');
+		player.velocity.x = -64;
+		player.lastDirection = 'left';
+		player.rightBorderCamPanning({ canvas, camera });
+	} else if (player.velocity.y === 0 && !player.isHit) {
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('IdleRight');
+		} else {
+			player.switchToSprite('IdleLeft');
+		}
+	}
+
+	// Rise
+	if (keys.p.pressed && !player.isHit && player.spellPower >= 5 / 60) {
+		player.velocity.y = -28;
+		player.useSpellPower(5 / 60);
+		player.bottomBorderCamPanning({ camera, canvas });
+
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('JumpRight');
+		} else {
+			player.switchToSprite('JumpLeft');
+		}
+	} else if (player.velocity.y > 0 && !player.isHit) {
+		player.upperBorderCamPanning({ camera, canvas });
+
+		if (player.lastDirection === 'right') {
+			player.switchToSprite('FallRight');
+		} else {
+			player.switchToSprite('FallLeft');
+		}
+	}
+
+	// Jump & Fall
 	if (player.velocity.y < 0 && !player.isHit) {
 		player.bottomBorderCamPanning({ camera, canvas });
 
@@ -350,11 +395,23 @@ window.addEventListener('keydown', (event) => {
 				player.isGrounded = false; // Spieler verlässt den Boden beim Springen
 			}
 			break;
+		case 'p':
+			keys.p.pressed = true;
+			break;
 		case 'd':
 			keys.d.pressed = true;
 			break;
 		case 'a':
 			keys.a.pressed = true;
+			break;
+		case 'e':
+			keys.e.pressed = true;
+			break;
+		case 'q':
+			keys.q.pressed = true;
+			break;
+		case ' ':
+			player.castSpell();
 			break;
 	}
 });
@@ -367,14 +424,14 @@ window.addEventListener('keyup', (event) => {
 		case 'a':
 			keys.a.pressed = false;
 			break;
-	}
-});
-
-window.addEventListener('keydown', (event) => {
-	switch (event.key) {
-		// ...
-		case ' ':
-			player.castSpell();
+		case 'e':
+			keys.e.pressed = false;
+			break;
+		case 'q':
+			keys.q.pressed = false;
+			break;
+		case 'p':
+			keys.p.pressed = false;
 			break;
 	}
 });
