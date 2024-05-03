@@ -68,6 +68,15 @@ class Player extends Sprite {
 			width: canvas.width,
 			height: canvas.height,
 		};
+
+		this.particleEmitter = new ParticleEmitter(
+			0,
+			0,
+			{ min: 8, max: 24 },
+			'rgba(0, 247, 255, 0.35)',
+			{ x: 24, y: 16 }
+		);
+		this.particleEmitterXRange = 96;
 	}
 
 	useSpellPower(amount) {
@@ -244,6 +253,20 @@ class Player extends Sprite {
 		this.updatePoisonEffect();
 
 		this.regenSpellPower();
+
+		if (
+			(keys.p.pressed || keys.e.pressed || keys.q.pressed) &&
+			!player.isHit &&
+			player.spellPower >= 5 / 60
+		) {
+			const emissionX = this.hitbox.position.x + this.hitbox.width / 2;
+			const emissionY = this.hitbox.position.y + this.hitbox.height;
+			const randomX =
+				emissionX + (Math.random() - 0.5) * this.particleEmitterXRange;
+			this.particleEmitter.emit(randomX, emissionY, 5);
+		}
+
+		this.particleEmitter.update();
 	}
 
 	applyPoisonDamage() {
@@ -301,6 +324,7 @@ class Player extends Sprite {
 		} else {
 			super.draw();
 		}
+		this.particleEmitter.draw();
 	}
 
 	updateHitbox() {
