@@ -181,6 +181,229 @@ windyPlantPositions.forEach((windyPlantPosition) => {
 	});
 });
 
+// ######################################
+// ############_COLLECTABLES_############
+// ######################################
+
+const blueGems = [];
+
+blueGemPositions.forEach((blueGemPosition) => {
+	blueGemPosition.objects.forEach((object) => {
+		const blueGem = new BlueGem({
+			position: {
+				x: object.x,
+				y: object.y - 404,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/GemBlue.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		blueGems.push(blueGem);
+	});
+});
+
+const redGems = [];
+
+redGemPositions.forEach((redGemPosition) => {
+	redGemPosition.objects.forEach((object) => {
+		const redGem = new RedGem({
+			position: {
+				x: object.x,
+				y: object.y - 512,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/GemRed.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		redGems.push(redGem);
+	});
+});
+
+const fullHPs = [];
+
+fullHPPositions.forEach((fullHPPosition) => {
+	fullHPPosition.objects.forEach((object) => {
+		const fullHP = new FullHealthPotion({
+			position: {
+				x: object.x,
+				y: object.y - 276,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/PotionGreen.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		fullHPs.push(fullHP);
+	});
+});
+
+const halfHPs = [];
+
+halfHPPositions.forEach((halfHPPosition) => {
+	halfHPPosition.objects.forEach((object) => {
+		const halfHP = new HalfHealthPotion({
+			position: {
+				x: object.x,
+				y: object.y - 276,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/PotionYellow.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		halfHPs.push(halfHP);
+	});
+});
+
+const fullSPs = [];
+
+fullSPPositions.forEach((fullSPPosition) => {
+	fullSPPosition.objects.forEach((object) => {
+		const fullSP = new FullSpellPowerPotion({
+			position: {
+				x: object.x,
+				y: object.y - 276,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/PotionBlue.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		fullSPs.push(fullSP);
+	});
+});
+
+const mightySpells = [];
+
+mightySpellPositions.forEach((mightySpellPosition) => {
+	mightySpellPosition.objects.forEach((object) => {
+		const mightySpell = new MightySpellPotion({
+			position: {
+				x: object.x,
+				y: object.y - 276,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/PotionRed.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		mightySpells.push(mightySpell);
+	});
+});
+
+const goldenBooks = [];
+
+goldenBookPositions.forEach((goldenBookPosition) => {
+	goldenBookPosition.objects.forEach((object) => {
+		const goldenBook = new GoldenBook({
+			position: {
+				x: object.x,
+				y: object.y - 256,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/TomeYellow.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		goldenBooks.push(goldenBook);
+	});
+});
+
+const redBooks = [];
+
+redBookPositions.forEach((redBookPosition) => {
+	redBookPosition.objects.forEach((object) => {
+		const redBook = new RedBook({
+			position: {
+				x: object.x,
+				y: object.y - 256,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/TomeRed.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		redBooks.push(redBook);
+	});
+});
+
+const blueBooks = [];
+
+blueBookPositions.forEach((blueBookPosition) => {
+	blueBookPosition.objects.forEach((object) => {
+		const blueBook = new BlueBook({
+			position: {
+				x: object.x,
+				y: object.y - 256,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/TomeBlue.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		blueBooks.push(blueBook);
+	});
+});
+
+const greenBooks = [];
+
+greenBookPositions.forEach((greenBookPosition) => {
+	greenBookPosition.objects.forEach((object) => {
+		const greenBook = new GreenBook({
+			position: {
+				x: object.x,
+				y: object.y - 256,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/TomeGreen.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		greenBooks.push(greenBook);
+	});
+});
+
+const spellScrolls = [];
+
+spellScrollPositions.forEach((spellScrollPosition) => {
+	spellScrollPosition.objects.forEach((object) => {
+		const spellScroll = new SpellScroll({
+			position: {
+				x: object.x,
+				y: object.y - 404,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/Scroll.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		spellScrolls.push(spellScroll);
+	});
+});
+
+const goldenArmors = [];
+
+goldenArmorPositions.forEach((goldenArmorPosition) => {
+	goldenArmorPosition.objects.forEach((object) => {
+		const goldenArmor = new GoldenArmor({
+			position: {
+				x: object.x,
+				y: object.y - 404,
+			},
+			scale: object.width / 512,
+			imgSrc: 'img/collectables/Armor.png',
+			frameRate: 1,
+			frameBuffer: 1,
+		});
+		goldenArmors.push(goldenArmor);
+	});
+});
+
+// ######################################
+// ######################################
+
 const gravity = 1.75;
 
 const player = new Player({
@@ -331,6 +554,66 @@ function animate() {
 	poisonPlants.forEach((poisonPlant) => {
 		poisonPlant.update();
 		poisonPlant.checkCollision(player);
+	});
+
+	blueGems.forEach((blueGem) => {
+		blueGem.update();
+		// blueGem.checkCollision(player);
+	});
+
+	redGems.forEach((redGem) => {
+		redGem.update();
+		// redGem.checkCollision(player);
+	});
+
+	fullHPs.forEach((fullHP) => {
+		fullHP.update();
+		// fullHP.checkCollision(player);
+	});
+
+	halfHPs.forEach((halfHP) => {
+		halfHP.update();
+		// halfHP.checkCollision(player);
+	});
+
+	fullSPs.forEach((fullSP) => {
+		fullSP.update();
+		// fullSP.checkCollision(player);
+	});
+
+	mightySpells.forEach((mightySpell) => {
+		mightySpell.update();
+		// mightySpell.checkCollision(player);
+	});
+
+	goldenBooks.forEach((goldenBook) => {
+		goldenBook.update();
+		// goldenBook.checkCollision(player);
+	});
+
+	redBooks.forEach((redBook) => {
+		redBook.update();
+		// redBook.checkCollision(player);
+	});
+
+	blueBooks.forEach((blueBook) => {
+		blueBook.update();
+		// blueBook.checkCollision(player);
+	});
+
+	greenBooks.forEach((greenBook) => {
+		greenBook.update();
+		// greenBook.checkCollision(player);
+	});
+
+	spellScrolls.forEach((spellScroll) => {
+		spellScroll.update();
+		// spellScroll.checkCollision(player);
+	});
+
+	goldenArmors.forEach((goldenArmor) => {
+		goldenArmor.update();
+		// goldenArmor.checkCollision(player);
 	});
 
 	const healthBarFill = document.getElementById('health-bar-fill');
