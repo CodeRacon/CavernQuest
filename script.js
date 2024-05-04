@@ -97,7 +97,7 @@ hangingBlobPositions.forEach((hangingBlobPosition) => {
 			scale: 1.66,
 			imgSrc: 'img/enemies/SlimeBasic.png',
 			frameRate: 30,
-			frameBuffer: 4,
+			frameBuffer: 8,
 		});
 		hangingBlobs.push(hangingBlob);
 	});
@@ -133,9 +133,51 @@ poisonPlantPositions.forEach((poisonPlantPosition) => {
 			scale: object.scale,
 			imgSrc: 'img/plants/poison-plant.png',
 			frameRate: 30,
-			frameBuffer: 5,
+			frameBuffer: 10,
 		});
 		poisonPlants.push(poisonPlant);
+	});
+});
+
+// ####################################
+// ############_DECORATION_############
+// ####################################
+
+const blueFlowers = [];
+
+blueFlowerPositions.forEach((blueFlowerPosition) => {
+	blueFlowerPosition.objects.forEach((object) => {
+		const blueFlower = new BlueFlower({
+			position: {
+				x: object.x,
+				y: object.y,
+			},
+			scale: object.width / 768,
+			rotation: object.rotation * (Math.PI / 180),
+			imgSrc: 'img/plants/BluePlant.png',
+			frameRate: 60,
+			frameBuffer: 10,
+		});
+		blueFlowers.push(blueFlower);
+	});
+});
+
+const windyPlants = [];
+
+windyPlantPositions.forEach((windyPlantPosition) => {
+	windyPlantPosition.objects.forEach((object) => {
+		const windyPlant = new WindyPlant({
+			position: {
+				x: object.x,
+				y: object.y - object.height / 2,
+			},
+			scale: object.width / 512,
+			rotation: object.rotation,
+			imgSrc: 'img/plants/windy-plant.png',
+			frameRate: 30,
+			frameBuffer: 8,
+		});
+		windyPlants.push(windyPlant);
 	});
 });
 
@@ -143,8 +185,8 @@ const gravity = 1.75;
 
 const player = new Player({
 	position: {
-		x: 360,
-		y: 2064,
+		x: 396,
+		y: 2048,
 	},
 
 	collisionBlocks: collisionBlocks,
@@ -251,6 +293,7 @@ function animate() {
 	c.save();
 	c.scale(0.125, 0.125);
 	c.translate(camera.position.x, camera.position.y);
+
 	background.update();
 
 	collisionBlocks.forEach((collisionBlock) => {
@@ -276,6 +319,14 @@ function animate() {
 	bouncePlants.forEach((bouncePlant) => {
 		bouncePlant.update();
 	});
+
+	windyPlants.forEach((windyPlant) => {
+		windyPlant.update();
+	});
+
+	// blueFlowers.forEach((blueFlower) => {
+	// 	blueFlower.update();
+	// });
 
 	poisonPlants.forEach((poisonPlant) => {
 		poisonPlant.update();

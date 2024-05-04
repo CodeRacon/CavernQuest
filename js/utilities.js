@@ -31,7 +31,12 @@ const spriteImages = [
 	'img/wizard/wizard-dash-right.png',
 	'img/plants/JumpPlant-frames.png',
 	'img/plants/poison-plant.png',
+	'img/plants/windy-plant.png',
+	'img/plants/BluePlant.png',
+	// 'img/plants/BluePlantClosed.png',
 	'img/enemies/SlimeBasic.png',
 	'img/enemies/SlimeOrange.png',
 	'img/background.jpg',
 ];
+
+const FPS = 60;
