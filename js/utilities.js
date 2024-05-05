@@ -7,6 +7,12 @@ function collision({ object1, object2 }) {
 	);
 }
 
+function calculateBlueGemScore() {
+	const baseScore = player.collectedBlueGems;
+	const multiplier = player.collectedRedGems * 1.333;
+	return Math.floor(baseScore * multiplier);
+}
+
 function preloadImages(urls) {
 	urls.forEach(function (url) {
 		const img = new Image();

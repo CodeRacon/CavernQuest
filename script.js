@@ -558,12 +558,12 @@ function animate() {
 
 	blueGems.forEach((blueGem) => {
 		blueGem.update();
-		// blueGem.checkCollision(player);
+		blueGem.checkCollision(player);
 	});
 
 	redGems.forEach((redGem) => {
 		redGem.update();
-		// redGem.checkCollision(player);
+		redGem.checkCollision(player);
 	});
 
 	fullHPs.forEach((fullHP) => {
@@ -629,6 +629,15 @@ function animate() {
 
 	const spellpowerBarText = document.getElementById('spellpower-bar-text');
 	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
+
+	const blueGemCount = document.getElementById('blue-gem-count');
+	blueGemCount.textContent = player.collectedBlueGems;
+
+	const redGemCount = document.getElementById('red-gem-count');
+	redGemCount.textContent = player.collectedRedGems;
+
+	const blueGemScore = document.getElementById('total-gem-score');
+	blueGemScore.textContent = calculateBlueGemScore();
 
 	player.update(bouncePlants);
 

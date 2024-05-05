@@ -19,6 +19,16 @@ class BlueGem extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkGemCollision(this)) {
+			player.collectedBlueGems++;
+			const index = blueGems.indexOf(this);
+			if (index > -1) {
+				blueGems.splice(index, 1);
+			}
+		}
+	}
 }
 
 class RedGem extends Sprite {
@@ -41,5 +51,15 @@ class RedGem extends Sprite {
 	update() {
 		this.updateFrames();
 		super.update();
+	}
+
+	checkCollision(player) {
+		if (player.checkGemCollision(this)) {
+			player.collectedRedGems++;
+			const index = redGems.indexOf(this);
+			if (index > -1) {
+				redGems.splice(index, 1);
+			}
+		}
 	}
 }

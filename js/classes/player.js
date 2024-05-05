@@ -41,6 +41,9 @@ class Player extends Sprite {
 		this.spellCooldown = 0;
 		this.spellCooldownDuration = 30;
 
+		this.collectedBlueGems = 0;
+		this.collectedRedGems = 0;
+
 		this.hitbox = {
 			position: {
 				x: this.position.x,
@@ -77,6 +80,80 @@ class Player extends Sprite {
 			{ x: 24, y: 16 }
 		);
 		this.particleEmitterXRange = 96;
+	}
+
+	update() {
+		if (this.spellCooldown > 0) {
+			this.spellCooldown--;
+		}
+
+		this.updateFrames();
+		this.updateHitbox();
+		this.updateCameraBox();
+
+		// draws out hitbox
+		c.fillStyle = 'transparent';
+		c.fillRect(
+			this.hitbox.position.x,
+			this.hitbox.position.y,
+			this.hitbox.width,
+			this.hitbox.height
+		);
+
+		// draws out cameraBox
+		c.fillStyle = 'transparent';
+		c.fillRect(
+			this.cameraBox.position.x,
+			this.cameraBox.position.y,
+			this.cameraBox.width,
+			this.cameraBox.height
+		);
+		this.draw();
+		this.position.x += this.velocity.x;
+		this.updateHitbox();
+		this.detectHorizontalCollision();
+		this.applyGravity();
+		this.updateHitbox();
+		this.detectVerticalCollision();
+		this.detectBouncePlantCollision(bouncePlants);
+
+		this.updatePoisonEffect();
+
+		this.regenSpellPower();
+
+		if (
+			(keys.p.pressed || keys.e.pressed || keys.q.pressed) &&
+			!player.isHit &&
+			player.spellPower >= 5 / 60
+		) {
+			const emissionX = this.hitbox.position.x + this.hitbox.width / 2;
+			const emissionY = this.hitbox.position.y + this.hitbox.height;
+			const randomX =
+				emissionX + (Math.random() - 0.5) * this.particleEmitterXRange;
+			this.particleEmitter.emit(randomX, emissionY, 5);
+		}
+
+		this.particleEmitter.update();
+
+		blueGems.forEach((blueGem) => {
+			blueGem.checkCollision(this);
+		});
+
+		redGems.forEach((redGem) => {
+			redGem.checkCollision(this);
+		});
+	}
+
+	checkGemCollision(gem) {
+		if (
+			this.hitbox.position.x < gem.position.x + gem.width &&
+			this.hitbox.position.x + this.hitbox.width > gem.position.x &&
+			this.hitbox.position.y < gem.position.y + gem.height &&
+			this.hitbox.position.y + this.hitbox.height > gem.position.y
+		) {
+			return true;
+		}
+		return false;
 	}
 
 	useSpellPower(amount) {
@@ -190,7 +267,6 @@ class Player extends Sprite {
 
 	castSpell() {
 		if (this.spellCooldown <= 0) {
-			console.log('Spell casted', this.lastDirection);
 			this.currentSpell = new MagicSpell({
 				position: {
 					x: this.position.x,
@@ -213,60 +289,6 @@ class Player extends Sprite {
 		} else {
 			return;
 		}
-	}
-
-	update() {
-		if (this.spellCooldown > 0) {
-			this.spellCooldown--;
-		}
-
-		this.updateFrames();
-		this.updateHitbox();
-		this.updateCameraBox();
-
-		// draws out hitbox
-		c.fillStyle = 'transparent';
-		c.fillRect(
-			this.hitbox.position.x,
-			this.hitbox.position.y,
-			this.hitbox.width,
-			this.hitbox.height
-		);
-
-		// draws out cameraBox
-		c.fillStyle = 'transparent';
-		c.fillRect(
-			this.cameraBox.position.x,
-			this.cameraBox.position.y,
-			this.cameraBox.width,
-			this.cameraBox.height
-		);
-		this.draw();
-		this.position.x += this.velocity.x;
-		this.updateHitbox();
-		this.detectHorizontalCollision();
-		this.applyGravity();
-		this.updateHitbox();
-		this.detectVerticalCollision();
-		this.detectBouncePlantCollision(bouncePlants);
-
-		this.updatePoisonEffect();
-
-		this.regenSpellPower();
-
-		if (
-			(keys.p.pressed || keys.e.pressed || keys.q.pressed) &&
-			!player.isHit &&
-			player.spellPower >= 5 / 60
-		) {
-			const emissionX = this.hitbox.position.x + this.hitbox.width / 2;
-			const emissionY = this.hitbox.position.y + this.hitbox.height;
-			const randomX =
-				emissionX + (Math.random() - 0.5) * this.particleEmitterXRange;
-			this.particleEmitter.emit(randomX, emissionY, 5);
-		}
-
-		this.particleEmitter.update();
 	}
 
 	applyPoisonDamage() {
