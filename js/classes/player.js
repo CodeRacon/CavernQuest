@@ -145,10 +145,11 @@ class Player extends Sprite {
 	}
 
 	checkGemCollision(gem) {
+		const offset = 0.525;
 		if (
-			this.hitbox.position.x < gem.position.x + gem.width &&
+			this.hitbox.position.x < gem.position.x + gem.width * offset &&
 			this.hitbox.position.x + this.hitbox.width > gem.position.x &&
-			this.hitbox.position.y < gem.position.y + gem.height &&
+			this.hitbox.position.y < gem.position.y + gem.height * offset &&
 			this.hitbox.position.y + this.hitbox.height > gem.position.y
 		) {
 			return true;
