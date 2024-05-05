@@ -32,28 +32,43 @@
 		<title>Platformer</title>
 	</head>
 	<body onload="preloadImages(spriteImages)">
-		<div id="health-bar">
-			<div id="health-bar-fill"></div>
-			<div id="health-bar-text"></div>
-		</div>
-		<div id="spellpower-bar">
-			<div id="spellpower-bar-fill"></div>
-			<div id="spellpower-bar-text"></div>
-		</div>
+		<main>
+			<div class="gui">
+				<div class="bars">
+					<div id="health-bar">
+						<div id="health-bar-fill"></div>
+						<div id="health-bar-text"></div>
+					</div>
+					<div id="spellpower-bar">
+						<div id="spellpower-bar-fill"></div>
+						<div id="spellpower-bar-text"></div>
+					</div>
+				</div>
 
-		<div id="gem-score">
-			<div id="blue-gem-score-container">
-				<img src="img/collectables/GemBlue.png" alt="" />
-				<span id="blue-gem-count"></span>
+				<div id="potions"></div>
+
+				<div id="books-container">
+					<img id="goldenBook" src="img/collectables/TomeYellow.png" alt="" />
+					<img id="greenBook" src="img/collectables/TomeGreen.png" alt="" />
+					<img id="blueBook" src="img/collectables/TomeBlue.png" alt="" />
+					<img id="redBook" src="img/collectables/TomeRed.png" alt="" />
+				</div>
+
+				<div id="gem-score">
+					<div id="blue-gem-score-container">
+						<img src="img/collectables/GemBlue.png" alt="" />
+						<span id="blue-gem-count"></span>
+					</div>
+					<div id="red-gem-score-container">
+						<img src="img/collectables/GemRed.png" alt="" />
+						<span id="red-gem-count"></span>/8
+					</div>
+					<div id="total-gem-score-container">
+						<span id="total-gem-score"></span>
+					</div>
+				</div>
 			</div>
-			<div id="red-gem-score-container">
-				<img src="img/collectables/GemRed.png" alt="" />
-				<span id="red-gem-count"></span>/8
-			</div>
-			<div id="total-gem-score-container">
-				<span id="total-gem-score"></span>
-			</div>
-		</div>
-		<canvas id="canvas"> </canvas>
+			<canvas id="canvas"> </canvas>
+		</main>
 	</body>
 </html>
