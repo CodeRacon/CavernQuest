@@ -221,17 +221,17 @@ function animate() {
 	}
 
 	// Dash
-	else if (keys.e.pressed && !player.isHit && player.spellPower >= 8 / 60) {
+	else if (keys.e.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.switchToSprite('DashRight');
 		player.velocity.x = 64;
 		player.lastDirection = 'right';
-		player.useSpellPower(8 / 60);
+		player.useSpellPower(12 / 60);
 		player.leftBorderCamPanning({ canvas, camera });
-	} else if (keys.q.pressed && !player.isHit && player.spellPower >= 8 / 60) {
+	} else if (keys.q.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.switchToSprite('DashLeft');
 		player.velocity.x = -64;
 		player.lastDirection = 'left';
-		player.useSpellPower(8 / 60);
+		player.useSpellPower(12 / 60);
 		player.rightBorderCamPanning({ canvas, camera });
 	} else if (player.velocity.y === 0 && !player.isHit) {
 		if (player.lastDirection === 'right') {
@@ -242,9 +242,9 @@ function animate() {
 	}
 
 	// Rise
-	if (keys.p.pressed && !player.isHit && player.spellPower >= 8 / 60) {
+	if (keys.p.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.velocity.y = -26;
-		player.useSpellPower(8 / 60);
+		player.useSpellPower(12 / 60);
 		player.bottomBorderCamPanning({ camera, canvas });
 
 		if (player.lastDirection === 'right') {
@@ -317,6 +317,9 @@ window.addEventListener('keydown', (event) => {
 			break;
 		case '2':
 			player.useFullHPPotion();
+			break;
+		case '3':
+			player.useFullSPPotion();
 			break;
 	}
 });

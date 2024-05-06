@@ -237,6 +237,13 @@ class Player extends Sprite {
 		}
 	}
 
+	useFullSPPotion() {
+		if (this.collectedPotions.fullSP > 0) {
+			this.spellPower = 100;
+			this.collectedPotions.fullSP--;
+		}
+	}
+
 	checkScrollCollision(scroll) {
 		const offset = 0.525;
 
@@ -354,7 +361,6 @@ class Player extends Sprite {
 
 	takeDamage() {
 		if (this.isHit === false) {
-			console.log('Player took damage');
 			if (this.lastDirection === 'right') {
 				this.switchToSprite('HitRight');
 			} else {
@@ -403,7 +409,7 @@ class Player extends Sprite {
 	applyPoisonDamage() {
 		if (!this.isPoisoned) {
 			this.isPoisoned = true;
-			this.poisonDuration = 15 * FPS;
+			this.poisonDuration = 25 * FPS;
 			this.poisonOpacity = 1;
 		}
 	}
