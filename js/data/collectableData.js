@@ -107,7 +107,7 @@ const fullSPPositions = [
 	},
 ];
 
-const mightySpellPositions = [
+const immunityPositions = [
 	{
 		objects: [
 			{
@@ -125,9 +125,9 @@ const mightySpellPositions = [
 				y: 7793.35747763102,
 			},
 			{
-				height: 512,
+				height: 340,
 				id: 1395,
-				width: 512,
+				width: 340,
 				x: 20672,
 				y: 2688,
 			},
