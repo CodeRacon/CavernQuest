@@ -19,6 +19,16 @@ class FullHealthPotion extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkPotionCollision(this)) {
+			player.collectedPotions.fullHP++;
+			const index = fullHPs.indexOf(this);
+			if (index > -1) {
+				fullHPs.splice(index, 1);
+			}
+		}
+	}
 }
 
 class HalfHealthPotion extends Sprite {
@@ -41,6 +51,16 @@ class HalfHealthPotion extends Sprite {
 	update() {
 		this.updateFrames();
 		super.update();
+	}
+
+	checkCollision(player) {
+		if (player.checkPotionCollision(this)) {
+			player.collectedPotions.halfHP++;
+			const index = halfHPs.indexOf(this);
+			if (index > -1) {
+				halfHPs.splice(index, 1);
+			}
+		}
 	}
 }
 
@@ -65,9 +85,19 @@ class FullSpellPowerPotion extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkPotionCollision(this)) {
+			player.collectedPotions.fullSP++;
+			const index = fullSPs.indexOf(this);
+			if (index > -1) {
+				fullSPs.splice(index, 1);
+			}
+		}
+	}
 }
 
-class MightySpellPotion extends Sprite {
+class ImmunityPotion extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
 			position,
@@ -87,5 +117,15 @@ class MightySpellPotion extends Sprite {
 	update() {
 		this.updateFrames();
 		super.update();
+	}
+
+	checkCollision(player) {
+		if (player.checkPotionCollision(this)) {
+			player.collectedPotions.immunity++;
+			const index = immunityPotions.indexOf(this);
+			if (index > -1) {
+				immunityPotions.splice(index, 1);
+			}
+		}
 	}
 }
