@@ -19,6 +19,16 @@ class GoldenBook extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkBookCollision(this)) {
+			player.collectedBooks.yellowBook = true;
+			const index = goldenBooks.indexOf(this);
+			if (index > -1) {
+				goldenBooks.splice(index, 1);
+			}
+		}
+	}
 }
 
 class RedBook extends Sprite {
@@ -41,6 +51,16 @@ class RedBook extends Sprite {
 	update() {
 		this.updateFrames();
 		super.update();
+	}
+
+	checkCollision(player) {
+		if (player.checkBookCollision(this)) {
+			player.collectedBooks.redBook = true;
+			const index = redBooks.indexOf(this);
+			if (index > -1) {
+				redBooks.splice(index, 1);
+			}
+		}
 	}
 }
 
@@ -65,6 +85,16 @@ class GreenBook extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkBookCollision(this)) {
+			player.collectedBooks.greenBook = true;
+			const index = greenBooks.indexOf(this);
+			if (index > -1) {
+				greenBooks.splice(index, 1);
+			}
+		}
+	}
 }
 
 class BlueBook extends Sprite {
@@ -87,5 +117,15 @@ class BlueBook extends Sprite {
 	update() {
 		this.updateFrames();
 		super.update();
+	}
+
+	checkCollision(player) {
+		if (player.checkBookCollision(this)) {
+			player.collectedBooks.blueBook = true;
+			const index = blueBooks.indexOf(this);
+			if (index > -1) {
+				blueBooks.splice(index, 1);
+			}
+		}
 	}
 }

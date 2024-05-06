@@ -53,6 +53,13 @@ class Player extends Sprite {
 			immunity: 0,
 		};
 
+		this.collectedBooks = {
+			yellowBook: false,
+			blueBook: false,
+			redBook: false,
+			greenBook: false,
+		};
+
 		this.hitbox = {
 			position: {
 				x: this.position.x,
@@ -171,6 +178,22 @@ class Player extends Sprite {
 		spellScrolls.forEach((scroll) => {
 			scroll.checkCollision(this);
 		});
+
+		goldenBooks.forEach((goldenBook) => {
+			goldenBook.checkCollision(this);
+		});
+
+		redBooks.forEach((redBook) => {
+			redBook.checkCollision(this);
+		});
+
+		blueBooks.forEach((blueBook) => {
+			blueBook.checkCollision(this);
+		});
+
+		greenBooks.forEach((greenBook) => {
+			greenBook.checkCollision(this);
+		});
 	}
 
 	checkGemCollision(gem) {
@@ -208,6 +231,20 @@ class Player extends Sprite {
 			this.hitbox.position.x + this.hitbox.width > scroll.position.x &&
 			this.hitbox.position.y < scroll.position.y + scroll.height * offset &&
 			this.hitbox.position.y + this.hitbox.height > scroll.position.y
+		) {
+			return true;
+		}
+		return false;
+	}
+
+	checkBookCollision(book) {
+		const offset = 0.525;
+
+		if (
+			this.hitbox.position.x < book.position.x + book.width * offset &&
+			this.hitbox.position.x + this.hitbox.width > book.position.x &&
+			this.hitbox.position.y < book.position.y + book.height * offset &&
+			this.hitbox.position.y + this.hitbox.height > book.position.y
 		) {
 			return true;
 		}

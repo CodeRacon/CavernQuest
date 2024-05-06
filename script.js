@@ -649,6 +649,25 @@ function animate() {
 	const spellScrollCount = document.getElementById('spell-scroll-count');
 	spellScrollCount.textContent = player.collectedScrolls;
 
+	// ####### BOOKS #########
+	const goldenBookImage = document.getElementById('goldenBook');
+	const greenBookImage = document.getElementById('greenBook');
+	const blueBookImage = document.getElementById('blueBook');
+	const redBookImage = document.getElementById('redBook');
+
+	if (player.collectedBooks.yellowBook) {
+		goldenBookImage.classList.add('collected');
+	}
+	if (player.collectedBooks.greenBook) {
+		greenBookImage.classList.add('collected');
+	}
+	if (player.collectedBooks.blueBook) {
+		blueBookImage.classList.add('collected');
+	}
+	if (player.collectedBooks.redBook) {
+		redBookImage.classList.add('collected');
+	}
+
 	// ####### GEMS + SCORE #########
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
