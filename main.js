@@ -112,22 +112,22 @@ function animate() {
 
 	goldenBooks.forEach((goldenBook) => {
 		goldenBook.update();
-		// goldenBook.checkCollision(player);
+		goldenBook.checkCollision(player);
 	});
 
 	redBooks.forEach((redBook) => {
 		redBook.update();
-		// redBook.checkCollision(player);
+		redBook.checkCollision(player);
 	});
 
 	blueBooks.forEach((blueBook) => {
 		blueBook.update();
-		// blueBook.checkCollision(player);
+		blueBook.checkCollision(player);
 	});
 
 	greenBooks.forEach((greenBook) => {
 		greenBook.update();
-		// greenBook.checkCollision(player);
+		greenBook.checkCollision(player);
 	});
 
 	spellScrolls.forEach((spellScroll) => {
@@ -135,22 +135,19 @@ function animate() {
 		spellScroll.checkCollision(player);
 	});
 
-	// goldenArmors.forEach((goldenArmor) => {
-	// 	goldenArmor.update();
-	// 	// goldenArmor.checkCollision(player);
-	// });
-
 	// ####### BARS #########
-	const healthBarFill = document.getElementById('health-bar-fill');
+	const healthBarWrapper = document.getElementById('health-bar-wrapper');
 	const healthPercentage = (player.health / 100) * 100;
-	healthBarFill.style.width = `${healthPercentage}`;
+	healthBarWrapper.style.width = `${healthPercentage}%`;
 
 	const healthBarText = document.getElementById('health-bar-text');
 	healthBarText.textContent = `${player.health} HP`;
 
-	const spellpowerBarFill = document.getElementById('spellpower-bar-fill');
-	const spellpowerPercentage = (player.health / 100) * 100;
-	spellpowerBarFill.style.width = `${spellpowerPercentage}`;
+	const spellpowerBarWrapper = document.getElementById(
+		'spellpower-bar-wrapper'
+	);
+	const spellpowerPercentage = (player.spellPower / 100) * 100;
+	spellpowerBarWrapper.style.width = `${spellpowerPercentage}%`;
 
 	const spellpowerBarText = document.getElementById('spellpower-bar-text');
 	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
@@ -201,6 +198,7 @@ function animate() {
 	const blueGemScore = document.getElementById('total-gem-score');
 	blueGemScore.textContent = calculateBlueGemScore();
 
+	// ####### PLAYER #########
 	player.update(bouncePlants);
 
 	if (player.currentSpell) {
@@ -313,6 +311,12 @@ window.addEventListener('keydown', (event) => {
 			break;
 		case ' ':
 			player.castSpell();
+			break;
+		case '1':
+			player.useHalfHPPotion();
+			break;
+		case '2':
+			player.useFullHPPotion();
 			break;
 	}
 });

@@ -223,6 +223,20 @@ class Player extends Sprite {
 		return false;
 	}
 
+	useHalfHPPotion() {
+		if (this.collectedPotions.halfHP > 0) {
+			this.health = Math.min(this.health + 50, 100);
+			this.collectedPotions.halfHP--;
+		}
+	}
+
+	useFullHPPotion() {
+		if (this.collectedPotions.fullHP > 0) {
+			this.health = 100;
+			this.collectedPotions.fullHP--;
+		}
+	}
+
 	checkScrollCollision(scroll) {
 		const offset = 0.525;
 
