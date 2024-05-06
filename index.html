@@ -45,7 +45,38 @@
 					</div>
 				</div>
 
-				<div id="potions"></div>
+				<div id="potions-container">
+					<div>
+						<img
+							id="halfHP"
+							src="img/collectables/PotionYellow.png"
+							alt="" /><span id="halfHP-count">0</span>
+					</div>
+					<div>
+						<img
+							id="fullHP"
+							src="img/collectables/PotionGreen.png"
+							alt="" /><span id="fullHP-count">0</span>
+					</div>
+					<div>
+						<img
+							id="fullSP"
+							src="img/collectables/PotionBlue.png"
+							alt="" /><span id="fullSP-count">0</span>
+					</div>
+					<div>
+						<img
+							id="immunity"
+							src="img/collectables/PotionRed.png"
+							alt="" /><span id="immunity-count">0</span>
+					</div>
+				</div>
+
+				<div id="specials-container">
+					<img src="img/collectables/Scroll.png" alt="" />
+					<span id="spell-scroll-count"></span>/2
+					<!-- <img src="img/collectables/Armor.png" alt="" /> -->
+				</div>
 
 				<div id="books-container">
 					<img id="goldenBook" src="img/collectables/TomeYellow.png" alt="" />
@@ -55,16 +86,18 @@
 				</div>
 
 				<div id="gem-score">
-					<div id="blue-gem-score-container">
-						<img src="img/collectables/GemBlue.png" alt="" />
-						<span id="blue-gem-count"></span>
-					</div>
-					<div id="red-gem-score-container">
-						<img src="img/collectables/GemRed.png" alt="" />
-						<span id="red-gem-count"></span>/8
+					<div id="blue-and-red">
+						<div id="blue-gem-score-container">
+							<img src="img/collectables/GemBlue.png" alt="" />
+							<span id="blue-gem-count"></span>
+						</div>
+						<div id="red-gem-score-container">
+							<img src="img/collectables/GemRed.png" alt="" />
+							<span id="red-gem-count"></span>/8
+						</div>
 					</div>
 					<div id="total-gem-score-container">
-						<span id="total-gem-score"></span>
+						<span>Total: <span id="total-gem-score"></span></span>
 					</div>
 				</div>
 			</div>
