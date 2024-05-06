@@ -28,11 +28,11 @@
 		<script defer src="js/classes/magicSpell.js"></script>
 		<script defer src="js/classes/particle.js"></script>
 		<script defer src="js/classes/player.js"></script>
-		<script defer src="initStaticCollision.js"></script>
-		<script defer src="initWorldElements.js"></script>
-		<script defer src="initCollectables.js"></script>
-		<script defer src="initEnemies.js"></script>
-		<script defer src="initPlayer.js"></script>
+		<script defer src="js/init/initStaticCollision.js"></script>
+		<script defer src="js/init/initWorldElements.js"></script>
+		<script defer src="js/init/initCollectables.js"></script>
+		<script defer src="js/init/initEnemies.js"></script>
+		<script defer src="js/init/initPlayer.js"></script>
 		<script defer src="main.js"></script>
 		<title>CavernQuest</title>
 	</head>
@@ -41,11 +41,16 @@
 			<div class="gui">
 				<div class="bars">
 					<div id="health-bar">
-						<div id="health-bar-fill"></div>
+						<div id="health-bar-wrapper">
+							<div id="health-bar-fill"></div>
+						</div>
 						<div id="health-bar-text"></div>
 					</div>
+
 					<div id="spellpower-bar">
-						<div id="spellpower-bar-fill"></div>
+						<div id="spellpower-bar-wrapper">
+							<div id="spellpower-bar-fill"></div>
+						</div>
 						<div id="spellpower-bar-text"></div>
 					</div>
 				</div>
