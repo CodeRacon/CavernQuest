@@ -18,15 +18,13 @@ class Player extends Sprite {
 			x: 0,
 			y: 1,
 		};
+		this.isGrounded = false;
 
 		this.collisionBlocks = collisionBlocks;
 		this.hazards = hazards;
 		this.collisionCooldown = 0;
 
-		this.isGrounded = false;
-
 		this.health = 100;
-
 		this.spellPower = 100;
 		this.spellPowerRegenRate = 0.5;
 
@@ -43,16 +41,13 @@ class Player extends Sprite {
 
 		this.collectedBlueGems = 0;
 		this.collectedRedGems = 0;
-
 		this.collectedScrolls = 0;
-
 		this.collectedPotions = {
 			halfHP: 0,
 			fullHP: 0,
 			fullSP: 0,
 			immunity: 0,
 		};
-
 		this.collectedBooks = {
 			yellowBook: false,
 			blueBook: false,
@@ -95,9 +90,14 @@ class Player extends Sprite {
 			'rgba(0, 247, 255, 0.35)',
 			{ x: 24, y: 16 }
 		);
-		this.particleEmitterXRange = 96;
+		this.particleEmitterXRange = 112;
 	}
 
+	/**
+	 * Updates the player's state and handles various collision checks and effects.
+	 * This method is called every frame to update the player's position, animations,
+	 * and interactions with other game objects.
+	 */
 	update() {
 		if (this.spellCooldown > 0) {
 			this.spellCooldown--;
@@ -196,6 +196,11 @@ class Player extends Sprite {
 		});
 	}
 
+	/**
+	 * Checks if the player's hitbox collides with a gem-item.
+	 * @param {Object} gem - The gem object to check for collision.
+	 * @returns {boolean} - True if the player's hitbox collides with the gem, false otherwise.
+	 */
 	checkGemCollision(gem) {
 		const offset = 0.525;
 		if (
@@ -209,6 +214,11 @@ class Player extends Sprite {
 		return false;
 	}
 
+	/**
+	 * Checks if the player's hitbox is colliding with a potion-item.
+	 * @param {Object} potion - The potion object to check for collision.
+	 * @returns {boolean} - True if the player's hitbox is colliding with the potion, false otherwise.
+	 */
 	checkPotionCollision(potion) {
 		const offset = 0.6;
 
@@ -223,6 +233,12 @@ class Player extends Sprite {
 		return false;
 	}
 
+	/**
+	 * Consumes a half-HP-potion-item, restoring the player's health by up to 50 points,
+	 * but not exceeding 100.
+	 * If the player has any half HP potions in it's inventory, this will decrement
+	 * the count of half HP potions.
+	 */
 	useHalfHPPotion() {
 		if (this.collectedPotions.halfHP > 0) {
 			this.health = Math.min(this.health + 50, 100);
@@ -230,6 +246,11 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Consumes a full-SP-potion-item, restoring the player's spell power to 100.
+	 *
+	 * If the player has any full-HP-potions in it's inventory, this will decrement
+	 * the count of full-HP-potions.*/
 	useFullHPPotion() {
 		if (this.collectedPotions.fullHP > 0) {
 			this.health = 100;
@@ -237,6 +258,11 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Restores the player's spell-power to the maximum amount of 100.
+	 * This method is called when the player uses a full-SP-potion-item, if previously collected.
+	 * The number of collected full-SP-potion-items is decremented by 1 after using the potion.
+	 */
 	useFullSPPotion() {
 		if (this.collectedPotions.fullSP > 0) {
 			this.spellPower = 100;
@@ -244,9 +270,13 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Checks if the player's hitbox is colliding with a scroll-item.
+	 * @param {Object} scroll - The scroll object to check for collision.
+	 * @returns {boolean} - True if the player's hitbox is colliding with the scroll, false otherwise.
+	 */
 	checkScrollCollision(scroll) {
 		const offset = 0.525;
-
 		if (
 			this.hitbox.position.x < scroll.position.x + scroll.width * offset &&
 			this.hitbox.position.x + this.hitbox.width > scroll.position.x &&
@@ -258,9 +288,13 @@ class Player extends Sprite {
 		return false;
 	}
 
+	/**
+	 * Checks if the player's hitbox is colliding with the given book-item.
+	 * @param {Object} book - The book object to check for collision.
+	 * @returns {boolean} - True if the player's hitbox is colliding with the book, false otherwise.
+	 */
 	checkBookCollision(book) {
 		const offset = 0.525;
-
 		if (
 			this.hitbox.position.x < book.position.x + book.width * offset &&
 			this.hitbox.position.x + this.hitbox.width > book.position.x &&
@@ -272,12 +306,21 @@ class Player extends Sprite {
 		return false;
 	}
 
+	/**
+	 * Consumes the specified amount of spell power from the player.
+	 * @param {number} amount - The amount of spell power to consume.
+	 * @returns {void}
+	 */
 	useSpellPower(amount) {
 		if (this.spellPower >= amount) {
 			this.spellPower -= amount;
 		}
 	}
 
+	/**
+	 * Regenerates the player's spell power over time.
+	 * The spell power is capped at 100.
+	 */
 	regenSpellPower() {
 		if (this.spellPower < 100) {
 			this.spellPower += this.spellPowerRegenRate / FPS;
@@ -287,9 +330,14 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Switches the player's sprite to the specified sprite.
+	 *
+	 * @param {string} sprite - The name of the sprite to switch to.
+	 * @returns {void}
+	 */
 	switchToSprite(sprite) {
 		if (this.image === this.animations[sprite].image) return;
-
 		if (
 			sprite === 'JumpRight' ||
 			sprite === 'FallRight' ||
@@ -298,12 +346,20 @@ class Player extends Sprite {
 		) {
 			this.currentFrame = 0;
 		}
-
 		this.image = this.animations[sprite].image;
 		this.frameRate = this.animations[sprite].frameRate;
 		this.frameBuffer = this.animations[sprite].frameBuffer;
 	}
 
+	/**
+	 * Updates the camera box dimensions based on the player's position.
+	 * The camera box is used to determine the area of the game world
+	 * that should be visible on the screen.
+	 * The camera box is positioned relative to the player's position,
+	 * with some offsets to ensure the player is centered.
+	 * The camera box has a fixed width and height, which determines
+	 * the size of the visible game area.
+	 */
 	updateCameraBox() {
 		this.cameraBox = {
 			position: {
@@ -315,6 +371,12 @@ class Player extends Sprite {
 		};
 	}
 
+	/**
+	 * Handles camera panning when the player reaches the left border of the screen.
+	 * @param {Object} params - An object containing the canvas and camera properties.
+	 * @param {HTMLCanvasElement} params.canvas - The canvas element.
+	 * @param {THREE.Camera} params.camera - The camera object.
+	 */
 	leftBorderCamPanning({ canvas, camera }) {
 		const cameraBoxRightEnd = this.cameraBox.position.x + this.cameraBox.width;
 		const scaledCanvasWidth = canvas.width * 8;
@@ -326,6 +388,11 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Handles camera panning when the player reaches the right border of the screen.
+	 * @param {Object} options - An object containing the camera instance.
+	 * @param {THREE.Camera} options.camera - The camera instance to be panned.
+	 */
 	rightBorderCamPanning({ camera }) {
 		if (this.cameraBox.position.x <= 0) return;
 
@@ -334,6 +401,12 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Handles the camera panning when the player reaches the upper border of the game world.
+	 * @param {Object} params - The parameters object.
+	 * @param {HTMLCanvasElement} params.canvas - The canvas element.
+	 * @param {THREE.Camera} params.camera - The camera object.
+	 */
 	upperBorderCamPanning({ canvas, camera }) {
 		if (
 			this.cameraBox.position.y + this.cameraBox.height + this.velocity.y >=
@@ -351,6 +424,10 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Handles the bottom border camera panning behavior.
+	 * @param {Object} camera - The camera object to update.
+	 */
 	bottomBorderCamPanning({ camera }) {
 		if (this.cameraBox.position.y + this.velocity.y <= 0) return;
 
@@ -359,6 +436,10 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Handles the player taking damage, including playing a hit animation
+	 * and resetting the hit state after a duration.
+	 */
 	takeDamage() {
 		if (this.isHit === false) {
 			if (this.lastDirection === 'right') {
@@ -380,6 +461,11 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Casts a 'MagicSpell' from the player's position in the last direction the player was facing.
+	 * The spell is created as a new `MagicSpell` object and added to the game. The spell's cooldown
+	 * is set, and after the spell's animation duration, the spell is removed from the game.
+	 */
 	castSpell() {
 		if (this.spellCooldown <= 0) {
 			this.currentSpell = new MagicSpell({
@@ -406,6 +492,18 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Applies a poison effect to the player, damaging their health over time.
+	 *
+	 * If the player is not already poisoned, this method sets
+	 * the `isPoisoned` flag to `true`,
+	 * initializes the `poisonDuration` to 25 seconds (25 * FPS),
+	 * and sets the `poisonOpacity` to 1.
+	 *
+	 * The poison effect will gradually reduce the player's health every second
+	 * until the `poisonDuration`
+	 * reaches 0, at which point the poison effect is cleared.
+	 */
 	applyPoisonDamage() {
 		if (!this.isPoisoned) {
 			this.isPoisoned = true;
@@ -414,6 +512,14 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Updates the poison effect on the player.
+	 * If the player is poisoned, the poison duration is decreased,
+	 * and the poison opacity is updated based on the remaining duration.
+	 * The player's health is decreased every second while poisoned.
+	 * If the poison duration reaches 0, the player is no longer poisoned
+	 * and the poison opacity is reset to 0.
+	 */
 	updatePoisonEffect() {
 		if (this.isPoisoned) {
 			this.poisonDuration--;
@@ -430,6 +536,13 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Draws the player character on the canvas, applying a poison effect
+	 * if the player's poisonOpacity is greater than 0.
+	 * The poison effect is created by drawing the player's sprite onto a separate canvas,
+	 * applying a green tint, and then
+	 * drawing the filtered canvas onto the main canvas.
+	 */
 	draw() {
 		if (this.poisonOpacity > 0) {
 			// create separate canvas for filter
@@ -464,6 +577,12 @@ class Player extends Sprite {
 		this.particleEmitter.draw();
 	}
 
+	/**
+	 * Updates the hitbox of the player object.
+	 * The hitbox is a rectangular area that represents the player's collision bounds.
+	 * It is positioned relative to the player's position, with an offset of (392, 288)
+	 * and dimensions of 248x512 pixels.
+	 */
 	updateHitbox() {
 		this.hitbox = {
 			position: {
@@ -475,9 +594,15 @@ class Player extends Sprite {
 		};
 	}
 
+	/**
+	 * Detects and handles horizontal collisions between the player and other objects.
+	 * This method is responsible for updating the player's position and velocity when
+	 * a horizontal collision occurs.
+	 * It checks for collisions with both collision blocks and hazards, and applies
+	 * the appropriate response based on the collision type.
+	 */
 	detectHorizontalCollision() {
 		const objects = [...this.collisionBlocks, ...this.hazards];
-
 		for (let i = 0; i < objects.length; i++) {
 			const object = objects[i];
 
@@ -519,11 +644,19 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Applies gravity to the player's vertical velocity and updates the player's position accordingly.
+	 */
 	applyGravity() {
 		this.velocity.y += gravity;
 		this.position.y += this.velocity.y;
 	}
 
+	/**
+	 * Detects vertical collision between the player and any collision blocks or hazards in the game.
+	 * If a collision is detected, the player's vertical velocity and position are adjusted accordingly.
+	 * If the player collides with a hazard, their health is reduced and the collision cooldown is set.
+	 */
 	detectVerticalCollision() {
 		const objects = [...this.collisionBlocks, ...this.hazards];
 
@@ -569,6 +702,12 @@ class Player extends Sprite {
 		}
 	}
 
+	/**
+	 * Detects collision between the player and any bounce plant - object.
+	 * If a collision is detected, the player's vertical velocity is increased to make them jump higher.
+	 *
+	 * @param {BouncePlant[]} bouncePlants - An array of bounce plant objects to check for collisions.
+	 */
 	detectBouncePlantCollision(bouncePlants) {
 		if (this.velocity.y <= 0) return; // proof, if player is falling
 
