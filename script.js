@@ -275,11 +275,11 @@ fullSPPositions.forEach((fullSPPosition) => {
 	});
 });
 
-const mightySpells = [];
+const immunityPotions = [];
 
-mightySpellPositions.forEach((mightySpellPosition) => {
-	mightySpellPosition.objects.forEach((object) => {
-		const mightySpell = new MightySpellPotion({
+immunityPositions.forEach((immunityPosition) => {
+	immunityPosition.objects.forEach((object) => {
+		const immunityPotion = new ImmunityPotion({
 			position: {
 				x: object.x,
 				y: object.y - 276,
@@ -289,7 +289,7 @@ mightySpellPositions.forEach((mightySpellPosition) => {
 			frameRate: 1,
 			frameBuffer: 1,
 		});
-		mightySpells.push(mightySpell);
+		immunityPotions.push(immunityPotion);
 	});
 });
 
@@ -383,23 +383,23 @@ spellScrollPositions.forEach((spellScrollPosition) => {
 	});
 });
 
-const goldenArmors = [];
+// const goldenArmors = [];
 
-goldenArmorPositions.forEach((goldenArmorPosition) => {
-	goldenArmorPosition.objects.forEach((object) => {
-		const goldenArmor = new GoldenArmor({
-			position: {
-				x: object.x,
-				y: object.y - 404,
-			},
-			scale: object.width / 512,
-			imgSrc: 'img/collectables/Armor.png',
-			frameRate: 1,
-			frameBuffer: 1,
-		});
-		goldenArmors.push(goldenArmor);
-	});
-});
+// goldenArmorPositions.forEach((goldenArmorPosition) => {
+// 	goldenArmorPosition.objects.forEach((object) => {
+// 		const goldenArmor = new GoldenArmor({
+// 			position: {
+// 				x: object.x,
+// 				y: object.y - 404,
+// 			},
+// 			scale: object.width / 512,
+// 			imgSrc: 'img/collectables/Armor.png',
+// 			frameRate: 1,
+// 			frameBuffer: 1,
+// 		});
+// 		goldenArmors.push(goldenArmor);
+// 	});
+// });
 
 // ######################################
 // ######################################
@@ -532,6 +532,7 @@ function animate() {
 	});
 
 	movingBlobs.forEach((movingBlob) => {
+		movingBlob.requiredHits = 3 - player.collectedScrolls;
 		movingBlob.update(player);
 	});
 
@@ -568,22 +569,22 @@ function animate() {
 
 	fullHPs.forEach((fullHP) => {
 		fullHP.update();
-		// fullHP.checkCollision(player);
+		fullHP.checkCollision(player);
 	});
 
 	halfHPs.forEach((halfHP) => {
 		halfHP.update();
-		// halfHP.checkCollision(player);
+		halfHP.checkCollision(player);
 	});
 
 	fullSPs.forEach((fullSP) => {
 		fullSP.update();
-		// fullSP.checkCollision(player);
+		fullSP.checkCollision(player);
 	});
 
-	mightySpells.forEach((mightySpell) => {
-		mightySpell.update();
-		// mightySpell.checkCollision(player);
+	immunityPotions.forEach((immunityPotion) => {
+		immunityPotion.update();
+		immunityPotion.checkCollision(player);
 	});
 
 	goldenBooks.forEach((goldenBook) => {
@@ -608,14 +609,15 @@ function animate() {
 
 	spellScrolls.forEach((spellScroll) => {
 		spellScroll.update();
-		// spellScroll.checkCollision(player);
+		spellScroll.checkCollision(player);
 	});
 
-	goldenArmors.forEach((goldenArmor) => {
-		goldenArmor.update();
-		// goldenArmor.checkCollision(player);
-	});
+	// goldenArmors.forEach((goldenArmor) => {
+	// 	goldenArmor.update();
+	// 	// goldenArmor.checkCollision(player);
+	// });
 
+	// ####### BARS #########
 	const healthBarFill = document.getElementById('health-bar-fill');
 	const healthPercentage = (player.health / 100) * 100;
 	healthBarFill.style.width = `${healthPercentage}`;
@@ -630,6 +632,24 @@ function animate() {
 	const spellpowerBarText = document.getElementById('spellpower-bar-text');
 	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
 
+	// ####### POTIONS #########
+	const halfHPCount = document.getElementById('halfHP-count');
+	halfHPCount.textContent = player.collectedPotions.halfHP;
+
+	const fullHPCount = document.getElementById('fullHP-count');
+	fullHPCount.textContent = player.collectedPotions.fullHP;
+
+	const fullSPCount = document.getElementById('fullSP-count');
+	fullSPCount.textContent = player.collectedPotions.fullSP;
+
+	const immunityCount = document.getElementById('immunity-count');
+	immunityCount.textContent = player.collectedPotions.immunity;
+
+	// ####### Spell-Power #########
+	const spellScrollCount = document.getElementById('spell-scroll-count');
+	spellScrollCount.textContent = player.collectedScrolls;
+
+	// ####### GEMS + SCORE #########
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
 

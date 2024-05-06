@@ -19,6 +19,16 @@ class SpellScroll extends Sprite {
 		this.updateFrames();
 		super.update();
 	}
+
+	checkCollision(player) {
+		if (player.checkScrollCollision(this)) {
+			player.collectedScrolls++;
+			const index = spellScrolls.indexOf(this);
+			if (index > -1) {
+				spellScrolls.splice(index, 1);
+			}
+		}
+	}
 }
 
 class GoldenArmor extends Sprite {

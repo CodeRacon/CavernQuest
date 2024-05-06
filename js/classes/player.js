@@ -44,6 +44,15 @@ class Player extends Sprite {
 		this.collectedBlueGems = 0;
 		this.collectedRedGems = 0;
 
+		this.collectedScrolls = 0;
+
+		this.collectedPotions = {
+			halfHP: 0,
+			fullHP: 0,
+			fullSP: 0,
+			immunity: 0,
+		};
+
 		this.hitbox = {
 			position: {
 				x: this.position.x,
@@ -142,6 +151,26 @@ class Player extends Sprite {
 		redGems.forEach((redGem) => {
 			redGem.checkCollision(this);
 		});
+
+		fullHPs.forEach((fullHP) => {
+			fullHP.checkCollision(this);
+		});
+
+		halfHPs.forEach((halfHP) => {
+			halfHP.checkCollision(this);
+		});
+
+		fullSPs.forEach((fullSP) => {
+			fullSP.checkCollision(this);
+		});
+
+		immunityPotions.forEach((immunityPotion) => {
+			immunityPotion.checkCollision(this);
+		});
+
+		spellScrolls.forEach((scroll) => {
+			scroll.checkCollision(this);
+		});
 	}
 
 	checkGemCollision(gem) {
@@ -151,6 +180,34 @@ class Player extends Sprite {
 			this.hitbox.position.x + this.hitbox.width > gem.position.x &&
 			this.hitbox.position.y < gem.position.y + gem.height * offset &&
 			this.hitbox.position.y + this.hitbox.height > gem.position.y
+		) {
+			return true;
+		}
+		return false;
+	}
+
+	checkPotionCollision(potion) {
+		const offset = 0.6;
+
+		if (
+			this.hitbox.position.x < potion.position.x + potion.width * offset &&
+			this.hitbox.position.x + this.hitbox.width > potion.position.x &&
+			this.hitbox.position.y < potion.position.y + potion.height * offset &&
+			this.hitbox.position.y + this.hitbox.height > potion.position.y
+		) {
+			return true;
+		}
+		return false;
+	}
+
+	checkScrollCollision(scroll) {
+		const offset = 0.525;
+
+		if (
+			this.hitbox.position.x < scroll.position.x + scroll.width * offset &&
+			this.hitbox.position.x + this.hitbox.width > scroll.position.x &&
+			this.hitbox.position.y < scroll.position.y + scroll.height * offset &&
+			this.hitbox.position.y + this.hitbox.height > scroll.position.y
 		) {
 			return true;
 		}

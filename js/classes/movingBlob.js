@@ -26,6 +26,9 @@ class MovingBlob extends Sprite {
 
 		this.isHit = false;
 		this.hitCount = 0;
+
+		this.requiredHits = 3;
+
 		this.initialSpeed = speed;
 		this.jumpAtHitVelocity = -30;
 		this.removerAfterHitDelay = 30;
@@ -46,14 +49,14 @@ class MovingBlob extends Sprite {
 			} else if (this.hitCount === 2) {
 				this.velocity.x *= 1.66;
 				this.hitOpacity = 0.4;
-			} else if (this.hitCount === 3) {
+			} else if (this.hitCount === this.requiredHits) {
 				this.velocity.y = this.jumpAtHitVelocity;
 				this.removerAfterHitDelay;
 			}
 		}
 
-		if (this.hitCount === 3) {
-			console.log('MovingBlob hit 3 times! ');
+		if (this.hitCount === this.requiredHits) {
+			console.log('MovingBlob hit required times! ');
 
 			this.velocity.y += gravity;
 			this.position.y += this.velocity.y;
