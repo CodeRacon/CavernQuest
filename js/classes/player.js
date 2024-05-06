@@ -271,6 +271,20 @@ class Player extends Sprite {
 	}
 
 	/**
+	 * Consumes an immunity potion, curing the player of any poison effects
+	 * and reducing the collected immunity potions by 1.
+	 * @returns {void}
+	 */
+	useImmunityPotion() {
+		if (this.collectedPotions.immunity > 0) {
+			this.isPoisoned = false;
+			this.poisonDuration = 0;
+			this.poisonOpacity = 0;
+			this.collectedPotions.immunity--;
+		}
+	}
+
+	/**
 	 * Checks if the player's hitbox is colliding with a scroll-item.
 	 * @param {Object} scroll - The scroll object to check for collision.
 	 * @returns {boolean} - True if the player's hitbox is colliding with the scroll, false otherwise.
@@ -566,7 +580,7 @@ class Player extends Sprite {
 
 			// use filter on new canvas context
 			filterCtx.globalCompositeOperation = 'source-atop';
-			filterCtx.fillStyle = `rgba(191, 255, 0, ${this.poisonOpacity})`;
+			filterCtx.fillStyle = `rgba(190, 0, 255, ${this.poisonOpacity})`;
 			filterCtx.fillRect(0, 0, this.width, this.height);
 
 			// draw filtered canvas onto main canvas

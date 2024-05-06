@@ -321,6 +321,9 @@ window.addEventListener('keydown', (event) => {
 		case '3':
 			player.useFullSPPotion();
 			break;
+		case '4':
+			player.useImmunityPotion();
+			break;
 	}
 });
 
