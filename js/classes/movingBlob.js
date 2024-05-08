@@ -56,8 +56,6 @@ class MovingBlob extends Sprite {
 		}
 
 		if (this.hitCount === this.requiredHits) {
-			console.log('MovingBlob hit required times! ');
-
 			this.velocity.y += gravity;
 			this.position.y += this.velocity.y;
 			this.removerAfterHitDelay--;

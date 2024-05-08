@@ -3,14 +3,6 @@ const movingBlobPositions = [
 		objects: [
 			{
 				height: 410,
-				id: 1339,
-
-				width: 510,
-				x: 16805,
-				y: 7848,
-			},
-			{
-				height: 410,
 				id: 266,
 
 				width: 510,
@@ -22,7 +14,7 @@ const movingBlobPositions = [
 				id: 276,
 
 				width: 510,
-				x: 4989,
+				x: 5053,
 				y: 5289,
 			},
 			{
@@ -30,15 +22,15 @@ const movingBlobPositions = [
 				id: 277,
 
 				width: 510,
-				x: 4613,
-				y: 2224,
+				x: 4553,
+				y: 2218,
 			},
 			{
 				height: 410,
 				id: 280,
 
 				width: 510,
-				x: 5680,
+				x: 5717,
 				y: 7853,
 			},
 			{
@@ -46,15 +38,7 @@ const movingBlobPositions = [
 				id: 281,
 
 				width: 510,
-				x: 7120,
-				y: 6827,
-			},
-			{
-				height: 410,
-				id: 123,
-
-				width: 510,
-				x: 6424,
+				x: 7072,
 				y: 6827,
 			},
 			{
@@ -62,16 +46,16 @@ const movingBlobPositions = [
 				id: 282,
 
 				width: 510,
-				x: 10337,
-				y: 7338,
+				x: 9701,
+				y: 7346,
 			},
 			{
 				height: 410,
 				id: 283,
 
 				width: 510,
-				x: 14077,
-				y: 6828,
+				x: 13984,
+				y: 6822,
 			},
 			{
 				height: 410,
@@ -118,15 +102,7 @@ const movingBlobPositions = [
 				id: 289,
 
 				width: 510,
-				x: 13923,
-				y: 2211,
-			},
-			{
-				height: 410,
-				id: 28999,
-
-				width: 510,
-				x: 14777,
+				x: 13857,
 				y: 2211,
 			},
 			{
@@ -150,8 +126,8 @@ const movingBlobPositions = [
 				id: 292,
 
 				width: 510,
-				x: 9207,
-				y: 2728,
+				x: 9056,
+				y: 2730,
 			},
 			{
 				height: 410,
@@ -166,7 +142,7 @@ const movingBlobPositions = [
 				id: 303,
 
 				width: 510,
-				x: 2882,
+				x: 2982,
 				y: 7848,
 			},
 			{
@@ -176,6 +152,70 @@ const movingBlobPositions = [
 				width: 510,
 				x: 11581.7,
 				y: 4790.85,
+			},
+			{
+				height: 410,
+				id: 1339,
+
+				width: 510,
+				x: 16805.1,
+				y: 7847.83,
+			},
+			{
+				height: 410,
+				id: 1614,
+
+				width: 510,
+				x: 15555,
+				y: 6824,
+			},
+			{
+				height: 410,
+				id: 1615,
+
+				width: 510,
+				x: 25193,
+				y: 4274,
+			},
+			{
+				height: 410,
+				id: 1616,
+
+				width: 510,
+				x: 20821,
+				y: 2738,
+			},
+			{
+				height: 410,
+				id: 1617,
+
+				width: 510,
+				x: 15031,
+				y: 2219,
+			},
+			{
+				height: 410,
+				id: 1618,
+
+				width: 510,
+				x: 6354,
+				y: 5288,
+			},
+			{
+				height: 410,
+				id: 1619,
+
+				width: 510,
+				x: 8320,
+				y: 7323,
+			},
+			{
+				height: 410,
+				id: 1620,
+
+				width: 510,
+				x: 6221,
+				y: 6828,
 			},
 		],
 	},
@@ -198,7 +238,7 @@ const hangingBlobPositions = [
 
 				width: 513.129,
 				x: 10606.4,
-				y: 5021.48,
+				y: 4920,
 			},
 			{
 				height: 349.364,
@@ -230,7 +270,7 @@ const hangingBlobPositions = [
 
 				width: 513.129,
 				x: 2164,
-				y: 5864,
+				y: 5924,
 			},
 			{
 				height: 349.364,
@@ -253,8 +293,8 @@ const hangingBlobPositions = [
 				id: 1225,
 
 				width: 513.129,
-				x: 10103.4,
-				y: 5473.32,
+				x: 10048,
+				y: 5448,
 			},
 			{
 				height: 349.364,
@@ -276,33 +316,25 @@ const bouncePlantPositions = [
 				id: 1140,
 
 				width: 512,
-				x: 9801,
-				y: 7439,
+				x: 9824,
+				y: 7424,
 			},
 			{
 				height: 512,
 				id: 1141,
 
 				width: 512,
-				x: 11528,
-				y: 7445,
+				x: 11520,
+				y: 7424,
 			},
 			{
 				height: 512,
 				id: 1142,
 
 				width: 512,
-				x: 2572,
-				y: 5398,
+				x: 2560,
+				y: 5376,
 			},
-			// {
-			// 	height: 512,
-			// 	id: 1143,
-
-			// 	width: 512,
-			// 	x: 11580,
-			// 	y: 2836,
-			// },
 			{
 				height: 512,
 				id: 1145,
@@ -316,65 +348,41 @@ const bouncePlantPositions = [
 				id: 1146,
 
 				width: 512,
-				x: 16909,
-				y: 7960,
+				x: 17344,
+				y: 7936,
 			},
 			{
 				height: 512,
 				id: 1147,
 
 				width: 512,
-				x: 17822.7,
-				y: 6900.67,
-			},
-			{
-				height: 512,
-				id: 1148,
-
-				width: 512,
-				x: 18444,
-				y: 4889,
+				x: 18016,
+				y: 6912,
 			},
 			{
 				height: 512,
 				id: 1149,
 
 				width: 512,
-				x: 19043.7,
-				y: 5877.33,
+				x: 19008,
+				y: 5888,
 			},
-			// {
-			// 	height: 512,
-			// 	id: 1151,
-
-			// 	width: 512,
-			// 	x: 24432,
-			// 	y: 6925.97,
-			// },
 			{
 				height: 512,
 				id: 1153,
 
 				width: 512,
-				x: 8892,
-				y: 5392,
+				x: 8896,
+				y: 5376,
 			},
 			{
 				height: 512,
 				id: 1154,
 
 				width: 512,
-				x: 12880.4,
-				y: 6928.85,
+				x: 13148,
+				y: 6912,
 			},
-			// {
-			// 	height: 512,
-			// 	id: 1156,
-
-			// 	width: 512,
-			// 	x: 3022.79,
-			// 	y: 7953.09,
-			// },
 		],
 	},
 ];
@@ -493,7 +501,7 @@ const windyPlantPositions = [
 			},
 			{
 				id: 215,
-				rotation: 0,
+
 				height: 993,
 				width: 993,
 				x: 13124,
@@ -681,83 +689,6 @@ const windyPlantPositions = [
 				width: 405,
 				x: 1254,
 				y: 7116,
-			},
-		],
-	},
-];
-
-const blueFlowerPositions = [
-	{
-		objects: [
-			{
-				height: 2001.17,
-				id: 1238,
-
-				rotation: 90.482,
-
-				width: 2001.17,
-				x: 19574.0805198202,
-				y: 1548.70390429187,
-			},
-			{
-				height: 880.227,
-				id: 1239,
-
-				rotation: 30.2547,
-
-				width: 880.227,
-				x: 23976.5805198202,
-				y: 2738.57390429187,
-			},
-			{
-				height: 1676.92,
-				id: 1240,
-
-				rotation: 111.013,
-
-				width: 1676.92,
-				x: 4470.08051982024,
-				y: 2193.64390429187,
-			},
-			{
-				height: 897.016,
-				id: 1241,
-
-				rotation: 55.7986,
-
-				width: 897.016,
-				x: 2552.95051982024,
-				y: 1525.62390429187,
-			},
-			{
-				height: 1632.64,
-				id: 1242,
-
-				rotation: 0,
-
-				width: 1632.64,
-				x: 13505.9805198202,
-				y: 4869.38390429187,
-			},
-			{
-				height: 1554.68,
-				id: 1243,
-
-				rotation: 87.0249,
-
-				width: 1554.68,
-				x: 15436.9805198202,
-				y: 1744.71390429187,
-			},
-			{
-				height: 2121.65,
-				id: 1244,
-
-				rotation: 352.545,
-
-				width: 2121.65,
-				x: 17671.0805198202,
-				y: 7152.55390429187,
 			},
 		],
 	},

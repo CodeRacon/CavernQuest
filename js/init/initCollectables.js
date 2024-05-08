@@ -8,9 +8,9 @@ blueGemPositions.forEach((blueGemPosition) => {
 				y: object.y - 404,
 			},
 			scale: object.width / 512,
-			imgSrc: 'img/collectables/GemBlue.png',
-			frameRate: 1,
-			frameBuffer: 1,
+			imgSrc: 'img/collectables/blue-gem.png',
+			frameRate: 16,
+			frameBuffer: 10,
 		});
 		blueGems.push(blueGem);
 	});
@@ -26,9 +26,9 @@ redGemPositions.forEach((redGemPosition) => {
 				y: object.y - 512,
 			},
 			scale: object.width / 512,
-			imgSrc: 'img/collectables/GemRed.png',
-			frameRate: 1,
-			frameBuffer: 1,
+			imgSrc: 'img/collectables/red-gem.png',
+			frameRate: 16,
+			frameBuffer: 9,
 		});
 		redGems.push(redGem);
 	});
@@ -41,7 +41,7 @@ fullHPPositions.forEach((fullHPPosition) => {
 		const fullHP = new FullHealthPotion({
 			position: {
 				x: object.x,
-				y: object.y - 276,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/PotionGreen.png',
@@ -59,7 +59,7 @@ halfHPPositions.forEach((halfHPPosition) => {
 		const halfHP = new HalfHealthPotion({
 			position: {
 				x: object.x,
-				y: object.y - 276,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/PotionYellow.png',
@@ -77,7 +77,7 @@ fullSPPositions.forEach((fullSPPosition) => {
 		const fullSP = new FullSpellPowerPotion({
 			position: {
 				x: object.x,
-				y: object.y - 276,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/PotionBlue.png',
@@ -95,7 +95,7 @@ immunityPositions.forEach((immunityPosition) => {
 		const immunityPotion = new ImmunityPotion({
 			position: {
 				x: object.x,
-				y: object.y - 276,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/PotionRed.png',
@@ -113,7 +113,7 @@ goldenBookPositions.forEach((goldenBookPosition) => {
 		const goldenBook = new GoldenBook({
 			position: {
 				x: object.x,
-				y: object.y - 256,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/TomeYellow.png',
@@ -131,7 +131,7 @@ redBookPositions.forEach((redBookPosition) => {
 		const redBook = new RedBook({
 			position: {
 				x: object.x,
-				y: object.y - 256,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/TomeRed.png',
@@ -149,7 +149,7 @@ blueBookPositions.forEach((blueBookPosition) => {
 		const blueBook = new BlueBook({
 			position: {
 				x: object.x,
-				y: object.y - 256,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/TomeBlue.png',
@@ -167,7 +167,7 @@ greenBookPositions.forEach((greenBookPosition) => {
 		const greenBook = new GreenBook({
 			position: {
 				x: object.x,
-				y: object.y - 256,
+				y: object.y - 372,
 			},
 			scale: object.width / 512,
 			imgSrc: 'img/collectables/TomeGreen.png',

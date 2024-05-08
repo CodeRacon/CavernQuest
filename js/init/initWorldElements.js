@@ -16,25 +16,6 @@ bouncePlantPositions.forEach((bouncePlantPosition) => {
 	});
 });
 
-const blueFlowers = [];
-
-blueFlowerPositions.forEach((blueFlowerPosition) => {
-	blueFlowerPosition.objects.forEach((object) => {
-		const blueFlower = new BlueFlower({
-			position: {
-				x: object.x,
-				y: object.y,
-			},
-			scale: object.width / 768,
-			rotation: object.rotation * (Math.PI / 180),
-			imgSrc: 'img/plants/BluePlant.png',
-			frameRate: 60,
-			frameBuffer: 10,
-		});
-		blueFlowers.push(blueFlower);
-	});
-});
-
 const windyPlants = [];
 
 windyPlantPositions.forEach((windyPlantPosition) => {

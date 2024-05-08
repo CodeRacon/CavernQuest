@@ -2,64 +2,73 @@ const groundCollisions = [
 	{
 		objects: [
 			{
-				height: 896,
+				height: 928,
 				id: 403,
+
 				width: 7040,
 				x: 19072,
-				y: 7296,
+				y: 7264,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 404,
+
 				width: 320,
 				x: 18752,
-				y: 7296,
+				y: 7264,
 			},
 			{
 				height: 512,
 				id: 405,
+
 				width: 1280,
 				x: 19072,
-				y: 6784,
+				y: 6752,
 			},
 			{
 				height: 512,
 				id: 406,
+
 				width: 2816,
 				x: 22144,
-				y: 6784,
+				y: 6752,
 			},
 			{
 				height: 512,
 				id: 407,
+
 				width: 1280,
 				x: 22656,
-				y: 6272,
+				y: 6240,
 			},
 			{
 				height: 512,
 				id: 408,
+
 				width: 768,
 				x: 23168,
-				y: 5760,
+				y: 5728,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 409,
+
 				width: 320,
 				x: 23936,
-				y: 5760,
+				y: 5728,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 410,
+
 				width: 1728,
 				x: 24384,
-				y: 4224,
+				y: 4192,
 			},
 			{
 				height: 512,
 				id: 411,
+
 				width: 1408,
 				x: 24704,
 				y: 4480,
@@ -67,6 +76,7 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 412,
+
 				width: 896,
 				x: 25216,
 				y: 4992,
@@ -74,6 +84,7 @@ const groundCollisions = [
 			{
 				height: 1792,
 				id: 413,
+
 				width: 384,
 				x: 25728,
 				y: 5504,
@@ -81,20 +92,23 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 418,
+
 				width: 256,
 				x: 19584,
-				y: 2176,
+				y: 2144,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 419,
+
 				width: 2048,
 				x: 19584,
-				y: 2688,
+				y: 2656,
 			},
 			{
 				height: 128,
 				id: 420,
+
 				width: 1984,
 				x: 19648,
 				y: 2880,
@@ -102,48 +116,55 @@ const groundCollisions = [
 			{
 				height: 768,
 				id: 421,
+
 				width: 768,
 				x: 21632,
-				y: 2688,
+				y: 2656,
 			},
 			{
 				height: 512,
 				id: 422,
+
 				width: 512,
 				x: 22400,
-				y: 3200,
+				y: 3168,
 			},
 			{
 				height: 256,
 				id: 423,
+
 				width: 256,
 				x: 22144,
-				y: 3456,
+				y: 3424,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 424,
+
 				width: 1600,
 				x: 22144,
-				y: 3712,
+				y: 3680,
 			},
 			{
 				height: 128,
 				id: 425,
+
 				width: 1472,
 				x: 22208,
 				y: 3904,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 426,
+
 				width: 576,
 				x: 20288,
-				y: 3712,
+				y: 3680,
 			},
 			{
-				height: 768,
+				height: 736,
 				id: 427,
+
 				width: 256,
 				x: 20608,
 				y: 3968,
@@ -151,20 +172,23 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 428,
+
 				width: 768,
 				x: 20608,
-				y: 4736,
+				y: 4704,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 429,
+
 				width: 2432,
 				x: 19776,
-				y: 5248,
+				y: 5216,
 			},
 			{
 				height: 128,
 				id: 430,
+
 				width: 2304,
 				x: 19840,
 				y: 5440,
@@ -172,6 +196,7 @@ const groundCollisions = [
 			{
 				height: 270,
 				id: 431,
+
 				width: 267,
 				x: 21114,
 				y: 6340,
@@ -179,6 +204,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 432,
+
 				width: 384,
 				x: 17984,
 				y: 6749,
@@ -186,6 +212,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 433,
+
 				width: 340,
 				x: 18006,
 				y: 6912,
@@ -193,6 +220,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 434,
+
 				width: 384,
 				x: 19012,
 				y: 5728,
@@ -200,6 +228,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 435,
+
 				width: 340,
 				x: 19034,
 				y: 5891,
@@ -207,6 +236,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 436,
+
 				width: 384,
 				x: 19523,
 				y: 4188,
@@ -214,6 +244,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 437,
+
 				width: 340,
 				x: 19545,
 				y: 4351,
@@ -221,6 +252,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 438,
+
 				width: 384,
 				x: 16966,
 				y: 3167,
@@ -228,6 +260,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 439,
+
 				width: 340,
 				x: 16988,
 				y: 3330,
@@ -235,6 +268,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 440,
+
 				width: 384,
 				x: 15941,
 				y: 2652,
@@ -242,6 +276,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 441,
+
 				width: 340,
 				x: 15963,
 				y: 2815,
@@ -249,6 +284,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 442,
+
 				width: 384,
 				x: 15432,
 				y: 3676,
@@ -256,6 +292,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 443,
+
 				width: 340,
 				x: 15454,
 				y: 3839,
@@ -263,6 +300,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 444,
+
 				width: 384,
 				x: 13891,
 				y: 4702,
@@ -270,6 +308,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 445,
+
 				width: 340,
 				x: 13913,
 				y: 4865,
@@ -277,6 +316,7 @@ const groundCollisions = [
 			{
 				height: 163,
 				id: 446,
+
 				width: 384,
 				x: 13640,
 				y: 5727,
@@ -284,34 +324,39 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 447,
+
 				width: 340,
 				x: 13662,
 				y: 5890,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 448,
+
 				width: 896,
 				x: 17728,
-				y: 2688,
+				y: 2656,
 			},
 			{
 				height: 64,
 				id: 449,
+
 				width: 640,
 				x: 17856,
 				y: 2944,
 			},
 			{
-				height: 832,
+				height: 864,
 				id: 450,
+
 				width: 1792,
 				x: 16512,
-				y: 4224,
+				y: 4192,
 			},
 			{
 				height: 320,
 				id: 451,
+
 				width: 384,
 				x: 18304,
 				y: 4736,
@@ -319,6 +364,7 @@ const groundCollisions = [
 			{
 				height: 256,
 				id: 452,
+
 				width: 128,
 				x: 18688,
 				y: 4736,
@@ -326,56 +372,64 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 453,
+
 				width: 256,
 				x: 18048,
-				y: 3712,
+				y: 3680,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 454,
+
 				width: 320,
 				x: 18304,
-				y: 3712,
+				y: 3680,
 			},
 			{
-				height: 320,
+				height: 352,
 				id: 455,
+
 				width: 512,
 				x: 16000,
-				y: 4736,
+				y: 4704,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 456,
+
 				width: 1600,
 				x: 15168,
-				y: 5248,
+				y: 5216,
 			},
 			{
 				height: 128,
 				id: 457,
+
 				width: 1472,
 				x: 15232,
 				y: 5440,
 			},
 
 			{
-				height: 192,
+				height: 160,
 				id: 458,
+
 				width: 768,
 				x: 16000,
 				y: 5056,
 			},
 			{
-				height: 512,
+				height: 544,
 				id: 459,
+
 				width: 768,
 				x: 13952,
-				y: 2176,
+				y: 2144,
 			},
 			{
 				height: 192,
 				id: 460,
+
 				width: 1088,
 				x: 13632,
 				y: 2688,
@@ -383,6 +437,7 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 461,
+
 				width: 960,
 				x: 13696,
 				y: 2880,
@@ -390,6 +445,7 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 462,
+
 				width: 384,
 				x: 13824,
 				y: 2944,
@@ -397,6 +453,7 @@ const groundCollisions = [
 			{
 				height: 320,
 				id: 463,
+
 				width: 256,
 				x: 13952,
 				y: 3008,
@@ -404,20 +461,23 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 464,
+
 				width: 128,
 				x: 14016,
 				y: 3328,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 465,
+
 				width: 832,
 				x: 14720,
-				y: 2176,
+				y: 2144,
 			},
 			{
 				height: 64,
 				id: 466,
+
 				width: 640,
 				x: 14720,
 				y: 2432,
@@ -425,83 +485,95 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 467,
+
 				width: 256,
 				x: 11392,
-				y: 1664,
+				y: 1632,
 			},
 			{
 				height: 512,
 				id: 468,
+
 				width: 768,
 				x: 10880,
-				y: 2176,
+				y: 2144,
 			},
 			{
-				height: 832,
+				height: 864,
 				id: 469,
+
 				width: 1792,
 				x: 10368,
-				y: 2688,
+				y: 2656,
 			},
 			{
-				height: 320,
+				height: 352,
 				id: 470,
+
 				width: 512,
 				x: 12160,
-				y: 3200,
+				y: 3168,
 			},
 			{
-				height: 320,
+				height: 352,
 				id: 471,
+
 				width: 2240,
 				x: 8128,
-				y: 3200,
+				y: 3168,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 472,
+
 				width: 128,
 				x: 8000,
-				y: 3200,
+				y: 3168,
 			},
 			{
 				height: 512,
 				id: 473,
+
 				width: 768,
 				x: 8832,
-				y: 2688,
+				y: 2656,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 474,
+
 				width: 1088,
 				x: 15488,
-				y: 6784,
+				y: 6752,
 			},
 			{
-				height: 768,
+				height: 736,
 				id: 475,
+
 				width: 256,
 				x: 16000,
 				y: 7040,
 			},
 			{
-				height: 384,
+				height: 416,
 				id: 476,
-				width: 1280,
+
+				width: 1781,
 				x: 16000,
-				y: 7808,
+				y: 7776,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 477,
+
 				width: 1664,
 				x: 12864,
-				y: 6784,
+				y: 6752,
 			},
 			{
 				height: 64,
 				id: 478,
+
 				width: 960,
 				x: 12992,
 				y: 7040,
@@ -509,6 +581,7 @@ const groundCollisions = [
 			{
 				height: 1152,
 				id: 479,
+
 				width: 256,
 				x: 13952,
 				y: 7040,
@@ -516,6 +589,7 @@ const groundCollisions = [
 			{
 				height: 384,
 				id: 480,
+
 				width: 512,
 				x: 13440,
 				y: 7808,
@@ -523,27 +597,31 @@ const groundCollisions = [
 			{
 				height: 1024,
 				id: 481,
+
 				width: 256,
 				x: 10880,
-				y: 6272,
+				y: 6240,
 			},
 			{
-				height: 896,
+				height: 928,
 				id: 482,
+
 				width: 3840,
 				x: 8320,
-				y: 7296,
+				y: 7264,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 483,
+
 				width: 576,
 				x: 12416,
-				y: 4224,
+				y: 4192,
 			},
 			{
 				height: 1024,
 				id: 484,
+
 				width: 256,
 				x: 12416,
 				y: 4480,
@@ -551,6 +629,7 @@ const groundCollisions = [
 			{
 				height: 256,
 				id: 487,
+
 				width: 448,
 				x: 12672,
 				y: 5248,
@@ -558,34 +637,39 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 488,
+
 				width: 64,
 				x: 13120,
 				y: 5312,
 			},
 			{
-				height: 320,
+				height: 352,
 				id: 489,
+
 				width: 2560,
 				x: 9856,
-				y: 4736,
+				y: 4704,
 			},
 			{
-				height: 192,
+				height: 160,
 				id: 491,
+
 				width: 256,
 				x: 9856,
 				y: 5056,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 492,
+
 				width: 1280,
 				x: 8832,
-				y: 5248,
+				y: 5216,
 			},
 			{
 				height: 896,
 				id: 493,
+
 				width: 768,
 				x: 8832,
 				y: 5504,
@@ -593,48 +677,55 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 494,
+
 				width: 640,
 				x: 8896,
 				y: 6400,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 495,
+
 				width: 1920,
 				x: 5696,
-				y: 6784,
+				y: 6752,
 			},
 			{
 				height: 128,
 				id: 496,
+
 				width: 1792,
 				x: 5760,
 				y: 6976,
 			},
 			{
-				height: 704,
+				height: 672,
 				id: 497,
-				width: 256,
-				x: 6272,
+
+				width: 288,
+				x: 6240,
 				y: 7104,
 			},
 			{
-				height: 384,
+				height: 416,
 				id: 498,
-				width: 1280,
-				x: 5248,
-				y: 7808,
+
+				width: 1312,
+				x: 5216,
+				y: 7776,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 499,
+
 				width: 896,
 				x: 7488,
-				y: 4224,
+				y: 4192,
 			},
 			{
 				height: 64,
 				id: 500,
+
 				width: 640,
 				x: 7616,
 				y: 4480,
@@ -642,27 +733,31 @@ const groundCollisions = [
 			{
 				height: 1024,
 				id: 501,
+
 				width: 256,
 				x: 6272,
-				y: 3200,
+				y: 3168,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 502,
+
 				width: 320,
 				x: 6528,
-				y: 3712,
+				y: 3680,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 503,
+
 				width: 576,
 				x: 5952,
-				y: 4224,
+				y: 4192,
 			},
 			{
 				height: 64,
 				id: 504,
+
 				width: 448,
 				x: 6016,
 				y: 4416,
@@ -670,41 +765,47 @@ const groundCollisions = [
 			{
 				height: 1024,
 				id: 505,
+
 				width: 768,
 				x: 4224,
-				y: 4224,
+				y: 4192,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 506,
+
 				width: 2816,
 				x: 4224,
-				y: 5248,
+				y: 5216,
 			},
 			{
 				height: 128,
 				id: 507,
+
 				width: 2752,
 				x: 4288,
 				y: 5440,
 			},
 			{
-				height: 192,
+				height: 160,
 				id: 508,
+
 				width: 256,
 				x: 6784,
 				y: 5568,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 509,
+
 				width: 1088,
 				x: 6784,
-				y: 5760,
+				y: 5728,
 			},
 			{
 				height: 128,
 				id: 510,
+
 				width: 960,
 				x: 6848,
 				y: 5952,
@@ -712,21 +813,24 @@ const groundCollisions = [
 			{
 				height: 512,
 				id: 511,
+
 				width: 256,
 				x: 5248,
-				y: 1664,
+				y: 1632,
 			},
 
 			{
-				height: 192,
+				height: 224,
 				id: 512,
+
 				width: 1920,
 				x: 4160,
-				y: 2176,
+				y: 2144,
 			},
 			{
 				height: 64,
 				id: 513,
+
 				width: 1792,
 				x: 4224,
 				y: 2368,
@@ -734,20 +838,23 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 514,
+
 				width: 1600,
 				x: 4288,
 				y: 2432,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 515,
+
 				width: 896,
 				x: 2368,
-				y: 2688,
+				y: 2656,
 			},
 			{
 				height: 64,
 				id: 516,
+
 				width: 768,
 				x: 2432,
 				y: 2880,
@@ -755,20 +862,23 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 517,
+
 				width: 640,
 				x: 2496,
 				y: 2944,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 518,
+
 				width: 1216,
 				x: 0,
-				y: 3200,
+				y: 3168,
 			},
 			{
 				height: 128,
 				id: 519,
+
 				width: 1152,
 				x: 0,
 				y: 3392,
@@ -776,41 +886,47 @@ const groundCollisions = [
 			{
 				height: 1024,
 				id: 520,
+
 				width: 1920,
 				x: 0,
-				y: 4224,
+				y: 4192,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 521,
+
 				width: 2944,
 				x: 0,
-				y: 5248,
+				y: 5216,
 			},
 			{
 				height: 64,
 				id: 522,
+
 				width: 1280,
 				x: 384,
 				y: 5504,
 			},
 			{
-				height: 256,
+				height: 224,
 				id: 523,
+
 				width: 1280,
 				x: 1664,
 				y: 5504,
 			},
 			{
-				height: 256,
+				height: 288,
 				id: 524,
+
 				width: 1600,
 				x: 1664,
-				y: 5760,
+				y: 5728,
 			},
 			{
 				height: 64,
 				id: 525,
+
 				width: 896,
 				x: 1792,
 				y: 6016,
@@ -818,6 +934,7 @@ const groundCollisions = [
 			{
 				height: 960,
 				id: 526,
+
 				width: 256,
 				x: 2688,
 				y: 6016,
@@ -825,6 +942,7 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 529,
+
 				width: 128,
 				x: 2752,
 				y: 6976,
@@ -832,41 +950,47 @@ const groundCollisions = [
 			{
 				height: 2688,
 				id: 530,
+
 				width: 384,
 				x: 0,
 				y: 5504,
 			},
 			{
-				height: 1408,
+				height: 1440,
 				id: 531,
+
 				width: 1024,
 				x: 384,
-				y: 6784,
+				y: 6752,
 			},
 			{
-				height: 896,
+				height: 928,
 				id: 532,
+
 				width: 512,
 				x: 1408,
-				y: 7296,
+				y: 7264,
 			},
 			{
-				height: 384,
+				height: 416,
 				id: 533,
+
 				width: 1536,
 				x: 1920,
-				y: 7808,
+				y: 7776,
 			},
 			{
-				height: 192,
+				height: 224,
 				id: 534,
+
 				width: 896,
 				x: 3904,
-				y: 6784,
+				y: 6752,
 			},
 			{
 				height: 64,
 				id: 535,
+
 				width: 768,
 				x: 3968,
 				y: 6976,
@@ -874,6 +998,7 @@ const groundCollisions = [
 			{
 				height: 64,
 				id: 537,
+
 				width: 640,
 				x: 4032,
 				y: 7040,
@@ -881,6 +1006,7 @@ const groundCollisions = [
 			{
 				height: 256,
 				id: 539,
+
 				width: 896,
 				x: 10816,
 				y: 3520,
@@ -888,6 +1014,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 540,
+
 				width: 768,
 				x: 10880,
 				y: 3776,
@@ -895,6 +1022,7 @@ const groundCollisions = [
 			{
 				height: 128,
 				id: 541,
+
 				width: 640,
 				x: 10944,
 				y: 3904,
@@ -1798,70 +1926,56 @@ const hazardCollisions = [
 	{
 		objects: [
 			{
-				height: 43,
+				height: 46,
 				id: 676,
 
-				rotation: 0,
-
-				width: 182,
-				x: 24309,
-				y: 4427,
+				width: 171,
+				x: 24320,
+				y: 4433,
 			},
 			{
 				height: 71,
 				id: 677,
 
-				rotation: 0,
-
-				width: 169,
-				x: 24299,
+				width: 161,
+				x: 24307,
 				y: 4482,
 			},
 			{
 				height: 72,
 				id: 678,
 
-				rotation: 0,
-
-				width: 186,
-				x: 24238,
+				width: 175,
+				x: 24249,
 				y: 4604,
 			},
 			{
-				height: 88,
+				height: 86,
 				id: 679,
 
-				rotation: 0,
-
-				width: 151,
-				x: 24330,
+				width: 144,
+				x: 24337,
 				y: 4685,
 			},
 			{
-				height: 86,
+				height: 77,
 				id: 680,
 
-				rotation: 0,
-
-				width: 88,
-				x: 24415,
+				width: 78,
+				x: 24425,
 				y: 4777,
 			},
 			{
 				height: 102,
 				id: 681,
 
-				rotation: 0,
-
 				width: 58,
 				x: 24522,
 				y: 4783,
 			},
 			{
-				height: 150,
+				height: 134,
 				id: 682,
-
-				rotation: 0,
 
 				width: 60,
 				x: 24583,
@@ -1871,8 +1985,6 @@ const hazardCollisions = [
 				height: 122,
 				id: 683,
 
-				rotation: 0,
-
 				width: 79,
 				x: 24651,
 				y: 4806,
@@ -1880,8 +1992,6 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 684,
-
-				rotation: 0,
 
 				width: 122,
 				x: 24736,
@@ -1891,27 +2001,21 @@ const hazardCollisions = [
 				height: 42,
 				id: 685,
 
-				rotation: 0,
-
 				width: 86,
 				x: 24722,
 				y: 5092,
 			},
 			{
-				height: 103,
+				height: 91,
 				id: 686,
 
-				rotation: 0,
-
-				width: 97,
-				x: 24754,
+				width: 94,
+				x: 24757,
 				y: 5138,
 			},
 			{
 				height: 94,
 				id: 689,
-
-				rotation: 0,
 
 				width: 56,
 				x: 24977,
@@ -1921,37 +2025,29 @@ const hazardCollisions = [
 				height: 90,
 				id: 690,
 
-				rotation: 0,
-
 				width: 58,
 				x: 25059,
 				y: 5327,
 			},
 			{
-				height: 72,
+				height: 63,
 				id: 691,
-
-				rotation: 0,
 
 				width: 101,
 				x: 24869,
 				y: 5321,
 			},
 			{
-				height: 58,
+				height: 48,
 				id: 692,
 
-				rotation: 0,
-
-				width: 116,
-				x: 24748,
+				width: 101,
+				x: 24763,
 				y: 5301,
 			},
 			{
 				height: 39,
 				id: 693,
-
-				rotation: 0,
 
 				width: 88,
 				x: 24799,
@@ -1961,57 +2057,45 @@ const hazardCollisions = [
 				height: 110,
 				id: 694,
 
-				rotation: 0,
-
 				width: 74,
 				x: 25126,
 				y: 5327,
 			},
 			{
-				height: 58,
+				height: 119,
 				id: 695,
 
-				rotation: 0,
-
-				width: 74,
+				width: 119,
 				x: 25247,
-				y: 5518,
+				y: 5510,
 			},
 			{
 				height: 63,
 				id: 696,
-
-				rotation: 0,
 
 				width: 177,
 				x: 25192,
 				y: 5631,
 			},
 			{
-				height: 56,
+				height: 85,
 				id: 697,
-
-				rotation: 0,
 
 				width: 63,
 				x: 25280,
-				y: 5726,
+				y: 5697,
 			},
 			{
-				height: 36,
+				height: 63,
 				id: 698,
 
-				rotation: 0,
-
-				width: 38,
+				width: 71,
 				x: 25353,
-				y: 5767,
+				y: 5740,
 			},
 			{
-				height: 88,
+				height: 80,
 				id: 699,
-
-				rotation: 0,
 
 				width: 56,
 				x: 25371,
@@ -2021,27 +2105,21 @@ const hazardCollisions = [
 				height: 85,
 				id: 700,
 
-				rotation: 0,
-
 				width: 50,
 				x: 25473,
 				y: 5826,
 			},
 			{
-				height: 138,
+				height: 130,
 				id: 701,
-
-				rotation: 0,
 
 				width: 61,
 				x: 25529,
 				y: 5832,
 			},
 			{
-				height: 122,
+				height: 115,
 				id: 702,
-
-				rotation: 0,
 
 				width: 68,
 				x: 25600,
@@ -2051,8 +2129,6 @@ const hazardCollisions = [
 				height: 34,
 				id: 703,
 
-				rotation: 0,
-
 				width: 116,
 				x: 23945.4,
 				y: 6027.88,
@@ -2060,8 +2136,6 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 704,
-
-				rotation: 0,
 
 				width: 87,
 				x: 23944.4,
@@ -2071,8 +2145,6 @@ const hazardCollisions = [
 				height: 59,
 				id: 705,
 
-				rotation: 0,
-
 				width: 122,
 				x: 23952.4,
 				y: 6130.88,
@@ -2080,8 +2152,6 @@ const hazardCollisions = [
 			{
 				height: 171,
 				id: 706,
-
-				rotation: 0,
 
 				width: 48,
 				x: 24108.4,
@@ -2091,8 +2161,6 @@ const hazardCollisions = [
 				height: 86,
 				id: 707,
 
-				rotation: 0,
-
 				width: 54,
 				x: 24158.4,
 				y: 6141.88,
@@ -2100,8 +2168,6 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 708,
-
-				rotation: 0,
 
 				width: 75,
 				x: 24239.4,
@@ -2111,8 +2177,6 @@ const hazardCollisions = [
 				height: 75,
 				id: 709,
 
-				rotation: 0,
-
 				width: 82,
 				x: 24306.4,
 				y: 6239.88,
@@ -2120,8 +2184,6 @@ const hazardCollisions = [
 			{
 				height: 81.0909,
 				id: 710,
-
-				rotation: 0,
 
 				width: 144,
 				x: 24327.4,
@@ -2131,8 +2193,6 @@ const hazardCollisions = [
 				height: 91.3333,
 				id: 711,
 
-				rotation: 0,
-
 				width: 122,
 				x: 24302.4,
 				y: 6421.55,
@@ -2140,8 +2200,6 @@ const hazardCollisions = [
 			{
 				height: 61,
 				id: 712,
-
-				rotation: 0,
 
 				width: 117,
 				x: 24324.4,
@@ -2151,8 +2209,6 @@ const hazardCollisions = [
 				height: 68,
 				id: 713,
 
-				rotation: 0,
-
 				width: 110,
 				x: 24380.4,
 				y: 6602.88,
@@ -2160,8 +2216,6 @@ const hazardCollisions = [
 			{
 				height: 209,
 				id: 714,
-
-				rotation: 0,
 
 				width: 90,
 				x: 21888,
@@ -2171,8 +2225,6 @@ const hazardCollisions = [
 				height: 253,
 				id: 715,
 
-				rotation: 0,
-
 				width: 117,
 				x: 21707,
 				y: 6873,
@@ -2180,8 +2232,6 @@ const hazardCollisions = [
 			{
 				height: 232,
 				id: 716,
-
-				rotation: 0,
 
 				width: 34,
 				x: 21646,
@@ -2191,8 +2241,6 @@ const hazardCollisions = [
 				height: 32,
 				id: 717,
 
-				rotation: 0,
-
 				width: 16,
 				x: 21587,
 				y: 6617,
@@ -2200,8 +2248,6 @@ const hazardCollisions = [
 			{
 				height: 58,
 				id: 718,
-
-				rotation: 0,
 
 				width: 21,
 				x: 21564,
@@ -2211,8 +2257,6 @@ const hazardCollisions = [
 				height: 66,
 				id: 719,
 
-				rotation: 0,
-
 				width: 21,
 				x: 21540,
 				y: 6663,
@@ -2220,8 +2264,6 @@ const hazardCollisions = [
 			{
 				height: 86,
 				id: 720,
-
-				rotation: 0,
 
 				width: 21,
 				x: 21516,
@@ -2231,8 +2273,6 @@ const hazardCollisions = [
 				height: 113,
 				id: 721,
 
-				rotation: 0,
-
 				width: 25,
 				x: 21487,
 				y: 6715,
@@ -2240,8 +2280,6 @@ const hazardCollisions = [
 			{
 				height: 128,
 				id: 722,
-
-				rotation: 0,
 
 				width: 15,
 				x: 21467,
@@ -2251,8 +2289,6 @@ const hazardCollisions = [
 				height: 115,
 				id: 723,
 
-				rotation: 0,
-
 				width: 16,
 				x: 21443,
 				y: 6762,
@@ -2260,8 +2296,6 @@ const hazardCollisions = [
 			{
 				height: 184,
 				id: 724,
-
-				rotation: 0,
 
 				width: 15,
 				x: 21625,
@@ -2271,8 +2305,6 @@ const hazardCollisions = [
 				height: 135,
 				id: 725,
 
-				rotation: 0,
-
 				width: 18,
 				x: 21598,
 				y: 6907,
@@ -2280,8 +2312,6 @@ const hazardCollisions = [
 			{
 				height: 239,
 				id: 726,
-
-				rotation: 0,
 
 				width: 54,
 				x: 21334,
@@ -2291,8 +2321,6 @@ const hazardCollisions = [
 				height: 178,
 				id: 727,
 
-				rotation: 0,
-
 				width: 49,
 				x: 21246,
 				y: 6698,
@@ -2300,8 +2328,6 @@ const hazardCollisions = [
 			{
 				height: 168,
 				id: 728,
-
-				rotation: 0,
 
 				width: 74,
 				x: 21136,
@@ -2312,8 +2338,6 @@ const hazardCollisions = [
 				height: 44,
 				id: 729,
 
-				rotation: 0,
-
 				width: 28,
 				x: 20985,
 				y: 6736,
@@ -2321,8 +2345,6 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 730,
-
-				rotation: 0,
 
 				width: 39,
 				x: 20823,
@@ -2332,8 +2354,6 @@ const hazardCollisions = [
 				height: 38,
 				id: 731,
 
-				rotation: 0,
-
 				width: 93,
 				x: 20843,
 				y: 6814,
@@ -2341,8 +2361,6 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 732,
-
-				rotation: 0,
 
 				width: 127,
 				x: 20876,
@@ -2352,8 +2370,6 @@ const hazardCollisions = [
 				height: 21,
 				id: 733,
 
-				rotation: 0,
-
 				width: 130,
 				x: 20914,
 				y: 6905,
@@ -2361,8 +2377,6 @@ const hazardCollisions = [
 			{
 				height: 15,
 				id: 734,
-
-				rotation: 0,
 
 				width: 40,
 				x: 20999,
@@ -2372,8 +2386,6 @@ const hazardCollisions = [
 				height: 18,
 				id: 735,
 
-				rotation: 0,
-
 				width: 53,
 				x: 21008,
 				y: 6814,
@@ -2381,8 +2393,6 @@ const hazardCollisions = [
 			{
 				height: 20,
 				id: 736,
-
-				rotation: 0,
 
 				width: 68,
 				x: 21020,
@@ -2392,8 +2402,6 @@ const hazardCollisions = [
 				height: 234,
 				id: 737,
 
-				rotation: 0,
-
 				width: 39,
 				x: 20620,
 				y: 6818,
@@ -2401,8 +2409,6 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 738,
-
-				rotation: 0,
 
 				width: 70,
 				x: 20731,
@@ -2412,8 +2418,6 @@ const hazardCollisions = [
 				height: 155,
 				id: 739,
 
-				rotation: 0,
-
 				width: 16,
 				x: 20603,
 				y: 6895,
@@ -2421,8 +2425,6 @@ const hazardCollisions = [
 			{
 				height: 90,
 				id: 740,
-
-				rotation: 0,
 
 				width: 16,
 				x: 20583,
@@ -2432,8 +2434,6 @@ const hazardCollisions = [
 				height: 19,
 				id: 744,
 
-				rotation: 0,
-
 				width: 51,
 				x: 20749,
 				y: 7010,
@@ -2441,8 +2441,6 @@ const hazardCollisions = [
 			{
 				height: 14,
 				id: 745,
-
-				rotation: 0,
 
 				width: 49,
 				x: 20756,
@@ -2452,8 +2450,6 @@ const hazardCollisions = [
 				height: 12,
 				id: 746,
 
-				rotation: 0,
-
 				width: 40,
 				x: 20767,
 				y: 6975,
@@ -2461,8 +2457,6 @@ const hazardCollisions = [
 			{
 				height: 12,
 				id: 747,
-
-				rotation: 0,
 
 				width: 34,
 				x: 20777,
@@ -2472,197 +2466,61 @@ const hazardCollisions = [
 				height: 24,
 				id: 748,
 
-				rotation: 0,
-
 				width: 27,
 				x: 20786,
 				y: 6927,
 			},
 			{
-				height: 35,
-				id: 749,
-
-				rotation: 0,
-
-				width: 44,
-				x: 19018,
-				y: 6011,
-			},
-			{
-				height: 47,
-				id: 750,
-
-				rotation: 0,
-
-				width: 27,
-				x: 19052,
-				y: 6048,
-			},
-			{
-				height: 34,
-				id: 751,
-
-				rotation: 0,
-
-				width: 27,
-				x: 19077,
-				y: 6126,
-			},
-			{
-				height: 31,
-				id: 752,
-
-				rotation: 0,
-
-				width: 25,
-				x: 19146,
-				y: 6126,
-			},
-			{
-				height: 26,
-				id: 753,
-
-				rotation: 0,
-
-				width: 19,
-				x: 19182,
-				y: 6112,
-			},
-			{
-				height: 51,
-				id: 754,
-
-				rotation: 0,
-
-				width: 25,
-				x: 19212,
-				y: 6111,
-			},
-			{
-				height: 31,
-				id: 755,
-
-				rotation: 0,
-
-				width: 32,
-				x: 19259,
-				y: 6098,
-			},
-			{
-				height: 42,
-				id: 756,
-
-				rotation: 0,
-
-				width: 52,
-				x: 19293,
-				y: 6076,
-			},
-			{
-				height: 31,
-				id: 757,
-
-				rotation: 0,
-
-				width: 45,
-				x: 19326,
-				y: 6043,
-			},
-			{
-				height: 30,
-				id: 758,
-
-				rotation: 0,
-
-				width: 46,
-				x: 19091,
-				y: 6095,
-			},
-			{
-				height: 262.670690107583,
+				height: 262.671,
 				id: 763,
 
-				rotation: 0,
-
-				width: 78.0910522172671,
-				x: 18417.9089477827,
-				y: 7480,
+				width: 78.0911,
+				x: 18636.4,
+				y: 7515,
 			},
 			{
-				height: 254.430070847547,
+				height: 254.43,
 				id: 770,
 
-				rotation: 0,
-
-				width: 139.781684597219,
-				x: 18129.2183154028,
-				y: 7517.44633954343,
+				width: 139.782,
+				x: 18347.7,
+				y: 7552.45,
 			},
 			{
-				height: 182.884544738914,
+				height: 182.885,
 				id: 775,
 
-				rotation: 0,
-
-				width: 86.9548674888501,
-				x: 18008,
-				y: 7523,
+				width: 86.9549,
+				x: 18226.5,
+				y: 7558,
 			},
 			{
-				height: 158.017055890842,
+				height: 158.017,
 				id: 778,
 
-				rotation: 0,
-
-				width: 107.252427184467,
-				x: 17857,
-				y: 7645,
+				width: 107.252,
+				x: 18075.5,
+				y: 7680,
 			},
 			{
-				height: 156.256887955918,
+				height: 156.257,
 				id: 786,
 
-				rotation: 0,
-
-				width: 152.901600629757,
-				x: 17699,
-				y: 7694,
-			},
-			{
-				height: 151.029651010233,
-				id: 789,
-
-				rotation: 0,
-
-				width: 79.8060876410382,
-				x: 17619.193912359,
-				y: 7854,
-			},
-			{
-				height: 220.154027814222,
-				id: 793,
-
-				rotation: 0,
-
-				width: 78.578850695354,
-				x: 17471.0865914458,
-				y: 7759,
+				width: 152.902,
+				x: 17917.5,
+				y: 7729,
 			},
 			{
 				height: 203,
 				id: 794,
-
-				rotation: 0,
 
 				width: 39,
 				x: 14683,
 				y: 6908,
 			},
 			{
-				height: 36,
+				height: 60,
 				id: 795,
-
-				rotation: 0,
 
 				width: 123,
 				x: 14595,
@@ -2672,8 +2530,6 @@ const hazardCollisions = [
 				height: 45,
 				id: 796,
 
-				rotation: 0,
-
 				width: 65,
 				x: 14616,
 				y: 7096,
@@ -2681,8 +2537,6 @@ const hazardCollisions = [
 			{
 				height: 61,
 				id: 797,
-
-				rotation: 0,
 
 				width: 31,
 				x: 14649,
@@ -2692,8 +2546,6 @@ const hazardCollisions = [
 				height: 40,
 				id: 798,
 
-				rotation: 0,
-
 				width: 19,
 				x: 14659,
 				y: 6993,
@@ -2701,8 +2553,6 @@ const hazardCollisions = [
 			{
 				height: 52,
 				id: 799,
-
-				rotation: 0,
 
 				width: 37,
 				x: 14939,
@@ -2712,8 +2562,6 @@ const hazardCollisions = [
 				height: 73,
 				id: 800,
 
-				rotation: 0,
-
 				width: 60,
 				x: 14929,
 				y: 6804,
@@ -2722,17 +2570,13 @@ const hazardCollisions = [
 				height: 98,
 				id: 801,
 
-				rotation: 0,
-
 				width: 100,
 				x: 14912,
 				y: 6883,
 			},
 			{
-				height: 156,
+				height: 217,
 				id: 802,
-
-				rotation: 0,
 
 				width: 131,
 				x: 14902,
@@ -2742,8 +2586,6 @@ const hazardCollisions = [
 				height: 58,
 				id: 803,
 
-				rotation: 0,
-
 				width: 22,
 				x: 15178,
 				y: 6913,
@@ -2751,8 +2593,6 @@ const hazardCollisions = [
 			{
 				height: 64,
 				id: 804,
-
-				rotation: 0,
 
 				width: 56,
 				x: 15140,
@@ -2762,27 +2602,21 @@ const hazardCollisions = [
 				height: 55,
 				id: 805,
 
-				rotation: 0,
-
 				width: 103,
 				x: 15091,
 				y: 7060,
 			},
 			{
-				height: 32,
+				height: 72,
 				id: 806,
 
-				rotation: 0,
-
-				width: 113,
-				x: 15075,
+				width: 145,
+				x: 15043,
 				y: 7125,
 			},
 			{
-				height: 116,
+				height: 91,
 				id: 807,
-
-				rotation: 0,
 
 				width: 83,
 				x: 15199,
@@ -2792,8 +2626,6 @@ const hazardCollisions = [
 				height: 84,
 				id: 808,
 
-				rotation: 0,
-
 				width: 42,
 				x: 15424,
 				y: 7093,
@@ -2802,28 +2634,21 @@ const hazardCollisions = [
 				height: 83,
 				id: 810,
 
-				rotation: 0,
-
-				width: 48,
-				x: 15324,
+				width: 166,
+				x: 15199,
 				y: 7175,
 			},
 			{
 				height: 70,
 				id: 812,
 
-				rotation: 0,
-
 				width: 45,
 				x: 15374,
 				y: 7136,
 			},
-
 			{
-				height: 42,
+				height: 86,
 				id: 813,
-
-				rotation: 0,
 
 				width: 100,
 				x: 14482,
@@ -2833,8 +2658,6 @@ const hazardCollisions = [
 				height: 40,
 				id: 814,
 
-				rotation: 0,
-
 				width: 81,
 				x: 14477,
 				y: 7071,
@@ -2842,8 +2665,6 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 815,
-
-				rotation: 0,
 
 				width: 156,
 				x: 12197,
@@ -2853,8 +2674,6 @@ const hazardCollisions = [
 				height: 34,
 				id: 816,
 
-				rotation: 0,
-
 				width: 55,
 				x: 12299,
 				y: 7367,
@@ -2862,8 +2681,6 @@ const hazardCollisions = [
 			{
 				height: 41,
 				id: 817,
-
-				rotation: 0,
 
 				width: 88,
 				x: 12329,
@@ -2873,8 +2690,6 @@ const hazardCollisions = [
 				height: 55,
 				id: 818,
 
-				rotation: 0,
-
 				width: 96,
 				x: 12362,
 				y: 7448,
@@ -2882,8 +2697,6 @@ const hazardCollisions = [
 			{
 				height: 105,
 				id: 820,
-
-				rotation: 0,
 
 				width: 155,
 				x: 12462,
@@ -2893,8 +2706,6 @@ const hazardCollisions = [
 				height: 49,
 				id: 821,
 
-				rotation: 0,
-
 				width: 109,
 				x: 12432,
 				y: 7293,
@@ -2902,8 +2713,6 @@ const hazardCollisions = [
 			{
 				height: 23,
 				id: 822,
-
-				rotation: 0,
 
 				width: 87,
 				x: 12416,
@@ -2913,8 +2722,6 @@ const hazardCollisions = [
 				height: 17,
 				id: 823,
 
-				rotation: 0,
-
 				width: 68,
 				x: 12405,
 				y: 7248,
@@ -2922,8 +2729,6 @@ const hazardCollisions = [
 			{
 				height: 32,
 				id: 824,
-
-				rotation: 0,
 
 				width: 37,
 				x: 12378,
@@ -2933,17 +2738,14 @@ const hazardCollisions = [
 				height: 20,
 				id: 825,
 
-				rotation: 0,
-
 				width: 64,
 				x: 12390,
 				y: 7224,
 			},
+
 			{
 				height: 32,
 				id: 826,
-
-				rotation: 0,
 
 				width: 28,
 				x: 12559,
@@ -2953,8 +2755,6 @@ const hazardCollisions = [
 				height: 66,
 				id: 827,
 
-				rotation: 0,
-
 				width: 40,
 				x: 12566,
 				y: 7209,
@@ -2962,8 +2762,6 @@ const hazardCollisions = [
 			{
 				height: 56,
 				id: 828,
-
-				rotation: 0,
 
 				width: 85,
 				x: 12580,
@@ -2973,8 +2771,6 @@ const hazardCollisions = [
 				height: 51,
 				id: 829,
 
-				rotation: 0,
-
 				width: 23,
 				x: 12611,
 				y: 7230,
@@ -2982,8 +2778,6 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 830,
-
-				rotation: 0,
 
 				width: 89,
 				x: 12726,
@@ -2993,8 +2787,6 @@ const hazardCollisions = [
 				height: 34,
 				id: 831,
 
-				rotation: 0,
-
 				width: 64,
 				x: 12733,
 				y: 7167,
@@ -3002,8 +2794,6 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 832,
-
-				rotation: 0,
 
 				width: 40,
 				x: 12741,
@@ -3013,8 +2803,6 @@ const hazardCollisions = [
 				height: 32,
 				id: 833,
 
-				rotation: 0,
-
 				width: 21,
 				x: 12748,
 				y: 7078,
@@ -3022,8 +2810,6 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 834,
-
-				rotation: 0,
 
 				width: 54,
 				x: 12851,
@@ -3033,8 +2819,6 @@ const hazardCollisions = [
 				height: 43,
 				id: 835,
 
-				rotation: 0,
-
 				width: 36,
 				x: 12865,
 				y: 7178,
@@ -3042,8 +2826,6 @@ const hazardCollisions = [
 			{
 				height: 43,
 				id: 836,
-
-				rotation: 0,
 
 				width: 27,
 				x: 13002,
@@ -3053,8 +2835,6 @@ const hazardCollisions = [
 				height: 25,
 				id: 837,
 
-				rotation: 0,
-
 				width: 48,
 				x: 12973,
 				y: 7174,
@@ -3062,8 +2842,6 @@ const hazardCollisions = [
 			{
 				height: 22,
 				id: 838,
-
-				rotation: 0,
 
 				width: 59,
 				x: 12953,
@@ -3073,8 +2851,6 @@ const hazardCollisions = [
 				height: 33,
 				id: 839,
 
-				rotation: 0,
-
 				width: 80,
 				x: 12924,
 				y: 7243,
@@ -3082,8 +2858,6 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 840,
-
-				rotation: 0,
 
 				width: 155,
 				x: 12836,
@@ -3093,8 +2867,6 @@ const hazardCollisions = [
 				height: 27,
 				id: 843,
 
-				rotation: 0,
-
 				width: 54,
 				x: 12359,
 				y: 7371,
@@ -3103,27 +2875,13 @@ const hazardCollisions = [
 				height: 42,
 				id: 844,
 
-				rotation: 0,
-
 				width: 37,
 				x: 12422,
 				y: 7403,
 			},
 			{
-				height: 37,
-				id: 846,
-
-				rotation: 0,
-
-				width: 104.500393597482,
-				x: 17320,
-				y: 7871,
-			},
-			{
 				height: 35,
 				id: 849,
-
-				rotation: 0,
 
 				width: 128,
 				x: 20376,
@@ -3133,8 +2891,6 @@ const hazardCollisions = [
 				height: 21,
 				id: 850,
 
-				rotation: 0,
-
 				width: 88,
 				x: 20393,
 				y: 6912,
@@ -3142,8 +2898,6 @@ const hazardCollisions = [
 			{
 				height: 19,
 				id: 851,
-
-				rotation: 0,
 
 				width: 22,
 				x: 20514,
@@ -3153,8 +2907,6 @@ const hazardCollisions = [
 				height: 34,
 				id: 852,
 
-				rotation: 0,
-
 				width: 40,
 				x: 20541,
 				y: 6981,
@@ -3162,8 +2914,6 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 853,
-
-				rotation: 0,
 
 				width: 144,
 				x: 21989,
@@ -3173,468 +2923,21 @@ const hazardCollisions = [
 				height: 86,
 				id: 854,
 
-				rotation: 0,
-
 				width: 45,
 				x: 24423.4,
 				y: 6687.88,
 			},
 			{
-				height: 88,
-				id: 855,
-
-				rotation: 0,
-
-				width: 104,
-				x: 15104,
-				y: 5132,
-			},
-			{
-				height: 101,
-				id: 856,
-
-				rotation: 0,
-
-				width: 47,
-				x: 15051,
-				y: 5076,
-			},
-			{
-				height: 62,
-				id: 857,
-
-				rotation: 0,
-
-				width: 139.400895856663,
-				x: 14904.5991041433,
-				y: 5114,
-			},
-			{
-				height: 150,
-				id: 858,
-
-				rotation: 0,
-
-				width: 47,
-				x: 14850,
-				y: 5011,
-			},
-			{
-				height: 70,
-				id: 859,
-
-				rotation: 0,
-
-				width: 56,
-				x: 14760,
-				y: 5083,
-			},
-			{
-				height: 82,
-				id: 860,
-
-				rotation: 0,
-
-				width: 100,
-				x: 14596,
-				y: 5113,
-			},
-			{
-				height: 49,
-				id: 861,
-
-				rotation: 0,
-
-				width: 85,
-				x: 14709,
-				y: 5172,
-			},
-			{
-				height: 95,
-				id: 862,
-
-				rotation: 0,
-
-				width: 91,
-				x: 14343,
-				y: 4829,
-			},
-			{
-				height: 54,
-				id: 863,
-
-				rotation: 0,
-
-				width: 57,
-				x: 14282,
-				y: 4857,
-			},
-			{
-				height: 49.8040313549836,
-				id: 864,
-
-				rotation: 0,
-
-				width: 96,
-				x: 14457,
-				y: 4908,
-			},
-			{
-				height: 144.185890257559,
-				id: 866,
-
-				rotation: 0,
-
-				width: 98.0011198208285,
-				x: 14525,
-				y: 4961.40985442329,
-			},
-			{
-				height: 76,
-				id: 867,
-
-				rotation: 0,
-
-				width: 40,
-				x: 14216,
-				y: 4994,
-			},
-			{
-				height: 131,
-				id: 868,
-
-				rotation: 0,
-
-				width: 55,
-				x: 14314,
-				y: 4995,
-			},
-			{
-				height: 44,
-				id: 869,
-
-				rotation: 0,
-
-				width: 49,
-				x: 14263,
-				y: 4982,
-			},
-			{
-				height: 93,
-				id: 870,
-
-				rotation: 0,
-
-				width: 45,
-				x: 14374,
-				y: 4994,
-			},
-
-			{
-				height: 99,
-				id: 871,
-
-				rotation: 0,
-
-				width: 107,
-				x: 14378,
-				y: 5088,
-			},
-			{
-				height: 29,
-				id: 872,
-
-				rotation: 0,
-
-				width: 51,
-				x: 14378,
-				y: 5300,
-			},
-			{
-				height: 19,
-				id: 873,
-
-				rotation: 0,
-
-				width: 77,
-				x: 14403,
-				y: 5278,
-			},
-			{
-				height: 26,
-				id: 874,
-
-				rotation: 0,
-
-				width: 111,
-				x: 14424,
-				y: 5247,
-			},
-			{
-				height: 54,
-				id: 875,
-
-				rotation: 0,
-
-				width: 140,
-				x: 14453,
-				y: 5189,
-			},
-			{
-				height: 31,
-				id: 876,
-
-				rotation: 0,
-
-				width: 30,
-				x: 14513,
-				y: 5336,
-			},
-			{
-				height: 21,
-				id: 877,
-
-				rotation: 0,
-
-				width: 57,
-				x: 14526,
-				y: 5311,
-			},
-			{
-				height: 27,
-				id: 878,
-
-				rotation: 0,
-
-				width: 112,
-				x: 14541,
-				y: 5281,
-			},
-			{
-				height: 43,
-				id: 879,
-
-				rotation: 0,
-
-				width: 33,
-				x: 14596,
-				y: 5309,
-			},
-			{
-				height: 115,
-				id: 880,
-
-				rotation: 0,
-
-				width: 46,
-				x: 14646,
-				y: 5310,
-			},
-			{
-				height: 102,
-				id: 881,
-
-				rotation: 0,
-
-				width: 42,
-				x: 14744,
-				y: 5288,
-			},
-			{
-				height: 26,
-				id: 882,
-
-				rotation: 0,
-
-				width: 49,
-				x: 14693,
-				y: 5310,
-			},
-			{
-				height: 78,
-				id: 883,
-
-				rotation: 0,
-
-				width: 32,
-				x: 14856,
-				y: 5326,
-			},
-			{
-				height: 133,
-				id: 884,
-
-				rotation: 0,
-
-				width: 64,
-				x: 14789,
-				y: 5236,
-			},
-			{
-				height: 96,
-				id: 885,
-
-				rotation: 0,
-
-				width: 89,
-				x: 14926,
-				y: 5225,
-			},
-			{
-				height: 95,
-				id: 886,
-
-				rotation: 0,
-
-				width: 69,
-				x: 15002,
-				y: 5326,
-			},
-			{
-				height: 75,
-				id: 887,
-
-				rotation: 0,
-
-				width: 154,
-				x: 10117,
-				y: 5350,
-			},
-			{
-				height: 190,
+				height: 220,
 				id: 888,
 
-				rotation: 0,
-
-				width: 59,
-				x: 10275,
+				width: 1138,
+				x: 10048,
 				y: 5306,
-			},
-			{
-				height: 136,
-				id: 889,
-
-				rotation: 0,
-
-				width: 98,
-				x: 10372,
-				y: 5271,
-			},
-			{
-				height: 154,
-				id: 890,
-
-				rotation: 0,
-
-				width: 550,
-				x: 10480,
-				y: 5375,
-			},
-			{
-				height: 20,
-				id: 891,
-
-				rotation: 0,
-
-				width: 29,
-				x: 10609,
-				y: 5530,
-			},
-			{
-				height: 106,
-				id: 892,
-
-				rotation: 0,
-
-				width: 49,
-				x: 10734,
-				y: 5532,
-			},
-			{
-				height: 45,
-				id: 893,
-
-				rotation: 0,
-
-				width: 29,
-				x: 10829,
-				y: 5530,
-			},
-			{
-				height: 92,
-				id: 894,
-
-				rotation: 0,
-
-				width: 72,
-				x: 10878,
-				y: 5531,
-			},
-			{
-				height: 44,
-				id: 895,
-
-				rotation: 0,
-
-				width: 52,
-				x: 11076,
-				y: 5586,
-			},
-			{
-				height: 48,
-				id: 896,
-
-				rotation: 0,
-
-				width: 96,
-				x: 11011,
-				y: 5531,
-			},
-			{
-				height: 88,
-				id: 898,
-
-				rotation: 0,
-
-				width: 29,
-				x: 11033,
-				y: 5440,
-			},
-			{
-				height: 132,
-				id: 899,
-
-				rotation: 0,
-
-				width: 120,
-				x: 11066,
-				y: 5334,
-			},
-			{
-				height: 40,
-				id: 900,
-
-				rotation: 0,
-
-				width: 96,
-				x: 11187,
-				y: 5303,
-			},
-			{
-				height: 230,
-				id: 901,
-
-				rotation: 0,
-
-				width: 129,
-				x: 11154,
-				y: 5059,
 			},
 			{
 				height: 66,
 				id: 902,
-
-				rotation: 0,
 
 				width: 263,
 				x: 8050,
@@ -3644,8 +2947,6 @@ const hazardCollisions = [
 				height: 102,
 				id: 903,
 
-				rotation: 0,
-
 				width: 120,
 				x: 8094,
 				y: 7282,
@@ -3653,8 +2954,6 @@ const hazardCollisions = [
 			{
 				height: 111,
 				id: 904,
-
-				rotation: 0,
 
 				width: 43,
 				x: 8082,
@@ -3664,8 +2963,6 @@ const hazardCollisions = [
 				height: 147,
 				id: 905,
 
-				rotation: 0,
-
 				width: 59,
 				x: 7681,
 				y: 6991,
@@ -3673,8 +2970,6 @@ const hazardCollisions = [
 			{
 				height: 33,
 				id: 906,
-
-				rotation: 0,
 
 				width: 76,
 				x: 7601,
@@ -3684,8 +2979,6 @@ const hazardCollisions = [
 				height: 89,
 				id: 907,
 
-				rotation: 0,
-
 				width: 33,
 				x: 7772,
 				y: 7055,
@@ -3693,8 +2986,6 @@ const hazardCollisions = [
 			{
 				height: 141,
 				id: 908,
-
-				rotation: 0,
 
 				width: 25,
 				x: 7864,
@@ -3704,8 +2995,6 @@ const hazardCollisions = [
 				height: 81,
 				id: 909,
 
-				rotation: 0,
-
 				width: 46,
 				x: 7813,
 				y: 7062,
@@ -3713,8 +3002,6 @@ const hazardCollisions = [
 			{
 				height: 40,
 				id: 910,
-
-				rotation: 0,
 
 				width: 53,
 				x: 8013,
@@ -3724,8 +3011,6 @@ const hazardCollisions = [
 				height: 19,
 				id: 911,
 
-				rotation: 0,
-
 				width: 61,
 				x: 7993,
 				y: 7045,
@@ -3733,8 +3018,6 @@ const hazardCollisions = [
 			{
 				height: 35,
 				id: 912,
-
-				rotation: 0,
 
 				width: 88,
 				x: 7956,
@@ -3744,8 +3027,6 @@ const hazardCollisions = [
 				height: 37,
 				id: 913,
 
-				rotation: 0,
-
 				width: 98,
 				x: 7925,
 				y: 7103,
@@ -3753,8 +3034,6 @@ const hazardCollisions = [
 			{
 				height: 76,
 				id: 914,
-
-				rotation: 0,
 
 				width: 106,
 				x: 7894,
@@ -3764,8 +3043,6 @@ const hazardCollisions = [
 				height: 58,
 				id: 915,
 
-				rotation: 0,
-
 				width: 75,
 				x: 8004,
 				y: 7210,
@@ -3773,8 +3050,6 @@ const hazardCollisions = [
 			{
 				height: 60,
 				id: 916,
-
-				rotation: 0,
 
 				width: 94,
 				x: 5069,
@@ -3784,8 +3059,6 @@ const hazardCollisions = [
 				height: 51,
 				id: 917,
 
-				rotation: 0,
-
 				width: 56,
 				x: 5075,
 				y: 7780,
@@ -3793,8 +3066,6 @@ const hazardCollisions = [
 			{
 				height: 80,
 				id: 918,
-
-				rotation: 0,
 
 				width: 39,
 				x: 5024,
@@ -3804,8 +3075,6 @@ const hazardCollisions = [
 				height: 79,
 				id: 919,
 
-				rotation: 0,
-
 				width: 29,
 				x: 4971,
 				y: 7723,
@@ -3813,8 +3082,6 @@ const hazardCollisions = [
 			{
 				height: 96,
 				id: 920,
-
-				rotation: 0,
 
 				width: 75,
 				x: 4885,
@@ -3824,28 +3091,13 @@ const hazardCollisions = [
 				height: 102,
 				id: 921,
 
-				rotation: 0,
-
 				width: 76,
 				x: 4805,
 				y: 7728,
 			},
 			{
-				height: 62,
-				id: 922,
-
-				rotation: 0,
-
-				width: 75,
-				x: 5169,
-				y: 7839,
-			},
-
-			{
 				height: 743,
 				id: 924,
-
-				rotation: 0,
 
 				width: 788,
 				x: 4008,
@@ -3855,8 +3107,6 @@ const hazardCollisions = [
 				height: 167,
 				id: 925,
 
-				rotation: 0,
-
 				width: 73,
 				x: 3927,
 				y: 7607,
@@ -3864,8 +3114,6 @@ const hazardCollisions = [
 			{
 				height: 110,
 				id: 926,
-
-				rotation: 0,
 
 				width: 218,
 				x: 3701,
@@ -3875,8 +3123,6 @@ const hazardCollisions = [
 				height: 59,
 				id: 927,
 
-				rotation: 0,
-
 				width: 54,
 				x: 3643,
 				y: 7732,
@@ -3884,8 +3130,6 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 928,
-
-				rotation: 0,
 
 				width: 59,
 				x: 3580,
@@ -3895,8 +3139,6 @@ const hazardCollisions = [
 				height: 33,
 				id: 929,
 
-				rotation: 0,
-
 				width: 31,
 				x: 3546,
 				y: 7798,
@@ -3905,17 +3147,14 @@ const hazardCollisions = [
 				height: 46,
 				id: 930,
 
-				rotation: 0,
-
 				width: 153,
 				x: 3460,
 				y: 7833,
 			},
+
 			{
 				height: 53,
 				id: 931,
-
-				rotation: 0,
 
 				width: 101,
 				x: 2955,
@@ -3925,8 +3164,6 @@ const hazardCollisions = [
 				height: 93,
 				id: 932,
 
-				rotation: 0,
-
 				width: 104,
 				x: 2954,
 				y: 6878,
@@ -3934,8 +3171,6 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 933,
-
-				rotation: 0,
 
 				width: 119,
 				x: 2885,
@@ -3945,8 +3180,6 @@ const hazardCollisions = [
 				height: 68,
 				id: 934,
 
-				rotation: 0,
-
 				width: 206,
 				x: 2770,
 				y: 7047,
@@ -3954,8 +3187,6 @@ const hazardCollisions = [
 			{
 				height: 245,
 				id: 935,
-
-				rotation: 0,
 
 				width: 69,
 				x: 2615,
@@ -3965,8 +3196,6 @@ const hazardCollisions = [
 				height: 58,
 				id: 936,
 
-				rotation: 0,
-
 				width: 96,
 				x: 2654,
 				y: 7013,
@@ -3974,8 +3203,6 @@ const hazardCollisions = [
 			{
 				height: 124,
 				id: 937,
-
-				rotation: 0,
 
 				width: 130,
 				x: 2510,
@@ -3985,8 +3212,6 @@ const hazardCollisions = [
 				height: 222,
 				id: 938,
 
-				rotation: 0,
-
 				width: 78,
 				x: 2305,
 				y: 6396,
@@ -3994,8 +3219,6 @@ const hazardCollisions = [
 			{
 				height: 126,
 				id: 939,
-
-				rotation: 0,
 
 				width: 36,
 				x: 2232,
@@ -4005,8 +3228,6 @@ const hazardCollisions = [
 				height: 159,
 				id: 940,
 
-				rotation: 0,
-
 				width: 136,
 				x: 2089,
 				y: 6388,
@@ -4014,8 +3235,6 @@ const hazardCollisions = [
 			{
 				height: 104,
 				id: 941,
-
-				rotation: 0,
 
 				width: 210,
 				x: 1796,
@@ -4025,8 +3244,6 @@ const hazardCollisions = [
 				height: 129,
 				id: 942,
 
-				rotation: 0,
-
 				width: 173,
 				x: 1842,
 				y: 6084,
@@ -4034,8 +3251,6 @@ const hazardCollisions = [
 			{
 				height: 112,
 				id: 943,
-
-				rotation: 0,
 
 				width: 142,
 				x: 1938,
@@ -4045,8 +3260,6 @@ const hazardCollisions = [
 				height: 157,
 				id: 944,
 
-				rotation: 0,
-
 				width: 120,
 				x: 2387,
 				y: 6396,
@@ -4054,8 +3267,6 @@ const hazardCollisions = [
 			{
 				height: 151,
 				id: 945,
-
-				rotation: 0,
 
 				width: 105,
 				x: 4079,
@@ -4065,8 +3276,6 @@ const hazardCollisions = [
 				height: 87,
 				id: 946,
 
-				rotation: 0,
-
 				width: 258,
 				x: 3626,
 				y: 5099,
@@ -4074,8 +3283,6 @@ const hazardCollisions = [
 			{
 				height: 66,
 				id: 947,
-
-				rotation: 0,
 
 				width: 223,
 				x: 3706,
@@ -4085,8 +3292,6 @@ const hazardCollisions = [
 				height: 59,
 				id: 948,
 
-				rotation: 0,
-
 				width: 101,
 				x: 3788,
 				y: 4946,
@@ -4094,8 +3299,6 @@ const hazardCollisions = [
 			{
 				height: 105,
 				id: 949,
-
-				rotation: 0,
 
 				width: 133,
 				x: 3779,
@@ -4105,8 +3308,6 @@ const hazardCollisions = [
 				height: 77,
 				id: 950,
 
-				rotation: 0,
-
 				width: 85,
 				x: 3911,
 				y: 4752,
@@ -4114,8 +3315,6 @@ const hazardCollisions = [
 			{
 				height: 100,
 				id: 951,
-
-				rotation: 0,
 
 				width: 62,
 				x: 3991,
@@ -4125,8 +3324,6 @@ const hazardCollisions = [
 				height: 84,
 				id: 952,
 
-				rotation: 0,
-
 				width: 152,
 				x: 4061,
 				y: 4691,
@@ -4134,8 +3331,6 @@ const hazardCollisions = [
 			{
 				height: 173,
 				id: 953,
-
-				rotation: 0,
 
 				width: 140,
 				x: 4090,
@@ -4145,8 +3340,6 @@ const hazardCollisions = [
 				height: 37,
 				id: 954,
 
-				rotation: 0,
-
 				width: 230,
 				x: 3753,
 				y: 5290,
@@ -4154,8 +3347,6 @@ const hazardCollisions = [
 			{
 				height: 30,
 				id: 955,
-
-				rotation: 0,
 
 				width: 160,
 				x: 3824,
@@ -4165,8 +3356,6 @@ const hazardCollisions = [
 				height: 71,
 				id: 956,
 
-				rotation: 0,
-
 				width: 155,
 				x: 3919,
 				y: 5432,
@@ -4174,8 +3363,6 @@ const hazardCollisions = [
 			{
 				height: 74,
 				id: 957,
-
-				rotation: 0,
 
 				width: 91,
 				x: 3824,
@@ -4185,8 +3372,6 @@ const hazardCollisions = [
 				height: 98,
 				id: 958,
 
-				rotation: 0,
-
 				width: 80,
 				x: 3835,
 				y: 5189,
@@ -4194,8 +3379,6 @@ const hazardCollisions = [
 			{
 				height: 155,
 				id: 959,
-
-				rotation: 0,
 
 				width: 126,
 				x: 6014,
@@ -4205,8 +3388,6 @@ const hazardCollisions = [
 				height: 99,
 				id: 960,
 
-				rotation: 0,
-
 				width: 217,
 				x: 6147,
 				y: 4594,
@@ -4215,27 +3396,21 @@ const hazardCollisions = [
 				height: 115,
 				id: 962,
 
-				rotation: 0,
-
 				width: 127,
 				x: 6369,
 				y: 4573,
 			},
 			{
-				height: 105.391937290034,
+				height: 105.392,
 				id: 963,
-
-				rotation: 0,
 
 				width: 108,
 				x: 6429,
-				y: 4460.60806270997,
+				y: 4460.61,
 			},
 			{
 				height: 53,
 				id: 965,
-
-				rotation: 0,
 
 				width: 66,
 				x: 6534,
@@ -4245,8 +3420,6 @@ const hazardCollisions = [
 				height: 380,
 				id: 967,
 
-				rotation: 0,
-
 				width: 591,
 				x: 5470,
 				y: 2508,
@@ -4254,8 +3427,6 @@ const hazardCollisions = [
 			{
 				height: 472,
 				id: 968,
-
-				rotation: 0,
 
 				width: 567,
 				x: 5493,
@@ -4265,8 +3436,6 @@ const hazardCollisions = [
 				height: 122,
 				id: 970,
 
-				rotation: 0,
-
 				width: 552,
 				x: 5686,
 				y: 3380,
@@ -4275,17 +3444,13 @@ const hazardCollisions = [
 				height: 180,
 				id: 971,
 
-				rotation: 0,
-
-				width: 122,
+				width: 101,
 				x: 6064,
 				y: 3068,
 			},
 			{
 				height: 61,
 				id: 973,
-
-				rotation: 0,
 
 				width: 97,
 				x: 10220,
@@ -4295,8 +3460,6 @@ const hazardCollisions = [
 				height: 47,
 				id: 974,
 
-				rotation: 0,
-
 				width: 229,
 				x: 10129,
 				y: 2687,
@@ -4304,8 +3467,6 @@ const hazardCollisions = [
 			{
 				height: 63,
 				id: 975,
-
-				rotation: 0,
 
 				width: 150,
 				x: 10131,
@@ -4315,8 +3476,6 @@ const hazardCollisions = [
 				height: 81,
 				id: 976,
 
-				rotation: 0,
-
 				width: 59,
 				x: 10082,
 				y: 2537,
@@ -4324,8 +3483,6 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 977,
-
-				rotation: 0,
 
 				width: 97,
 				x: 9981,
@@ -4335,8 +3492,6 @@ const hazardCollisions = [
 				height: 160,
 				id: 978,
 
-				rotation: 0,
-
 				width: 52,
 				x: 9923,
 				y: 2498,
@@ -4345,18 +3500,13 @@ const hazardCollisions = [
 				height: 131,
 				id: 979,
 
-				rotation: 0,
-
 				width: 71,
 				x: 9792,
 				y: 2566,
 			},
-
 			{
 				height: 63,
 				id: 980,
-
-				rotation: 0,
 
 				width: 48,
 				x: 9868,
@@ -4366,8 +3516,6 @@ const hazardCollisions = [
 				height: 57,
 				id: 981,
 
-				rotation: 0,
-
 				width: 47,
 				x: 9663,
 				y: 2577,
@@ -4375,8 +3523,6 @@ const hazardCollisions = [
 			{
 				height: 104,
 				id: 982,
-
-				rotation: 0,
 
 				width: 251,
 				x: 9611,
@@ -4386,8 +3532,6 @@ const hazardCollisions = [
 				height: 57,
 				id: 983,
 
-				rotation: 0,
-
 				width: 96,
 				x: 9692,
 				y: 2639,
@@ -4395,8 +3539,6 @@ const hazardCollisions = [
 			{
 				height: 89,
 				id: 984,
-
-				rotation: 0,
 
 				width: 138,
 				x: 7688,
@@ -4406,8 +3548,6 @@ const hazardCollisions = [
 				height: 67,
 				id: 985,
 
-				rotation: 0,
-
 				width: 90,
 				x: 7733,
 				y: 4642,
@@ -4416,17 +3556,14 @@ const hazardCollisions = [
 				height: 39,
 				id: 986,
 
-				rotation: 0,
-
 				width: 57,
 				x: 7764,
 				y: 4712,
 			},
+
 			{
 				height: 75,
 				id: 987,
-
-				rotation: 0,
 
 				width: 161,
 				x: 7825,
@@ -4436,8 +3573,6 @@ const hazardCollisions = [
 				height: 45,
 				id: 988,
 
-				rotation: 0,
-
 				width: 30,
 				x: 7894,
 				y: 4794,
@@ -4445,8 +3580,6 @@ const hazardCollisions = [
 			{
 				height: 38,
 				id: 989,
-
-				rotation: 0,
 
 				width: 48,
 				x: 8174,
@@ -4456,8 +3589,6 @@ const hazardCollisions = [
 				height: 92,
 				id: 990,
 
-				rotation: 0,
-
 				width: 112,
 				x: 8043,
 				y: 4546,
@@ -4465,8 +3596,6 @@ const hazardCollisions = [
 			{
 				height: 39,
 				id: 991,
-
-				rotation: 0,
 
 				width: 82,
 				x: 8025,
@@ -4476,8 +3605,6 @@ const hazardCollisions = [
 				height: 65,
 				id: 992,
 
-				rotation: 0,
-
 				width: 82,
 				x: 7989,
 				y: 4682,
@@ -4485,8 +3612,6 @@ const hazardCollisions = [
 			{
 				height: 57,
 				id: 993,
-
-				rotation: 0,
 
 				width: 76,
 				x: 10864,
@@ -4496,8 +3621,6 @@ const hazardCollisions = [
 				height: 61,
 				id: 994,
 
-				rotation: 0,
-
 				width: 42,
 				x: 10899,
 				y: 3980,
@@ -4505,8 +3628,6 @@ const hazardCollisions = [
 			{
 				height: 100,
 				id: 995,
-
-				rotation: 0,
 
 				width: 85,
 				x: 10909,
@@ -4516,8 +3637,6 @@ const hazardCollisions = [
 				height: 130,
 				id: 996,
 
-				rotation: 0,
-
 				width: 100,
 				x: 11011,
 				y: 4037,
@@ -4525,8 +3644,6 @@ const hazardCollisions = [
 			{
 				height: 84,
 				id: 997,
-
-				rotation: 0,
 
 				width: 35,
 				x: 11118,
@@ -4536,8 +3653,6 @@ const hazardCollisions = [
 				height: 72,
 				id: 998,
 
-				rotation: 0,
-
 				width: 41,
 				x: 11180,
 				y: 4099,
@@ -4545,8 +3660,6 @@ const hazardCollisions = [
 			{
 				height: 117,
 				id: 999,
-
-				rotation: 0,
 
 				width: 75,
 				x: 11225,
@@ -4556,8 +3669,6 @@ const hazardCollisions = [
 				height: 98,
 				id: 1000,
 
-				rotation: 0,
-
 				width: 244,
 				x: 11304,
 				y: 4040,
@@ -4565,8 +3676,6 @@ const hazardCollisions = [
 			{
 				height: 34,
 				id: 1001,
-
-				rotation: 0,
 
 				width: 91,
 				x: 11653,
@@ -4576,8 +3685,6 @@ const hazardCollisions = [
 				height: 52,
 				id: 1002,
 
-				rotation: 0,
-
 				width: 57,
 				x: 11555,
 				y: 4041,
@@ -4585,8 +3692,6 @@ const hazardCollisions = [
 			{
 				height: 92,
 				id: 1003,
-
-				rotation: 0,
 
 				width: 68,
 				x: 11615,
@@ -4596,8 +3701,6 @@ const hazardCollisions = [
 				height: 35,
 				id: 1004,
 
-				rotation: 0,
-
 				width: 37,
 				x: 11686,
 				y: 3985,
@@ -4605,8 +3708,6 @@ const hazardCollisions = [
 			{
 				height: 68,
 				id: 1005,
-
-				rotation: 0,
 
 				width: 82,
 				x: 11608,
@@ -4616,8 +3717,6 @@ const hazardCollisions = [
 				height: 96,
 				id: 1006,
 
-				rotation: 0,
-
 				width: 104,
 				x: 14218,
 				y: 3262,
@@ -4625,8 +3724,6 @@ const hazardCollisions = [
 			{
 				height: 80,
 				id: 1007,
-
-				rotation: 0,
 
 				width: 155,
 				x: 14148,
@@ -4636,8 +3733,6 @@ const hazardCollisions = [
 				height: 53,
 				id: 1008,
 
-				rotation: 0,
-
 				width: 118,
 				x: 14148,
 				y: 3361,
@@ -4645,8 +3740,6 @@ const hazardCollisions = [
 			{
 				height: 62,
 				id: 1009,
-
-				rotation: 0,
 
 				width: 117,
 				x: 14152,
@@ -4656,8 +3749,6 @@ const hazardCollisions = [
 				height: 186,
 				id: 1010,
 
-				rotation: 0,
-
 				width: 86,
 				x: 13862,
 				y: 3279,
@@ -4665,8 +3756,6 @@ const hazardCollisions = [
 			{
 				height: 54,
 				id: 1011,
-
-				rotation: 0,
 
 				width: 231,
 				x: 13914,
@@ -4676,8 +3765,6 @@ const hazardCollisions = [
 				height: 82,
 				id: 1012,
 
-				rotation: 0,
-
 				width: 203,
 				x: 13945,
 				y: 3524,
@@ -4685,8 +3772,6 @@ const hazardCollisions = [
 			{
 				height: 231.461,
 				id: 1174,
-
-				rotation: 0,
 
 				width: 211.236,
 				x: 6104.49,
@@ -4696,8 +3781,6 @@ const hazardCollisions = [
 				height: 192.135,
 				id: 1175,
 
-				rotation: 0,
-
 				width: 116.854,
 				x: 6176.4,
 				y: 5812.36,
@@ -4705,8 +3788,6 @@ const hazardCollisions = [
 			{
 				height: 115.73,
 				id: 1176,
-
-				rotation: 0,
 
 				width: 105.618,
 				x: 6305.62,
@@ -4716,8 +3797,6 @@ const hazardCollisions = [
 				height: 217.978,
 				id: 1177,
 
-				rotation: 0,
-
 				width: 82.0225,
 				x: 6429.21,
 				y: 5996.63,
@@ -4725,8 +3804,6 @@ const hazardCollisions = [
 			{
 				height: 107.865,
 				id: 1178,
-
-				rotation: 0,
 
 				width: 164.045,
 				x: 6552.81,
@@ -4736,117 +3813,13 @@ const hazardCollisions = [
 				height: 100,
 				id: 1179,
 
-				rotation: 0,
-
 				width: 113.483,
 				x: 6723.6,
 				y: 5957.3,
 			},
 			{
-				height: 115.333,
-				id: 1189,
-
-				rotation: 0,
-
-				width: 610,
-				x: 21534.7,
-				y: 5575.33,
-			},
-			{
-				height: 65.3333,
-				id: 1190,
-
-				rotation: 0,
-
-				width: 498,
-				x: 21600.7,
-				y: 5697.33,
-			},
-			{
-				height: 61.3333,
-				id: 1191,
-
-				rotation: 0,
-
-				width: 412,
-				x: 21645.3,
-				y: 5765.33,
-			},
-			{
-				height: 52,
-				id: 1192,
-
-				rotation: 0,
-
-				width: 206,
-				x: 21766.7,
-				y: 5828,
-			},
-			{
-				height: 54.6667,
-				id: 1193,
-
-				rotation: 0,
-
-				width: 33.3333,
-				x: 21847.3,
-				y: 5883.33,
-			},
-			{
-				height: 115.333,
-				id: 1194,
-
-				rotation: 0,
-
-				width: 611.333,
-				x: 20352.7,
-				y: 5573.33,
-			},
-			{
-				height: 71.3333,
-				id: 1195,
-
-				rotation: 0,
-
-				width: 492.667,
-				x: 20400.7,
-				y: 5692,
-			},
-			{
-				height: 64,
-				id: 1196,
-
-				rotation: 0,
-
-				width: 404,
-				x: 20442.7,
-				y: 5766,
-			},
-			{
-				height: 49.3333,
-				id: 1197,
-
-				rotation: 0,
-
-				width: 205.333,
-				x: 20524.7,
-				y: 5832,
-			},
-			{
-				height: 57.3333,
-				id: 1198,
-
-				rotation: 0,
-
-				width: 36.6667,
-				x: 20612,
-				y: 5884,
-			},
-			{
 				height: 205.502,
 				id: 1218,
-
-				rotation: 0,
 
 				width: 82.0031,
 				x: 11392.2,
@@ -4856,82 +3829,1148 @@ const hazardCollisions = [
 				height: 45.0704,
 				id: 1219,
 
-				rotation: 0,
-
 				width: 62.5978,
 				x: 11369,
 				y: 7034.74,
 			},
-
 			{
 				height: 66.3537,
 				id: 1220,
-
-				rotation: 0,
 
 				width: 267.919,
 				x: 11139.9,
 				y: 6964.01,
 			},
 			{
-				height: 205.502,
-				id: 1221,
-
-				rotation: 0,
-
-				width: 82.0031,
-				x: 10535.8,
-				y: 7085.45,
-			},
-			{
-				height: 45.0704,
-				id: 1222,
-
-				rotation: 0,
-
-				width: 62.5978,
-				x: 10578.5,
-				y: 7035.37,
-			},
-			{
-				height: 66.3537,
-				id: 1223,
-
-				rotation: 0,
-
-				width: 274.805,
-				x: 10600.9,
-				y: 6965.26,
-			},
-			{
-				height: 177.381264759906,
+				height: 177.381,
 				id: 1234,
 
-				rotation: 0,
-
-				width: 134.872736814486,
-				x: 18274.4686434007,
-				y: 7563.89399107846,
+				width: 134.873,
+				x: 18493,
+				y: 7598.89,
 			},
 			{
-				height: 100.760955129887,
-				id: 1235,
+				height: 103,
+				id: 1421,
 
-				rotation: 0,
-
-				width: 386.7751246392,
-				x: 18508.5279454212,
-				y: 7681.97323537129,
+				width: 397,
+				x: 10724,
+				y: 5530,
 			},
 			{
-				height: 192.60036735765,
-				id: 1236,
+				height: 72,
+				id: 1423,
 
-				rotation: 0,
+				width: 527,
+				x: 12502,
+				y: 5644,
+			},
+			{
+				height: 72,
+				id: 1424,
 
-				width: 40.4093413802184,
-				x: 18753.6079769089,
-				y: 7485.69929152453,
+				width: 266,
+				x: 12542,
+				y: 5759,
+			},
+			{
+				height: 37,
+				id: 1425,
+
+				width: 420,
+				x: 12564,
+				y: 5719,
+			},
+			{
+				height: 99,
+				id: 1426,
+
+				width: 277,
+				x: 11189,
+				y: 5305,
+			},
+			{
+				height: 199,
+				id: 1427,
+
+				width: 392,
+				x: 11469,
+				y: 5377,
+			},
+			{
+				height: 269,
+				id: 1428,
+
+				width: 243,
+				x: 11872,
+				y: 5222,
+			},
+			{
+				height: 158,
+				id: 1429,
+
+				width: 200,
+				x: 12118,
+				y: 5273,
+			},
+			{
+				height: 315,
+				id: 1430,
+
+				width: 254,
+				x: 14633,
+				y: 5098,
+			},
+			{
+				height: 108,
+				id: 1431,
+
+				width: 319,
+				x: 14890,
+				y: 5128,
+			},
+			{
+				height: 330,
+				id: 1432,
+
+				width: 245,
+				x: 14384,
+				y: 5028,
+			},
+			{
+				height: 78,
+				id: 1433,
+
+				width: 72,
+				x: 14925,
+				y: 5237,
+			},
+			{
+				height: 173,
+				id: 1434,
+
+				width: 84,
+				x: 15001,
+				y: 5240,
+			},
+			{
+				height: 119,
+				id: 1435,
+
+				width: 93,
+				x: 14217,
+				y: 4949,
+			},
+			{
+				height: 294,
+				id: 1436,
+
+				width: 66,
+				x: 14315,
+				y: 4827,
+			},
+
+			{
+				height: 196,
+				id: 1437,
+
+				width: 50,
+				x: 14387,
+				y: 4827,
+			},
+			{
+				height: 122,
+				id: 1438,
+
+				width: 110,
+				x: 14443,
+				y: 4901,
+			},
+			{
+				height: 59,
+				id: 1439,
+
+				width: 62,
+				x: 14557,
+				y: 4964,
+			},
+			{
+				height: 88,
+				id: 1440,
+
+				width: 37,
+				x: 14851,
+				y: 5008,
+			},
+			{
+				height: 49,
+				id: 1441,
+
+				width: 44,
+				x: 15055,
+				y: 5076,
+			},
+			{
+				height: 708,
+				id: 1443,
+
+				width: 559,
+				x: 7188,
+				y: 1751,
+			},
+			{
+				height: 148,
+				id: 1444,
+
+				width: 409,
+				x: 7761,
+				y: 2040,
+			},
+			{
+				height: 161,
+				id: 1445,
+
+				width: 130,
+				x: 7761,
+				y: 2198,
+			},
+			{
+				height: 413,
+				id: 1446,
+
+				width: 196,
+				x: 7757,
+				y: 1617,
+			},
+			{
+				height: 1071,
+				id: 1447,
+
+				width: 168,
+				x: 7006,
+				y: 1985,
+			},
+			{
+				height: 233,
+				id: 1448,
+
+				width: 312,
+				x: 7174,
+				y: 2648,
+			},
+			{
+				height: 168,
+				id: 1449,
+
+				width: 78,
+				x: 7188,
+				y: 2469,
+			},
+			{
+				height: 401,
+				id: 1450,
+
+				width: 312,
+				x: 6707,
+				y: 3067,
+			},
+			{
+				height: 226,
+				id: 1451,
+
+				width: 175,
+				x: 7026,
+				y: 3067,
+			},
+			{
+				height: 134,
+				id: 1452,
+
+				width: 175,
+				x: 6820,
+				y: 2215,
+			},
+			{
+				height: 86,
+				id: 1453,
+
+				width: 196,
+				x: 6806,
+				y: 2462,
+			},
+			{
+				height: 494,
+				id: 1454,
+
+				width: 285,
+				x: 6710,
+				y: 2569,
+			},
+			{
+				height: 580,
+				id: 1455,
+
+				width: 79,
+				x: 6621,
+				y: 2885,
+			},
+			{
+				height: 131,
+				id: 1459,
+
+				width: 228,
+				x: 19339,
+				y: 2495,
+			},
+			{
+				height: 202,
+				id: 1460,
+
+				width: 117,
+				x: 19216,
+				y: 2355,
+			},
+			{
+				height: 217,
+				id: 1461,
+
+				width: 121,
+				x: 18900,
+				y: 2525,
+			},
+			{
+				height: 100,
+				id: 1462,
+
+				width: 24,
+				x: 18996,
+				y: 2421,
+			},
+			{
+				height: 167,
+				id: 1463,
+
+				width: 52,
+				x: 19142,
+				y: 2399,
+			},
+			{
+				height: 114,
+				id: 1465,
+
+				width: 43,
+				x: 19093,
+				y: 2453,
+			},
+			{
+				height: 266,
+				id: 1466,
+
+				width: 62,
+				x: 19025,
+				y: 2476,
+			},
+			{
+				height: 226,
+				id: 1467,
+
+				width: 95,
+				x: 18799,
+				y: 2583,
+			},
+			{
+				height: 78,
+				id: 1468,
+
+				width: 155,
+				x: 18637,
+				y: 2730,
+			},
+			{
+				height: 228,
+				id: 1469,
+
+				width: 176,
+				x: 18635,
+				y: 2815,
+			},
+			{
+				height: 190,
+				id: 1470,
+
+				width: 176,
+				x: 18900,
+				y: 2749,
+			},
+			{
+				height: 102,
+				id: 1471,
+
+				width: 75,
+				x: 18818,
+				y: 2818,
+			},
+			{
+				height: 107,
+				id: 1472,
+
+				width: 482,
+				x: 19092,
+				y: 2632,
+			},
+			{
+				height: 107,
+				id: 1473,
+
+				width: 203,
+				x: 19271,
+				y: 2743,
+			},
+			{
+				height: 150,
+				id: 1481,
+
+				width: 127,
+				x: 10358,
+				y: 6989,
+			},
+			{
+				height: 140,
+				id: 1482,
+
+				width: 211,
+				x: 10310,
+				y: 7145,
+			},
+			{
+				height: 93,
+				id: 1484,
+
+				width: 143,
+				x: 10402,
+				y: 6893,
+			},
+			{
+				height: 69,
+				id: 1485,
+
+				width: 395,
+				x: 10475,
+				y: 6815,
+			},
+			{
+				height: 95,
+				id: 1486,
+
+				width: 46,
+				x: 10558,
+				y: 6718,
+			},
+			{
+				height: 45,
+				id: 1487,
+
+				width: 205,
+				x: 10664,
+				y: 6765,
+			},
+			{
+				height: 72,
+				id: 1488,
+
+				width: 67,
+				x: 10803,
+				y: 6688,
+			},
+			{
+				height: 25,
+				id: 1489,
+
+				width: 69,
+				x: 10728,
+				y: 6735,
+			},
+			{
+				height: 187,
+				id: 1520,
+
+				width: 356,
+				x: 15219,
+				y: 3977,
+			},
+			{
+				height: 106,
+				id: 1521,
+
+				width: 296,
+				x: 15148,
+				y: 3863,
+			},
+			{
+				height: 126,
+				id: 1522,
+
+				width: 69,
+				x: 15275,
+				y: 3733,
+			},
+			{
+				height: 54,
+				id: 1523,
+
+				width: 451,
+				x: 14945,
+				y: 4167,
+			},
+			{
+				height: 539,
+				id: 1524,
+
+				width: 381,
+				x: 14743,
+				y: 4463,
+			},
+			{
+				height: 136,
+				id: 1525,
+
+				width: 85,
+				x: 15128,
+				y: 4024,
+			},
+			{
+				height: 65,
+				id: 1526,
+
+				width: 190,
+				x: 15109,
+				y: 4228,
+			},
+			{
+				height: 67,
+				id: 1527,
+
+				width: 504,
+				x: 14987,
+				y: 4296,
+			},
+			{
+				height: 54,
+				id: 1528,
+
+				width: 304,
+				x: 15112,
+				y: 4409,
+			},
+			{
+				height: 39,
+				id: 1529,
+
+				width: 292,
+				x: 15113,
+				y: 4366,
+			},
+			{
+				height: 349,
+				id: 1530,
+
+				width: 117,
+				x: 15128,
+				y: 4467,
+			},
+
+			{
+				height: 224,
+				id: 1531,
+
+				width: 29,
+				x: 15247,
+				y: 4468,
+			},
+			{
+				height: 91,
+				id: 1532,
+
+				width: 121,
+				x: 15279,
+				y: 4552,
+			},
+			{
+				height: 70,
+				id: 1533,
+
+				width: 310,
+				x: 14425,
+				y: 4753,
+			},
+			{
+				height: 219,
+				id: 1534,
+
+				width: 112,
+				x: 14624,
+				y: 4529,
+			},
+			{
+				height: 87,
+				id: 1535,
+
+				width: 81,
+				x: 14460,
+				y: 4664,
+			},
+			{
+				height: 52,
+				id: 1536,
+
+				width: 68,
+				x: 14548,
+				y: 4696,
+			},
+			{
+				height: 254,
+				id: 1591,
+
+				width: 228,
+				x: 19674,
+				y: 4486,
+			},
+			{
+				height: 71,
+				id: 1592,
+
+				width: 258,
+				x: 19598,
+				y: 4742,
+			},
+			{
+				height: 64,
+				id: 1593,
+
+				width: 146,
+				x: 19637,
+				y: 4817,
+			},
+			{
+				height: 391,
+				id: 1594,
+
+				width: 141,
+				x: 19852,
+				y: 4854,
+			},
+			{
+				height: 239,
+				id: 1595,
+
+				width: 62,
+				x: 19787,
+				y: 4817,
+			},
+			{
+				height: 106,
+				id: 1596,
+
+				width: 37,
+				x: 19746,
+				y: 4886,
+			},
+			{
+				height: 55,
+				id: 1597,
+
+				width: 71,
+				x: 19671,
+				y: 4887,
+			},
+			{
+				height: 91,
+				id: 1598,
+
+				width: 92,
+				x: 19997,
+				y: 5017,
+			},
+			{
+				height: 356,
+				id: 1605,
+
+				width: 306,
+				x: 16693,
+				y: 5576,
+			},
+			{
+				height: 137,
+				id: 1606,
+
+				width: 94,
+				x: 16590,
+				y: 5574,
+			},
+			{
+				height: 304,
+				id: 1607,
+
+				width: 86,
+				x: 17155,
+				y: 5653,
+			},
+			{
+				height: 208,
+				id: 1608,
+
+				width: 136,
+				x: 17008,
+				y: 5657,
+			},
+			{
+				height: 180,
+				id: 1609,
+
+				width: 175,
+				x: 17247,
+				y: 5651,
+			},
+			{
+				height: 137,
+				id: 1610,
+
+				width: 194,
+				x: 17425,
+				y: 5651,
+			},
+			{
+				height: 584,
+				id: 1611,
+
+				width: 301,
+				x: 17414,
+				y: 5063,
+			},
+			{
+				height: 63,
+				id: 1612,
+
+				width: 58,
+				x: 17724,
+				y: 5146,
+			},
+			{
+				height: 238,
+				id: 1625,
+
+				width: 119,
+				x: 13022,
+				y: 3046,
+			},
+			{
+				height: 210,
+				id: 1626,
+
+				width: 215,
+				x: 13363,
+				y: 3229,
+			},
+			{
+				height: 176,
+				id: 1627,
+
+				width: 184,
+				x: 12812,
+				y: 3292,
+			},
+			{
+				height: 77,
+				id: 1628,
+
+				width: 85,
+				x: 13581,
+				y: 3228,
+			},
+			{
+				height: 135,
+				id: 1629,
+
+				width: 410,
+				x: 13365,
+				y: 3091,
+			},
+			{
+				height: 68,
+				id: 1630,
+
+				width: 382,
+				x: 13392,
+				y: 3020,
+			},
+			{
+				height: 127,
+				id: 1631,
+
+				width: 361,
+				x: 13413,
+				y: 2889,
+			},
+			{
+				height: 344,
+				id: 1632,
+
+				width: 72,
+				x: 13221,
+				y: 3236,
+			},
+			{
+				height: 62,
+				id: 1633,
+
+				width: 41,
+				x: 13362,
+				y: 3442,
+			},
+			{
+				height: 168,
+				id: 1635,
+
+				width: 60,
+				x: 13079,
+				y: 3287,
+			},
+			{
+				height: 59,
+				id: 1636,
+
+				width: 41,
+				x: 12999,
+				y: 3290,
+			},
+			{
+				height: 159,
+				id: 1637,
+
+				width: 57,
+				x: 13302,
+				y: 3121,
+			},
+			{
+				height: 278,
+				id: 1638,
+
+				width: 67,
+				x: 13145,
+				y: 3085,
+			},
+			{
+				height: 152,
+				id: 1640,
+
+				width: 234,
+				x: 12782,
+				y: 3133,
+			},
+			{
+				height: 58,
+				id: 1642,
+
+				width: 46,
+				x: 12849,
+				y: 3073,
+			},
+			{
+				height: 95,
+				id: 1643,
+
+				width: 125,
+				x: 12680,
+				y: 3293,
+			},
+			{
+				height: 138,
+				id: 1644,
+
+				width: 166,
+				x: 19073,
+				y: 6021,
+			},
+			{
+				height: 89,
+				id: 1645,
+
+				width: 98,
+				x: 19243,
+				y: 6022,
+			},
+			{
+				height: 68,
+				id: 1646,
+
+				width: 20,
+				x: 19052,
+				y: 6021,
+			},
+			{
+				height: 51,
+				id: 1647,
+
+				width: 28,
+				x: 19343,
+				y: 6021,
+			},
+			{
+				height: 359,
+				id: 1648,
+
+				width: 68,
+				x: 3660,
+				y: 2520,
+			},
+			{
+				height: 195,
+				id: 1649,
+
+				width: 82,
+				x: 3734,
+				y: 2599,
+			},
+			{
+				height: 112,
+				id: 1650,
+
+				width: 118,
+				x: 3820,
+				y: 2599,
+			},
+			{
+				height: 56,
+				id: 1651,
+
+				width: 245,
+				x: 3734,
+				y: 2540,
+			},
+			{
+				height: 100,
+				id: 1652,
+
+				width: 330,
+				x: 3731,
+				y: 2432,
+			},
+			{
+				height: 220,
+				id: 1653,
+
+				width: 75,
+				x: 4066,
+				y: 2221,
+			},
+			{
+				height: 306,
+				id: 1654,
+
+				width: 61,
+				x: 3997,
+				y: 2120,
+			},
+			{
+				height: 253,
+				id: 1655,
+
+				width: 75,
+				x: 3917,
+				y: 2174,
+			},
+			{
+				height: 106,
+				id: 1656,
+
+				width: 188,
+				x: 3723,
+				y: 2321,
+			},
+
+			{
+				height: 33,
+				id: 1657,
+
+				width: 32,
+				x: 3879,
+				y: 2283,
+			},
+			{
+				height: 292,
+				id: 1658,
+
+				width: 190,
+				x: 3465,
+				y: 2509,
+			},
+			{
+				height: 298,
+				id: 1659,
+
+				width: 74,
+				x: 3335,
+				y: 2561,
+			},
+			{
+				height: 147,
+				id: 1660,
+
+				width: 45,
+				x: 3414,
+				y: 2614,
+			},
+			{
+				height: 113,
+				id: 1661,
+
+				width: 60,
+				x: 3271,
+				y: 2702,
+			},
+			{
+				height: 278,
+				id: 1663,
+
+				width: 57,
+				x: 20304,
+				y: 5813.12628402054,
+			},
+			{
+				height: 203,
+				id: 1664,
+
+				width: 67,
+				x: 20420,
+				y: 5810.12628402054,
+			},
+			{
+				height: 92,
+				id: 1665,
+
+				width: 120,
+				x: 20492,
+				y: 5906.12628402054,
+			},
+			{
+				height: 91,
+				id: 1666,
+
+				width: 198,
+				x: 20491,
+				y: 5809.12628402054,
+			},
+			{
+				height: 42,
+				id: 1667,
+
+				width: 256,
+				x: 20520,
+				y: 5573.12628402054,
+			},
+			{
+				height: 184,
+				id: 1668,
+
+				width: 133,
+				x: 20521,
+				y: 5619.12628402054,
+			},
+			{
+				height: 112,
+				id: 1669,
+
+				width: 50,
+				x: 20366,
+				y: 5813.12628402054,
+			},
+			{
+				height: 190,
+				id: 1670,
+
+				width: 65,
+				x: 20234,
+				y: 5814.12628402054,
+			},
+			{
+				height: 228,
+				id: 1671,
+
+				width: 87,
+				x: 20142,
+				y: 5815.12628402054,
+			},
+			{
+				height: 65,
+				id: 1672,
+
+				width: 59,
+				x: 19968,
+				y: 5964.12628402054,
+			},
+			{
+				height: 97,
+				id: 1673,
+
+				width: 124,
+				x: 20014,
+				y: 5862.12628402054,
+			},
+			{
+				height: 172,
+				id: 1674,
+
+				width: 213,
+				x: 19927,
+				y: 5686.12628402054,
+			},
+			{
+				height: 46,
+				id: 1675,
+
+				width: 170,
+				x: 19846,
+				y: 5597.12628402054,
+			},
+			{
+				height: 51,
+				id: 1676,
+
+				width: 66,
+				x: 19859,
+				y: 5686.12628402054,
+			},
+			{
+				height: 283,
+				id: 1677,
+
+				width: 270,
+				x: 17796,
+				y: 7902,
+			},
+			{
+				height: 105,
+				id: 1678,
+
+				width: 167,
+				x: 14728,
+				y: 7099,
+			},
+			{
+				height: 121,
+				id: 1679,
+
+				width: 596,
+				x: 12432,
+				y: 5517,
+			},
+			{
+				height: 0,
+				id: 1680,
+
+				width: 1,
+				x: 13220,
+				y: 5711,
 			},
 		],
 	},
@@ -4940,22 +4979,6 @@ const hazardCollisions = [
 const fencePoleCollisions = [
 	{
 		objects: [
-			{
-				height: 624,
-				id: 1337,
-
-				width: 68,
-				x: 17418,
-				y: 7203,
-			},
-			{
-				height: 624,
-				id: 1338,
-
-				width: 68,
-				x: 16220,
-				y: 7203,
-			},
 			{
 				height: 624,
 				id: 295,
@@ -5153,8 +5176,8 @@ const fencePoleCollisions = [
 				id: 1125,
 
 				width: 68,
-				x: 10904,
-				y: 6704,
+				x: 10240,
+				y: 6656,
 			},
 			{
 				height: 624,
@@ -5227,6 +5250,38 @@ const fencePoleCollisions = [
 				width: 68,
 				x: 25948,
 				y: 3608,
+			},
+			{
+				height: 624,
+				id: 1337,
+
+				width: 68,
+				x: 17418.1,
+				y: 7203.98,
+			},
+			{
+				height: 624,
+				id: 1338,
+
+				width: 68,
+				x: 16220.8,
+				y: 7157.11,
+			},
+			{
+				height: 624,
+				id: 1478,
+
+				width: 68,
+				x: 15360,
+				y: 6144,
+			},
+			{
+				height: 624,
+				id: 1479,
+
+				width: 68,
+				x: 16640,
+				y: 6144,
 			},
 		],
 	},

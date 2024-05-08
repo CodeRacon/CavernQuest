@@ -7,7 +7,7 @@ class Hazard {
 
 	draw() {
 		// draws out hazard objects
-		c.fillStyle = '#ff00e16a';
+		c.fillStyle = 'transparent';
 		c.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 
