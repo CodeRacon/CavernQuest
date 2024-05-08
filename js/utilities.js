@@ -44,6 +44,8 @@ const spriteImages = [
 	'img/collectables/Armor.png',
 	'img/collectables/GemBlue.png',
 	'img/collectables/GemRed.png',
+	'img/collectables/blue-gem.png',
+	'img/collectables/red-gem.png',
 	'img/collectables/PotionBlue.png',
 	'img/collectables/PotionGreen.png',
 	'img/collectables/PotionRed.png',
@@ -53,7 +55,8 @@ const spriteImages = [
 	'img/collectables/TomeGreen.png',
 	'img/collectables/TomeRed.png',
 	'img/collectables/TomeYellow.png',
-	'img/background.jpg',
+	'img/bg-map.jpg',
+	'img/fg-map.png',
 ];
 
 const FPS = 60;

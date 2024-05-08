@@ -21,7 +21,15 @@ const background = new Sprite({
 		x: 0,
 		y: 0,
 	},
-	imgSrc: '/img/background.jpg',
+	imgSrc: 'img/bg-map.jpg',
+});
+
+const foreground = new Sprite({
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imgSrc: 'img/fg-map.png',
 });
 
 const camera = {
@@ -280,6 +288,7 @@ function animate() {
 			player.switchToSprite('FallLeft');
 		}
 	}
+	foreground.update();
 
 	c.restore();
 }
