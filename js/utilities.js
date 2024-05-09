@@ -1,3 +1,5 @@
+const FPS = 60;
+
 function collision({ object1, object2 }) {
 	return (
 		object1.position.y + object1.height >= object2.position.y &&
@@ -59,4 +61,17 @@ const spriteImages = [
 	'img/fg-map.png',
 ];
 
-const FPS = 60;
+function showGameOverScreen() {
+	const gameOverScreen = document.getElementById('game-over-screen');
+	gameOverScreen.style.display = 'flex';
+}
+
+function hideGameOverScreen() {
+	const gameOverScreen = document.getElementById('game-over-screen');
+	gameOverScreen.style.display = 'none';
+}
+
+function hideStartScreen() {
+	const startScreen = document.getElementById('start-screen');
+	startScreen.style.display = 'none';
+}

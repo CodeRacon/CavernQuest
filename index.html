@@ -19,7 +19,6 @@
 		<script defer src="js/classes/collectables/gems.js"></script>
 		<script defer src="js/classes/collectables/books.js"></script>
 		<script defer src="js/classes/collectables/potions.js"></script>
-		<script defer src="js/classes/decoration/blueFlower.js"></script>
 		<script defer src="js/classes/decoration/windyPlant.js"></script>
 		<script defer src="js/classes/bouncePlant.js"></script>
 		<script defer src="js/classes/poisonPlant.js"></script>
@@ -28,16 +27,30 @@
 		<script defer src="js/classes/magicSpell.js"></script>
 		<script defer src="js/classes/particle.js"></script>
 		<script defer src="js/classes/player.js"></script>
+		<script defer src="js/init/initPlayer.js"></script>
 		<script defer src="js/init/initStaticCollision.js"></script>
 		<script defer src="js/init/initWorldElements.js"></script>
 		<script defer src="js/init/initCollectables.js"></script>
 		<script defer src="js/init/initEnemies.js"></script>
-		<script defer src="js/init/initPlayer.js"></script>
 		<script defer src="main.js"></script>
 		<title>CavernQuest</title>
 	</head>
-	<body onload="preloadImages(spriteImages)">
+	<body onload="preloadImages(spriteImages), initGame()">
 		<main>
+			<div id="start-screen" style="display: flex">
+				<h1>CavernQuest</h1>
+				<p>Grundlegende Story und Steuerung des Spiels...</p>
+				<button id="start-button" onclick="hideStartScreen()">
+					Start Game
+				</button>
+			</div>
+
+			<div id="game-over-screen" style="display: none">
+				<h1>Game Over</h1>
+				<p>You died!</p>
+				<button onclick="resetGame()">Restart</button>
+			</div>
+
 			<div class="gui">
 				<div class="bars">
 					<div id="health-bar">
@@ -111,6 +124,7 @@
 					</div>
 				</div>
 			</div>
+
 			<canvas id="canvas"> </canvas>
 		</main>
 	</body>
