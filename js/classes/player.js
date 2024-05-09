@@ -13,47 +13,18 @@ class Player extends Sprite {
 			frameRate,
 			scale,
 		});
+
 		this.position = position;
 		this.velocity = {
 			x: 0,
 			y: 1,
 		};
-		this.isGrounded = false;
+
+		this.initialValues();
 
 		this.collisionBlocks = collisionBlocks;
 		this.hazards = hazards;
 		this.collisionCooldown = 0;
-
-		this.health = 100;
-		this.spellPower = 100;
-		this.spellPowerRegenRate = 0.5;
-
-		this.isHit = false;
-		this.hitAnimationDuration = 333;
-
-		this.isPoisoned = false;
-		this.poisonDuration = 0;
-		this.poisonOpacity = 0;
-
-		this.currentSpell = null;
-		this.spellCooldown = 0;
-		this.spellCooldownDuration = 30;
-
-		this.collectedBlueGems = 0;
-		this.collectedRedGems = 0;
-		this.collectedScrolls = 0;
-		this.collectedPotions = {
-			halfHP: 0,
-			fullHP: 0,
-			fullSP: 0,
-			immunity: 0,
-		};
-		this.collectedBooks = {
-			yellowBook: false,
-			blueBook: false,
-			redBook: false,
-			greenBook: false,
-		};
 
 		this.hitbox = {
 			position: {
@@ -93,12 +64,56 @@ class Player extends Sprite {
 		this.particleEmitterXRange = 112;
 	}
 
+	initialValues() {
+		this.health = 100;
+		this.spellPower = 100;
+		this.spellPowerRegenRate = 0.5;
+		this.collectedPotions = {
+			halfHP: 0,
+			fullHP: 0,
+			fullSP: 0,
+			immunity: 0,
+		};
+		this.collectedScrolls = 0;
+		this.collectedBooks = {
+			yellowBook: false,
+			greenBook: false,
+			blueBook: false,
+			redBook: false,
+		};
+		this.collectedBlueGems = 0;
+		this.collectedRedGems = 0;
+		this.position = {
+			x: 396,
+			y: 2048,
+		};
+		this.velocity = {
+			x: 0,
+			y: 0,
+		};
+		this.isDead = false;
+		this.deadAnimationDuration = 12;
+		this.isHit = false;
+		this.hitAnimationDuration = 333;
+		this.isPoisoned = false;
+		this.poisonDuration = 0;
+		this.poisonOpacity = 0;
+		this.currentSpell = null;
+		this.spellCooldown = 0;
+		this.spellCooldownDuration = 30;
+	}
+
 	/**
 	 * Updates the player's state and handles various collision checks and effects.
 	 * This method is called every frame to update the player's position, animations,
 	 * and interactions with other game objects.
 	 */
 	update() {
+		if (this.health <= 0) {
+			this.isDead = true;
+			this.switchToSprite('Dead');
+		}
+
 		if (this.spellCooldown > 0) {
 			this.spellCooldown--;
 		}
@@ -601,10 +616,10 @@ class Player extends Sprite {
 		this.hitbox = {
 			position: {
 				x: this.position.x + 392,
-				y: this.position.y + 288,
+				y: this.position.y + 304,
 			},
 			width: 248,
-			height: 512,
+			height: 480,
 		};
 	}
 
