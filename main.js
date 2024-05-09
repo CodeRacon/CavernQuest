@@ -39,17 +39,7 @@ const camera = {
 	},
 };
 
-function animate() {
-	window.requestAnimationFrame(animate);
-	c.fillStyle = 'black';
-	c.fillRect(0, 0, canvas.width, canvas.height);
-
-	c.save();
-	c.scale(0.125, 0.125);
-	c.translate(camera.position.x, camera.position.y);
-
-	background.update();
-
+function updateStaticCollision() {
 	collisionBlocks.forEach((collisionBlock) => {
 		collisionBlock.update();
 	});
@@ -61,7 +51,9 @@ function animate() {
 	fencePoles.forEach((fencePole) => {
 		fencePole.update();
 	});
+}
 
+function updateEnemies() {
 	movingBlobs.forEach((movingBlob) => {
 		movingBlob.requiredHits = 3 - player.collectedScrolls;
 		movingBlob.update(player);
@@ -71,6 +63,13 @@ function animate() {
 		hangingBlob.update(player);
 	});
 
+	poisonPlants.forEach((poisonPlant) => {
+		poisonPlant.update();
+		poisonPlant.checkCollision(player);
+	});
+}
+
+function updateWorldElements() {
 	bouncePlants.forEach((bouncePlant) => {
 		bouncePlant.update();
 	});
@@ -78,16 +77,9 @@ function animate() {
 	windyPlants.forEach((windyPlant) => {
 		windyPlant.update();
 	});
+}
 
-	// blueFlowers.forEach((blueFlower) => {
-	// 	blueFlower.update();
-	// });
-
-	poisonPlants.forEach((poisonPlant) => {
-		poisonPlant.update();
-		poisonPlant.checkCollision(player);
-	});
-
+function updateCollectables() {
 	blueGems.forEach((blueGem) => {
 		blueGem.update();
 		blueGem.checkCollision(player);
@@ -142,15 +134,18 @@ function animate() {
 		spellScroll.update();
 		spellScroll.checkCollision(player);
 	});
+}
 
-	// ####### BARS #########
+function updateHealthBar() {
 	const healthBarWrapper = document.getElementById('health-bar-wrapper');
 	const healthPercentage = (player.health / 100) * 100;
 	healthBarWrapper.style.width = `${healthPercentage}%`;
 
 	const healthBarText = document.getElementById('health-bar-text');
 	healthBarText.textContent = `${player.health} HP`;
+}
 
+function updateSpellPowerBar() {
 	const spellpowerBarWrapper = document.getElementById(
 		'spellpower-bar-wrapper'
 	);
@@ -159,8 +154,9 @@ function animate() {
 
 	const spellpowerBarText = document.getElementById('spellpower-bar-text');
 	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
+}
 
-	// ####### POTIONS #########
+function updatePotionCounter() {
 	const halfHPCount = document.getElementById('halfHP-count');
 	halfHPCount.textContent = player.collectedPotions.halfHP;
 
@@ -172,12 +168,14 @@ function animate() {
 
 	const immunityCount = document.getElementById('immunity-count');
 	immunityCount.textContent = player.collectedPotions.immunity;
+}
 
-	// ####### Spell-Power #########
+function updateSpellScrollCounter() {
 	const spellScrollCount = document.getElementById('spell-scroll-count');
 	spellScrollCount.textContent = player.collectedScrolls;
+}
 
-	// ####### BOOKS #########
+function updateBookCounter() {
 	const goldenBookImage = document.getElementById('goldenBook');
 	const greenBookImage = document.getElementById('greenBook');
 	const blueBookImage = document.getElementById('blueBook');
@@ -195,8 +193,9 @@ function animate() {
 	if (player.collectedBooks.redBook) {
 		redBookImage.classList.add('collected');
 	}
+}
 
-	// ####### GEMS + SCORE #########
+function updateGemsAndScore() {
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
 
@@ -205,17 +204,60 @@ function animate() {
 
 	const blueGemScore = document.getElementById('total-gem-score');
 	blueGemScore.textContent = calculateBlueGemScore();
+}
 
-	// ####### PLAYER #########
+function updateGameAssets() {
+	updateStaticCollision();
+	updateEnemies();
+	updateWorldElements();
+	updateCollectables();
+}
+
+function updateStatusBar() {
+	updateHealthBar();
+	updateSpellPowerBar();
+	updatePotionCounter();
+	updateSpellScrollCounter();
+	updateBookCounter();
+	updateGemsAndScore();
+}
+
+// ########### PLAYER FUNCTIONS ###########
+function updatePlayer() {
 	player.update(bouncePlants);
 
+	checkPlayerState();
+	updatePlayerSpell();
+	handlePlayerInput();
+	updatePlayerAnimation();
+}
+
+function checkPlayerState() {
+	if (player.isDead) {
+		player.deadAnimationDuration--;
+		if (player.deadAnimationDuration <= 0) {
+			showGameOverScreen();
+			return;
+		}
+	}
+}
+
+function updatePlayerSpell() {
 	if (player.currentSpell) {
 		player.currentSpell.update(movingBlobs);
 	}
+}
 
+function handlePlayerInput() {
 	player.velocity.x = 0;
 
-	// Walk
+	handleWalkInput();
+	handleDashInput();
+	handleRiseInput();
+	handleJumpAndFallInput();
+}
+
+function handleWalkInput() {
 	if (keys.d.pressed && !player.isHit) {
 		player.switchToSprite('WalkRight');
 		player.velocity.x = 28;
@@ -227,9 +269,10 @@ function animate() {
 		player.lastDirection = 'left';
 		player.rightBorderCamPanning({ canvas, camera });
 	}
+}
 
-	// Dash
-	else if (keys.e.pressed && !player.isHit && player.spellPower >= 12 / 60) {
+function handleDashInput() {
+	if (keys.e.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.switchToSprite('DashRight');
 		player.velocity.x = 64;
 		player.lastDirection = 'right';
@@ -241,7 +284,27 @@ function animate() {
 		player.lastDirection = 'left';
 		player.useSpellPower(12 / 60);
 		player.rightBorderCamPanning({ canvas, camera });
-	} else if (player.velocity.y === 0 && !player.isHit) {
+	}
+}
+
+function handleRiseInput() {
+	if (keys.p.pressed && !player.isHit && player.spellPower >= 12 / 60) {
+		player.velocity.y = -26;
+		player.useSpellPower(12 / 60);
+		player.bottomBorderCamPanning({ camera, canvas });
+	}
+}
+
+function handleJumpAndFallInput() {
+	if (player.velocity.y < 0 && !player.isHit) {
+		player.bottomBorderCamPanning({ camera, canvas });
+	} else if (player.velocity.y > 0 && !player.isHit) {
+		player.upperBorderCamPanning({ camera, canvas });
+	}
+}
+
+function updatePlayerAnimation() {
+	if (player.velocity.y === 0 && !player.isHit) {
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('IdleRight');
 		} else {
@@ -249,58 +312,78 @@ function animate() {
 		}
 	}
 
-	// Rise
-	if (keys.p.pressed && !player.isHit && player.spellPower >= 12 / 60) {
-		player.velocity.y = -26;
-		player.useSpellPower(12 / 60);
-		player.bottomBorderCamPanning({ camera, canvas });
-
-		if (player.lastDirection === 'right') {
-			player.switchToSprite('JumpRight');
-		} else {
-			player.switchToSprite('JumpLeft');
-		}
-	} else if (player.velocity.y > 0 && !player.isHit) {
-		player.upperBorderCamPanning({ camera, canvas });
-
-		if (player.lastDirection === 'right') {
-			player.switchToSprite('FallRight');
-		} else {
-			player.switchToSprite('FallLeft');
-		}
-	}
-
-	// Jump & Fall
 	if (player.velocity.y < 0 && !player.isHit) {
-		player.bottomBorderCamPanning({ camera, canvas });
-
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('JumpRight');
 		} else {
 			player.switchToSprite('JumpLeft');
 		}
 	} else if (player.velocity.y > 0 && !player.isHit) {
-		player.upperBorderCamPanning({ camera, canvas });
-
 		if (player.lastDirection === 'right') {
 			player.switchToSprite('FallRight');
 		} else {
 			player.switchToSprite('FallLeft');
 		}
 	}
+}
+
+let animationId;
+
+function animate() {
+	animationId = window.requestAnimationFrame(animate);
+
+	c.fillStyle = 'black';
+	c.fillRect(0, 0, canvas.width, canvas.height);
+
+	c.save();
+	c.scale(0.125, 0.125);
+	c.translate(camera.position.x, camera.position.y);
+
+	background.update();
+
+	updateGameAssets();
+	updateStatusBar();
+	updatePlayer();
 	foreground.update();
 
 	c.restore();
 }
 
-animate();
+// animate();
+
+function initGame() {
+	console.log('init game');
+	initStaticCollision();
+	initWorldElements();
+	initCollectables();
+	initEnemies();
+	initPlayer();
+
+	animate();
+}
+
+function resetGame() {
+	cancelAnimationFrame(animationId);
+
+	player.initialValues();
+
+	initCollectables();
+	initPlayer();
+	initWorldElements();
+	initEnemies();
+
+	hideStartScreen();
+	hideGameOverScreen();
+
+	animate();
+}
 
 window.addEventListener('keydown', (event) => {
 	switch (event.key) {
 		case 'w':
 			if (player.isGrounded) {
 				player.velocity.y = -48;
-				player.isGrounded = false; // Spieler verlässt den Boden beim Springen
+				player.isGrounded = false;
 			}
 			break;
 		case 'p':
