@@ -38,10 +38,241 @@
 	<body onload="preloadImages(spriteImages), initGame()">
 		<main>
 			<div id="start-screen" style="display: flex">
-				<h1>CavernQuest</h1>
-				<p>Grundlegende Story und Steuerung des Spiels...</p>
+				<div class="heading">
+					<h1>CavernQuest</h1>
+				</div>
+
+				<div class="how-to-play">
+					<h2>Quest</h2>
+
+					<p>
+						In addition to freeing the cave from all evil forces, your main task
+						is to find the four ancient Tomes of Magic:
+					</p>
+					<div class="books">
+						<img src="img/collectables/TomeYellow.png" alt="" />
+						<img src="img/collectables/TomeGreen.png" alt="" />
+						<img src="img/collectables/TomeBlue.png" alt="" />
+						<img src="img/collectables/TomeRed.png" alt="" />
+					</div>
+
+					<h2>Enemies:</h2>
+					<p>Beware of lurking dangers like:</p>
+					<br />
+					<div class="enemies">
+						<div class="blobs">
+							<img src="img/intro/tblob.png" alt="" />
+							<p>The Tingle-Tangle Blob</p>
+						</div>
+						<div class="blobs">
+							<img src="img/intro/sblob.png" alt="" />
+							<p>The Sleepy Blob</p>
+						</div>
+					</div>
+
+					<br />
+					<p>Nature itself conspires against our hero:</p>
+					<br />
+
+					<div class="natural-enemies">
+						<div class="plants">
+							<img src="img/intro/thorny-vine.png" alt="" />
+							<p>Thorny Vines</p>
+						</div>
+						<div class="plants">
+							<img src="img/intro/poison-plant.png" alt="" />
+							<p>"Deadly Breath"</p>
+						</div>
+					</div>
+					<br />
+					<div class="poison-note">
+						<div class="text">
+							<p>
+								When touched by the "Deadly Breath" Woozl will have an quiet
+								unhealthy color and is constantly loosing HP for a period of 20
+								seconds.
+							</p>
+							<br />
+							<p>Use a Red Potion to counteract the poison!</p>
+						</div>
+						<img src="img/intro/woozle-poisoned.png" alt="" />
+					</div>
+
+					<h2>Items:</h2>
+					<p>
+						To help you on your way, you'll find a range of magical elixirs
+						scattered throughout the cavern.
+					</p>
+					<br />
+					<p>
+						Press the following keys to use the desired Potion if available:
+					</p>
+
+					<div class="items">
+						<div class="potion">
+							<div class="key">1</div>
+							<img src="img/collectables/PotionYellow.png" alt="" />
+							<p>Yellow Potion fills Health up to <span>50%</span></p>
+						</div>
+
+						<div class="potion">
+							<div class="key">2</div>
+							<img src="img/collectables/PotionGreen.png" alt="" />
+							<p>Green Potion fills Health up to <span>100%</span></p>
+						</div>
+
+						<div class="potion">
+							<div class="key">3</div>
+							<img src="img/collectables/PotionBlue.png" alt="" />
+							<p>Blue Potion fills Spell-Power up to <span>100%</span></p>
+						</div>
+
+						<div class="potion">
+							<div class="key">4</div>
+							<img src="img/collectables/PotionRed.png" alt="" />
+							<p>Red Potion counteracts poison</p>
+						</div>
+
+						<div class="scroll">
+							<p>Keep an eye on hidden <span>scrolls</span></p>
+							<img src="img/collectables/Scroll.png" alt="" />
+							<br />
+						</div>
+						<p>
+							They contain
+							<span>ancient powers</span>, to unleash the full might of your
+							magic upon your enemies!
+						</p>
+					</div>
+
+					<h2>Controls:</h2>
+					<div class="controls">
+						<div class="control-entry-row">
+							<div class="control-entry">
+								<div class="key">A</div>
+								<p>Move <span>left</span></p>
+							</div>
+							<div class="control-entry">
+								<div class="key">W</div>
+								<p><span>Jump</span></p>
+							</div>
+							<div class="control-entry">
+								<div class="key">D</div>
+								<p>Move <span>right</span></p>
+							</div>
+						</div>
+						<br />
+						<p>
+							The following Moves consume a decent amount of
+							<span>Spell-Power</span> when used. You can fill up the SP with
+							Blue Potions if available. Otherwise you have to wait since
+							<span>SP will slowly regenarate</span>.
+						</p>
+						<div class="control-entry-row">
+							<div class="control-entry">
+								<div class="key">Q</div>
+								<p>Dash <span>left</span></p>
+							</div>
+							<div class="control-entry">
+								<div class="key">P</div>
+								<p><span>Fly up</span></p>
+							</div>
+							<div class="control-entry">
+								<div class="key">E</div>
+								<p>Dash <span>right</span></p>
+							</div>
+						</div>
+						<div class="control-entry-row">
+							<div class="control-entry">
+								<div class="key padding">Spacebar</div>
+								<p>Cast a <span>Spell</span> against an enemy</p>
+							</div>
+							<img class="spell" src="img/intro/woozle-spell.png" alt="" />
+						</div>
+						<p>
+							Most of these Moves can be combined to outmaneuver opponents or
+							reach hard to access areas.
+						</p>
+
+						<h2>The journey awaits! So buckle up, grab your wand and...</h2>
+					</div>
+				</div>
+
+				<div id="intro" class="intro">
+					<p>
+						In a world shrouded in mystery and danger, where magic reigns
+						supreme, comes a tale of epic proportions.
+					</p>
+
+					<h2>Welcome to Cavern Quest!</h2>
+
+					<div class="part">
+						<p>
+							Meet Woozl, a young apprentice wizard tasked with a daunting
+							mission: to retrieve the
+							<span>four ancient tomes of magic</span> that have vanished into
+							the depths of the dark cavern. Armed with only his wits and his
+							trusty spells, Woozl must navigate treacherous terrain and
+							<span>face off against deadly foes</span> to complete his quest.
+						</p>
+						<img src="img/intro/woozle.png" alt="" />
+					</div>
+
+					<div class="part">
+						<p>
+							But fear not, for
+							<span>Woozl is no ordinary apprentice.</span> With a flick of his
+							hand, he can unleash <span>powerful magic</span> to defend
+							himself. And with the ability to
+							<span>float and dash through the air</span>, he can outmaneuver
+							even the most cunning opponents. But magic comes at a cost, as
+							Woozl's powers rely on a finite well of energy that
+							<span>must be managed carefully</span>.
+						</p>
+						<img src="img/intro/spell.png" alt="" />
+					</div>
+
+					<div class="part">
+						<p>
+							Beware the <span>Tingle-Tangle Blob</span>, a mischievous creature
+							that grow more aggressive with each encounter. Be also aware of
+							the <span>Sleepy Blobs</span>. Deceptively harmless until
+							disturbed from their slumber, one should definitely stay out of
+							their way. Nature itself conspires against our hero, with
+							<span>thorny vines and poisonous plants</span> lying in wait at
+							every turn.
+						</p>
+						<img src="img/intro/tblob.png" alt="" />
+					</div>
+
+					<div class="part">
+						<p>
+							Yet, hope shines bright in the form of
+							<span>magical elixirs scattered throughout the cavern</span>. From
+							potions to restore health and magical powers, to antidotes to
+							counteract poison, Woozl has the tools he needs to succeed. And
+							with the discovery of
+							<span>hidden scrolls containing ancient powers</span>, he can
+							unleash the full might of his magic upon his enemies.
+						</p>
+						<img src="img/intro/PotionGreen.png" alt="" />
+					</div>
+
+					<p>
+						Woozl's and the fate of the wizarding world hangs in the balance,
+						and only you can help him prevail against the darkness that lurks
+						within. So grab your wand, summon your courage, and embark on an
+						adventure like no other.
+					</p>
+
+					<h2>
+						The journey awaits, brave soul. Will you answer the call and join
+						Woozl on his daring Cavern Quest?
+					</h2>
+				</div>
+
 				<button id="start-button" onclick="hideStartScreen()">
-					Start Game
+					Start the Game
 				</button>
 			</div>
 
@@ -50,82 +281,87 @@
 				<p>You died!</p>
 				<button onclick="resetGame()">Restart</button>
 			</div>
+			<div id="game-panel">
+				<div id="HUD-wrapper">
+					<div id="HUD">
+						<div class="bars">
+							<div id="health-bar">
+								<div id="health-bar-wrapper">
+									<div id="health-bar-fill"></div>
+								</div>
+								<div id="health-bar-text"></div>
+							</div>
 
-			<div class="gui">
-				<div class="bars">
-					<div id="health-bar">
-						<div id="health-bar-wrapper">
-							<div id="health-bar-fill"></div>
+							<div id="spellpower-bar">
+								<div id="spellpower-bar-wrapper">
+									<div id="spellpower-bar-fill"></div>
+								</div>
+								<div id="spellpower-bar-text"></div>
+							</div>
 						</div>
-						<div id="health-bar-text"></div>
-					</div>
 
-					<div id="spellpower-bar">
-						<div id="spellpower-bar-wrapper">
-							<div id="spellpower-bar-fill"></div>
+						<div id="potions-container">
+							<div>
+								<img
+									id="halfHP"
+									src="img/collectables/PotionYellow.png"
+									alt="" /><span id="halfHP-count">0</span>
+							</div>
+							<div>
+								<img
+									id="fullHP"
+									src="img/collectables/PotionGreen.png"
+									alt="" /><span id="fullHP-count">0</span>
+							</div>
+							<div>
+								<img
+									id="fullSP"
+									src="img/collectables/PotionBlue.png"
+									alt="" /><span id="fullSP-count">0</span>
+							</div>
+							<div>
+								<img
+									id="immunity"
+									src="img/collectables/PotionRed.png"
+									alt="" /><span id="immunity-count">0</span>
+							</div>
 						</div>
-						<div id="spellpower-bar-text"></div>
-					</div>
-				</div>
 
-				<div id="potions-container">
-					<div>
-						<img
-							id="halfHP"
-							src="img/collectables/PotionYellow.png"
-							alt="" /><span id="halfHP-count">0</span>
-					</div>
-					<div>
-						<img
-							id="fullHP"
-							src="img/collectables/PotionGreen.png"
-							alt="" /><span id="fullHP-count">0</span>
-					</div>
-					<div>
-						<img
-							id="fullSP"
-							src="img/collectables/PotionBlue.png"
-							alt="" /><span id="fullSP-count">0</span>
-					</div>
-					<div>
-						<img
-							id="immunity"
-							src="img/collectables/PotionRed.png"
-							alt="" /><span id="immunity-count">0</span>
-					</div>
-				</div>
-
-				<div id="specials-container">
-					<img src="img/collectables/Scroll.png" alt="" />
-					<span id="spell-scroll-count"></span>/2
-					<!-- <img src="img/collectables/Armor.png" alt="" /> -->
-				</div>
-
-				<div id="books-container">
-					<img id="goldenBook" src="img/collectables/TomeYellow.png" alt="" />
-					<img id="greenBook" src="img/collectables/TomeGreen.png" alt="" />
-					<img id="blueBook" src="img/collectables/TomeBlue.png" alt="" />
-					<img id="redBook" src="img/collectables/TomeRed.png" alt="" />
-				</div>
-
-				<div id="gem-score">
-					<div id="blue-and-red">
-						<div id="blue-gem-score-container">
-							<img src="img/collectables/GemBlue.png" alt="" />
-							<span id="blue-gem-count"></span>
+						<div id="specials-container">
+							<img src="img/collectables/Scroll.png" alt="" />
+							<span id="spell-scroll-count"></span>/2
 						</div>
-						<div id="red-gem-score-container">
-							<img src="img/collectables/GemRed.png" alt="" />
-							<span id="red-gem-count"></span>/10
+
+						<div id="books-container">
+							<img
+								id="goldenBook"
+								src="img/collectables/TomeYellow.png"
+								alt="" />
+							<img id="greenBook" src="img/collectables/TomeGreen.png" alt="" />
+							<img id="blueBook" src="img/collectables/TomeBlue.png" alt="" />
+							<img id="redBook" src="img/collectables/TomeRed.png" alt="" />
+						</div>
+
+						<div id="gem-score">
+							<div id="blue-and-red">
+								<div id="blue-gem-score-container">
+									<img src="img/collectables/GemBlue.png" alt="" />
+									<span id="blue-gem-count"></span>
+								</div>
+								<div id="red-gem-score-container">
+									<img src="img/collectables/GemRed.png" alt="" />
+									<span id="red-gem-count"></span>/10
+								</div>
+							</div>
+							<div id="total-gem-score-container">
+								<span>Total: <span id="total-gem-score"></span></span>
+							</div>
 						</div>
 					</div>
-					<div id="total-gem-score-container">
-						<span>Total: <span id="total-gem-score"></span></span>
-					</div>
 				</div>
+
+				<canvas id="canvas"> </canvas>
 			</div>
-
-			<canvas id="canvas"> </canvas>
 		</main>
 	</body>
 </html>

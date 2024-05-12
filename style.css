@@ -2,6 +2,10 @@
 	font-family: 'Magical';
 	src: url('./fonts/magical-world.regular.otf');
 }
+@font-face {
+	font-family: 'RETROACTIVE';
+	src: url('fonts/RETROACTIVE.otf');
+}
 
 body {
 	margin: 0;
@@ -14,30 +18,334 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 1024px;
-	height: 512px;
+	width: 100vw;
+	max-width: 1280px;
+	height: 100vh;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
-span {
+button {
+	font-family: 'Magical', sans-serif;
+}
+
+span,
+p {
 	margin: 0;
 	padding: 0;
 }
 
-canvas {
-	display: block;
+h1 {
+	font-size: 4.125rem;
+	font-weight: 500;
+	color: #ffd900;
+	text-shadow: 2px 2px 12px #ffae00a5;
 }
 
-.gui {
+h2 {
+	font-family: 'RETROACTIVE';
+	color: #45c7d5;
+	margin-top: 2.75rem;
+	text-shadow: 2px 2px 12px #5edceaac;
+}
+
+#start-screen {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 1280px;
+	height: 100%;
+	background-color: #0b2025;
+	background-image: url(img/frame.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #fff;
+	z-index: 9999;
+	overflow-y: auto;
+}
+
+.heading {
+	display: flex;
+	justify-content: center;
+}
+
+.intro {
+	display: none;
+	flex-direction: column;
+	max-width: 60%;
+	padding-bottom: 4rem;
+}
+
+.part {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.part img {
+	width: 25%;
+	max-width: 96px;
+	aspect-ratio: 1/1;
+	object-fit: contain;
+	border-radius: 50%;
+	box-shadow: #00eaffbe 0px 0px 24px 0px;
+}
+
+.intro p,
+.how-to-play {
+	font-family: 'RETROACTIVE';
+	font-size: 1.25rem;
+	color: #d1edff;
+	line-height: 120%;
+}
+
+.intro span {
+	font-size: 1.25rem;
+	color: #aa45d5;
+	line-height: 112.5%;
+}
+
+.how-to-play {
+	display: flex;
+	flex-direction: column;
+	max-width: 60%;
+	padding-bottom: 4rem;
+}
+
+.books {
+	display: flex;
+	margin-top: 0.75rem;
+}
+
+.enemies,
+.natural-enemies {
+	display: flex;
+	justify-content: space-between;
+	height: fit-content;
+	color: #aa45d5;
+}
+
+.natural-enemies img {
+	height: 15%;
+	object-fit: contain;
+}
+
+.blobs,
+.plants {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	height: fit-content;
+	background-position-y: center;
+	background-repeat: no-repeat;
+}
+
+.plants {
+	background-image: radial-gradient(circle, #0098c696 0%, #ffffff00 65%);
+}
+
+.blobs {
+	background-image: radial-gradient(circle, #0098c696 0%, #ffffff00 57.5%);
+}
+
+.blobs img {
+	width: 66%;
+	object-fit: contain;
+}
+
+.plants img {
+	width: 37.5%;
+	object-fit: contain;
+}
+
+.poison-note {
+	display: flex;
+	justify-content: space-between;
+}
+
+.poison-note img {
+	max-height: 160px;
+	object-fit: contain;
+	border-radius: 50%;
+	background-image: radial-gradient(circle, #0098c696 0%, #ffffff00 75%);
+}
+
+.items,
+.controls {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.potion {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+	margin-top: 0.75rem;
+}
+
+.potion span,
+.scroll span {
+	color: #aa45d5;
+}
+
+.scroll {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.books img,
+.items img {
+	width: 48px;
+	object-fit: contain;
+	border-radius: 50%;
+	background-image: radial-gradient(circle, #0098c6d9 0%, #ffffff00 75%);
+}
+
+.key {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-width: 24px;
+	width: fit-content;
+	height: 24px;
+	border-radius: 4px;
+	border: 1px white solid;
+	background-color: #3c3c3c;
+	color: white;
+	font-size: 1.25rem;
+	font-family: 'Magical';
+}
+.padding {
+	padding: 0 0.35rem;
+}
+
+.control-entry-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.control-entry-row:last-of-type {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2rem;
+}
+
+.control-entry {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+	margin-top: 0.75rem;
+}
+
+.spell {
+	height: 160px;
+	object-fit: contain;
+	border-radius: 50%;
+	background-image: radial-gradient(circle, #0098c6aa 0%, #ffffff00 65%);
+}
+
+.control-entry span {
+	color: #45c7d5;
+}
+
+#start-button {
+	padding: 10px 20px;
+	margin-bottom: 4rem;
+	font-size: 24px;
+	background-color: #2c838c;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	text-shadow: 2px 2px 2px #0f282b1b;
+	box-shadow: 0px 0px 16px 4px #b341d9a1;
+	cursor: pointer;
+	transition: all 0.125s ease-in-out;
+}
+
+#start-button:hover {
+	text-shadow: 2px 2px 2px #0f282b76;
+	background-color: #45c7d5;
+	box-shadow: 0px 0px 16px 2px #2de3bf97;
+}
+
+#game-over-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #ffd900;
+	z-index: 9999;
+}
+
+canvas {
+	display: block;
+	border: #0a2222e8 solid 1px;
+	border-radius: 1rem;
+	box-shadow: #537a7796 0px 0px 16px 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+	canvas {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-height: 512px) {
+	canvas {
+		height: 100vh;
+	}
+}
+
+#game-panel {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+#HUD-wrapper {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#mobile-actions-wrapper {
+	position: relative;
+	display: flex;
+	bottom: 0;
+}
+
+#HUD {
 	position: absolute;
 	top: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	width: calc(1024px - 2rem);
-	height: 120px;
+	height: 3.5rem;
 	padding: 0.75rem 1rem 0 1rem;
-	background-image: linear-gradient(180deg, #040d10e8 20%, #06131700 100%);
+	border-radius: 1rem;
+	background-image: linear-gradient(180deg, #0a2222e8 0%, #ffffff00 100%);
+	pointer-events: none;
 }
 
 .bars {
@@ -212,44 +520,4 @@ canvas {
 
 #total-gem-score {
 	margin-left: 2.25rem;
-}
-
-#game-over-screen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: #ffd900;
-	z-index: 9999;
-}
-
-#start-screen {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	z-index: 9999;
-}
-
-#start-button {
-	padding: 10px 20px;
-	font-size: 24px;
-	background-color: #4caf50;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
 }
