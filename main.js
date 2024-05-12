@@ -32,7 +32,7 @@ const foreground = new Sprite({
 	imgSrc: 'img/fg-map.png',
 });
 
-const camera = {
+let camera = {
 	position: {
 		x: 0,
 		y: 0,
@@ -364,6 +364,13 @@ function initGame() {
 
 function resetGame() {
 	cancelAnimationFrame(animationId);
+
+	camera = {
+		position: {
+			x: 0,
+			y: 0,
+		},
+	};
 
 	player.initialValues();
 
