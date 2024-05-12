@@ -15,6 +15,21 @@ function calculateBlueGemScore() {
 	return Math.floor(baseScore * multiplier);
 }
 
+function scaleHUD() {
+	const HUDwrap = document.getElementById('HUD-wrapper');
+	const HUD = document.getElementById('HUD');
+	const screenWidth = window.innerWidth;
+	const scale = Math.min(screenWidth / 1024, 1);
+
+	HUDwrap.style.transform = `scale(${scale})`;
+}
+
+window.addEventListener('load', scaleHUD);
+window.addEventListener('resize', scaleHUD);
+
+window.addEventListener('load', scaleHUD);
+window.addEventListener('resize', scaleHUD);
+
 function preloadImages(urls) {
 	urls.forEach(function (url) {
 		const img = new Image();
