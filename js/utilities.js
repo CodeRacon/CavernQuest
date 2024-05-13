@@ -90,3 +90,69 @@ function hideStartScreen() {
 	const startScreen = document.getElementById('start-screen');
 	startScreen.style.display = 'none';
 }
+
+function toggleStoryChapter() {
+	const storyChapter = document.getElementById('story');
+	const storyBtn = document.getElementById('story-btn');
+	const manualBtn = document.getElementById('manual-btn');
+
+	if (manualBtn.classList.contains('active')) {
+		toggleManualChapter();
+	}
+	if (storyChapter.classList.contains('fade-in')) {
+		storyBtn.classList.replace('active', 'inactive');
+		storyChapter.classList.replace('fade-in', 'fade-out');
+		setTimeout(() => {
+			storyChapter.classList.replace('d-flex', 'd-none');
+		}, 200);
+	} else {
+		storyBtn.classList.replace('inactive', 'active');
+		storyChapter.classList.replace('fade-out', 'fade-in');
+		setTimeout(() => {
+			storyChapter.classList.replace('d-none', 'd-flex');
+		}, 0);
+	}
+	toggleQuickStart();
+}
+
+function toggleManualChapter() {
+	const manualChapter = document.getElementById('manual');
+	const manualBtn = document.getElementById('manual-btn');
+	const storyBtn = document.getElementById('story-btn');
+
+	if (storyBtn.classList.contains('active')) {
+		toggleStoryChapter();
+	}
+	if (manualChapter.classList.contains('fade-in')) {
+		manualBtn.classList.replace('active', 'inactive');
+		manualChapter.classList.replace('fade-in', 'fade-out');
+		setTimeout(() => {
+			manualChapter.classList.replace('d-flex', 'd-none');
+		}, 200);
+	} else {
+		manualBtn.classList.replace('inactive', 'active');
+		manualChapter.classList.replace('fade-out', 'fade-in');
+		setTimeout(() => {
+			manualChapter.classList.replace('d-none', 'd-flex');
+		}, 0);
+	}
+	toggleQuickStart();
+}
+
+function toggleQuickStart() {
+	const quickStart = document.getElementById('quick-start');
+	const manualBtn = document.getElementById('manual-btn');
+	const storyBtn = document.getElementById('story-btn');
+	if (
+		manualBtn.classList.contains('active') ||
+		storyBtn.classList.contains('active')
+	) {
+		setTimeout(() => {
+			quickStart.classList.replace('d-block', 'd-none');
+		}, 200);
+	} else {
+		setTimeout(() => {
+			quickStart.classList.replace('d-none', 'd-block');
+		}, 200);
+	}
+}
