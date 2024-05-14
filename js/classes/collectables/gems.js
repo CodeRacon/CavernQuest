@@ -27,6 +27,7 @@ class BlueGem extends Sprite {
 			if (index > -1) {
 				blueGems.splice(index, 1);
 			}
+			playGemCollected();
 		}
 	}
 }
@@ -60,6 +61,7 @@ class RedGem extends Sprite {
 			if (index > -1) {
 				redGems.splice(index, 1);
 			}
+			playGemCollected();
 		}
 	}
 }
