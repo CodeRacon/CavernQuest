@@ -258,6 +258,7 @@ class Player extends Sprite {
 		if (this.collectedPotions.halfHP > 0) {
 			this.health = Math.min(this.health + 50, 100);
 			this.collectedPotions.halfHP--;
+			playPotionUse();
 		}
 	}
 
@@ -270,6 +271,7 @@ class Player extends Sprite {
 		if (this.collectedPotions.fullHP > 0) {
 			this.health = 100;
 			this.collectedPotions.fullHP--;
+			playPotionUse();
 		}
 	}
 
@@ -282,6 +284,7 @@ class Player extends Sprite {
 		if (this.collectedPotions.fullSP > 0) {
 			this.spellPower = 100;
 			this.collectedPotions.fullSP--;
+			playPotionUse();
 		}
 	}
 
@@ -296,6 +299,7 @@ class Player extends Sprite {
 			this.poisonDuration = 0;
 			this.poisonOpacity = 0;
 			this.collectedPotions.immunity--;
+			playPotionUse();
 		}
 	}
 
@@ -513,6 +517,8 @@ class Player extends Sprite {
 			});
 			this.spellCooldown = this.spellCooldownDuration;
 
+			playSpellcast();
+
 			setTimeout(() => {
 				this.currentSpell = null;
 			}, ((this.currentSpell.frameRate * this.currentSpell.frameBuffer) / 60) * 1000);
@@ -644,6 +650,7 @@ class Player extends Sprite {
 				if (object instanceof Hazard && this.collisionCooldown <= 0) {
 					this.health -= 2;
 					this.takeDamage();
+					playPlayerHurt();
 					this.collisionCooldown = 60;
 				}
 
@@ -701,6 +708,7 @@ class Player extends Sprite {
 				if (object instanceof Hazard && this.collisionCooldown <= 0) {
 					this.health -= 2;
 					this.takeDamage();
+					playPlayerHurt();
 					this.collisionCooldown = 60;
 				}
 
@@ -738,12 +746,11 @@ class Player extends Sprite {
 	 * @param {BouncePlant[]} bouncePlants - An array of bounce plant objects to check for collisions.
 	 */
 	detectBouncePlantCollision(bouncePlants) {
-		if (this.velocity.y <= 0) return; // proof, if player is falling
+		if (this.velocity.y <= 0) return;
 
 		for (let i = 0; i < bouncePlants.length; i++) {
 			const bouncePlant = bouncePlants[i];
 
-			// define offset for visual part of the BouncePlant (lot of transparent 'whitespace' in png)
 			const offset = {
 				x: 256,
 				y: 256,
@@ -759,9 +766,9 @@ class Player extends Sprite {
 				this.hitbox.position.x <=
 					bouncePlant.position.x + bouncePlant.width - offset.x
 			) {
-				// collision detected, player jumps higher
 				this.velocity.y = -48 * 1.2875;
 				this.isGrounded = false;
+				playBounceSound();
 				break;
 			}
 		}
