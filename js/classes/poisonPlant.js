@@ -67,6 +67,7 @@ class PoisonPlant extends Sprite {
 			player.hitbox.position.y <= bottomRight.y
 		) {
 			player.applyPoisonDamage();
+			playPlayerPoisened();
 		}
 	}
 
