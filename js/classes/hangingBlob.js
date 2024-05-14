@@ -70,6 +70,7 @@ class HangingBlob extends Sprite {
 					// collision detected, reduce player health by 10 points
 					player.health -= 20;
 					player.takeDamage();
+					playPlayerHurtAlt();
 
 					this.collisionCooldown = 60;
 				}
@@ -93,6 +94,7 @@ class HangingBlob extends Sprite {
 			player.hitbox.position.y <= this.sensor.position.y + this.sensor.height
 		) {
 			this.isAwake = true;
+			playBlobFall();
 		}
 	}
 }
