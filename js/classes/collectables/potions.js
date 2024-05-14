@@ -27,6 +27,7 @@ class FullHealthPotion extends Sprite {
 			if (index > -1) {
 				fullHPs.splice(index, 1);
 			}
+			playPotionFound();
 		}
 	}
 }
@@ -60,6 +61,7 @@ class HalfHealthPotion extends Sprite {
 			if (index > -1) {
 				halfHPs.splice(index, 1);
 			}
+			playPotionFound();
 		}
 	}
 }
@@ -93,6 +95,7 @@ class FullSpellPowerPotion extends Sprite {
 			if (index > -1) {
 				fullSPs.splice(index, 1);
 			}
+			playPotionFound();
 		}
 	}
 }
@@ -126,6 +129,7 @@ class ImmunityPotion extends Sprite {
 			if (index > -1) {
 				immunityPotions.splice(index, 1);
 			}
+			playPotionFound();
 		}
 	}
 }
