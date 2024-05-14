@@ -27,6 +27,7 @@ class SpellScroll extends Sprite {
 			if (index > -1) {
 				spellScrolls.splice(index, 1);
 			}
+			playScrollFound();
 		}
 	}
 }
