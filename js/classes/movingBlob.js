@@ -31,7 +31,7 @@ class MovingBlob extends Sprite {
 
 		this.initialSpeed = speed;
 		this.jumpAtHitVelocity = -30;
-		this.removerAfterHitDelay = 30;
+		this.removeAfterHitDelay = 20;
 
 		this.hitOpacity = 0;
 	}
@@ -44,23 +44,26 @@ class MovingBlob extends Sprite {
 			this.isHit = false;
 
 			if (this.hitCount === 1) {
+				playMovingBlob01();
 				this.velocity.x *= 1.33;
 				this.hitOpacity = 0.2;
 			} else if (this.hitCount === 2) {
+				playMovingBlob02();
 				this.velocity.x *= 1.66;
 				this.hitOpacity = 0.4;
 			} else if (this.hitCount === this.requiredHits) {
 				this.velocity.y = this.jumpAtHitVelocity;
-				this.removerAfterHitDelay;
+				playMovingBlob03();
+				this.removeAfterHitDelay;
 			}
 		}
 
 		if (this.hitCount === this.requiredHits) {
 			this.velocity.y += gravity;
 			this.position.y += this.velocity.y;
-			this.removerAfterHitDelay--;
+			this.removeAfterHitDelay--;
 
-			if (this.removerAfterHitDelay <= 0) {
+			if (this.removeAfterHitDelay <= 0) {
 				const index = movingBlobs.indexOf(this);
 				if (index !== -1) {
 					movingBlobs.splice(index, 1);
@@ -106,6 +109,7 @@ class MovingBlob extends Sprite {
 				// collision detected, reduce player health by 10 points
 				player.health -= 10;
 				player.takeDamage();
+				playPlayerHurt();
 
 				// set collision cooldown to 60 frames (= 1 Second)
 				this.collisionCooldown = 60;
