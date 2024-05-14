@@ -193,6 +193,16 @@ function updateBookCounter() {
 	if (player.collectedBooks.redBook) {
 		redBookImage.classList.add('collected');
 	}
+
+	if (
+		player.collectedBooks.yellowBook &&
+		player.collectedBooks.greenBook &&
+		player.collectedBooks.blueBook &&
+		player.collectedBooks.redBook
+	) {
+		allTomesFound = true;
+		playAllTomesFound();
+	}
 }
 
 function updateGemsAndScore() {
@@ -233,12 +243,28 @@ function updatePlayer() {
 }
 
 function checkPlayerState() {
+	if (player.health <= 15) {
+		playHeartBeat();
+	} else {
+		stopHeartBeat();
+	}
 	if (player.isDead) {
 		player.deadAnimationDuration--;
 		if (player.deadAnimationDuration <= 0) {
+			isDead = true;
 			showGameOverScreen();
 			return;
 		}
+	}
+}
+
+function checkQuestState() {
+	if (allTomesFound && movingBlobs.length === 0) {
+		playQuestCompleted();
+		isVictory = true;
+		setTimeout(() => {
+			playWellDone();
+		}, 2000);
 	}
 }
 
@@ -344,6 +370,7 @@ function animate() {
 	updateGameAssets();
 	updateStatusBar();
 	updatePlayer();
+	checkQuestState();
 	foreground.update();
 
 	c.restore();
@@ -389,12 +416,15 @@ window.addEventListener('keydown', (event) => {
 	switch (event.key) {
 		case 'w':
 			if (player.isGrounded) {
+				playJump();
 				player.velocity.y = -48;
 				player.isGrounded = false;
 			}
 			break;
 		case 'p':
 			keys.p.pressed = true;
+			playHover();
+			isHovering = true;
 			break;
 		case 'd':
 			keys.d.pressed = true;
@@ -404,9 +434,13 @@ window.addEventListener('keydown', (event) => {
 			break;
 		case 'e':
 			keys.e.pressed = true;
+			playDash();
+			isDashing = true;
 			break;
 		case 'q':
 			keys.q.pressed = true;
+			playDash();
+			isDashing = true;
 			break;
 		case ' ':
 			player.castSpell();
@@ -436,12 +470,15 @@ window.addEventListener('keyup', (event) => {
 			break;
 		case 'e':
 			keys.e.pressed = false;
+			isDashing = false;
 			break;
 		case 'q':
 			keys.q.pressed = false;
+			isDashing = false;
 			break;
 		case 'p':
 			keys.p.pressed = false;
+			isHovering = false;
 			break;
 	}
 });
