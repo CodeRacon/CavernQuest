@@ -17,15 +17,11 @@ function calculateBlueGemScore() {
 
 function scaleHUD() {
 	const HUDwrap = document.getElementById('HUD-wrapper');
-	const HUD = document.getElementById('HUD');
 	const screenWidth = window.innerWidth;
 	const scale = Math.min(screenWidth / 1024, 1);
 
 	HUDwrap.style.transform = `scale(${scale})`;
 }
-
-window.addEventListener('load', scaleHUD);
-window.addEventListener('resize', scaleHUD);
 
 window.addEventListener('load', scaleHUD);
 window.addEventListener('resize', scaleHUD);
@@ -79,16 +75,34 @@ const spriteImages = [
 function showGameOverScreen() {
 	const gameOverScreen = document.getElementById('game-over-screen');
 	gameOverScreen.style.display = 'flex';
+	stopHeartBeat();
+	muteAllSounds();
+	playGameOverSound();
+	setTimeout(() => {
+		playCarryOn();
+	}, 3000);
 }
 
 function hideGameOverScreen() {
 	const gameOverScreen = document.getElementById('game-over-screen');
 	gameOverScreen.style.display = 'none';
+	const gamePanel = document.getElementById('game-panel');
+	gamePanel.classList.toggle('d-none');
+	isGameOverSoundPlayed = false;
+	isCarryOnPlayed = false;
+	isDead = false;
+	unmuteAllSounds();
 }
 
 function hideStartScreen() {
 	const startScreen = document.getElementById('start-screen');
+	const gamePanel = document.getElementById('game-panel');
+	gamePanel.classList.toggle('d-none');
 	startScreen.style.display = 'none';
+	isGameOverSoundPlayed = false;
+	isCarryOnPlayed = false;
+	isDead = false;
+	unmuteAllSounds();
 }
 
 function toggleStoryChapter() {
