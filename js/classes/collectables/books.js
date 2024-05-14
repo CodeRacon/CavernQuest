@@ -27,6 +27,7 @@ class GoldenBook extends Sprite {
 			if (index > -1) {
 				goldenBooks.splice(index, 1);
 			}
+			playMagicTomeFound();
 		}
 	}
 }
@@ -60,6 +61,7 @@ class RedBook extends Sprite {
 			if (index > -1) {
 				redBooks.splice(index, 1);
 			}
+			playMagicTomeFound();
 		}
 	}
 }
@@ -93,6 +95,7 @@ class GreenBook extends Sprite {
 			if (index > -1) {
 				greenBooks.splice(index, 1);
 			}
+			playMagicTomeFound();
 		}
 	}
 }
@@ -126,6 +129,7 @@ class BlueBook extends Sprite {
 			if (index > -1) {
 				blueBooks.splice(index, 1);
 			}
+			playMagicTomeFound();
 		}
 	}
 }
