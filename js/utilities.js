@@ -1,4 +1,5 @@
 const FPS = 60;
+let isGameOverScreen = false;
 
 function collision({ object1, object2 }) {
 	return (
@@ -11,7 +12,7 @@ function collision({ object1, object2 }) {
 
 function calculateBlueGemScore() {
 	const baseScore = player.collectedBlueGems;
-	const multiplier = player.collectedRedGems * 1.333;
+	const multiplier = Math.max(player.collectedRedGems * 1.333, 1);
 	return Math.floor(baseScore * multiplier);
 }
 
@@ -72,37 +73,90 @@ const spriteImages = [
 	'img/fg-map.png',
 ];
 
-function showGameOverScreen() {
-	const gameOverScreen = document.getElementById('game-over-screen');
-	gameOverScreen.style.display = 'flex';
-	stopHeartBeat();
-	muteAllSounds();
-	playGameOverSound();
-	setTimeout(() => {
-		playCarryOn();
-	}, 3000);
-}
-
-function hideGameOverScreen() {
-	const gameOverScreen = document.getElementById('game-over-screen');
-	gameOverScreen.style.display = 'none';
+function showStartScreen() {
+	const startScreen = document.getElementById('start-screen');
 	const gamePanel = document.getElementById('game-panel');
-	gamePanel.classList.toggle('d-none');
+	gamePanel.classList.replace('d-flex', 'd-none');
+	startScreen.style.display = 'flex';
 	isGameOverSoundPlayed = false;
-	isCarryOnPlayed = false;
 	isDead = false;
-	unmuteAllSounds();
+	muteAllSounds();
+	disableGameControls();
 }
 
 function hideStartScreen() {
 	const startScreen = document.getElementById('start-screen');
 	const gamePanel = document.getElementById('game-panel');
-	gamePanel.classList.toggle('d-none');
+	gamePanel.classList.replace('d-none', 'd-flex');
 	startScreen.style.display = 'none';
 	isGameOverSoundPlayed = false;
-	isCarryOnPlayed = false;
 	isDead = false;
 	unmuteAllSounds();
+	enableGameControls();
+	playCavernBG();
+}
+
+function showGameOverScreen() {
+	console.log('is called!');
+	isGameOverScreen = true;
+
+	const gameOverScreen = document.getElementById('game-over-screen');
+	const canvas = document.getElementById('canvas');
+	muteAllSounds();
+	disableGameControls();
+	setTimeout(() => {
+		canvas.classList.add('filtered');
+		gameOverScreen.classList.replace('d-none', 'd-flex');
+		gameOverScreen.classList.replace('fade-out', 'fade-in');
+		playGameOverSound();
+	}, 1000);
+	setTimeout(() => {
+		setTimeout(() => {
+			playCarryOn();
+		}, 3000);
+	}, 2000);
+}
+
+function hideGameOverScreen() {
+	console.log('is called!');
+	isGameOverScreen = false;
+	const gameOverScreen = document.getElementById('game-over-screen');
+	const canvas = document.getElementById('canvas');
+	canvas.classList.remove('filtered');
+	gameOverScreen.classList.replace('fade-in', 'fade-out');
+	setTimeout(() => {
+		gameOverScreen.classList.replace('d-flex', 'd-none');
+	}, 200);
+	stopCarryOn();
+	isGameOverSoundPlayed = false;
+	isCarryOnPlayed = false;
+}
+
+function showWinningScreen() {
+	const winningScreen = document.getElementById('winning-screen');
+	const canvas = document.getElementById('canvas');
+	canvas.classList.add('filtered');
+	winningScreen.classList.replace('d-none', 'flex');
+	winningScreen.classList.replace('fade-out', 'fade-in');
+	muteAllSounds();
+	playQuestCompleted();
+	setTimeout(() => {
+		playWellDone();
+	}, 3000);
+	disableGameControls();
+}
+
+function hideWinningScreen() {
+	const winningScreen = document.getElementById('winning-screen');
+	const canvas = document.getElementById('canvas');
+	canvas.classList.remove('filtered');
+	winningScreen.classList.replace('fade-in', 'fade-out');
+	setTimeout(() => {
+		winningScreen.classList.replace('d-flex', 'd-none');
+	}, 200);
+	stopWellDone();
+	isWellDonePlayed = false;
+	isQuestCompletedPlayed = false;
 }
 
 function toggleStoryChapter() {
