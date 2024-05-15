@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="img/favicon.png" />
 		<link rel="stylesheet" href="style.css" />
 
 		<script defer src="js/data/positionData.js"></script>
@@ -148,7 +149,7 @@
 						<div class="control-entry-row">
 							<div class="control-entry">
 								<div class="key padding">ESC</div>
-								<p>come back to this info-screen at any time</p>
+								<p>Pause Game at any time</p>
 							</div>
 						</div>
 						<div class="control-entry-row">
@@ -198,8 +199,6 @@
 							Most of these Moves can be combined to outmaneuver opponents or
 							reach hard to access areas.
 						</p>
-
-						<h2>The journey awaits! So buckle up, grab your wand and...</h2>
 					</div>
 
 					<h2>Quest:</h2>
@@ -249,7 +248,7 @@
 						<div class="text">
 							<p>
 								When touched by the "Deadly Breath" Woozl will have a quiet
-								unhealthy color and is constantly loosing HP for a period of 20
+								unhealthy color and is constantly loosing HP for a period of 25
 								seconds!
 							</p>
 							<br />
@@ -265,7 +264,8 @@
 					</p>
 					<br />
 					<p>
-						Press the following keys to use the desired Potion if available:
+						Press the following <span class="key padding inline">keys</span> to
+						use the desired Potion if available:
 					</p>
 
 					<div class="items">
@@ -304,6 +304,8 @@
 							magic upon your enemies!
 						</p>
 					</div>
+					<br />
+					<h2>The journey awaits! So buckle up, grab your wand and...</h2>
 				</div>
 
 				<p id="quick-start" class="d-block">
@@ -314,12 +316,61 @@
 				</button>
 			</div>
 
-			<div id="game-over-screen" style="display: none">
-				<h1>Game Over</h1>
-				<p>You died!</p>
-				<button onclick="resetGame()">Restart</button>
+			<div id="game-over-screen" class="d-none fade-out">
+				<h2>Game Over</h2>
+				<p>Sadly, you couldn't withstand all the dangers on your way.</p>
+				<p>You gave it all and left everything.</p>
+				<br />
+				<p>
+					But magic itself wouldn't be any magical if it was over now, would it?
+				</p>
+				<br />
+				<p>So, when you fall, you get up again and carry on, right?</p>
+				<div class="btn-bar">
+					<button onclick=" showStartScreen()">Back to Home Screen</button>
+					<button onclick=" resetGame()">Restart Game</button>
+				</div>
 			</div>
-			<div id="game-panel">
+
+			<div id="winning-screen" class="d-none fade-out">
+				<h2>Well done, brave soul</h2>
+				<p>You succeeded helping Woozle on his Quest:</p>
+				<p>
+					Retrieved all four Magic Tomes and freed the dark cavern from all evil
+					folks.
+				</p>
+				<br />
+				<p>Not to mention the impressive amount of Gems you have gathered:</p>
+
+				<div class="game-score">
+					<div class="blue-gem-score-container">
+						<img src="img/collectables/GemBlue.png" alt="" />
+						<span id="blue-gem-amount"></span>
+					</div>
+					<div class="red-gem-score-container">
+						<img src="img/collectables/GemRed.png" alt="" />
+						<span id="red-gem-amount"></span>
+					</div>
+				</div>
+				<span>Total Score: <span id="total-score"></span></span>
+
+				<br />
+				<p>
+					This will enable the High Council of the Magic Academy to finally
+					order the new 3000S Magic-Wand.
+				</p>
+				<br />
+				<p>Long overdue!</p>
+
+				<div class="btn-bar">
+					<button onclick=" showStartScreen()">Back to Home Screen</button>
+					<button onclick=" resetGame()">Restart Game</button>
+				</div>
+			</div>
+
+			<div id="pause-screen"></div>
+
+			<div id="game-panel" class="d-none">
 				<div id="HUD-wrapper">
 					<div id="HUD">
 						<div class="bars">
