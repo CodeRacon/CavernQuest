@@ -208,12 +208,19 @@ function updateBookCounter() {
 function updateGemsAndScore() {
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
+	const blueGemAmount = document.getElementById('blue-gem-amount');
+	blueGemAmount.textContent = player.collectedBlueGems;
 
 	const redGemCount = document.getElementById('red-gem-count');
 	redGemCount.textContent = player.collectedRedGems;
+	const redGemAmount = document.getElementById('red-gem-amount');
+	redGemAmount.textContent = player.collectedRedGems;
 
 	const blueGemScore = document.getElementById('total-gem-score');
 	blueGemScore.textContent = calculateBlueGemScore();
+
+	const totalScore = document.getElementById('total-score');
+	totalScore.textContent = calculateBlueGemScore();
 }
 
 function updateGameAssets() {
@@ -252,7 +259,10 @@ function checkPlayerState() {
 		player.deadAnimationDuration--;
 		if (player.deadAnimationDuration <= 0) {
 			isDead = true;
-			showGameOverScreen();
+			stopHeartBeat();
+			if (isDead && !isGameOverScreen) {
+				showGameOverScreen();
+			}
 			return;
 		}
 	}
@@ -260,11 +270,9 @@ function checkPlayerState() {
 
 function checkQuestState() {
 	if (allTomesFound && movingBlobs.length === 0) {
-		playQuestCompleted();
-		isVictory = true;
-		setTimeout(() => {
-			playWellDone();
-		}, 2000);
+		isQuestCompleted = true;
+		showWinningScreen();
+		return;
 	}
 }
 
@@ -353,10 +361,10 @@ function updatePlayerAnimation() {
 	}
 }
 
-let animationId;
+let currentAnimationLoop;
 
 function animate() {
-	animationId = window.requestAnimationFrame(animate);
+	currentAnimationLoop = window.requestAnimationFrame(animate);
 
 	c.fillStyle = 'black';
 	c.fillRect(0, 0, canvas.width, canvas.height);
@@ -376,8 +384,6 @@ function animate() {
 	c.restore();
 }
 
-// animate();
-
 function initGame() {
 	console.log('init game');
 	initStaticCollision();
@@ -390,7 +396,7 @@ function initGame() {
 }
 
 function resetGame() {
-	cancelAnimationFrame(animationId);
+	cancelAnimationFrame(currentAnimationLoop);
 
 	camera = {
 		position: {
@@ -408,11 +414,15 @@ function resetGame() {
 
 	hideStartScreen();
 	hideGameOverScreen();
+	hideWinningScreen();
 
 	animate();
+	unmuteAllSounds();
+	enableGameControls();
+	isDead = false;
 }
 
-window.addEventListener('keydown', (event) => {
+function handleKeyDown(event) {
 	switch (event.key) {
 		case 'w':
 			if (player.isGrounded) {
@@ -458,9 +468,9 @@ window.addEventListener('keydown', (event) => {
 			player.useImmunityPotion();
 			break;
 	}
-});
+}
 
-window.addEventListener('keyup', (event) => {
+function handleKeyUp(event) {
 	switch (event.key) {
 		case 'd':
 			keys.d.pressed = false;
@@ -481,4 +491,14 @@ window.addEventListener('keyup', (event) => {
 			isHovering = false;
 			break;
 	}
-});
+}
+
+function enableGameControls() {
+	window.addEventListener('keydown', handleKeyDown);
+	window.addEventListener('keyup', handleKeyUp);
+}
+
+function disableGameControls() {
+	window.removeEventListener('keydown', handleKeyDown);
+	window.removeEventListener('keyup', handleKeyUp);
+}
