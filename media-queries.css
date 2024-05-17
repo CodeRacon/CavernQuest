@@ -1,0 +1,58 @@
+@media (width <= 900px) {
+	#pause-screen,
+	#winning-screen,
+	#game-over-screen {
+		font-size: 1rem;
+	}
+}
+
+@media (width <= 610px) {
+	html {
+		font-size: 14px;
+	}
+	.part img {
+		float: right;
+		width: 33%;
+	}
+}
+
+@media (width <= 498px) {
+	html {
+		font-size: 12px;
+	}
+
+	.key {
+		min-width: 20px;
+		min-height: 20px;
+	}
+
+	.control-entry-row {
+		gap: 0.5rem;
+	}
+}
+
+@media (width <= 424px) {
+	.heading {
+		flex-direction: column-reverse;
+		height: rem;
+	}
+	.heading h1 {
+		margin-top: -2rem;
+		margin-bottom: -2rem;
+	}
+	.heading img {
+		height: 25%;
+	}
+}
+
+@media (width <= 402px) {
+	.control-entry-row:last-of-type {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.blobs p,
+	.plants p {
+		font-size: 1.125rem;
+	}
+}
