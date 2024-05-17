@@ -1,3 +1,8 @@
+/**
+ * Represents the player character in the game.
+ * The `Player` class extends the `Sprite` class and handles the player's movement,
+ * collision detection, and interactions with various game objects.
+ */
 class Player extends Sprite {
 	constructor({
 		position,
@@ -122,7 +127,6 @@ class Player extends Sprite {
 		this.updateHitbox();
 		this.updateCameraBox();
 
-		// draws out hitbox
 		c.fillStyle = 'transparent';
 		c.fillRect(
 			this.hitbox.position.x,
@@ -131,7 +135,6 @@ class Player extends Sprite {
 			this.hitbox.height
 		);
 
-		// draws out cameraBox
 		c.fillStyle = 'transparent';
 		c.fillRect(
 			this.cameraBox.position.x,
@@ -580,13 +583,11 @@ class Player extends Sprite {
 	 */
 	draw() {
 		if (this.poisonOpacity > 0) {
-			// create separate canvas for filter
 			const filterCanvas = document.createElement('canvas');
 			filterCanvas.width = this.width;
 			filterCanvas.height = this.height;
 			const filterCtx = filterCanvas.getContext('2d');
 
-			// draw sprite onto filter canvas
 			filterCtx.drawImage(
 				this.image,
 				this.currentFrame * (this.image.width / this.frameRate),
@@ -599,12 +600,10 @@ class Player extends Sprite {
 				this.height
 			);
 
-			// use filter on new canvas context
 			filterCtx.globalCompositeOperation = 'source-atop';
 			filterCtx.fillStyle = `rgba(190, 0, 255, ${this.poisonOpacity})`;
 			filterCtx.fillRect(0, 0, this.width, this.height);
 
-			// draw filtered canvas onto main canvas
 			c.drawImage(filterCanvas, this.position.x, this.position.y);
 		} else {
 			super.draw();

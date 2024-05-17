@@ -1,3 +1,6 @@
+/**
+ * Represents a windy deco-plant sprite in the game.
+ */
 class WindyPlant extends Sprite {
 	constructor({
 		position,

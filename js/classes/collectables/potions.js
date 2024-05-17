@@ -1,3 +1,7 @@
+/**
+ * Represents a full health potion that can be collected by the player.
+ * When the player collides with the potion, their full HP is increased.
+ */
 class FullHealthPotion extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -32,6 +36,10 @@ class FullHealthPotion extends Sprite {
 	}
 }
 
+/**
+ * Represents a half health potion collectable in the game.
+ * When collected by the player, it increases the player's health by a small amount.
+ */
 class HalfHealthPotion extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -66,6 +74,10 @@ class HalfHealthPotion extends Sprite {
 	}
 }
 
+/**
+ * Represents a full spell power potion that can be collected by the player.
+ * When collected, it increases the player's full spell power.
+ */
 class FullSpellPowerPotion extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -100,6 +112,10 @@ class FullSpellPowerPotion extends Sprite {
 	}
 }
 
+/**
+ * Represents an immunity potion that can be collected by the player.
+ * When collected, it increases the player's immunity.
+ */
 class ImmunityPotion extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({

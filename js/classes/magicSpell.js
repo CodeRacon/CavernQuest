@@ -1,3 +1,8 @@
+/**
+ * Represents a magic spell, essentaially an animaed sprite, that can be cast and collide with enemies.
+ *
+ * @extends Sprite
+ */
 class MagicSpell extends Sprite {
 	constructor({ position, direction, imgSrc, frameRate, frameBuffer, scale }) {
 		super({
@@ -36,7 +41,6 @@ class MagicSpell extends Sprite {
 				this.position.y < blob.position.y + blob.height &&
 				this.position.y + collisionHeight > blob.position.y
 			) {
-				// collision detected
 				if (blob.hitCount < 3 && !this.hitEnemies.includes(blob)) {
 					blob.isHit = true;
 					this.hitEnemies.push(blob);

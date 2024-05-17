@@ -1,6 +1,22 @@
 const FPS = 60;
 let isGameOverScreen = false;
 
+/**
+ * Checks for collision between two objects.
+ * @param {Object} object1 - The first object to check for collision.
+ * @param {Object} object1.position - The position of the first object.
+ * @param {number} object1.position.x - The x-coordinate of the first object's position.
+ * @param {number} object1.position.y - The y-coordinate of the first object's position.
+ * @param {number} object1.width - The width of the first object.
+ * @param {number} object1.height - The height of the first object.
+ * @param {Object} object2 - The second object to check for collision.
+ * @param {Object} object2.position - The position of the second object.
+ * @param {number} object2.position.x - The x-coordinate of the second object's position.
+ * @param {number} object2.position.y - The y-coordinate of the second object's position.
+ * @param {number} object2.width - The width of the second object.
+ * @param {number} object2.height - The height of the second object.
+ * @returns {boolean} - True if the two objects are colliding, false otherwise.
+ */
 function collision({ object1, object2 }) {
 	return (
 		object1.position.y + object1.height >= object2.position.y &&
@@ -10,12 +26,21 @@ function collision({ object1, object2 }) {
 	);
 }
 
+/**
+ * Calculates the score for the player's collected blue gems, with a multiplier based on the number of collected red gems.
+ * @returns {number} The calculated blue gem score.
+ */
 function calculateBlueGemScore() {
 	const baseScore = player.collectedBlueGems;
 	const multiplier = Math.max(player.collectedRedGems * 1.333, 1);
 	return Math.floor(baseScore * multiplier);
 }
 
+/**
+ * Scales the HUD (Heads-Up Display) wrapper element to fit the current screen width.
+ * This function is called on page load and window resize events to ensure the HUD
+ * remains properly scaled as the browser window size changes.
+ */
 function scaleHUD() {
 	const HUDwrap = document.getElementById('HUD-wrapper');
 	const screenWidth = window.innerWidth;
@@ -24,6 +49,11 @@ function scaleHUD() {
 	HUDwrap.style.transform = `scale(${scale})`;
 }
 
+/**
+ * Scales the size of the pause, winning, and game-over modals to fit the current window width.
+ * This function is called on the 'load' and 'resize' events of the window to ensure the modals
+ * are properly scaled as the window size changes.
+ */
 function scaleModals() {
 	const pauseModal = document.getElementById('pause-screen');
 	const winModal = document.getElementById('winning-screen');
@@ -41,6 +71,12 @@ window.addEventListener('resize', scaleHUD);
 window.addEventListener('load', scaleModals);
 window.addEventListener('resize', scaleModals);
 
+/**
+ * Preloads a set of image URLs by creating new Image objects and setting their `src` property.
+ * This ensures the images are cached and ready for use when needed.
+ *
+ * @param {string[]} urls - An array of image URLs to preload.
+ */
 function preloadImages(urls) {
 	urls.forEach(function (url) {
 		const img = new Image();
@@ -48,6 +84,10 @@ function preloadImages(urls) {
 	});
 }
 
+/**
+ * An array of file paths for various sprite images used in the game, including wizard animations,
+ * plant enemies, collectables, and background elements.
+ */
 const spriteImages = [
 	'img/wizard/magic-spell-left.png',
 	'img/wizard/magic-spell-right.png',
@@ -87,6 +127,11 @@ const spriteImages = [
 	'img/fg-map.png',
 ];
 
+/**
+ * Shows the start screen and hides the game panel.
+ * Mutes all sounds, disables game controls, and disables the ESC event.
+ * Resets the game state by setting `isGameOverSoundPlayed` to `false` and `isDead` to `false`.
+ */
 function showStartScreen() {
 	const startScreen = document.getElementById('start-screen');
 	const gamePanel = document.getElementById('game-panel');
@@ -99,6 +144,10 @@ function showStartScreen() {
 	disableESCevent();
 }
 
+/**
+ * Hides the start screen and shows the game panel, unmuteS all sounds, enables game controls
+ * and ESC event, and plays the cavern background sound.
+ */
 function hideStartScreen() {
 	const startScreen = document.getElementById('start-screen');
 	const gamePanel = document.getElementById('game-panel');
@@ -112,16 +161,17 @@ function hideStartScreen() {
 	playCavernBG();
 }
 
+/**
+ * Displays the game-over screen, mutes all sounds, disables game controls and the ESC event,
+ * and plays the game-over sound and carry on sound after a delay.
+ */
 function showGameOverScreen() {
-	console.log('is called!');
-	isGameOverScreen = true;
-
 	const gameOverScreen = document.getElementById('game-over-screen');
 	const canvas = document.getElementById('canvas');
+	isGameOverScreen = true;
 	muteAllSounds();
 	disableGameControls();
 	disableESCevent();
-
 	setTimeout(() => {
 		canvas.classList.add('filtered');
 		gameOverScreen.classList.replace('d-none', 'd-flex');
@@ -135,11 +185,18 @@ function showGameOverScreen() {
 	}, 2000);
 }
 
+/**
+ * Hides the game-over screen and resets related state.
+ * This function is called when the game-over screen needs to be hidden, such as
+ * when the player starts a new game.
+ * It removes the 'filtered' class from the canvas, hides the game-over screen,
+ * stops the 'carry on' sound, and resets flags for game-over and 'carry on' sound playback.
+ * It also re-enables the ESC event listener.
+ */
 function hideGameOverScreen() {
-	console.log('is called!');
-	isGameOverScreen = false;
 	const gameOverScreen = document.getElementById('game-over-screen');
 	const canvas = document.getElementById('canvas');
+	isGameOverScreen = false;
 	canvas.classList.remove('filtered');
 	gameOverScreen.classList.replace('fade-in', 'fade-out');
 	setTimeout(() => {
@@ -151,6 +208,10 @@ function hideGameOverScreen() {
 	enableESCevent();
 }
 
+/**
+ * Displays the winning screen and performs related actions.
+ * This function is called when the player fullfills all winning conditions.
+ */
 function showWinningScreen() {
 	const winningScreen = document.getElementById('winning-screen');
 	const canvas = document.getElementById('canvas');
@@ -166,6 +227,13 @@ function showWinningScreen() {
 	disableESCevent();
 }
 
+/**
+ * Hides the winning screen and resets related state.
+ *
+ * This function is responsible for hiding the winning screen, removing the
+ * 'filtered' class from the canvas, and resetting the state of the 'wellDone'
+ * and 'questCompleted' audio events. It also re-enables the ESC event.
+ */
 function hideWinningScreen() {
 	const winningScreen = document.getElementById('winning-screen');
 	const canvas = document.getElementById('canvas');
@@ -180,6 +248,9 @@ function hideWinningScreen() {
 	enableESCevent();
 }
 
+/**
+ * Displays the pause screen and applies a filter to the canvas.
+ */
 function showPauseScreen() {
 	const pauseScreen = document.getElementById('pause-screen');
 	const canvas = document.getElementById('canvas');
@@ -188,6 +259,9 @@ function showPauseScreen() {
 	pauseScreen.classList.replace('fade-out', 'fade-in');
 }
 
+/**
+ * Hides the pause screen and removes the filtered effect from the canvas.
+ */
 function hidePauseScreen() {
 	const pauseScreen = document.getElementById('pause-screen');
 	const canvas = document.getElementById('canvas');
@@ -198,6 +272,12 @@ function hidePauseScreen() {
 	}, 200);
 }
 
+/**
+ * Toggles the visibility of the story chapter and updates the state of the story and manual buttons.
+ * When the story chapter is visible, the story button is active and the manual button is inactive.
+ * When the story chapter is hidden, the story button is inactive and the manual button can be active.
+ * This function also toggles the visibility of the quick start section.
+ */
 function toggleStoryChapter() {
 	const storyChapter = document.getElementById('story');
 	const storyBtn = document.getElementById('story-btn');
@@ -222,6 +302,12 @@ function toggleStoryChapter() {
 	toggleQuickStart();
 }
 
+/**
+ * Toggles the visibility of the manual chapter and updates the state of the story and manual buttons.
+ * When the manual chapter is visible, the manual button is active and the manual button is inactive.
+ * When the manual chapter is hidden, the manual button is inactive and the manual button can be active.
+ * This function also toggles the visibility of the quick start section.
+ */
 function toggleManualChapter() {
 	const manualChapter = document.getElementById('manual');
 	const manualBtn = document.getElementById('manual-btn');
@@ -246,6 +332,11 @@ function toggleManualChapter() {
 	toggleQuickStart();
 }
 
+/**
+ * Toggles the visibility of the quick start note based on the state of the manual and story buttons.
+ * When the manual or story button is active, the quick start section is hidden.
+ * When both the manual and story buttons are inactive, the quick start section is shown.
+ */
 function toggleQuickStart() {
 	const quickStart = document.getElementById('quick-start');
 	const manualBtn = document.getElementById('manual-btn');

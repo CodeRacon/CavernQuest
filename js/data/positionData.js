@@ -1,3 +1,7 @@
+/**
+ * An array of position data used for placing and displaying MovingBlob instances.
+ * Each object has properties such as height, width, and x/y coordinates.
+ */
 const movingBlobPositions = [
 	{
 		objects: [
@@ -221,6 +225,10 @@ const movingBlobPositions = [
 	},
 ];
 
+/**
+ * An array of position data used for placing and displaying HangingBlob instances.
+ * Each object has properties such as height, width, and x/y coordinates.
+ */
 const hangingBlobPositions = [
 	{
 		objects: [
@@ -308,6 +316,10 @@ const hangingBlobPositions = [
 	},
 ];
 
+/**
+ * An array of position data used for placing and displaying BouncePlant instances.
+ * Each object has properties such as height, width, scale, and x/y coordinates.
+ */
 const bouncePlantPositions = [
 	{
 		objects: [
@@ -387,6 +399,10 @@ const bouncePlantPositions = [
 	},
 ];
 
+/**
+ * An array of position data used for placing and displaying PoisonPlant instances.
+ * Each object has properties such as height, width, scale, and x/y coordinates.
+ */
 const poisonPlantPositions = [
 	{
 		objects: [
@@ -442,6 +458,10 @@ const poisonPlantPositions = [
 	},
 ];
 
+/**
+ * An array of position data used for placing and dispaying WindyPlant - intances.
+ * Each object has properties such as height, width, rotation, and x/y coordinates.
+ */
 const windyPlantPositions = [
 	{
 		objects: [

@@ -1,3 +1,8 @@
+/**
+ * Each array defines the positions of a collectable's type in the game world.
+ * Each object in the `objects` sub-array represents a single collectable instance,
+ * with properties defining its dimensions and location.
+ */
 const fullHPPositions = [
 	{
 		objects: [
@@ -1411,20 +1416,6 @@ const redGemPositions = [
 		],
 	},
 ];
-
-// const goldenArmorPositions = [
-// 	{
-// 		objects: [
-// 			{
-// 				height: 404 ,
-// 				id: 1307,
-// 				width: 404 ,
-// 				x: 25356,
-// 				y: 6248,
-// 			},
-// 		],
-// 	},
-// ];
 
 const spellScrollPositions = [
 	{

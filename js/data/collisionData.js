@@ -1,3 +1,8 @@
+/**
+ * Defines the collision data for the ground-, wall- or platform-objects in the game.
+ * This data is used to detect collisions between the player and the aforementioned objects.
+ * Each object in the `objects` sub-array represents a rectangular collision area with the given dimensions and position.
+ */
 const groundCollisions = [
 	{
 		objects: [
@@ -1031,6 +1036,11 @@ const groundCollisions = [
 	},
 ];
 
+/**
+ * Defines the collision data for the upper, left and right boundaries of the game world.
+ * This data represents the positions and dimensions of objects that can collide with the player or other game entities.
+ * The `frameCollisions` array contains an array of collision objects for each frame, where each object has properties like `height`, `width`, `x`, and `y` to define its position and size.
+ */
 const frameCollisions = [
 	{
 		objects: [
@@ -1922,6 +1932,11 @@ const frameCollisions = [
 	},
 ];
 
+/**
+ * Defines the collision data for all the hazard-objects in the game.
+ * This data is used to detect collisions between the player and the aforementioned objects and cause damage to the player.
+ * Each object in the `objects` sub-array represents a rectangular collision area with the given dimensions and position.
+ */
 const hazardCollisions = [
 	{
 		objects: [
@@ -4976,6 +4991,12 @@ const hazardCollisions = [
 	},
 ];
 
+/**
+ * An array of collision data for FencePoles in the game world.
+ * Each object in the array represents a single collision box, with properties
+ * such as the height, width and coordinates.
+ * This data is used for collision detection between the Moving and the FencePoles.
+ */
 const fencePoleCollisions = [
 	{
 		objects: [

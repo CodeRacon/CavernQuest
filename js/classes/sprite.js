@@ -1,7 +1,15 @@
 class Sprite {
-	constructor({ position, imgSrc, frameRate = 1, frameBuffer = 4, scale = 1 }) {
+	constructor({
+		position,
+		imgSrc,
+		frameRate = 1,
+		frameBuffer = 4,
+		scale = 1,
+		rotation = 0,
+	}) {
 		this.position = position;
 		this.scale = scale;
+		this.rotation = rotation;
 		this.loaded = false;
 		this.image = new Image();
 		this.image.onload = () => {
@@ -14,7 +22,7 @@ class Sprite {
 		this.frameRate = frameRate;
 		this.currentFrame = 0;
 		this.frameBuffer = frameBuffer;
-		this.elepsedFrames = 0;
+		this.elapsedFrames = 0;
 	}
 
 	draw() {
@@ -22,7 +30,7 @@ class Sprite {
 			return;
 		}
 
-		const cropBox = {
+		const cropbox = {
 			position: {
 				x: this.currentFrame * (this.image.width / this.frameRate),
 				y: 0,
@@ -31,27 +39,35 @@ class Sprite {
 			height: this.image.height,
 		};
 
+		c.save();
+		c.translate(
+			this.position.x + this.width / 2,
+			this.position.y + this.height / 2
+		);
+		c.rotate(this.rotation);
+		c.translate(-this.width / 2, -this.height / 2);
 		c.drawImage(
 			this.image,
-			cropBox.position.x,
-			cropBox.position.y,
-			cropBox.width,
-			cropBox.height,
-			this.position.x,
-			this.position.y,
+			cropbox.position.x,
+			cropbox.position.y,
+			cropbox.width,
+			cropbox.height,
+			0,
+			0,
 			this.width,
 			this.height
 		);
+		c.restore();
 	}
 
 	update() {
 		this.draw();
-		this.updateFrames;
+		this.updateFrames();
 	}
 
 	updateFrames() {
-		this.elepsedFrames++;
-		if (this.elepsedFrames % this.frameBuffer === 0) {
+		this.elapsedFrames++;
+		if (this.elapsedFrames % this.frameBuffer === 0) {
 			if (this.currentFrame < this.frameRate - 1) {
 				this.currentFrame++;
 			} else {

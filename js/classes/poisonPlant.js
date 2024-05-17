@@ -1,3 +1,9 @@
+/**
+ * Represents a poison plant in the game. The poison plant has a collision area
+ * that grows larger as the animation progresses.
+ * When the player's hitbox collides with the poison plant's collision area,
+ * the player takes poison damage.
+ */
 class PoisonPlant extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -28,9 +34,13 @@ class PoisonPlant extends Sprite {
 		this.updateFrames();
 		this.updateCollisionArea();
 		super.update();
-		// this.drawCollisionArea();
 	}
 
+	/**
+	 * Updates the collision area of the poison plant based on the current frame of the animation.
+	 * The collision area starts at a smaller size and gradually expands to a larger size over the course of the animation.
+	 * This allows the collision detection to match the visual size of the poison plant as it grows.
+	 */
 	updateCollisionArea() {
 		const frameRatio = (this.currentFrame + 1) / this.frameRate;
 		const heightDiff =
@@ -50,6 +60,11 @@ class PoisonPlant extends Sprite {
 		}
 	}
 
+	/**
+	 * Checks if the player's hitbox collides with the poison plant's collision area.
+	 * If a collision is detected, the player is applied poison damage and the poison sound effect is played.
+	 * @param {Player} player - The player object to check for collision.
+	 */
 	checkCollision(player) {
 		const topLeft = {
 			x: this.position.x + (this.width - this.collisionArea.width) / 2,

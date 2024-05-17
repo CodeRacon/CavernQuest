@@ -1,3 +1,7 @@
+/**
+ * Represents a blue gem collectable in the game.
+ * Blue gems can be collected by the player, incrementing the player's collectedBlueGems count.
+ */
 class BlueGem extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -32,6 +36,10 @@ class BlueGem extends Sprite {
 	}
 }
 
+/**
+ * Represents a red gem collectable in the game.
+ * Red gems can be collected by the player, incrementing the player's collectedRedGems count.
+ */
 class RedGem extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({

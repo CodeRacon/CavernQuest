@@ -24,6 +24,12 @@ function unmuteAllSounds() {
 	isMuted = false;
 }
 
+/**
+ * Plays or pauses the main story audio track.
+ * If the main story audio is not yet loaded, it is initialized with the appropriate volume.
+ * If the main story audio is currently paused, it is played. Otherwise, it is paused.
+ * The 'play-intro-btn' element is updated to reflect the current state of the audio playback.
+ */
 function playIntro() {
 	const playIntroBtn = document.getElementById('play-intro-btn');
 
@@ -41,6 +47,10 @@ function playIntro() {
 	}
 }
 
+/**
+ * Plays the background audio for the cavern environment.
+ * The audio file is looped continuously until muted or stopped.
+ */
 function playCavernBG() {
 	if (!isMuted) {
 		const cavernBGAudio = new Audio('./audio/cavern-bg-sound.mp3');

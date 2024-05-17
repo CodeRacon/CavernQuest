@@ -1,3 +1,7 @@
+/**
+ * Represents a particle emitter that generates and manages a collection of particles,
+ * whenever the player uses it's hover-ability.
+ */
 class ParticleEmitter {
 	constructor(x, y, size, color, velocity) {
 		this.particles = [];

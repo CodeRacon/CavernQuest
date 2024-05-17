@@ -1,3 +1,21 @@
+/**
+ * Represents a movingblob object that extends the Sprite class.
+ * Initially it takes 3 hits to finish a MovingBlob. With each more hit hit,
+ * MovingBlob-intance adds up x-velocity and opacity of a red color-filter
+ * The MovingBlob class handles the movement, collision detection, and
+ * visual effects of the moving blob.
+ *
+ * @class MovingBlob
+ * @extends Sprite
+ * @param {Object} options - The options for creating the MovingBlob instance.
+ * @param {Object} options.position - The initial position of the MovingBlob.
+ * @param {string} options.imgSrc - The source of the image for the MovingBlob.
+ * @param {number} options.frameRate - The frame rate for the MovingBlob's animation.
+ * @param {number} options.frameBuffer - The buffer between frames for the MovingBlob's animation.
+ * @param {number} [options.scale=1] - The scale of the MovingBlob.
+ * @param {Array} options.fencePoles - An array of fence poles that the MovingBlob can collide with.
+ * @param {number} options.speed - The initial speed of the MovingBlob.
+ */
 class MovingBlob extends Sprite {
 	constructor({
 		position,
@@ -70,7 +88,6 @@ class MovingBlob extends Sprite {
 				}
 			}
 		} else {
-			// check collision with fencePoles
 			for (let i = 0; i < this.fencePoles.length; i++) {
 				const fencePole = this.fencePoles[i];
 				if (
@@ -79,23 +96,19 @@ class MovingBlob extends Sprite {
 					this.position.y < fencePole.position.y + fencePole.height &&
 					this.position.y + this.height > fencePole.position.y
 				) {
-					// collision detected, change direction
 					this.direction *= -1;
 					break;
 				}
 			}
 		}
 
-		// update position based on tempo and direction
 		this.position.x += this.velocity.x * this.direction;
 
-		// deifne offset for visible area of MovingBlob
 		const offset = {
 			x: 72,
 			y: 72,
 		};
 
-		// check for collision of MovingBlob with player
 		if (
 			player.hitbox.position.x + player.hitbox.width >=
 				this.position.x + offset.x &&
@@ -104,19 +117,15 @@ class MovingBlob extends Sprite {
 				this.position.y + offset.y &&
 			player.hitbox.position.y <= this.position.y + this.height - offset.y
 		) {
-			// check for collision cooldown to be done
 			if (this.collisionCooldown <= 0) {
-				// collision detected, reduce player health by 10 points
 				player.health -= 10;
 				player.takeDamage();
 				playPlayerHurt();
 
-				// set collision cooldown to 60 frames (= 1 Second)
 				this.collisionCooldown = 60;
 			}
 		}
 
-		// reduce collision cooldown in each frame
 		if (this.collisionCooldown > 0) {
 			this.collisionCooldown--;
 		}
@@ -126,13 +135,11 @@ class MovingBlob extends Sprite {
 
 	draw() {
 		if (this.hitOpacity > 0) {
-			// create seperate canvas for filter
 			const filterCanvas = document.createElement('canvas');
 			filterCanvas.width = this.width;
 			filterCanvas.height = this.height;
 			const filterCtx = filterCanvas.getContext('2d');
 
-			// draw sprite onto filter canvas
 			filterCtx.drawImage(
 				this.image,
 				this.currentFrame * (this.image.width / this.frameRate),
@@ -145,12 +152,10 @@ class MovingBlob extends Sprite {
 				this.height
 			);
 
-			// use filter on new canvas context
 			filterCtx.globalCompositeOperation = 'source-atop';
 			filterCtx.fillStyle = `rgba(255, 0, 0, ${this.hitOpacity})`;
 			filterCtx.fillRect(0, 0, this.width, this.height);
 
-			// draw filtered canvas onto main canvas
 			c.drawImage(filterCanvas, this.position.x, this.position.y);
 		} else {
 			super.draw();

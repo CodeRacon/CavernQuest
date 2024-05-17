@@ -1,3 +1,18 @@
+/**
+ * Represents a hanging blob enemy in the game.
+ * It hangs upside down on the ceiling and falls, if player enters a certain proximity-area.
+ * The HangingBlob class extends the Sprite class and handles the behavior and
+ * collision detection of the HangingBlob enemy.
+ *
+ * @class HangingBlob
+ * @extends Sprite
+ * @param {Object} options - The options for creating a HangingBlob instance.
+ * @param {Object} options.position - The initial position of the hanging blob.
+ * @param {string} options.imgSrc - The image source for the hanging blob sprite.
+ * @param {number} options.frameRate - The frame rate for the hanging blob animation.
+ * @param {number} options.frameBuffer - The frame buffer for the hanging blob animation.
+ * @param {number} [options.scale=1] - The scale factor for the hanging blob sprite.
+ */
 class HangingBlob extends Sprite {
 	constructor({ position, imgSrc, frameRate, frameBuffer, scale = 1 }) {
 		super({
@@ -54,10 +69,8 @@ class HangingBlob extends Sprite {
 		);
 
 		if (this.isAwake) {
-			// define offset for visible area of HangingBlob
 			const offset = 110;
 
-			// check for collision of HangingBlob with player
 			if (
 				player.hitbox.position.x + player.hitbox.width >=
 					this.position.x + offset &&
@@ -65,9 +78,7 @@ class HangingBlob extends Sprite {
 				player.hitbox.position.y + player.hitbox.height >= this.position.y &&
 				player.hitbox.position.y <= this.position.y + this.height
 			) {
-				// check for collision cooldown to be done
 				if (this.collisionCooldown <= 0) {
-					// collision detected, reduce player health by 10 points
 					player.health -= 20;
 					player.takeDamage();
 					playPlayerHurtAlt();
@@ -84,6 +95,12 @@ class HangingBlob extends Sprite {
 		super.update();
 	}
 
+	/**
+	 * Checks if the player is within the proximity of the sensor associated with this hanging blob.
+	 * If the player is within the sensor's bounds, the hanging blob is set to be awake and a sound is played.
+	 * @param {Object} player - The player object to check for proximity.
+	 * @returns {void}
+	 */
 	checkPlayerProximity(player) {
 		if (
 			player.hitbox.position.x + player.hitbox.width >=
