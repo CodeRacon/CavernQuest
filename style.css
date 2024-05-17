@@ -28,7 +28,7 @@
 }
 
 .inline {
-	display: inline-block !important;
+	display: inline-flex !important;
 }
 
 body {
@@ -72,6 +72,7 @@ h2 {
 	color: #45c7d5;
 	margin-top: 2rem;
 	text-shadow: 2px 2px 12px #5edceaac;
+	line-height: 100%;
 }
 
 #start-screen {
@@ -123,7 +124,7 @@ h2 {
 .chapter {
 	display: flex;
 	justify-content: center;
-	width: 60%;
+	width: 72%;
 	gap: 3rem;
 	margin-bottom: 2rem;
 }
@@ -187,7 +188,7 @@ h2 {
 
 .intro {
 	flex-direction: column;
-	max-width: 60%;
+	max-width: 72%;
 	padding-bottom: 4rem;
 }
 
@@ -259,9 +260,11 @@ h2 {
 	display: flex;
 	gap: 1rem;
 	align-items: center;
+	overflow: hidden;
 }
 
 .part img {
+	float: right;
 	width: 20%;
 	object-fit: contain;
 	border-radius: 50%;
@@ -285,7 +288,7 @@ h2 {
 
 .how-to-play {
 	flex-direction: column;
-	max-width: 60%;
+	max-width: 72%;
 	padding-bottom: 4rem;
 }
 
@@ -326,6 +329,11 @@ h2 {
 	background-image: radial-gradient(circle, #0098c696 0%, #ffffff00 57.5%);
 }
 
+.blobs p {
+	margin-top: 0.375rem;
+	text-align: center;
+}
+
 .blobs img {
 	width: 66%;
 	object-fit: contain;
@@ -339,10 +347,12 @@ h2 {
 .poison-note {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .poison-note img {
-	max-height: 160px;
+	float: right;
+	max-height: 120px;
 	object-fit: contain;
 	border-radius: 50%;
 	background-image: radial-gradient(circle, #0098c696 0%, #ffffff00 75%);
@@ -385,10 +395,11 @@ h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 0;
 	text-align: center;
 	min-width: 24px;
 	width: fit-content;
-	height: 24px;
+	min-height: 24px;
 	border-radius: 4px;
 	border: 1px white solid;
 	background-color: #3c3c3c;
@@ -421,7 +432,7 @@ h2 {
 }
 
 .spell {
-	height: 160px;
+	height: 120px;
 	object-fit: contain;
 	border-radius: 50%;
 	background-image: radial-gradient(circle, #0098c6aa 0%, #ffffff00 65%);
@@ -459,29 +470,9 @@ h2 {
 	margin-bottom: 1.5rem;
 }
 
-#game-over-screen {
-	position: absolute;
-	z-index: 99;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	width: 45%;
-	max-width: calc(1024px - 8rem);
-	max-height: calc(521px - 8rem);
-	margin: 1rem;
-	padding: 2rem;
-	object-fit: contain;
-	border: #72e8ffe8 solid 1px;
-	border-radius: 1rem;
-	box-shadow: #58f1ff96 0px 0px 16px 0px;
-	background-color: rgba(216, 228, 236, 0.125);
-	backdrop-filter: blur(6px);
-	color: white;
-	font-size: 1.125rem;
-}
-
-#winning-screen {
+#winning-screen,
+#game-over-screen,
+#pause-screen {
 	position: absolute;
 	z-index: 99;
 	display: flex;
@@ -504,7 +495,8 @@ h2 {
 }
 
 #winning-screen h2,
-#game-over-screen h2 {
+#game-over-screen h2,
+#pause-screen h2 {
 	font-family: 'Magical' !important;
 	font-size: 3rem;
 	text-shadow: none;
@@ -513,7 +505,8 @@ h2 {
 }
 
 #winning-screen p,
-#game-over-screen p {
+#game-over-screen p,
+#pause-screen p {
 	font-family: 'RETROACTIVE';
 	text-align: center;
 	text-wrap: balance;
@@ -526,9 +519,9 @@ h2 {
 	gap: 1rem;
 }
 
-#winning-screen span {
+#winning-screen span,
+#pause-screen span {
 	font-family: 'Magical' !important;
-
 	font-size: 1.25rem;
 	font-weight: bold;
 	color: #ffd900;
@@ -572,12 +565,85 @@ h2 {
 	outline: 1px solid white;
 }
 
+#pause-screen .btn-bar {
+	justify-content: space-between;
+}
+
+#pause-screen h3 {
+	margin: 0;
+	margin-bottom: 0.75rem;
+}
+
+.pause-screen-columns {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.quest-log,
+.control-sheet {
+	display: flex;
+	align-items: flex-start;
+}
+
+.quest-log {
+	width: fit-content;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.control-sheet {
+	width: 100%;
+	gap: 4rem;
+}
+
+.m-right {
+	margin-right: 0.375rem;
+}
+
+.m-left {
+	margin-left: 0.375rem;
+}
+
+li {
+	list-style-type: none;
+	margin-bottom: 0.5rem;
+	width: fit-content;
+	align-items: center;
+}
+
+.control-sheet ul:last-of-type > li {
+	margin: 0;
+}
+
+li strong {
+	color: #00e8ff;
+}
+
+li img {
+	height: 32px;
+	margin-left: 0.25rem;
+	object-fit: contain;
+	border-radius: 50%;
+	background-image: radial-gradient(circle, #259bced9 0%, #ffffff00 55%);
+}
+
+ul {
+	width: 33%;
+	margin-block-end: 0;
+	margin-block-start: 0;
+	padding-inline-start: 0;
+}
+
 canvas {
 	display: block;
 	border: #0a2222e8 solid 1px;
 	border-radius: 1rem;
 	box-shadow: #537a7796 0px 0px 16px 0px;
 	transition: filter 0.125s ease;
+	aspect-ratio: 2/1;
 }
 
 canvas.filtered {
@@ -592,7 +658,7 @@ canvas.filtered {
 
 @media only screen and (max-height: 512px) {
 	canvas {
-		height: 100vh;
+		width: 100%;
 	}
 }
 
