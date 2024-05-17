@@ -24,8 +24,22 @@ function scaleHUD() {
 	HUDwrap.style.transform = `scale(${scale})`;
 }
 
+function scaleModals() {
+	const pauseModal = document.getElementById('pause-screen');
+	const winModal = document.getElementById('winning-screen');
+	const gameOverModal = document.getElementById('game-over-screen');
+	const screenWidth = window.innerWidth;
+	const scale = Math.min(screenWidth / 1024, 1);
+
+	pauseModal.style.transform = `scale(${scale})`;
+	winModal.style.transform = `scale(${scale})`;
+	gameOverModal.style.transform = `scale(${scale})`;
+}
+
 window.addEventListener('load', scaleHUD);
 window.addEventListener('resize', scaleHUD);
+window.addEventListener('load', scaleModals);
+window.addEventListener('resize', scaleModals);
 
 function preloadImages(urls) {
 	urls.forEach(function (url) {
