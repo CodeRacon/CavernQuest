@@ -39,6 +39,8 @@ let camera = {
 	},
 };
 
+let isPaused = false;
+
 function updateStaticCollision() {
 	collisionBlocks.forEach((collisionBlock) => {
 		collisionBlock.update();
@@ -208,19 +210,43 @@ function updateBookCounter() {
 function updateGemsAndScore() {
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
-	const blueGemAmount = document.getElementById('blue-gem-amount');
-	blueGemAmount.textContent = player.collectedBlueGems;
 
 	const redGemCount = document.getElementById('red-gem-count');
 	redGemCount.textContent = player.collectedRedGems;
-	const redGemAmount = document.getElementById('red-gem-amount');
-	redGemAmount.textContent = player.collectedRedGems;
 
 	const blueGemScore = document.getElementById('total-gem-score');
 	blueGemScore.textContent = calculateBlueGemScore();
+}
+
+function updateWinningScreen() {
+	const blueGemAmount = document.getElementById('blue-gem-amount');
+	blueGemAmount.textContent = player.collectedBlueGems;
+
+	const redGemAmount = document.getElementById('red-gem-amount');
+	redGemAmount.textContent = player.collectedRedGems;
 
 	const totalScore = document.getElementById('total-score');
 	totalScore.textContent = calculateBlueGemScore();
+}
+
+function updatePauseScreen() {
+	const foundTomesAmount = document.getElementById('current-tomes-amount');
+	const enemiesDefeated = document.getElementById('enemies-defeated');
+	let currentTomesFound = 0;
+	if (player.collectedBooks.yellowBook) {
+		currentTomesFound += 1;
+	}
+	if (player.collectedBooks.greenBook) {
+		currentTomesFound += 1;
+	}
+	if (player.collectedBooks.blueBook) {
+		currentTomesFound += 1;
+	}
+	if (player.collectedBooks.redBook) {
+		currentTomesFound += 1;
+	}
+	foundTomesAmount.textContent = currentTomesFound;
+	enemiesDefeated.textContent = 27 - movingBlobs.length;
 }
 
 function updateGameAssets() {
@@ -237,6 +263,8 @@ function updateStatusBar() {
 	updateSpellScrollCounter();
 	updateBookCounter();
 	updateGemsAndScore();
+	updateWinningScreen();
+	updatePauseScreen();
 }
 
 // ########### PLAYER FUNCTIONS ###########
@@ -364,24 +392,26 @@ function updatePlayerAnimation() {
 let currentAnimationLoop;
 
 function animate() {
-	currentAnimationLoop = window.requestAnimationFrame(animate);
+	if (!isPaused) {
+		currentAnimationLoop = window.requestAnimationFrame(animate);
 
-	c.fillStyle = 'black';
-	c.fillRect(0, 0, canvas.width, canvas.height);
+		c.fillStyle = 'black';
+		c.fillRect(0, 0, canvas.width, canvas.height);
 
-	c.save();
-	c.scale(0.125, 0.125);
-	c.translate(camera.position.x, camera.position.y);
+		c.save();
+		c.scale(0.125, 0.125);
+		c.translate(camera.position.x, camera.position.y);
 
-	background.update();
+		background.update();
 
-	updateGameAssets();
-	updateStatusBar();
-	updatePlayer();
-	checkQuestState();
-	foreground.update();
+		updateGameAssets();
+		updateStatusBar();
+		updatePlayer();
+		checkQuestState();
+		foreground.update();
 
-	c.restore();
+		c.restore();
+	}
 }
 
 function initGame() {
@@ -397,7 +427,6 @@ function initGame() {
 
 function resetGame() {
 	cancelAnimationFrame(currentAnimationLoop);
-
 	camera = {
 		position: {
 			x: 0,
@@ -419,7 +448,21 @@ function resetGame() {
 	animate();
 	unmuteAllSounds();
 	enableGameControls();
+	enableESCevent();
 	isDead = false;
+}
+
+function togglePause() {
+	isPaused = !isPaused;
+	if (isPaused) {
+		disableGameControls();
+		cancelAnimationFrame(currentAnimationLoop);
+		showPauseScreen();
+	} else {
+		hidePauseScreen();
+		enableGameControls();
+		animate();
+	}
 }
 
 function handleKeyDown(event) {
@@ -491,6 +534,22 @@ function handleKeyUp(event) {
 			isHovering = false;
 			break;
 	}
+}
+
+function handleESCevent(event) {
+	switch (event.key) {
+		case 'Escape':
+			togglePause();
+			break;
+	}
+}
+
+function enableESCevent() {
+	window.addEventListener('keydown', handleESCevent);
+}
+
+function disableESCevent() {
+	window.removeEventListener('keydown', handleESCevent);
 }
 
 function enableGameControls() {

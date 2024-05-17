@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="img/favicon.png" />
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="media-queries.css" />
 
 		<script defer src="js/data/positionData.js"></script>
 		<script defer src="js/data/collisionData.js"></script>
@@ -78,6 +79,8 @@
 
 					<div class="part">
 						<p>
+							<img src="img/intro/tomes.png" alt="" />
+
 							Meet Woozl, a young apprentice wizard tasked with a daunting
 							mission: to retrieve the
 							<span>four ancient Tomes of Magic</span> that have vanished into
@@ -85,11 +88,12 @@
 							trusty spells, Woozl must navigate treacherous terrain and
 							<span>face off against deadly foes</span> to complete his quest.
 						</p>
-						<img src="img/intro/tomes.png" alt="" />
 					</div>
 
 					<div class="part">
 						<p>
+							<img src="img/intro/spell.png" alt="" />
+
 							But fear not, for
 							<span>Woozl is no ordinary apprentice.</span> With a flick of his
 							hand, he can unleash <span>powerful magic</span> to defend
@@ -99,11 +103,12 @@
 							Woozl's powers rely on a finite well of energy that
 							<span>must be managed carefully</span>.
 						</p>
-						<img src="img/intro/spell.png" alt="" />
 					</div>
 
 					<div class="part">
 						<p>
+							<img src="img/intro/blobs.png" alt="" />
+
 							Beware the <span>Tingle-Tangle Blob</span>, a mischievous creature
 							that grow more aggressive with each encounter. Be also aware of
 							the <span>Sleepy Blobs</span>. Deceptively harmless until
@@ -112,11 +117,12 @@
 							<span>thorny vines and poisonous plants</span> lying in wait at
 							every turn.
 						</p>
-						<img src="img/intro/blobs.png" alt="" />
 					</div>
 
 					<div class="part">
 						<p>
+							<img src="img/intro/items.png" alt="" />
+
 							Yet, hope shines bright in the form of
 							<span>magical elixirs scattered throughout the cavern</span>. From
 							potions to restore health and magical powers, to antidotes to
@@ -125,14 +131,17 @@
 							<span>hidden scrolls containing ancient powers</span>, he can
 							unleash the full might of his magic upon his enemies.
 						</p>
-						<img src="img/intro/items.png" alt="" />
 					</div>
 
 					<p>
 						Woozl's and the fate of the wizarding world hangs in the balance,
 						and only you can help him prevail against the darkness that lurks
-						within. So grab your wand, summon your courage, and embark on an
-						adventure like no other.
+						within.
+					</p>
+
+					<p>
+						So grab your wand, summon your courage, and embark on an adventure
+						like no other.
 					</p>
 
 					<h2>
@@ -247,6 +256,7 @@
 					<div class="poison-note">
 						<div class="text">
 							<p>
+								<img src="img/intro/woozle-poisoned.png" alt="" />
 								When touched by the "Deadly Breath" Woozl will have a quiet
 								unhealthy color and is constantly loosing HP for a period of 25
 								seconds!
@@ -254,7 +264,6 @@
 							<br />
 							<p>Use a Red Potion to counteract the poison!</p>
 						</div>
-						<img src="img/intro/woozle-poisoned.png" alt="" />
 					</div>
 
 					<h2>Items:</h2>
@@ -327,7 +336,9 @@
 				<br />
 				<p>So, when you fall, you get up again and carry on, right?</p>
 				<div class="btn-bar">
-					<button onclick=" showStartScreen()">Back to Home Screen</button>
+					<button onclick=" showStartScreen(); hideGameOverScreen()">
+						Back to Home Screen
+					</button>
 					<button onclick=" resetGame()">Restart Game</button>
 				</div>
 			</div>
@@ -363,12 +374,101 @@
 				<p>Long overdue!</p>
 
 				<div class="btn-bar">
-					<button onclick=" showStartScreen()">Back to Home Screen</button>
+					<button onclick=" showStartScreen(); hideWinningScreen()">
+						Back to Home Screen
+					</button>
 					<button onclick=" resetGame()">Restart Game</button>
 				</div>
 			</div>
+			<div id="pause-screen" class="d-none fade-out">
+				<h2>Game Paused</h2>
+				<div class="pause-screen-columns">
+					<h3>Quest Log:</h3>
+					<div class="quest-log">
+						<p>
+							Magic Tomes retrieved:
+							<span id="current-tomes-amount" class="m-left"></span>
+							<span> of 4</span>
+							<br />
+						</p>
+						<p>
+							Enemies defeated:
+							<span id="enemies-defeated" class="m-left"></span>
+							<span> of 27</span>
+						</p>
+						<br />
+					</div>
+					<div class="spacer"></div>
+					<h3>Controls:</h3>
+					<div class="control-sheet">
+						<!-- <div class="controls-left-clmn"></div>
+						<div class="controls-right-clmn"></div> -->
 
-			<div id="pause-screen"></div>
+						<ul>
+							<li>
+								<span class="key inline m-right">A</span> move
+								<strong>LEFT</strong>
+							</li>
+							<li>
+								<span class="key inline m-right">D</span> move
+								<strong>RIGHT</strong>
+							</li>
+							<li>
+								<span class="key inline m-right">W</span> <strong>JUMP</strong>
+							</li>
+							<li>
+								<span class="key padding inline m-right">ESC</span>
+								<strong>Pause Game</strong>
+							</li>
+						</ul>
+
+						<ul>
+							<li>
+								<span class="key inline m-right">P</span> <strong>HOVER</strong>
+							</li>
+							<li>
+								<span class="key inline m-right">Q</span>
+								<strong>DASH LEFT</strong>
+							</li>
+							<li>
+								<span class="key inline m-right">E</span>
+								<strong>DASH RIGHT</strong>
+							</li>
+							<li>
+								<span class="key padding inline m-right">SPACE</span>
+								<strong>CAST Spell</strong>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="inline">
+								<span class="key inline m-right">1</span> use
+								<img src="img/collectables/PotionYellow.png" alt="" />
+							</li>
+							<li class="inline">
+								<span class="key inline m-right">2</span> use
+								<img src="img/collectables/PotionGreen.png" alt="" />
+							</li>
+							<li class="inline">
+								<span class="key inline m-right">3</span> use
+								<img src="img/collectables/PotionBlue.png" alt="" />
+							</li>
+							<li class="inline">
+								<span class="key inline m-right">4</span> use
+								<img src="img/collectables/PotionRed.png" alt="" />
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="btn-bar">
+					<button onclick=" togglePause()">Resume Game</button>
+					<button onclick=" showStartScreen(); togglePause()">
+						Back to Home Screen
+					</button>
+					<button onclick=" resetGame(); togglePause()">Restart Game</button>
+				</div>
+			</div>
 
 			<div id="game-panel" class="d-none">
 				<div id="HUD-wrapper">

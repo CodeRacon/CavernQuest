@@ -82,6 +82,7 @@ function showStartScreen() {
 	isDead = false;
 	muteAllSounds();
 	disableGameControls();
+	disableESCevent();
 }
 
 function hideStartScreen() {
@@ -93,6 +94,7 @@ function hideStartScreen() {
 	isDead = false;
 	unmuteAllSounds();
 	enableGameControls();
+	enableESCevent();
 	playCavernBG();
 }
 
@@ -104,6 +106,8 @@ function showGameOverScreen() {
 	const canvas = document.getElementById('canvas');
 	muteAllSounds();
 	disableGameControls();
+	disableESCevent();
+
 	setTimeout(() => {
 		canvas.classList.add('filtered');
 		gameOverScreen.classList.replace('d-none', 'd-flex');
@@ -130,13 +134,14 @@ function hideGameOverScreen() {
 	stopCarryOn();
 	isGameOverSoundPlayed = false;
 	isCarryOnPlayed = false;
+	enableESCevent();
 }
 
 function showWinningScreen() {
 	const winningScreen = document.getElementById('winning-screen');
 	const canvas = document.getElementById('canvas');
 	canvas.classList.add('filtered');
-	winningScreen.classList.replace('d-none', 'flex');
+	winningScreen.classList.replace('d-none', 'd-flex');
 	winningScreen.classList.replace('fade-out', 'fade-in');
 	muteAllSounds();
 	playQuestCompleted();
@@ -144,6 +149,7 @@ function showWinningScreen() {
 		playWellDone();
 	}, 3000);
 	disableGameControls();
+	disableESCevent();
 }
 
 function hideWinningScreen() {
@@ -157,6 +163,25 @@ function hideWinningScreen() {
 	stopWellDone();
 	isWellDonePlayed = false;
 	isQuestCompletedPlayed = false;
+	enableESCevent();
+}
+
+function showPauseScreen() {
+	const pauseScreen = document.getElementById('pause-screen');
+	const canvas = document.getElementById('canvas');
+	canvas.classList.add('filtered');
+	pauseScreen.classList.replace('d-none', 'd-flex');
+	pauseScreen.classList.replace('fade-out', 'fade-in');
+}
+
+function hidePauseScreen() {
+	const pauseScreen = document.getElementById('pause-screen');
+	const canvas = document.getElementById('canvas');
+	canvas.classList.remove('filtered');
+	pauseScreen.classList.replace('fade-in', 'fade-out');
+	setTimeout(() => {
+		pauseScreen.classList.replace('d-flex', 'd-none');
+	}, 200);
 }
 
 function toggleStoryChapter() {
