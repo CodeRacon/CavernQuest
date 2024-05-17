@@ -1,3 +1,15 @@
+/**
+ * Represents a sprite object that can be drawn on a canvas.
+ *
+ * @class Sprite
+ * @param {Object} options - The options for creating the sprite.
+ * @param {Object} options.position - The initial position of the sprite.
+ * @param {string} options.imgSrc - The source URL of the sprite image.
+ * @param {number} [options.frameRate=1] - The number of frames in the sprite animation.
+ * @param {number} [options.frameBuffer=4] - The number of frames to buffer between animation frames.
+ * @param {number} [options.scale=1] - The scale factor to apply to the sprite.
+ * @param {number} [options.rotation=0] - The initial rotation of the sprite in radians.
+ */
 class Sprite {
 	constructor({
 		position,
