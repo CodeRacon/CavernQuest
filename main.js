@@ -41,6 +41,10 @@ let camera = {
 
 let isPaused = false;
 
+/**
+ * Updates the static collision elements in the game world, including collision blocks, hazards, and fence poles.
+ * This function is called each frame to update the state of these static elements and handle any collisions with the player.
+ */
 function updateStaticCollision() {
 	collisionBlocks.forEach((collisionBlock) => {
 		collisionBlock.update();
@@ -55,6 +59,14 @@ function updateStaticCollision() {
 	});
 }
 
+/**
+ * Updates the state of all enemies in the game.
+ *
+ * This function iterates through the `movingBlobs`, `hangingBlobs`, and `poisonPlants` arrays,
+ * and calls the appropriate update methods on each enemy type.
+ * It also checks for collisions between the player and the poison plants.
+ * It sets the initial amount of hits needed to finish a MovingBlob, which decreases with each SpellScroll found.
+ */
 function updateEnemies() {
 	movingBlobs.forEach((movingBlob) => {
 		movingBlob.requiredHits = 3 - player.collectedScrolls;
@@ -71,6 +83,9 @@ function updateEnemies() {
 	});
 }
 
+/**
+ * Updates the world elements, including bouncing plants and windy plants.
+ */
 function updateWorldElements() {
 	bouncePlants.forEach((bouncePlant) => {
 		bouncePlant.update();
@@ -81,6 +96,12 @@ function updateWorldElements() {
 	});
 }
 
+/**
+ * Updates and checks for collisions with various collectables in the game.
+ * This function iterates through arrays of different collectable objects, calls their
+ * `update()` and `checkCollision(player)` methods, allowing the collectables to
+ * update their state and check for collisions with the player.
+ */
 function updateCollectables() {
 	blueGems.forEach((blueGem) => {
 		blueGem.update();
@@ -138,6 +159,11 @@ function updateCollectables() {
 	});
 }
 
+/**
+ * Updates the health bar HUD element to reflect the current player health.
+ * The health bar wrapper element is resized to match the player's current health percentage,
+ * and the health bar text is updated to display the current health value.
+ */
 function updateHealthBar() {
 	const healthBarWrapper = document.getElementById('health-bar-wrapper');
 	const healthPercentage = (player.health / 100) * 100;
@@ -147,6 +173,11 @@ function updateHealthBar() {
 	healthBarText.textContent = `${player.health} HP`;
 }
 
+/**
+ * Updates the visual representation of the player's spell power.
+ * The spell power bar wrapper is resized to reflect the current spell power percentage,
+ * and the text content of the spell power bar is updated to display the current spell power value.
+ */
 function updateSpellPowerBar() {
 	const spellpowerBarWrapper = document.getElementById(
 		'spellpower-bar-wrapper'
@@ -158,6 +189,11 @@ function updateSpellPowerBar() {
 	spellpowerBarText.textContent = `${Math.round(player.spellPower)} SP`;
 }
 
+/**
+ * Updates the on-screen counters for the player's collected potions.
+ * Retrieves the current potion counts from the `player.collectedPotions` object
+ * and updates the corresponding HTML elements with the new values.
+ */
 function updatePotionCounter() {
 	const halfHPCount = document.getElementById('halfHP-count');
 	halfHPCount.textContent = player.collectedPotions.halfHP;
@@ -172,11 +208,20 @@ function updatePotionCounter() {
 	immunityCount.textContent = player.collectedPotions.immunity;
 }
 
+/**
+ * Updates the displayed count of spell scrolls collected by the player.
+ */
 function updateSpellScrollCounter() {
 	const spellScrollCount = document.getElementById('spell-scroll-count');
 	spellScrollCount.textContent = player.collectedScrolls;
 }
 
+/**
+ * Updates the visual representation of the collected books in the game.
+ * Checks the player's collected books status and updates the corresponding book images to indicate which books
+ * have been collected (others are greyed out).
+ * Also sets a flag `allTomesFound` to true if all books have been collected, and plays a special sound effect in that case.
+ */
 function updateBookCounter() {
 	const goldenBookImage = document.getElementById('goldenBook');
 	const greenBookImage = document.getElementById('greenBook');
@@ -204,9 +249,14 @@ function updateBookCounter() {
 	) {
 		allTomesFound = true;
 		playAllTomesFound();
+	} else {
+		allTomesFound = false;
 	}
 }
 
+/**
+ * Updates the displayed counts of blue and red gems collected by the player, as well as the total score calculated with multipliers.
+ */
 function updateGemsAndScore() {
 	const blueGemCount = document.getElementById('blue-gem-count');
 	blueGemCount.textContent = player.collectedBlueGems;
@@ -218,6 +268,9 @@ function updateGemsAndScore() {
 	blueGemScore.textContent = calculateBlueGemScore();
 }
 
+/**
+ * Updates the winning screen with the player's collected blue and red gems, as well as the total score.
+ */
 function updateWinningScreen() {
 	const blueGemAmount = document.getElementById('blue-gem-amount');
 	blueGemAmount.textContent = player.collectedBlueGems;
@@ -229,6 +282,11 @@ function updateWinningScreen() {
 	totalScore.textContent = calculateBlueGemScore();
 }
 
+/**
+ * Updates the pause screen with the current number of tomes found and enemies defeated.
+ * The number of tomes found is based on the player's collected books.
+ * The number of enemies defeated is calculated by subtracting the number of remaining moving blobs from the total of 27.
+ */
 function updatePauseScreen() {
 	const foundTomesAmount = document.getElementById('current-tomes-amount');
 	const enemiesDefeated = document.getElementById('enemies-defeated');
@@ -249,6 +307,9 @@ function updatePauseScreen() {
 	enemiesDefeated.textContent = 27 - movingBlobs.length;
 }
 
+/**
+ * Updates the game assets, including static collision, enemies, world elements, and collectables.
+ */
 function updateGameAssets() {
 	updateStaticCollision();
 	updateEnemies();
@@ -256,6 +317,10 @@ function updateGameAssets() {
 	updateCollectables();
 }
 
+/**
+ * Updates the various UI & HUD elements on the status bar, including the health bar, spell power bar, potion counter,
+ * spell scroll counter, book counter, gems and score, winning screen, and pause screen.
+ */
 function updateStatusBar() {
 	updateHealthBar();
 	updateSpellPowerBar();
@@ -268,6 +333,12 @@ function updateStatusBar() {
 }
 
 // ########### PLAYER FUNCTIONS ###########
+
+/**
+ * Updates the player's state and performs various actions related to the player.
+ * This function is called regularly to update the player's position, handle input,
+ * update the player's spell, and update the player's animation.
+ */
 function updatePlayer() {
 	player.update(bouncePlants);
 
@@ -277,6 +348,11 @@ function updatePlayer() {
 	updatePlayerAnimation();
 }
 
+/**
+ * Checks the state of the player and performs actions based on their health and death status.
+ * If the player's health is below 15, it plays a heart-beat 'low-on-health' sound.
+ * If the player is dead, it decrements the dead animation duration and shows the game over screen if the animation has finished.
+ */
 function checkPlayerState() {
 	if (player.health <= 15) {
 		playHeartBeat();
@@ -296,6 +372,9 @@ function checkPlayerState() {
 	}
 }
 
+/**
+ * Checks the current state of the quest-items and shows the winning screen in case all tomes have been found and there are no moving blobs left.
+ */
 function checkQuestState() {
 	if (allTomesFound && movingBlobs.length === 0) {
 		isQuestCompleted = true;
@@ -304,21 +383,34 @@ function checkQuestState() {
 	}
 }
 
+/**
+ * Updates the player's current spell, if any, by calling its `update` method with the `movingBlobs` - array as an argument.
+ */
 function updatePlayerSpell() {
 	if (player.currentSpell) {
 		player.currentSpell.update(movingBlobs);
 	}
 }
 
+/**
+ * Handles the player's input, updating the player's velocity and calling main input handling functions.
+ */
 function handlePlayerInput() {
 	player.velocity.x = 0;
 
 	handleWalkInput();
 	handleDashInput();
-	handleRiseInput();
+	handleHoverInput();
 	handleJumpAndFallInput();
 }
 
+/**
+ * Handles the player's walking input, updating their sprite and velocity based on the pressed keys.
+ * If the 'd' key is pressed and the player is not hit, the player's sprite is set to 'WalkRight',
+ * their velocity is set to 28 in the x-axis, their last direction is set to 'right', and the camera followa as it pans to the left border.
+ * If the 'a' key is pressed and the player is not hit, the player's sprite is set to 'WalkLeft',
+ * their velocity is set to -28 in the x-axis, their last direction is set to 'left', and the camera followa as it pans to the right border.
+ */
 function handleWalkInput() {
 	if (keys.d.pressed && !player.isHit) {
 		player.switchToSprite('WalkRight');
@@ -333,6 +425,13 @@ function handleWalkInput() {
 	}
 }
 
+/**
+ * Handles the player's dash input, updating their sprite, velocity, and spell power usage.
+ * If the 'e' key is pressed and the player has enough spell power, the player will dash to the right.
+ * If the 'q' key is pressed and the player has enough spell power, the player will dash to the left.
+ * The player's last direction is also updated to reflect the direction of the dash.
+ * The camera panning is also handled, depending on the direction of the dash.
+ */
 function handleDashInput() {
 	if (keys.e.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.switchToSprite('DashRight');
@@ -349,7 +448,15 @@ function handleDashInput() {
 	}
 }
 
-function handleRiseInput() {
+/**
+ * Handles the player's hover input, which allows the player to hover / float upwards.
+ *
+ * If the 'p' key is pressed, the player is not currently hit, and the player has enough spell power (SP), this function will:
+ * - Set the player's vertical velocity to -26, causing them to jump upwards
+ * - Consume 12 points of the player's SP per second
+ * - Trigger bottom border camera panning for the player's camera
+ */
+function handleHoverInput() {
 	if (keys.p.pressed && !player.isHit && player.spellPower >= 12 / 60) {
 		player.velocity.y = -26;
 		player.useSpellPower(12 / 60);
@@ -357,6 +464,11 @@ function handleRiseInput() {
 	}
 }
 
+/**
+ * Handles the camera panning behavior based on the player's vertical velocity.
+ * If the player is moving upwards and not hit, the camera pans towards the upper border.
+ * If the player is moving downwards and not hit, the camera pans towards the lower border.
+ */
 function handleJumpAndFallInput() {
 	if (player.velocity.y < 0 && !player.isHit) {
 		player.bottomBorderCamPanning({ camera, canvas });
@@ -365,6 +477,12 @@ function handleJumpAndFallInput() {
 	}
 }
 
+/**
+ * Updates the player's animation based on their current velocity and direction.
+ * If the player is not being hit, this function will switch the player's sprite to
+ * the appropriate idle, jump, or fall animation based on the player's velocity and
+ * last direction faced.
+ */
 function updatePlayerAnimation() {
 	if (player.velocity.y === 0 && !player.isHit) {
 		if (player.lastDirection === 'right') {
@@ -391,6 +509,13 @@ function updatePlayerAnimation() {
 
 let currentAnimationLoop;
 
+/**
+ * Animates the game scene by updating the background, game assets, player, foreground,
+ * and rendering the updated scene to the canvas.
+ * This function is called repeatedly by the browser's requestAnimationFrame method to create a
+ * continuous animation loop.
+ * The animation is paused when the `isPaused` flag is true.
+ */
 function animate() {
 	if (!isPaused) {
 		currentAnimationLoop = window.requestAnimationFrame(animate);
@@ -414,6 +539,9 @@ function animate() {
 	}
 }
 
+/**
+ * Initializes the game by setting up various game elements and starting the animation loop.
+ */
 function initGame() {
 	console.log('init game');
 	initStaticCollision();
@@ -425,6 +553,11 @@ function initGame() {
 	animate();
 }
 
+/**
+ * Resets the game state to its initial conditions.
+ * This function is called when the game needs to be restarted, such as after the player has won or lost.
+ * It cancels the current animation loop, resets the camera position, initializes the player, and hides any gameover or winning screens.
+ */
 function resetGame() {
 	cancelAnimationFrame(currentAnimationLoop);
 	camera = {
@@ -436,22 +569,19 @@ function resetGame() {
 
 	player.initialValues();
 
-	initCollectables();
-	initPlayer();
-	initWorldElements();
-	initEnemies();
+	initGame();
 
-	hideStartScreen();
 	hideGameOverScreen();
 	hideWinningScreen();
 
-	animate();
-	unmuteAllSounds();
-	enableGameControls();
-	enableESCevent();
 	isDead = false;
 }
 
+/**
+ * Toggles the pause state of the game.
+ * When the game is paused, the game controls are disabled, the animation loop is cancelled, and the pause screen is shown.
+ * When the game is unpaused, the game controls are enabled, the animation loop is resumed, and the pause screen is hidden.
+ */
 function togglePause() {
 	isPaused = !isPaused;
 	if (isPaused) {
@@ -465,6 +595,12 @@ function togglePause() {
 	}
 }
 
+/**
+ * Handles keyboard input events for the game.
+ * This function is called whenever a key is pressed down.
+ * It performs various actions based on the key that was pressed, such as jumping, hovering, dashing, and casting spells.
+ * @param {KeyboardEvent} event - The keyboard event object.
+ */
 function handleKeyDown(event) {
 	switch (event.key) {
 		case 'w':
@@ -513,6 +649,10 @@ function handleKeyDown(event) {
 	}
 }
 
+/**
+ * Handles key up events for various player actions.
+ * @param {KeyboardEvent} event - The keyboard event object.
+ */
 function handleKeyUp(event) {
 	switch (event.key) {
 		case 'd':
@@ -536,6 +676,10 @@ function handleKeyUp(event) {
 	}
 }
 
+/**
+ * Handles the ESC key event by toggling the pause state.
+ * @param {KeyboardEvent} event - The keyboard event object.
+ */
 function handleESCevent(event) {
 	switch (event.key) {
 		case 'Escape':
@@ -544,19 +688,31 @@ function handleESCevent(event) {
 	}
 }
 
+/**
+ * Enables the ESC key event listener on the window object.
+ */
 function enableESCevent() {
 	window.addEventListener('keydown', handleESCevent);
 }
 
+/**
+ * Disables the ESC key event listener on the window object.
+ */
 function disableESCevent() {
 	window.removeEventListener('keydown', handleESCevent);
 }
 
+/**
+ * Enables the game controls by adding event listeners for key down and key up events.
+ */
 function enableGameControls() {
 	window.addEventListener('keydown', handleKeyDown);
 	window.addEventListener('keyup', handleKeyUp);
 }
 
+/**
+ * Disables the game controls by removing the event listeners for key down and key up events.
+ */
 function disableGameControls() {
 	window.removeEventListener('keydown', handleKeyDown);
 	window.removeEventListener('keyup', handleKeyUp);

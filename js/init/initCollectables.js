@@ -13,6 +13,9 @@ const greenBooks = [];
 
 const spellScrolls = [];
 
+/**
+ * An array containing all the collectable objects in the game.
+ */
 const allCollectables = [
 	blueGems,
 	redGems,
@@ -27,11 +30,14 @@ const allCollectables = [
 	spellScrolls,
 ];
 
+/**
+ * Initializes all collectable objects in the game world.
+ * This function is responsible for creating and adding all types of collectables to the game.
+ */
 function initCollectables() {
 	allCollectables.forEach((collectableArray) => {
 		collectableArray.length = 0;
 	});
-
 	initBlueGems();
 	initRedGems();
 	initFullHPPotions();
@@ -45,6 +51,11 @@ function initCollectables() {
 	initSpellScrolls();
 }
 
+/**
+ * Initializes the blue gems in the game world.
+ * This function iterates through the `blueGemPositions` array and creates a new `BlueGem` object for each position.
+ * The created `BlueGem` objects are then added to the `blueGems` array.
+ */
 function initBlueGems() {
 	blueGemPositions.forEach((blueGemPosition) => {
 		blueGemPosition.objects.forEach((object) => {
@@ -63,6 +74,11 @@ function initBlueGems() {
 	});
 }
 
+/**
+ * Initializes the red gem collectables in the game.
+ * This function iterates through the `redGemPositions` array and creates a new `RedGem` object
+ * for each position. The created `RedGem` objects are then added to the `redGems` array.
+ */
 function initRedGems() {
 	redGemPositions.forEach((redGemPosition) => {
 		redGemPosition.objects.forEach((object) => {
@@ -81,6 +97,11 @@ function initRedGems() {
 	});
 }
 
+/**
+ * Initializes full health potion collectables in the game world.
+ * This function iterates through the `fullHPPositions` array and creates a new `FullHealthPotion` object
+ * for each position. The created `FullHealthPotion` objects are then added to the `fullHPs` array.
+ */
 function initFullHPPotions() {
 	fullHPPositions.forEach((fullHPPosition) => {
 		fullHPPosition.objects.forEach((object) => {
@@ -99,6 +120,11 @@ function initFullHPPotions() {
 	});
 }
 
+/**
+ * Initializes the half health potion collectables in the game world.
+ * This function iterates through the `halfHPPositions` array and creates a new `HalfHealthPotion` object
+ * for each position. The created potions are then added to the `halfHPs` array.
+ */
 function initHalfHPPotions() {
 	halfHPPositions.forEach((halfHPPosition) => {
 		halfHPPosition.objects.forEach((object) => {
@@ -117,6 +143,11 @@ function initHalfHPPotions() {
 	});
 }
 
+/**
+ * Initializes the full spell power potion collectables in the game.
+ * This function iterates through the `fullSPPositions` array and creates a new `FullSpellPowerPotion` object
+ * for each position. The created potions are then added to the `fullSPs` array.
+ */
 function initFullSPPotions() {
 	fullSPPositions.forEach((fullSPPosition) => {
 		fullSPPosition.objects.forEach((object) => {
@@ -135,6 +166,11 @@ function initFullSPPotions() {
 	});
 }
 
+/**
+ * Initializes immunity potion collectables in the game world.
+ * This function iterates through the `immunityPositions` array and creates new `ImmunityPotion` objects
+ * for each position. The created `ImmunityPotion` objects are then added to the `immunityPotions` array.
+ */
 function initImmunityPotions() {
 	immunityPositions.forEach((immunityPosition) => {
 		immunityPosition.objects.forEach((object) => {
@@ -153,6 +189,11 @@ function initImmunityPotions() {
 	});
 }
 
+/**
+ * Initializes the Golden Book collectables in the game which are also quest-items.
+ * The Golden Book collectable is positioned based on the `goldenBookPositions` array data.
+ * A new `GoldenBook` object is created for each Golden Book position and added to the `goldenBooks` array.
+ */
 function initGoldenBook() {
 	goldenBookPositions.forEach((goldenBookPosition) => {
 		goldenBookPosition.objects.forEach((object) => {
@@ -171,6 +212,11 @@ function initGoldenBook() {
 	});
 }
 
+/**
+ * Initializes the Red Book collectables in the game which is also a quest-item.
+ * The Red Book collectable is positioned based on the `redBookPositions` array data.
+ * A new `RedBook` object is created for each Red Book position and added to the `redBooks` array.
+ */
 function initRedBook() {
 	redBookPositions.forEach((redBookPosition) => {
 		redBookPosition.objects.forEach((object) => {
@@ -189,6 +235,11 @@ function initRedBook() {
 	});
 }
 
+/**
+ * Initializes the Blue Book collectables in the game which is also a quest-item.
+ * The Blue Book collectable is positioned based on the `blueBookPositions` array data.
+ * A new `BlueBook` object is created for each Blue Book position and added to the `blueBooks` array.
+ */
 function initBlueBook() {
 	blueBookPositions.forEach((blueBookPosition) => {
 		blueBookPosition.objects.forEach((object) => {
@@ -207,6 +258,11 @@ function initBlueBook() {
 	});
 }
 
+/**
+ * Initializes the Green Book collectables in the game which is also a quest-item.
+ * The Green Book collectable is positioned based on the `greenBookPositions` array data.
+ * A new `GreenBook` object is created for each Green Book position and added to the `greenBooks` array.
+ */
 function initGreenBook() {
 	greenBookPositions.forEach((greenBookPosition) => {
 		greenBookPosition.objects.forEach((object) => {
@@ -225,6 +281,11 @@ function initGreenBook() {
 	});
 }
 
+/**
+ * Initializes the Spell Scroll collectables in the game which are quest-items.
+ * The Spell Scroll collectable is positioned based on the `spellScrollPositions` array data.
+ * A new `SpellScroll` object is created for each Spell Scroll position and added to the `spellScrolls` array.
+ */
 function initSpellScrolls() {
 	spellScrollPositions.forEach((spellScrollPosition) => {
 		spellScrollPosition.objects.forEach((object) => {

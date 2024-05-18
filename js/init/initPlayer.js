@@ -1,5 +1,17 @@
 let player;
 
+/**
+ * Initializes the player object with various properties and animations.
+ *
+ * The `initPlayer` function creates one new `Player` object with the following properties:
+ * - `position`: The initial position of the player.
+ * - `collisionBlocks`: The collision blocks that the player can collide with.
+ * - `hazards`: The hazards that the player can collide with.
+ * - `poisonPlants`: The poison plants that the player can collide with.
+ * - `imgSrc`: The source image for the player's idle right animation.
+ * - `frameRate`: The frame rate for the player's animations.
+ * - `animations`: An object containing the various animations for the player, such as idle, walk, jump, fall, hit, dash, and death.
+ */
 function initPlayer() {
 	console.log('init player');
 

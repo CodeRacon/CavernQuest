@@ -3,6 +3,10 @@ const windyPlants = [];
 
 const allWorldElements = [bouncePlants, windyPlants];
 
+/**
+ * Initializes the world elements, including bouncing plants and windy plants.
+ * This function is called during the initialization of the game world.
+ */
 function initWorldElements() {
 	allWorldElements.forEach((worldElementArray) => {
 		worldElementArray.length = 0;
@@ -11,6 +15,11 @@ function initWorldElements() {
 	initWindyPlants();
 }
 
+/**
+ * Initializes the bounce plants in the game world.
+ * The bounce plants are positioned based on the `bouncePlantPositions` array data.
+ * A new `BouncePlant` object is created for each position and added to the `bouncePlants` array.
+ */
 function initBouncePlants() {
 	bouncePlantPositions.forEach((bouncePlantPosition) => {
 		bouncePlantPosition.objects.forEach((object) => {
@@ -29,6 +38,11 @@ function initBouncePlants() {
 	});
 }
 
+/**
+ * Initializes the windy plants in the game world.
+ * The windy plant positions are defined in the `windyPlantPositions` array,
+ * and for each position, a new `WindyPlant` object is created and added to the `windyPlants` array.
+ */
 function initWindyPlants() {
 	windyPlantPositions.forEach((windyPlantPosition) => {
 		windyPlantPosition.objects.forEach((object) => {
