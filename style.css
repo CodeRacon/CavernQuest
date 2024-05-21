@@ -519,8 +519,7 @@ h2 {
 	gap: 1rem;
 }
 
-#winning-screen span,
-#pause-screen span {
+#winning-screen span {
 	font-family: 'Magical' !important;
 	font-size: 1.25rem;
 	font-weight: bold;
@@ -594,6 +593,13 @@ h2 {
 	margin-bottom: 1rem;
 }
 
+.quest-log span {
+	font-family: 'Magical' !important;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: #ffd900;
+}
+
 .control-sheet {
 	width: 100%;
 	gap: 4rem;
@@ -619,7 +625,7 @@ li {
 }
 
 li strong {
-	color: #00e8ff;
+	color: #ffd900;
 }
 
 li img {
