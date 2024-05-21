@@ -12,11 +12,19 @@ class FencePole {
 		this.color = 'transparent';
 	}
 
+	/**
+	 * Draws the fence pole on the canvas.
+	 *
+	 * @param {CanvasRenderingContext2D} c - The 2D rendering context of the canvas.
+	 */
 	draw() {
 		c.fillStyle = this.color;
 		c.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 
+	/**
+	 * Redraws the fence pole.
+	 */
 	update() {
 		this.draw();
 	}

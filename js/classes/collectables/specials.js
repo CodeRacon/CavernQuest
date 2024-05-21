@@ -19,6 +19,9 @@ class SpellScroll extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the object's frames and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
@@ -57,6 +60,9 @@ class GoldenArmor extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the object's frames and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();

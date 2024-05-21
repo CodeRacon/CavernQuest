@@ -30,6 +30,10 @@ class PoisonPlant extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the poison plant's state, including its animation frames, collision area,
+	 * and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		this.updateCollisionArea();
@@ -86,6 +90,12 @@ class PoisonPlant extends Sprite {
 		}
 	}
 
+	/**
+	 * Draws the collision area for the poison plant.
+	 * The collision area is represented by a rectangle with a red border.
+	 * The position and size of the collision area are calculated based on the
+	 * position and size of the poison plant.
+	 */
 	drawCollisionArea() {
 		const topLeft = {
 			x: this.position.x + (this.width - this.collisionArea.width) / 2,

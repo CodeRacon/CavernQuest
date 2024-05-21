@@ -26,6 +26,10 @@ class MagicSpell extends Sprite {
 		this.hitEnemies = [];
 	}
 
+	/**
+	 * Updates the magic spell's state, including checking for collisions with moving blobs and
+	 * applying hit effects.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();

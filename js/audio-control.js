@@ -16,10 +16,16 @@ let isAllTomesFoundPlayed = false;
 let isQuestCompleted = false;
 let isDead = false;
 
+/**
+ * Mutes all sounds in the application.
+ */
 function muteAllSounds() {
 	isMuted = true;
 }
 
+/**
+ * Sets the `isMuted` flag to `false`, effectively unmuting all sounds.
+ */
 function unmuteAllSounds() {
 	isMuted = false;
 }
@@ -32,12 +38,10 @@ function unmuteAllSounds() {
  */
 function playIntro() {
 	const playIntroBtn = document.getElementById('play-intro-btn');
-
 	if (!mainStory) {
 		mainStory = new Audio('./audio/main-story.mp3');
 		mainStory.volume = 0.65;
 	}
-
 	if (mainStory.paused) {
 		mainStory.play();
 		playIntroBtn.classList.add('outlined');
@@ -60,6 +64,10 @@ function playCavernBG() {
 	}
 }
 
+/**
+ * Plays a sound effect when a potion is found in the game.
+ * The sound effect is played at a reduced volume to avoid being too loud.
+ */
 function playPotionFound() {
 	if (!isMuted) {
 		const potionFoundAudio = new Audio('./audio/bottle.wav');
@@ -68,6 +76,9 @@ function playPotionFound() {
 	}
 }
 
+/**
+ * Plays the potion use audio effect if the game audio is not muted.
+ */
 function playPotionUse() {
 	if (!isMuted) {
 		const potionUseAudio = new Audio('./audio/use-potion.mp3');
@@ -76,6 +87,11 @@ function playPotionUse() {
 	}
 }
 
+/**
+ * Plays a sound effect when a magic tome is found.
+ * This function checks if the audio is not muted, and if so, plays a quest item sound effect
+ * at a reduced volume.
+ */
 function playMagicTomeFound() {
 	if (!isMuted) {
 		const tomeFoundAudio = new Audio('./audio/quest-item.mp3');
@@ -84,6 +100,9 @@ function playMagicTomeFound() {
 	}
 }
 
+/**
+ * Plays the gem collected audio effect if the audio is not muted.
+ */
 function playGemCollected() {
 	if (!isMuted) {
 		const gemCollectedAudio = new Audio('./audio/gem-collected.mp3');
@@ -92,6 +111,9 @@ function playGemCollected() {
 	}
 }
 
+/**
+ * Plays the bounce sound effect when jumping on a BouncePlant if the audio is not muted.
+ */
 function playBounceSound() {
 	if (!isMuted) {
 		const bouncePlantAudio = new Audio('./audio/bounce.mp3');
@@ -100,6 +122,10 @@ function playBounceSound() {
 	}
 }
 
+/**
+ * Plays the player hurt audio effect if the game is not muted.
+ * The audio file is played at a reduced volume of 0.175.
+ */
 function playPlayerHurt() {
 	if (!isMuted) {
 		const playerHurtAudio = new Audio('./audio/player-hurt01.mp3');
@@ -108,6 +134,10 @@ function playPlayerHurt() {
 	}
 }
 
+/**
+ * Plays an alternative audio clip for when the player is hurt.
+ * This audio clip is played if the game is not muted.
+ */
 function playPlayerHurtAlt() {
 	if (!isMuted) {
 		const playerHurtAltAudio = new Audio('./audio/player-hurt02.mp3');
@@ -116,6 +146,10 @@ function playPlayerHurtAlt() {
 	}
 }
 
+/**
+ * Plays a sound effect when the player is poisoned.
+ * The sound effect is played at a reduced volume and is rate-limited to play no more than once every 4 seconds.
+ */
 function playPlayerPoisened() {
 	if (!isMuted) {
 		const timeStamp = Date.now();
@@ -129,6 +163,9 @@ function playPlayerPoisened() {
 	}
 }
 
+/**
+ * Plays the spell cast audio effect if the audio is not muted.
+ */
 function playSpellcast() {
 	if (!isMuted) {
 		const playerSpellcastAudio = new Audio('./audio/spell-cast.mp3');
@@ -137,6 +174,11 @@ function playSpellcast() {
 	}
 }
 
+/**
+ * Plays a sound effect for when a blob falls.
+ * The sound effect is played at a reduced volume.
+ * The sound effect will only play if the audio is not muted.
+ */
 function playBlobFall() {
 	if (!isMuted) {
 		const blobFallAudio = new Audio('./audio/sleepy-blob.wav');
@@ -145,6 +187,11 @@ function playBlobFall() {
 	}
 }
 
+/**
+ * Plays a moving blob audio effect.
+ * This function is called when a moving blob animation is triggered, to play a corresponding audio effect.
+ * The audio is played with a 750ms delay and a volume of 0.35.
+ */
 function playMovingBlob01() {
 	if (!isMuted) {
 		const movingBlob01Audio = new Audio('./audio/moving-blob01.mp3');
@@ -155,6 +202,11 @@ function playMovingBlob01() {
 	}
 }
 
+/**
+ * Plays a moving blob sound effect after a 750ms delay.
+ * The sound effect is played at a volume of 0.35.
+ * The sound effect will only play if the audio is not muted.
+ */
 function playMovingBlob02() {
 	if (!isMuted) {
 		const movingBlob02Audio = new Audio('./audio/moving-blob02.mp3');
@@ -165,6 +217,9 @@ function playMovingBlob02() {
 	}
 }
 
+/**
+ * Plays a moving blob audio effect after a 750ms delay, if the audio is not muted.
+ */
 function playMovingBlob03() {
 	if (!isMuted) {
 		const movingBlob03Audio = new Audio('./audio/moving-blob03.mp3');
@@ -175,6 +230,9 @@ function playMovingBlob03() {
 	}
 }
 
+/**
+ * Plays the jump sound effect if the audio is not muted.
+ */
 function playJump() {
 	if (!isMuted) {
 		const jumpAudio = new Audio('./audio/jump.mp3');
@@ -183,6 +241,10 @@ function playJump() {
 	}
 }
 
+/**
+ * Plays a hover audio effect if the user is not muted and is not currently hovering.
+ * The hover audio is played at a volume of 0.15.
+ */
 function playHover() {
 	if (!isMuted) {
 		if (!isHovering) {
@@ -194,6 +256,9 @@ function playHover() {
 	}
 }
 
+/**
+ * Plays the dash audio effect if the player is not muted and not currently dashing.
+ */
 function playDash() {
 	if (!isMuted) {
 		if (!isDashing) {
@@ -205,6 +270,9 @@ function playDash() {
 	}
 }
 
+/**
+ * Plays the "scroll found" audio effect if the audio is not muted.
+ */
 function playScrollFound() {
 	if (!isMuted) {
 		const scrollFoundAudio = new Audio('./audio/scroll-found.mp3');
@@ -213,6 +281,10 @@ function playScrollFound() {
 	}
 }
 
+/**
+ * Plays an audio clip indicating that all tomes have been found, if the audio is not muted
+ * and the clip has not already been played.
+ */
 function playAllTomesFound() {
 	if (!isMuted) {
 		if (!isAllTomesFoundPlayed) {
@@ -224,6 +296,11 @@ function playAllTomesFound() {
 	}
 }
 
+/**
+ * Plays a sound effect when a quest is completed.
+ * This function checks if a quest has been completed and if the sound effect has not already been played.
+ * If both conditions are true, it plays the "winning.mp3" audio file at a volume of 0.35.
+ */
 function playQuestCompleted() {
 	const questCompletedAudio = new Audio('./audio/winning.mp3');
 	questCompletedAudio.volume = 0.35;
@@ -235,6 +312,10 @@ function playQuestCompleted() {
 
 let wellDoneAudio;
 
+/**
+ * Plays the "well done" audio clip when a quest is completed.
+ * The audio clip is only played once per quest completion.
+ */
 function playWellDone() {
 	if (!wellDoneAudio) {
 		wellDoneAudio = new Audio('./audio/well-done.mp3');
@@ -246,6 +327,9 @@ function playWellDone() {
 	}
 }
 
+/**
+ * Stops the "well done" audio if it is currently playing.
+ */
 function stopWellDone() {
 	if (wellDoneAudio) {
 		wellDoneAudio.pause();
@@ -253,6 +337,11 @@ function stopWellDone() {
 	}
 }
 
+/**
+ * Plays the game over sound effect.
+ * The sound is played at a reduced volume of 0.15 to avoid being too loud.
+ * The sound is only played once per game-over event to avoid repetition.
+ */
 function playGameOverSound() {
 	const gameOverAudio = new Audio('./audio/game-over.mp3');
 	gameOverAudio.volume = 0.15;
@@ -264,6 +353,9 @@ function playGameOverSound() {
 
 let carryOnAudio;
 
+/**
+ * Plays the "carry on" audio clip if the game is over and the "carry on" audio has not been played yet.
+ */
 function playCarryOn() {
 	if (!carryOnAudio) {
 		carryOnAudio = new Audio('./audio/carry-on.mp3');
@@ -275,6 +367,9 @@ function playCarryOn() {
 	}
 }
 
+/**
+ * Stops the "carry on" audio if it is currently playing.
+ */
 function stopCarryOn() {
 	if (carryOnAudio) {
 		carryOnAudio.pause();
@@ -284,6 +379,11 @@ function stopCarryOn() {
 
 let heartbeatAudio;
 
+/**
+ * Plays a looping heartbeat audio effect if the audio is not muted.
+ * If the heartbeat audio has not been initialized, it is created and configured with a volume of 0.75 and set to loop.
+ * If the heartbeat audio is paused, it is resumed.
+ */
 function playHeartBeat() {
 	if (!isMuted) {
 		if (!heartbeatAudio) {
@@ -297,6 +397,9 @@ function playHeartBeat() {
 	}
 }
 
+/**
+ * Stops the heartbeat audio if it is currently playing.
+ */
 function stopHeartBeat() {
 	if (heartbeatAudio && !heartbeatAudio.paused) {
 		heartbeatAudio.pause();

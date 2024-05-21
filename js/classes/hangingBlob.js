@@ -41,6 +41,15 @@ class HangingBlob extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the state of the hanging blob entity.
+	 *
+	 * If the blob is not awake, it checks the player's proximity to determine if it should wake up.
+	 * If the blob is awake, it updates the blob's position and velocity based on gravity, and checks for collisions with the player.
+	 * If a collision occurs, the player takes damage.
+	 *
+	 * @param {Player} player - The player object to check for collisions against.
+	 */
 	update(player) {
 		this.updateFrames();
 

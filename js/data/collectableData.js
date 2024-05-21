@@ -1,7 +1,7 @@
 /**
- * Each array defines the positions of a collectable's type in the game world.
- * Each object in the `objects` sub-array represents a single collectable instance,
- * with properties defining its dimensions and location.
+ * Defines the positions of full HP collectables in the game world.
+ * Each object in the `objects` array represents a single full HP collectable,
+ * with properties for its height, width, unique ID, and x/y coordinates.
  */
 const fullHPPositions = [
 	{
@@ -50,6 +50,15 @@ const fullHPPositions = [
 	},
 ];
 
+/**
+ * Defines the positions of half-HP collectables in the game world.
+ * Each object in the `objects` array represents a single collectable with the following properties:
+ * - `height`: The height of the collectable in pixels.
+ * - `id`: A unique identifier for the collectable.
+ * - `width`: The width of the collectable in pixels.
+ * - `x`: The x-coordinate of the collectable's position in the game world.
+ * - `y`: The y-coordinate of the collectable's position in the game world.
+ */
 const halfHPPositions = [
 	{
 		objects: [
@@ -105,6 +114,15 @@ const halfHPPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing full-screen positions for collectables in the game.
+ * Each object in the array contains an "objects" array with the following properties for each collectable:
+ * - height: The height of the collectable in pixels.
+ * - id: The unique identifier for the collectable.
+ * - width: The width of the collectable in pixels.
+ * - x: The x-coordinate of the collectable's position.
+ * - y: The y-coordinate of the collectable's position.
+ */
 const fullSPPositions = [
 	{
 		objects: [
@@ -168,6 +186,16 @@ const fullSPPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing positions of immunity collectables in the game.
+ * Each object in the array represents a group of collectables, with an array of individual collectable objects.
+ * Each collectable object has the following properties:
+ * - `height`: The height of the collectable in pixels.
+ * - `id`: The unique identifier of the collectable.
+ * - `width`: The width of the collectable in pixels.
+ * - `x`: The x-coordinate of the collectable's position.
+ * - `y`: The y-coordinate of the collectable's position.
+ */
 const immunityPositions = [
 	{
 		objects: [
@@ -207,6 +235,16 @@ const immunityPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing the positions of golden books in the game.
+ * Each object in the array has an `objects` property that contains an array of
+ * individual golden book objects, each with the following properties:
+ * - `height`: the height of the golden book in pixels
+ * - `id`: a unique identifier for the golden book
+ * - `width`: the width of the golden book in pixels
+ * - `x`: the x-coordinate of the golden book's position
+ * - `y`: the y-coordinate of the golden book's position
+ */
 const goldenBookPositions = [
 	{
 		objects: [
@@ -222,6 +260,16 @@ const goldenBookPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing the positions of green books in the game.
+ * Each object in the array has the following properties:
+ * - `objects`: An array of objects, each with the following properties:
+ *   - `height`: The height of the green book object.
+ *   - `id`: The unique identifier of the green book object.
+ *   - `width`: The width of the green book object.
+ *   - `x`: The x-coordinate of the green book object.
+ *   - `y`: The y-coordinate of the green book object.
+ */
 const greenBookPositions = [
 	{
 		objects: [
@@ -236,6 +284,16 @@ const greenBookPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing the positions of blue books in the game.
+ * Each object in the array has the following properties:
+ * - `objects`: an array of objects, each with the following properties:
+ *   - `height`: the height of the blue book object
+ *   - `id`: the unique identifier of the blue book object
+ *   - `width`: the width of the blue book object
+ *   - `x`: the x-coordinate of the blue book object
+ *   - `y`: the y-coordinate of the blue book object
+ */
 const blueBookPositions = [
 	{
 		objects: [
@@ -250,6 +308,15 @@ const blueBookPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing the positions of red books in the game.
+ * Each object in the array has an 'objects' property, which is an array containing a single object with the following properties:
+ * - height: The height of the red book object in pixels.
+ * - id: The unique identifier of the red book object.
+ * - width: The width of the red book object in pixels.
+ * - x: The x-coordinate of the red book object's position.
+ * - y: The y-coordinate of the red book object's position.
+ */
 const redBookPositions = [
 	{
 		objects: [
@@ -265,6 +332,11 @@ const redBookPositions = [
 	},
 ];
 
+/**
+ * Defines the positions of blue gem collectables in the game world.
+ * Each object in the `objects` array represents a single collectable blue gem,
+ * with properties for its `height`, `id`, `width`, `x` coordinate, and `y` coordinate.
+ */
 const blueGemPositions = [
 	{
 		objects: [
@@ -1330,6 +1402,15 @@ const blueGemPositions = [
 	},
 ];
 
+/**
+ * An array of objects representing the positions of red gems in the game world.
+ * Each object in the array has the following properties:
+ * - `height`: The height of the gem in pixels.
+ * - `id`: A unique identifier for the gem.
+ * - `width`: The width of the gem in pixels.
+ * - `x`: The x-coordinate of the gem's position in the game world.
+ * - `y`: The y-coordinate of the gem's position in the game world.
+ */
 const redGemPositions = [
 	{
 		objects: [
@@ -1417,6 +1498,11 @@ const redGemPositions = [
 	},
 ];
 
+/**
+ * Defines the positions of spell scroll collectables in the game world.
+ * Each object in the `objects` array represents a single spell scroll collectable,
+ * with properties for its height, width, and coordinates within the game world.
+ */
 const spellScrollPositions = [
 	{
 		objects: [

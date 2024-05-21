@@ -1,5 +1,6 @@
 const FPS = 60;
 let isGameOverScreen = false;
+let isWinningScreen = false;
 
 /**
  * Checks for collision between two objects.
@@ -142,6 +143,7 @@ function showStartScreen() {
 	muteAllSounds();
 	disableGameControls();
 	disableESCevent();
+	resetGame();
 }
 
 /**
@@ -151,6 +153,9 @@ function showStartScreen() {
 function hideStartScreen() {
 	const startScreen = document.getElementById('start-screen');
 	const gamePanel = document.getElementById('game-panel');
+	const manualBtn = document.getElementById('manual-btn');
+	const storyBtn = document.getElementById('story-btn');
+
 	gamePanel.classList.replace('d-none', 'd-flex');
 	startScreen.style.display = 'none';
 	isGameOverSoundPlayed = false;
@@ -159,6 +164,12 @@ function hideStartScreen() {
 	enableGameControls();
 	enableESCevent();
 	playCavernBG();
+	if (manualBtn.classList.contains('active')) {
+		toggleManualChapter();
+	}
+	if (storyBtn.classList.contains('active')) {
+		toggleStoryChapter();
+	}
 }
 
 /**
@@ -196,7 +207,6 @@ function showGameOverScreen() {
 function hideGameOverScreen() {
 	const gameOverScreen = document.getElementById('game-over-screen');
 	const canvas = document.getElementById('canvas');
-	isGameOverScreen = false;
 	canvas.classList.remove('filtered');
 	gameOverScreen.classList.replace('fade-in', 'fade-out');
 	setTimeout(() => {
@@ -218,13 +228,14 @@ function showWinningScreen() {
 	canvas.classList.add('filtered');
 	winningScreen.classList.replace('d-none', 'd-flex');
 	winningScreen.classList.replace('fade-out', 'fade-in');
+	isWinningScreen = true;
 	muteAllSounds();
+	disableGameControls();
+	disableESCevent();
 	playQuestCompleted();
 	setTimeout(() => {
 		playWellDone();
 	}, 3000);
-	disableGameControls();
-	disableESCevent();
 }
 
 /**

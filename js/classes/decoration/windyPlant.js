@@ -26,6 +26,9 @@ class WindyPlant extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the animation frames of the windy plant and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();

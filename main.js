@@ -6,6 +6,11 @@ canvas.height = 512;
 
 const gravity = 1.75;
 
+/**
+ * An object that tracks the pressed state of various keyboard keys.
+ * The keys are 'd', 'a', 'e', 'q', and 'p', each with a 'pressed' property
+ * that is a boolean indicating whether the key is currently pressed.
+ */
 const keys = {
 	d: { pressed: false },
 	a: { pressed: false },
@@ -16,6 +21,14 @@ const keys = {
 
 let y = 100;
 
+/**
+ * Initializes a new background Sprite with the specified position and image source.
+ *
+ * @param {Object} position - The position of the background Sprite.
+ * @param {number} position.x - The x-coordinate of the background Sprite.
+ * @param {number} position.y - The y-coordinate of the background Sprite.
+ * @param {string} imgSrc - The source of the image for the background Sprite.
+ */
 const background = new Sprite({
 	position: {
 		x: 0,
@@ -24,6 +37,10 @@ const background = new Sprite({
 	imgSrc: 'img/bg-map.jpg',
 });
 
+/**
+ * Initializes a new `Sprite` object representing the foreground of the game map.
+ * The sprite is positioned at the top-left corner of the screen and uses the 'img/fg-map.png' image as its source.
+ */
 const foreground = new Sprite({
 	position: {
 		x: 0,
@@ -32,6 +49,11 @@ const foreground = new Sprite({
 	imgSrc: 'img/fg-map.png',
 });
 
+/**
+ * Represents the position of the camera in the game world.
+ * @property {number} x - The x-coordinate of the camera position.
+ * @property {number} y - The y-coordinate of the camera position.
+ */
 let camera = {
 	position: {
 		x: 0,
@@ -574,6 +596,8 @@ function resetGame() {
 	hideGameOverScreen();
 	hideWinningScreen();
 
+	enableGameControls();
+	unmuteAllSounds();
 	isDead = false;
 }
 
@@ -711,9 +735,8 @@ function enableGameControls() {
 }
 
 /**
- * Disables the game controls by removing the event listeners for key down and key up events.
+ * Disables the game controls by removing the event listener for key down events.
  */
 function disableGameControls() {
 	window.removeEventListener('keydown', handleKeyDown);
-	window.removeEventListener('keyup', handleKeyUp);
 }

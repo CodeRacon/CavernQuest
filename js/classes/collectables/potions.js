@@ -19,11 +19,20 @@ class FullHealthPotion extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the potion object by updating its frames and calling the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and this potion object.
+	 * If a collision is detected, the player's collected potions count is incremented,
+	 * the potion is removed from the fullHPs array, and a potion found sound effect is played.
+	 * @param {Player} player - The player object to check for collision with.
+	 */
 	checkCollision(player) {
 		if (player.checkPotionCollision(this)) {
 			player.collectedPotions.fullHP++;
@@ -57,11 +66,20 @@ class HalfHealthPotion extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the potion object by updating its frames and calling the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and this potion object.
+	 * If a collision is detected, the player's collected half-HP potions are incremented,
+	 * the potion is removed from the halfHPs array, and a sound effect is played.
+	 * @param {Player} player - The player object to check for collision.
+	 */
 	checkCollision(player) {
 		if (player.checkPotionCollision(this)) {
 			player.collectedPotions.halfHP++;
@@ -95,11 +113,18 @@ class FullSpellPowerPotion extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the potion object by updating its frames and calling the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and a potion, and handles the potion collection.
+	 * @param {Player} player - The player object to check for potion collision.
+	 */
 	checkCollision(player) {
 		if (player.checkPotionCollision(this)) {
 			player.collectedPotions.fullSP++;
@@ -133,11 +158,21 @@ class ImmunityPotion extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the potion object by updating its animation frames and calling the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and this potion object.
+	 * If a collision is detected, the player's immunity potion count is incremented,
+	 * the potion is removed from the `immunityPotions` array, and a sound effect is played.
+	 *
+	 * @param {Player} player - The player object to check for collision with.
+	 */
 	checkCollision(player) {
 		if (player.checkPotionCollision(this)) {
 			player.collectedPotions.immunity++;

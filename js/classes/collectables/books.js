@@ -21,11 +21,21 @@ class GoldenBook extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the collectible book object.
+	 * Calls the `updateFrames()` method to update the animation frames,
+	 * then calls the `update()` method of the parent class.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and the book object.
+	 * If a collision is detected, the yellow book is marked as collected, the book is removed from the goldenBooks array, and a sound effect is played.
+	 * @param {Player} player - The player object to check for collision with.
+	 */
 	checkCollision(player) {
 		if (player.checkBookCollision(this)) {
 			player.collectedBooks.yellowBook = true;
@@ -61,11 +71,23 @@ class RedBook extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the collectible book object.
+	 * Calls the `updateFrames()` method to update the animation frames,
+	 * then calls the `update()` method of the parent class.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and the red book collectable.
+	 * If a collision is detected, the player's `collectedBooks.redBook` property is set to `true`,
+	 * the red book is removed from the `redBooks` array, and a sound effect is played.
+	 *
+	 * @param {Player} player - The player object to check for collision.
+	 */
 	checkCollision(player) {
 		if (player.checkBookCollision(this)) {
 			player.collectedBooks.redBook = true;
@@ -101,11 +123,21 @@ class GreenBook extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the object's frames and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks if the player has collided with this collectable book.
+	 * If a collision is detected, the player's `greenBook` property is set to `true`,
+	 * the book is removed from the `greenBooks` array, and a sound effect is played.
+	 *
+	 * @param {Player} player - The player object to check for collision.
+	 */
 	checkCollision(player) {
 		if (player.checkBookCollision(this)) {
 			player.collectedBooks.greenBook = true;
@@ -141,11 +173,21 @@ class BlueBook extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the object's frames and calls the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and this collectable book.
+	 * If a collision is detected, the player's `collectedBooks.blueBook` property is set to `true`,
+	 * the book is removed from the `blueBooks` array, and a sound effect is played.
+	 *
+	 * @param {Player} player - The player object to check for collision against.
+	 */
 	checkCollision(player) {
 		if (player.checkBookCollision(this)) {
 			player.collectedBooks.blueBook = true;

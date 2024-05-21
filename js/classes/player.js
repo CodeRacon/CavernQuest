@@ -69,6 +69,10 @@ class Player extends Sprite {
 		this.particleEmitterXRange = 112;
 	}
 
+	/**
+	 * Initializes the player's default values, including health, spell power, collected items,
+	 * position, and various state flags.
+	 */
 	initialValues() {
 		this.health = 100;
 		this.spellPower = 100;
@@ -97,7 +101,7 @@ class Player extends Sprite {
 			y: 0,
 		};
 		this.isDead = false;
-		this.deadAnimationDuration = 12;
+		this.deadAnimationDuration = 20;
 		this.isHit = false;
 		this.hitAnimationDuration = 333;
 		this.isPoisoned = false;

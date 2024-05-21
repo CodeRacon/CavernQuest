@@ -18,11 +18,17 @@ class Hazard {
 		this.height = height;
 	}
 
+	/**
+	 * Draws the hazard on the canvas.
+	 */
 	draw() {
 		c.fillStyle = 'transparent';
 		c.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 
+	/**
+	 * Updates the hazard by drawing it.
+	 */
 	update() {
 		this.draw();
 	}

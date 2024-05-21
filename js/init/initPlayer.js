@@ -91,8 +91,8 @@ function initPlayer() {
 			},
 			Dead: {
 				imgSrc: 'img/wizard/wizard-dead.png',
-				frameRate: 12,
-				frameBuffer: 3,
+				frameRate: 20,
+				frameBuffer: 6,
 			},
 		},
 	});

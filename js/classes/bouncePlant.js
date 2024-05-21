@@ -22,6 +22,11 @@ class BouncePlant extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the state of the bounce plant.
+	 * Calls the `updateFrames()` method to update the animation frames,
+	 * then calls the `update()` method of the parent class.
+	 */
 	update() {
 		this.updateFrames();
 

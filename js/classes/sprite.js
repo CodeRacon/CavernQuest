@@ -37,6 +37,16 @@ class Sprite {
 		this.elapsedFrames = 0;
 	}
 
+	/**
+	 * Draws the sprite on the canvas.
+	 *
+	 * This method is responsible for rendering the sprite on the canvas.
+	 * It first checks if the sprite has an image, and if not, it returns without drawing anything.
+	 * It then calculates the cropbox coordinates and dimensions based on the current frame and the sprite's
+	 * frame rate. It then saves the current canvas state, translates and rotates the canvas to the sprite's
+	 * position and rotation, and draws the sprite's image on the canvas using the calculated cropbox.
+	 * Finally, it restores the canvas state.
+	 */
 	draw() {
 		if (!this.image) {
 			return;
@@ -72,11 +82,20 @@ class Sprite {
 		c.restore();
 	}
 
+	/**
+	 * Updates the sprite by drawing it and updating its animation frames.
+	 */
 	update() {
 		this.draw();
 		this.updateFrames();
 	}
 
+	/**
+	 * Updates the current frame of the sprite animation.
+	 * The currentFrame property is incremented each time the elapsedFrames
+	 * counter reaches the frameBuffer value. When the currentFrame reaches
+	 * the frameRate - 1, it is reset back to 0.
+	 */
 	updateFrames() {
 		this.elapsedFrames++;
 		if (this.elapsedFrames % this.frameBuffer === 0) {

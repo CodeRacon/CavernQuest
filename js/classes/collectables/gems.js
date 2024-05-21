@@ -57,11 +57,21 @@ class RedGem extends Sprite {
 		};
 	}
 
+	/**
+	 * Updates the gem object, including updating its animation frames and calling the parent class's update method.
+	 */
 	update() {
 		this.updateFrames();
 		super.update();
 	}
 
+	/**
+	 * Checks for collision between the player and this gem, and handles the gem collection.
+	 * If the player collides with this gem, the player's collected red gems count is incremented,
+	 * the gem is removed from the redGems array, and the gemCollected sound effect is played.
+	 *
+	 * @param {Player} player - The player object to check for collision with.
+	 */
 	checkCollision(player) {
 		if (player.checkGemCollision(this)) {
 			player.collectedRedGems++;

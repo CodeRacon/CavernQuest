@@ -54,6 +54,17 @@ class MovingBlob extends Sprite {
 		this.hitOpacity = 0;
 	}
 
+	/**
+	 * Updates the state of the moving blob object.
+	 *
+	 * This method handles the following:
+	 * - Updating the animation frames of the blob
+	 * - Handling collisions with the player and applying damage
+	 * - Updating the blob's velocity and position based on its state
+	 * - Removing the blob from the game when it has taken the required number of hits
+	 *
+	 * @param {Player} player - The player object to check for collisions against.
+	 */
 	update(player) {
 		this.updateFrames();
 
@@ -133,6 +144,11 @@ class MovingBlob extends Sprite {
 		super.update();
 	}
 
+	/**
+	 * Draws the moving blob on the canvas, applying a red hit effect if the `hitOpacity` is greater than 0.
+	 * The hit effect is achieved by creating a temporary canvas, drawing the blob image on it, and then overlaying a red semi-transparent rectangle on top of it. The resulting image is then drawn on the main canvas.
+	 * If the `hitOpacity` is 0, the blob is drawn using the default `draw()` method.
+	 */
 	draw() {
 		if (this.hitOpacity > 0) {
 			const filterCanvas = document.createElement('canvas');
