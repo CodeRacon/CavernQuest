@@ -2,7 +2,7 @@
  * Imports the Firebase Firestore database instance from the './firebase.js' module.
  * This database instance is used to interact with the 'leaderboard' collection in Firestore.
  */
-import { db } from './firebase.js';
+import { db } from './firebaseConfig.js';
 
 /**
  * Retrieves all documents from the 'leaderboard' collection in Firestore and logs their data to the console.
