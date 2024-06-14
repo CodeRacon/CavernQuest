@@ -7,6 +7,11 @@
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="media-queries.css" />
 
+		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+		<script defer type="module" src="firebase.js"></script>
+		<script defer type="module" src="leaderboard.js"></script>
+
 		<script defer src="js/data/positionData.js"></script>
 		<script defer src="js/data/collisionData.js"></script>
 		<script defer src="js/data/collectableData.js"></script>
@@ -50,13 +55,15 @@
 					<button
 						id="story-btn"
 						class="inactive"
-						onclick="toggleStoryChapter()">
+						onclick="toggleStoryChapter()"
+					>
 						Story Introduction
 					</button>
 					<button
 						id="manual-btn"
 						class="inactive"
-						onclick="toggleManualChapter()">
+						onclick="toggleManualChapter()"
+					>
 						How to Play
 					</button>
 				</div>
@@ -321,6 +328,24 @@
 				<button id="start-button" onclick="hideStartScreen()">
 					Start the Game
 				</button>
+
+				<div class="leaderboard">
+					<h2>Leaderboard</h2>
+					<table id="leaderboard-table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Enemies Killed</th>
+								<th>Tomes</th>
+								<th>Score</th>
+								<th>Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Dynamically filled rows will go here -->
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			<div id="game-over-screen" class="d-none fade-out">
@@ -490,25 +515,29 @@
 								<img
 									id="halfHP"
 									src="img/collectables/PotionYellow.png"
-									alt="" /><span id="halfHP-count">0</span>
+									alt=""
+								/><span id="halfHP-count">0</span>
 							</div>
 							<div>
 								<img
 									id="fullHP"
 									src="img/collectables/PotionGreen.png"
-									alt="" /><span id="fullHP-count">0</span>
+									alt=""
+								/><span id="fullHP-count">0</span>
 							</div>
 							<div>
 								<img
 									id="fullSP"
 									src="img/collectables/PotionBlue.png"
-									alt="" /><span id="fullSP-count">0</span>
+									alt=""
+								/><span id="fullSP-count">0</span>
 							</div>
 							<div>
 								<img
 									id="immunity"
 									src="img/collectables/PotionRed.png"
-									alt="" /><span id="immunity-count">0</span>
+									alt=""
+								/><span id="immunity-count">0</span>
 							</div>
 						</div>
 
@@ -521,7 +550,8 @@
 							<img
 								id="goldenBook"
 								src="img/collectables/TomeYellow.png"
-								alt="" />
+								alt=""
+							/>
 							<img id="greenBook" src="img/collectables/TomeGreen.png" alt="" />
 							<img id="blueBook" src="img/collectables/TomeBlue.png" alt="" />
 							<img id="redBook" src="img/collectables/TomeRed.png" alt="" />
