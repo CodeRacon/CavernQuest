@@ -10,7 +10,12 @@
 		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
 		<script defer type="module" src="firebaseConfig.js"></script>
-		<script defer type="module" src="leaderboard.js"></script>
+
+		<script type="module">
+			import { loadLeaderboard, claimLeaderBoardSpot } from './leaderboard.js';
+			window.loadLeaderboard = loadLeaderboard;
+			window.claimLeaderBoardSpot = claimLeaderBoardSpot;
+		</script>
 
 		<script defer src="js/data/positionData.js"></script>
 		<script defer src="js/data/collisionData.js"></script>
@@ -41,9 +46,10 @@
 		<script defer src="js/init/initEnemies.js"></script>
 		<script defer src="js/audio-control.js"></script>
 		<script defer src="main.js"></script>
+
 		<title>CavernQuest</title>
 	</head>
-	<body onload="preloadImages(spriteImages), initGame()">
+	<body onload="preloadImages(spriteImages),  initGame(), loadLeaderboard()">
 		<main>
 			<div id="start-screen" style="display: flex">
 				<div class="heading">
@@ -160,6 +166,11 @@
 				<div id="manual" class="how-to-play fade-out d-none">
 					<div class="spacer"></div>
 
+					<p>
+						<span>Note:</span> For the best gaming experience keyboard & mouse
+						are recommended!
+					</p>
+
 					<h2>Controls:</h2>
 					<div class="controls">
 						<div class="control-entry-row">
@@ -185,8 +196,8 @@
 						<br />
 						<p>
 							The following Moves consume a decent amount of
-							<span>Spell-Power</span> when in use. You can fill up the SP with
-							Blue Potions if available. Otherwise you have to wait since
+							<span>Spell-Power</span> (SP) when in use. You can fill up the SP
+							with Blue Potions if available. Otherwise you have to wait since
 							<span>SP will slowly regenarate</span>.
 						</p>
 						<div class="control-entry-row">
@@ -329,19 +340,21 @@
 					Start the Game
 				</button>
 
-				<div class="leaderboard">
-					<h2>Leaderboard</h2>
+				<div class="leaderboard" id="leaderboard">
+					<div class="spacer"></div>
+
+					<h2>Board of Honour</h2>
 					<table id="leaderboard-table">
 						<thead>
 							<tr>
 								<th>Name</th>
-								<th>Enemies Killed</th>
-								<th>Tomes</th>
 								<th>Score</th>
+								<th><img src="img/collectables/GemBlue.png" alt="" /></th>
+								<th><img src="img/collectables/GemRed.png" alt="" /></th>
 								<th>Date</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="leaderboard-body">
 							<!-- Dynamically filled rows will go here -->
 						</tbody>
 					</table>
@@ -393,14 +406,27 @@
 					This will enable the High Council of the Magic Academy to finally
 					order the new 3000S Magic-Wand.
 				</p>
-				<br />
+				<!-- <br /> -->
 				<p>Long overdue!</p>
-
+				<div class="input-box">
+					<span>Claim your spot on the Board of Honor!</span>
+					<input
+						id="name-input"
+						type="text"
+						placeholder="Enter your name..."
+						maxlength="12"
+					/>
+					<button
+						onclick="claimLeaderBoardSpot(); showStartScreen(); hideWinningScreen()"
+					>
+						Claim
+					</button>
+				</div>
 				<div class="btn-bar">
-					<button onclick=" showStartScreen(); hideWinningScreen()">
+					<button onclick="showStartScreen(); hideWinningScreen()">
 						Back to Home Screen
 					</button>
-					<button onclick=" resetGame()">Restart Game</button>
+					<button onclick="resetGame()">Restart Game</button>
 				</div>
 			</div>
 
@@ -565,7 +591,7 @@
 								</div>
 								<div id="red-gem-score-container">
 									<img src="img/collectables/GemRed.png" alt="" />
-									<span id="red-gem-count"></span>/10
+									<span id="red-gem-count"></span>&nbsp;/&nbsp;10
 								</div>
 							</div>
 							<div id="total-gem-score-container">
