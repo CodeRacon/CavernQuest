@@ -293,6 +293,7 @@ function toggleStoryChapter() {
 	const storyChapter = document.getElementById('story');
 	const storyBtn = document.getElementById('story-btn');
 	const manualBtn = document.getElementById('manual-btn');
+	const leaderboard = document.getElementById('leaderboard');
 
 	if (manualBtn.classList.contains('active')) {
 		toggleManualChapter();
@@ -303,12 +304,14 @@ function toggleStoryChapter() {
 		setTimeout(() => {
 			storyChapter.classList.replace('d-flex', 'd-none');
 		}, 200);
+		leaderboard.classList.toggle('d-none');
 	} else {
 		storyBtn.classList.replace('inactive', 'active');
 		storyChapter.classList.replace('fade-out', 'fade-in');
 		setTimeout(() => {
 			storyChapter.classList.replace('d-none', 'd-flex');
 		}, 0);
+		leaderboard.classList.toggle('d-none');
 	}
 	toggleQuickStart();
 }
@@ -323,6 +326,7 @@ function toggleManualChapter() {
 	const manualChapter = document.getElementById('manual');
 	const manualBtn = document.getElementById('manual-btn');
 	const storyBtn = document.getElementById('story-btn');
+	const leaderboard = document.getElementById('leaderboard');
 
 	if (storyBtn.classList.contains('active')) {
 		toggleStoryChapter();
@@ -333,12 +337,14 @@ function toggleManualChapter() {
 		setTimeout(() => {
 			manualChapter.classList.replace('d-flex', 'd-none');
 		}, 200);
+		leaderboard.classList.toggle('d-none');
 	} else {
 		manualBtn.classList.replace('inactive', 'active');
 		manualChapter.classList.replace('fade-out', 'fade-in');
 		setTimeout(() => {
 			manualChapter.classList.replace('d-none', 'd-flex');
 		}, 0);
+		leaderboard.classList.toggle('d-none');
 	}
 	toggleQuickStart();
 }
