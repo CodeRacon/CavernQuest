@@ -96,6 +96,7 @@ class MovingBlob extends Sprite {
 				const index = movingBlobs.indexOf(this);
 				if (index !== -1) {
 					movingBlobs.splice(index, 1);
+					player.collectedBlueGems += 10;
 				}
 			}
 		} else {
