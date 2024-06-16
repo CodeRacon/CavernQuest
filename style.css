@@ -526,6 +526,47 @@ h2 {
 	color: #ffd900;
 }
 
+.input-box {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 1.75rem;
+}
+
+.input-box input {
+	width: 8rem;
+	border-radius: 0.25rem;
+	border: unset;
+	padding: 0.4rem 0.8rem;
+	outline: 1px solid #075861b6;
+	background-color: #b3e2e8;
+	color: #063f45;
+	font-family: 'RETROACTIVE';
+	font-size: 1.125rem;
+}
+
+.input-box button {
+	padding: 0.4rem 0.8rem;
+	font-size: 1rem;
+	background-color: #1d5b61;
+	box-shadow: #58f1ff2d 0px 0px 16px 0px;
+	color: #fff;
+	font-size: 1.125rem;
+	border: none;
+	outline: 1px solid #103b3f7b;
+	border-radius: 4px;
+	text-shadow: 2px 2px 2px #0f282b1b;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+}
+
+::placeholder {
+	color: #7d979a;
+	font-size: 1rem;
+}
+
 .game-score img {
 	height: 48px;
 	object-fit: contain;
@@ -553,14 +594,16 @@ h2 {
 	transition: all 0.1s ease-in-out;
 }
 
-.btn-bar button:hover {
+.btn-bar button:hover,
+.input-box button:hover {
 	text-shadow: 2px 2px 2px #0f282b76;
 	background-color: #38abb8;
 	outline: 1px solid #075861b6;
 	box-shadow: #58f1ff96 0px 0px 16px 0px;
 }
 
-.btn-bar button:active {
+.btn-bar button:active,
+.input-box button:active {
 	outline: 1px solid white;
 }
 
@@ -641,6 +684,95 @@ ul {
 	margin-block-end: 0;
 	margin-block-start: 0;
 	padding-inline-start: 0;
+}
+
+.leaderboard {
+	width: 72%;
+	font-family: 'RETROACTIVE';
+	font-size: 1rem;
+	color: white;
+	margin-bottom: 3rem;
+}
+
+.leaderboard h2 {
+	font-size: 2.25rem;
+	width: 100%;
+	text-align: center;
+}
+
+.leaderboard table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.highlight {
+	font-size: 1.25rem;
+	font-weight: bold;
+	letter-spacing: 0.0375rem;
+}
+
+.leaderboard th {
+	color: #ffd900;
+	font-size: 1.375rem;
+	border-bottom: 1px solid #ffd90080;
+	padding: 0;
+}
+
+.leaderboard th img,
+.leaderboard td img {
+	width: 3rem;
+}
+
+.leaderboard tr {
+	width: 100%;
+	padding: 0.75rem;
+}
+
+.leaderboard tr:nth-of-type(1) td,
+.leaderboard tr:nth-of-type(2) td,
+.leaderboard tr:nth-of-type(3) td {
+	padding: 0 !important;
+	color: #b2adf3;
+	font-size: 1.175rem;
+}
+
+.leaderboard tr:nth-of-type(1) td:last-of-type,
+.leaderboard tr:nth-of-type(2) td:last-of-type,
+.leaderboard tr:nth-of-type(3) td:last-of-type {
+	padding-right: 1.25rem !important;
+}
+
+.leaderboard td {
+	padding: 0.625rem 0;
+	width: 16%;
+	text-align: center;
+}
+
+.leaderboard th:first-of-type {
+	text-align: left;
+	padding-left: 1.25rem;
+}
+
+.leaderboard td:first-of-type {
+	display: inline-flex;
+	align-items: center;
+	text-align: left;
+	width: fit-content !important;
+}
+
+.leaderboard th:last-of-type,
+.leaderboard td:last-of-type {
+	text-align: right;
+	padding-right: 1.25rem;
+	width: fit-content !important;
+}
+
+.leaderboard td:first-of-type:not(.highlight) {
+	padding-left: 3rem;
+}
+
+.leaderboard tbody tr {
+	border-bottom: 1px solid #2c828c80 !important;
 }
 
 canvas {
@@ -851,7 +983,6 @@ canvas.filtered {
 	display: flex;
 	gap: 0.75rem;
 	font-size: 1.25rem;
-	letter-spacing: 0.325rem;
 }
 
 #blue-gem-score-container,
